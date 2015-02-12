@@ -8,7 +8,7 @@ define(function() {
 			var xPadding = this.xPadding;
 			var yPadding = this.yPadding;
 			var flowWidth = this.flowWidth;
-			
+
 			this.children().forEach(function(element, index) {
 				var bbox = element.bbox();
 				

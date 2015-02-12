@@ -5,7 +5,8 @@ require.config({
 		'svg-js': '/node_modules/svg.js/dist/svg',
 		'Flow': '/inventions/flow',
 		'float': '/etc/float',
-		'grid': '/etc/grid'
+		'grid': '/etc/grid',
+		'centre': '/etc/centre'
 	},
 	shim: {
 		'QUnit': {
@@ -134,6 +135,30 @@ require(['QUnit', 'svg-js', 'Flow'], function(QUnit, SVG) {
 		QUnit.equal(flow.get(2).bbox().x2, FLOW_WIDTH, "The 3rd square is on the far right");
 		QUnit.equal(flow.get(3).bbox().x2, FLOW_WIDTH - XPADDING - SQUARE_LENGTH * 2, "The 4th square is in the second column");
 		QUnit.equal(flow.get(4).bbox().x2, FLOW_WIDTH, "The 5th square is on the far right");
+	});
+
+	QUnit.test('A centre flow should distribute all squares across a single row, with the collective centre at the middle of the flow\'s width.', function() {
+		var paper = SVG(createTestContainer(('A centre flow should distribute all squares across a single row, with the collective centre at the middle of the flow\'s width.')));
+		var flow = paper.flow(FLOW_WIDTH, XPADDING, YPADDING);
+
+		flow.add(paper.rect(SQUARE_LENGTH, SQUARE_LENGTH));
+		flow.add(paper.rect(SQUARE_LENGTH, SQUARE_LENGTH));
+		flow.add(paper.rect(SQUARE_LENGTH, SQUARE_LENGTH));
+		
+		flow.centre();
+
+		var centreOfGroup = ((XPADDING * 4) + (SQUARE_LENGTH * 3)) / 2 - (SQUARE_LENGTH / 2);
+
+		QUnit.equal(flow.get(1).bbox().x, centreOfGroup, 'The middle square is in the centre of the whole group.');
+
+		flow.add(paper.rect(SQUARE_LENGTH, SQUARE_LENGTH));
+		flow.add(paper.rect(SQUARE_LENGTH, SQUARE_LENGTH));
+		flow.add(paper.rect(SQUARE_LENGTH, SQUARE_LENGTH));
+
+		QUnit.equal(flow.get(1).bbox().x, centreOfGroup, 'The middle square is still in the centre of the whole group even when all the squares will not fit within the flow width (no line breaking).');
+		
+		flow.centre();
+
 	});
 
 	QUnit.load();

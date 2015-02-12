@@ -18,10 +18,11 @@ define(function() {
 		
 		var xTracker = (this.flowWidth / 2) - (totalWidth / 2);
 
+		var xPadding = this.xPadding;
 		this.children().forEach(function(element) {
 			element.move(xTracker, 0);
-			xTracker += element.bbox().width + this.xPadding;
-		}.bind(this));
+			xTracker += element.bbox().width + xPadding;
+		});
 
 	};
 });

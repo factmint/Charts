@@ -1,8 +1,8 @@
 define([
 	'svg-js',
-	'../etc/float',
-	'../etc/grid',
-	'../etc/centre'
+	'float',
+	'grid',
+	'centre'
 ], function(
 	SVG,
 	Float,
