@@ -1,11 +1,13 @@
 define([
 	'svg-js',
 	'float',
-	'grid'
+	'grid',
+	'centre'
 ], function(
 	SVG,
 	Float,
-	Grid
+	Grid,
+	Centre
 ) {
 	SVG.Flow = SVG.invent({
 		create: 'g',
@@ -27,7 +29,8 @@ define([
 			floatLeft: Float.left,
 			floatRight: Float.right,
 			gridLeft: Grid.left,
-			gridRight: Grid.right
+			gridRight: Grid.right,
+			centre: Centre
 		},
 		
 		construct: {
