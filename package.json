@@ -20,5 +20,8 @@
     "qunitjs": "~1.17.1",
     "grunt-openport": "~0.1.0",
     "svg.js": "git+https://github.com/bcbweb/svg.js.git"
+  },
+  "dependencies": {
+    "paths-js": "git+https://github.com/andreaferretti/paths-js.git"
   }
 }
