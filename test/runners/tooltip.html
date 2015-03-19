@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Tooltip tests</title>
+	<link rel="stylesheet" href="/node_modules/qunitjs/qunit/qunit.css">
+	<script src="/node_modules/qunitjs/qunit/qunit.js"></script>
+	<style>
+		@import url(http://fonts.googleapis.com/css?family=Lato);
+		.test-svg-container {
+			width: 100px;
+			float: left;
+			border: 1px dashed red;
+			margin: 10px 10px 0 0;
+			padding: 20px;
+		}
+		.fm-tooltip text {
+			fill: white;
+			dominant-baseline: central;
+			font-family: "Lato", sans-serif;
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<script data-main="../unit-tests/tooltip.js" src="/node_modules/requirejs/require.js"></script>
+</body>
+
+</html>

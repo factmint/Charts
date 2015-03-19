@@ -2,13 +2,11 @@ define([
 	'flow',
 	'float',
 	'grid',
-	'path',
 	'svg-js'
 ], function(
 	Float,
 	Flow,
 	Grid,
-	Path,
 	SVG
 ) {
 

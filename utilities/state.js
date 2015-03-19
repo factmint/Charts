@@ -37,7 +37,7 @@ var StateMachine = function() {
 		if (stateFound) {
 			return true;
 		} else {
-			throw "" + StateName + " is does not exist in this state machine.";
+			throw "" + stateName + " is does not exist in this state machine.";
 			return false;
 		}
 	};
