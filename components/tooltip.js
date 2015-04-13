@@ -15,7 +15,6 @@ return function(
 	mainText,
 	arrowPosition
 ) {
-
 	var configuration = {
 		PADDING: 7
 	};
@@ -43,12 +42,16 @@ return function(
 			x + tooltip.background.configuration.ARROW_WIDTH + configuration.PADDING,
 			y - mainTextObjectBBox.height / 2
 		);
-	} else {
+	} else if (arrowPosition == "right") {
 		tooltip.mainTextObject.attr({ "text-anchor": "end" });
 		tooltip.mainTextObject.move(
 			x - tooltip.background.configuration.ARROW_WIDTH - configuration.PADDING,
 			y - mainTextObjectBBox.height / 2
 		);	
+	} else if (arrowPosition == "top") {
+		console.log("Not yet implemented");
+	} else if (arrowPosition == "bottom") {
+		console.log("Not yet implemented");	
 	}
 
 	return tooltip;

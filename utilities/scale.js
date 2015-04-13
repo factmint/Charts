@@ -44,9 +44,9 @@ define(function() {
 		return Math.ceil(uglyIncrement / divisor) * divisor;
 	}
 	 
+	var numberOfIncrements = 4;
+	
 	return function() {
-		var numberOfIncrements = 4;
-
 		return {
 			withIncrements: function(increments) {
 				numberOfIncrements = increments;

@@ -1,9 +1,9 @@
 define(function() {
 	return {
 		circle: {
-			tenth: Math.PI * 1/5,
-			eighth: Math.PI * 1/4,
-			quarter: Math.PI * 1/2,
+			tenth: 1/5 * Math.PI,
+			eighth: 1/4 * Math.PI,
+			quarter: 1/2 * Math.PI,
 			half: Math.PI,
 			whole: 2 * Math.PI,
 			getPointOnCircumference: function(x, y, radius, angle) {

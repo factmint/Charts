@@ -10,14 +10,19 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 	var colorScaleKey = chart.group();
 
 	var colorMarkers = chart.group();
+	var colorLabels = chart.group();
 
-	var COLOR_MARKER_THICKNESS = 5;
-	var TICK_MARK_EXTRUDE = 8;
-	var TICK_LABEL_MARGIN = 5;
-	var TICK_LABEL_FONT_HEIGHT = 12;
-	var VALUE_MARKER_THICKNESS = 10;
-	var VALUE_MARKER_LENGTH = 10;
-	var VALUE_MARKER_MARGIN = 2;
+	var configuration = {
+		COLOR_MARKER_THICKNESS: 5,
+		TICK_MARK_EXTRUDE: 8,
+		TICK_LABEL_MARGIN: 5,
+		TICK_LABEL_FONT_HEIGHT: 12,
+		VALUE_MARKER_THICKNESS: 10,
+		VALUE_MARKER_LENGTH: 10,
+		VALUE_MARKER_MARGIN: 2		
+	};
+
+	colorScaleKey.configuration = configuration;
 
 	function drawVerticalScale() {
 		tickMarks.forEach(function(tickMark, tickMarkIndex) {
@@ -27,8 +32,8 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 
 			var markPosition = scale.map(tickMark.value);
 
-			var colorMarker = chart.rect(COLOR_MARKER_THICKNESS, scale.map(scale.domain.max) / (tickMarks.length - 1));
-			colorMarker.move(VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN, markPosition);
+			var colorMarker = chart.rect(configuration.COLOR_MARKER_THICKNESS, scale.map(scale.domain.max) / (tickMarks.length - 1));
+			colorMarker.move(configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN, markPosition);
 			colorMarker.addClass(colorClass);
 
 			if (tickMark.tintClass) {
@@ -36,43 +41,44 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 			}
 			
 			var tickLine = chart.line(
-				VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN,
+				configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN,
 				markPosition,
-				VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN + COLOR_MARKER_THICKNESS + TICK_MARK_EXTRUDE,
+				configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN + configuration.COLOR_MARKER_THICKNESS + configuration.TICK_MARK_EXTRUDE,
 				markPosition
 			);
 			tickLine.addClass("fm-color-scale-key-tick-line");
 
 			var tickLabel = chart.text("" + NumberUtilities.renderValue(tickMark.value));
 			tickLabel.move(
-				VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN + COLOR_MARKER_THICKNESS + TICK_MARK_EXTRUDE + TICK_LABEL_MARGIN,
-				markPosition - TICK_LABEL_FONT_HEIGHT
+				configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN + configuration.COLOR_MARKER_THICKNESS + configuration.TICK_MARK_EXTRUDE + configuration.TICK_LABEL_MARGIN,
+				markPosition - configuration.TICK_LABEL_FONT_HEIGHT
 			);
 			tickLabel.addClass("fm-color-scale-key-tick-label");
 
 			colorMarkers.add(colorMarker);
 			colorMarkers.add(tickLine);
-			colorMarkers.add(tickLabel);
+			colorLabels.add(tickLabel);
 		});
 
 		var finalTickLine = chart.line(
-			VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN,
+			configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN,
 			scale.map(tickMarks[tickMarks.length - 1].value),
-			VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN + COLOR_MARKER_THICKNESS + TICK_MARK_EXTRUDE,
+			configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN + configuration.COLOR_MARKER_THICKNESS + configuration.TICK_MARK_EXTRUDE,
 			scale.map(tickMarks[tickMarks.length - 1].value)
 		);
 		finalTickLine.addClass("fm-color-scale-key-tick-line");
 
 		var finalTickLabel = chart.text("" + NumberUtilities.renderValue(tickMarks[tickMarks.length - 1].value));
 		finalTickLabel.move(
-			VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN + COLOR_MARKER_THICKNESS + TICK_MARK_EXTRUDE + TICK_LABEL_MARGIN,
-			scale.map(tickMarks[tickMarks.length - 1].value) - TICK_LABEL_FONT_HEIGHT
+			configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN + configuration.COLOR_MARKER_THICKNESS + configuration.TICK_MARK_EXTRUDE + configuration.TICK_LABEL_MARGIN,
+			scale.map(tickMarks[tickMarks.length - 1].value) - configuration.TICK_LABEL_FONT_HEIGHT
 		);
 		finalTickLabel.addClass("fm-color-scale-key-tick-label");
 		colorMarkers.add(finalTickLine);
-		colorMarkers.add(finalTickLabel);
+		colorLabels.add(finalTickLabel);
 
 		colorScaleKey.add(colorMarkers);
+		colorScaleKey.add(colorLabels);
 	}
 
 	function drawHorizontalScale() {
@@ -83,8 +89,8 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 
 			var markPosition = scale.map(tickMark.value);
 
-			var colorMarker = chart.rect(scale.map(scale.domain.max) / (tickMarks.length - 1), COLOR_MARKER_THICKNESS);
-			colorMarker.move(markPosition, VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN);
+			var colorMarker = chart.rect(scale.map(scale.domain.max) / (tickMarks.length - 1), configuration.COLOR_MARKER_THICKNESS);
+			colorMarker.move(markPosition, configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN);
 			colorMarker.addClass(colorClass);
 			
 			if (tickMark.tintClass) {
@@ -93,43 +99,44 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 
 			var tickLine = chart.line(
 				markPosition,
-				VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN,
+				configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN,
 				markPosition,
-				VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN + COLOR_MARKER_THICKNESS + TICK_MARK_EXTRUDE
+				configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN + configuration.COLOR_MARKER_THICKNESS + configuration.TICK_MARK_EXTRUDE
 			);
 			tickLine.addClass("fm-color-scale-key-tick-line");
 
 			var tickLabel = chart.text("" + NumberUtilities.renderValue(tickMark.value));
 			tickLabel.move(
 				markPosition - tickLabel.bbox().width / 2,
-				VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN + COLOR_MARKER_THICKNESS + TICK_MARK_EXTRUDE + TICK_LABEL_MARGIN
+				configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN + configuration.COLOR_MARKER_THICKNESS + configuration.TICK_MARK_EXTRUDE + configuration.TICK_LABEL_MARGIN
 			);
 
 			tickLabel.addClass("fm-color-scale-key-tick-label");
 
 			colorMarkers.add(colorMarker);
 			colorMarkers.add(tickLine);
-			colorMarkers.add(tickLabel);
+			colorLabels.add(tickLabel);
 		});
 
 		var finalTickLine = chart.line(
 			scale.map(tickMarks[tickMarks.length - 1].value),
-			VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN,
+			configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN,
 			scale.map(tickMarks[tickMarks.length - 1].value),
-			VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN + COLOR_MARKER_THICKNESS + TICK_MARK_EXTRUDE
+			configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN + configuration.COLOR_MARKER_THICKNESS + configuration.TICK_MARK_EXTRUDE
 		);
 		finalTickLine.addClass("fm-color-scale-key-tick-line");
 
 		var finalTickLabel = chart.text("" + NumberUtilities.renderValue(tickMarks[tickMarks.length - 1].value));
 		finalTickLabel.move(
 			scale.map(tickMarks[tickMarks.length - 1].value) - finalTickLabel.bbox().width / 2,
-			VALUE_MARKER_LENGTH + VALUE_MARKER_MARGIN + COLOR_MARKER_THICKNESS + TICK_MARK_EXTRUDE + TICK_LABEL_MARGIN
+			configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN + configuration.COLOR_MARKER_THICKNESS + configuration.TICK_MARK_EXTRUDE + configuration.TICK_LABEL_MARGIN
 		);
 		finalTickLabel.addClass("fm-color-scale-key-tick-label");
 		colorMarkers.add(finalTickLine);
-		colorMarkers.add(finalTickLabel);
+		colorLabels.add(finalTickLabel);
 
 		colorScaleKey.add(colorMarkers);
+		colorScaleKey.add(colorLabels);
 	}
 
 	if (orientation === "horizontal") {
@@ -141,6 +148,8 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 		drawVerticalScale();
 	}
 
+	colorScaleKey.colorMarkers = colorMarkers;
+
 	colorScaleKey.markValue = function(value, secondary) {
 		var markPosition = scale.map(value);
 
@@ -148,15 +157,15 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 
 		if (orientation === "horizontal") {
 			markerPoints = [
-				[markPosition - (1/2 * VALUE_MARKER_THICKNESS), 0],
-				[markPosition, VALUE_MARKER_LENGTH],
-				[markPosition + (1/2 * VALUE_MARKER_THICKNESS), 0]
+				[markPosition - (1/2 * configuration.VALUE_MARKER_THICKNESS), 0],
+				[markPosition, configuration.VALUE_MARKER_LENGTH],
+				[markPosition + (1/2 * configuration.VALUE_MARKER_THICKNESS), 0]
 			];
 		} else {
 			markerPoints = [
-				[0, markPosition - (1/2 * VALUE_MARKER_THICKNESS)],
-				[VALUE_MARKER_LENGTH, markPosition],
-				[0, markPosition + (1/2 * VALUE_MARKER_THICKNESS)]
+				[0, markPosition - (1/2 * configuration.VALUE_MARKER_THICKNESS)],
+				[configuration.VALUE_MARKER_LENGTH, markPosition],
+				[0, markPosition + (1/2 * configuration.VALUE_MARKER_THICKNESS)]
 			];
 		}
 
