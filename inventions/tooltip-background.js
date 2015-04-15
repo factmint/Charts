@@ -23,8 +23,8 @@ SVG.TooltipBackground = SVG.invent({
 		tooltipBackground: function(
 			x,
 			y,
-			height,
 			width,
+			height,
 			arrowPosition
 		) {
 
