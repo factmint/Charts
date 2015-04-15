@@ -100,8 +100,8 @@ return function(
 	tooltip.background = chart.tooltipBackground(
 		x,
 		y,
-		tooltipBackgroundHeight,
 		tooltipBackgroundWidth,
+		tooltipBackgroundHeight,
 		arrowPosition
 	);
 
