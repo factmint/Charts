@@ -18,7 +18,7 @@ return function(
 ) {
 	var configuration = {
 		PADDING: 7,
-		ICON_SPACING: 5
+		ICON_SPACING: 9
 	};
 
 	var tooltip = chart.group().addClass("fm-tooltip");
@@ -29,8 +29,8 @@ return function(
 	tooltip.add(tooltip.mainTextObject);
 	mainTextObjectBBox = tooltip.mainTextObject.bbox();
 
-	var backgroundWidth = mainTextObjectBBox.width + configuration.PADDING * 2;
-	var backgroundHeight = mainTextObjectBBox.height + configuration.PADDING * 2;
+	var backgroundWidth = mainTextObjectBBox.width + 2 * configuration.PADDING;
+	var backgroundHeight = mainTextObjectBBox.height + 2 * configuration.PADDING;
 
 	var iconWidth = 0;
 	var iconHeight = 0;
@@ -39,8 +39,8 @@ return function(
 		iconWidth = iconBBox.width;
 		iconHeight = iconBBox.height;
 
-		backgroundWidth += iconWidth + configuration.ICON_SPACING;
-		backgroundHeight = Math.max(iconHeight, mainTextObjectBBox.height) + configuration.PADDING * 2;
+		backgroundWidth = mainTextObjectBBox.width + iconWidth + 2 * configuration.ICON_SPACING + configuration.PADDING;
+		backgroundHeight = Math.max(iconHeight, mainTextObjectBBox.height) + 2 * configuration.PADDING;
 
 		tooltip.add(icon);
 	}
@@ -57,26 +57,32 @@ return function(
 
 	var xTracker;
 	if (arrowPosition == "left") {
-		xTracker = x + tooltip.background.configuration.ARROW_WIDTH + configuration.PADDING;
+		xTracker = x + tooltip.background.configuration.ARROW_WIDTH;
 		if (icon) {
+			xTracker += configuration.ICON_SPACING;
 			icon.move(
 				xTracker,
 				y - iconHeight / 2
 			);
 			xTracker += iconWidth + configuration.ICON_SPACING;
+		} else {
+			xTracker += configuration.PADDING
 		}
 		tooltip.mainTextObject.move(
 			xTracker,
 			y - mainTextObjectBBox.height / 2
 		);
 	} else if (arrowPosition == "right") {
-		xTracker = x - tooltip.background.configuration.ARROW_WIDTH - configuration.PADDING;
+		xTracker = x - tooltip.background.configuration.ARROW_WIDTH;
 		if (icon) {
+			xTracker -= configuration.ICON_SPACING;
 			icon.move(
 				xTracker - iconWidth,
 				y - iconHeight / 2
 			);
 			xTracker -= iconWidth + configuration.ICON_SPACING;
+		} else {
+			xTracker -= configuration.PADDING;
 		}
 		tooltip.mainTextObject.attr({ "text-anchor": "end" });
 		tooltip.mainTextObject.move(
