@@ -1,5 +1,7 @@
-SVG.extend(SVG.G, {
-	unshift: function(svgJSElement) {
-		this.node.insertBefore(svgJSElement.node, this.children()[0].node);
-	}
+define(['svg-js'], function(SVG) {
+	SVG.extend(SVG.G, {
+		unshift: function(svgJSElement) {
+			this.node.insertBefore(svgJSElement.node, this.children()[0].node);
+		}
+	});
 });
