@@ -44,7 +44,7 @@ define(function() {
 		return Math.ceil(uglyIncrement / divisor) * divisor;
 	}
 	 
-	var numberOfIncrements = 4;
+	var numberOfIncrements = 0;
 	
 	return function() {
 		return {
@@ -68,10 +68,15 @@ define(function() {
 			},
 			domains: {
 				RealNumbers: function(min, max) {
-					this.increments = getIncrements(min, max, numberOfIncrements, false);
+					if (numberOfIncrements > 0) {
+						this.increments = getIncrements(min, max, numberOfIncrements, false);
 					
-					this.min = this.increments[0];
-					this.max = this.increments[this.increments.length - 1];
+						this.min = this.increments[0];
+						this.max = this.increments[this.increments.length - 1];
+					} else {
+						this.min = min;
+						this.max = max;
+					}
 		
 					this.getProportion = function(value) {
 						return (value - this.min) / (this.max - this.min);
@@ -103,6 +108,8 @@ define(function() {
 
 						return angle;
 					};
+					
+					return this;
 				},
 				Chromatic: {},
 				Linear: function(start, end) {
