@@ -17,12 +17,16 @@ define(function() {
 
 		var dataObject = [];
 		for (var rowIndex = 0; rowIndex < this.rows.length; rowIndex++) {
+			var currentRow = this.rows[rowIndex];
 			var rowObject = [];
+			var classes = currentRow.classList;
+			var attributes = currentRow.attributes;
+
 			for (var columnIndex = 0; columnIndex < this.rows[rowIndex].children.length; columnIndex++) {
 				rowObject.push(this.rows[rowIndex].children[columnIndex].textContent);
 			}
 			
-			var dataItem = callback(rowObject, rowIndex, headerRowObject);
+			var dataItem = callback(rowObject, rowIndex, headerRowObject, classes, attributes);
 			if (dataItem) {
 				dataObject.push(dataItem);
 			}
