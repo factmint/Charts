@@ -27,7 +27,7 @@ return function(
 
 	tooltip.mainTextObject = chart.text(mainText);
 	tooltip.add(tooltip.mainTextObject);
-	mainTextObjectBBox = tooltip.mainTextObject.bbox();
+	var mainTextObjectBBox = tooltip.mainTextObject.bbox();
 
 	var backgroundWidth = mainTextObjectBBox.width + 2 * configuration.PADDING;
 	var backgroundHeight = mainTextObjectBBox.height + 2 * configuration.PADDING;
@@ -45,19 +45,38 @@ return function(
 		tooltip.add(icon);
 	}
 
+	var backgroundType;
+	switch (arrowPosition) {
+		case "left": 
+			backgroundType = "singleLeft";
+			break;
+		case "right":
+			backgroundType = "singleRight";
+			break;
+		case "top":
+			backgroundType = "singleTop";
+			break;
+		case "bottom":
+			backgroundType = "singleBottom";
+			break;
+		default: 
+			backgroundType = "singleLeft";
+			break;
+	}
+
 	tooltip.background = chart.tooltipBackground(
 		x,
 		y,
+		backgroundType,
 		backgroundWidth,
-		backgroundHeight,
-		arrowPosition
+		backgroundHeight
 	);
 
 	tooltip.unshift(tooltip.background);
 
 	var xTracker;
 	if (arrowPosition == "left") {
-		xTracker = x + tooltip.background.configuration.ARROW_WIDTH;
+		xTracker = x + tooltip.background.configuration.ARROW_LENGTH;
 		if (icon) {
 			xTracker += configuration.ICON_SPACING;
 			icon.move(
@@ -73,7 +92,7 @@ return function(
 			y - mainTextObjectBBox.height / 2
 		);
 	} else if (arrowPosition == "right") {
-		xTracker = x - tooltip.background.configuration.ARROW_WIDTH;
+		xTracker = x - tooltip.background.configuration.ARROW_LENGTH;
 		if (icon) {
 			xTracker -= configuration.ICON_SPACING;
 			icon.move(
@@ -90,9 +109,39 @@ return function(
 			y - mainTextObjectBBox.height / 2
 		);	
 	} else if (arrowPosition == "top") {
-		console.log("Not yet implemented");
+		xTracker = x - configuration.PADDING;
+		if (icon) {
+			xTracker += configuration.ICON_SPACING;
+			icon.move(
+				xTracker,
+				y - iconHeight / 2
+			);
+			xTracker += iconWidth + configuration.ICON_SPACING;
+		} else {
+			xTracker += configuration.PADDING
+		}
+		tooltip.mainTextObject.attr({ "text-anchor": "middle" });
+		tooltip.mainTextObject.move(
+			xTracker,
+			y + tooltip.background.configuration.ARROW_LENGTH + mainTextObjectBBox.height / 2
+		);
 	} else if (arrowPosition == "bottom") {
-		console.log("Not yet implemented");	
+		xTracker = x - configuration.PADDING;
+		if (icon) {
+			xTracker += configuration.ICON_SPACING;
+			icon.move(
+				xTracker,
+				y - iconHeight / 2
+			);
+			xTracker += iconWidth + configuration.ICON_SPACING;
+		} else {
+			xTracker += configuration.PADDING
+		}
+		tooltip.mainTextObject.attr({ "text-anchor": "middle" });
+		tooltip.mainTextObject.move(
+			xTracker,
+			y - tooltip.background.configuration.ARROW_LENGTH - mainTextObjectBBox.height / 2 - backgroundHeight / 2
+		);
 	}
 
 	return tooltip;
