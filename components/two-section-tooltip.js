@@ -10,16 +10,13 @@ define([
 
 return function(
 	chart,
-	x,
-	y,
 	mainText,
 	secondaryText,
-	arrowPosition,
-	fillColor
+	arrowPosition
 ) {
-
+1
 	var PADDING = 7;
-	var GAP_SIZE = 2;
+	var GAP_SIZE = 1;
 
 	var tooltip = chart.group().addClass("fm-tooltip");
 	
@@ -40,7 +37,7 @@ return function(
 	var largeSectionWidth = mainTextObjectBBox.width + 2 * PADDING;
 	var smallSectionWidth = secondaryTextObjectBBox.width + 2 * PADDING;
 	
-	var xTracker = x;
+	var xTracker = 0;
 	var yPosition;
 	
 	if (arrowPosition == "left") {
@@ -59,19 +56,19 @@ return function(
 
 	function setUpTooltipWithArrowOnLeft() {
 		tooltip.background.leftSection = chart.tooltipBackground(
-			x,
-			y,
 			"leftSectionWithLeftArrow",
 			largeSectionWidth, 
 			height
 		);
 		tooltip.background.rightSection = chart.tooltipBackground(
-			x + tooltip.background.leftSection.configuration.ARROW_LENGTH + largeSectionWidth + GAP_SIZE,
-			y - height / 2,
 			"rightSection",
 			smallSectionWidth,
 			height
-		);
+		)
+			.move(
+				-(smallSectionWidth + largeSectionWidth + tooltip.background.leftSection.configuration.ARROW_LENGTH + GAP_SIZE),
+				-height / 2
+			);
 		
 		tooltip.background.add(tooltip.background.leftSection);
 		tooltip.background.add(tooltip.background.rightSection);
@@ -82,7 +79,7 @@ return function(
 		
 		tooltip.mainTextObject.move(
 			xTracker,
-			y - mainTextObjectBBox.height / 2
+			-mainTextObjectBBox.height / 2
 		);
 		
 		xTracker = xTracker
@@ -92,25 +89,25 @@ return function(
 		
 		tooltip.secondaryTextObject.move(
 			xTracker,
-			y - mainTextObjectBBox.height / 2
+			-mainTextObjectBBox.height / 2
 		);
 	}
 	
 	function setUpTooltipWithArrowOnRight() {
 		tooltip.background.leftSection = chart.tooltipBackground(
-			x - smallSectionWidth - GAP_SIZE,
-			y - height / 2,
 			"leftSection",
 			largeSectionWidth, 
 			height
 		);
-		tooltip.background.leftSection.translate(-tooltip.background.leftSection.configuration.ARROW_LENGTH, 0);
 		tooltip.background.rightSection = chart.tooltipBackground(
-			x,
-			y,
 			"rightSectionWithRightArrow",
 			smallSectionWidth,
 			height
+		);
+		
+		tooltip.background.leftSection.move(
+			-tooltip.background.leftSection.configuration.ARROW_LENGTH - smallSectionWidth - largeSectionWidth - GAP_SIZE,
+			-height / 2
 		);
 		
 		tooltip.background.add(tooltip.background.leftSection);
@@ -123,7 +120,7 @@ return function(
 		tooltip.secondaryTextObject.attr({ "text-anchor": "end" });
 		tooltip.secondaryTextObject.move(
 			xTracker,
-			y - secondaryTextObjectBBox.height / 2
+			-secondaryTextObjectBBox.height / 2
 		);
 
 		xTracker = xTracker
@@ -134,30 +131,30 @@ return function(
 		tooltip.mainTextObject.attr({ "text-anchor": "end" });
 		tooltip.mainTextObject.move(
 			xTracker,
-			y - mainTextObjectBBox.height / 2
+			-mainTextObjectBBox.height / 2
 		);
 	}
 	
 	function setUpTooltipWithArrowOnTopLeft() {
 		tooltip.background.leftSection = chart.tooltipBackground(
-			x,
-			y,
 			"leftSectionWithTopArrow",
 			largeSectionWidth, 
 			height
 		);
 		tooltip.background.rightSection = chart.tooltipBackground(
-			x + largeSectionWidth / 2 + GAP_SIZE,
-			y + tooltip.background.leftSection.configuration.ARROW_LENGTH,
 			"rightSection",
 			smallSectionWidth,
 			height
-		);
+		)
+			.move(
+				-(largeSectionWidth / 2 + GAP_SIZE + smallSectionWidth),
+				tooltip.background.leftSection.configuration.ARROW_LENGTH
+			);
 		
 		tooltip.background.add(tooltip.background.leftSection);
 		tooltip.background.add(tooltip.background.rightSection);
 		
-		yPosition = y - Math.max(mainTextObjectBBox.height, secondaryTextObjectBBox.height) / 2 + tooltip.background.leftSection.configuration.ARROW_LENGTH + height / 2;
+		yPosition = -Math.max(mainTextObjectBBox.height, secondaryTextObjectBBox.height) / 2 + tooltip.background.leftSection.configuration.ARROW_LENGTH + height / 2;
 		tooltip.mainTextObject.attr({ "text-anchor": "middle" });
 		tooltip.mainTextObject.move(
 			xTracker,
@@ -177,25 +174,25 @@ return function(
 	
 	function setUpTooltipWithArrowOnBottomLeft() {
 		tooltip.background.leftSection = chart.tooltipBackground(
-			x,
-			y,
 			"leftSectionWithBottomArrow",
 			largeSectionWidth, 
 			height
 		);
 
 		tooltip.background.rightSection = chart.tooltipBackground(
-			x + largeSectionWidth / 2 + GAP_SIZE,
-			y - height - tooltip.background.leftSection.configuration.ARROW_LENGTH,
 			"rightSection",
 			smallSectionWidth,
 			height
-		);
+		)
+			.move(
+				-(largeSectionWidth / 2 + GAP_SIZE + smallSectionWidth),
+				-height - tooltip.background.leftSection.configuration.ARROW_LENGTH
+			);
 		
 		tooltip.background.add(tooltip.background.leftSection);
 		tooltip.background.add(tooltip.background.rightSection);
 		
-		yPosition = y - Math.max(mainTextObjectBBox.height, secondaryTextObjectBBox.height) / 2 - tooltip.background.leftSection.configuration.ARROW_LENGTH - height / 2;
+		yPosition = -Math.max(mainTextObjectBBox.height, secondaryTextObjectBBox.height) / 2 - tooltip.background.leftSection.configuration.ARROW_LENGTH - height / 2;
 		tooltip.mainTextObject.attr({ "text-anchor": "middle" });
 		tooltip.mainTextObject.move(
 			xTracker,
@@ -217,16 +214,16 @@ return function(
 	
 	function setUpTooltipWithArrowOnBottomRight() {
 		tooltip.background.leftSection = chart.tooltipBackground(
-			x - smallSectionWidth / 2 - GAP_SIZE,
-			y,
 			"leftSection",
 			largeSectionWidth, 
 			height
-		);
+		)
+			.move(
+				-smallSectionWidth / 2 - GAP_SIZE - largeSectionWidth,
+				0
+			);
 		tooltip.background.leftSection.translate(0, -tooltip.background.leftSection.configuration.ARROW_LENGTH - height);
 		tooltip.background.rightSection = chart.tooltipBackground(
-			x,
-			y,
 			"rightSectionWithBottomArrow",
 			smallSectionWidth,
 			height
@@ -235,7 +232,7 @@ return function(
 		tooltip.background.add(tooltip.background.leftSection);
 		tooltip.background.add(tooltip.background.rightSection);
 		
-		yPosition = y - Math.max(mainTextObjectBBox.height, secondaryTextObjectBBox.height) / 2 - tooltip.background.leftSection.configuration.ARROW_LENGTH - height / 2;
+		yPosition = -Math.max(mainTextObjectBBox.height, secondaryTextObjectBBox.height) / 2 - tooltip.background.leftSection.configuration.ARROW_LENGTH - height / 2;
 		tooltip.secondaryTextObject.attr({ "text-anchor": "middle" });
 		tooltip.secondaryTextObject.move(
 			xTracker,
@@ -256,16 +253,16 @@ return function(
 	
 	function setUpTooltipWithArrowOnTopRight() {
 		tooltip.background.leftSection = chart.tooltipBackground(
-			x - smallSectionWidth / 2 - GAP_SIZE,
-			y,
 			"leftSection",
 			largeSectionWidth, 
 			height
-		);
+		)
+			.move(
+				-smallSectionWidth / 2 - GAP_SIZE - largeSectionWidth,
+				0
+			);
 		tooltip.background.leftSection.translate(0, tooltip.background.leftSection.configuration.ARROW_LENGTH);
 		tooltip.background.rightSection = chart.tooltipBackground(
-			x,
-			y,
 			"rightSectionWithTopArrow",
 			smallSectionWidth,
 			height
@@ -274,7 +271,7 @@ return function(
 		tooltip.background.add(tooltip.background.leftSection);
 		tooltip.background.add(tooltip.background.rightSection);
 		
-		yPosition = y - Math.max(mainTextObjectBBox.height, secondaryTextObjectBBox.height) / 2 + tooltip.background.leftSection.configuration.ARROW_LENGTH + height / 2;
+		yPosition = -Math.max(mainTextObjectBBox.height, secondaryTextObjectBBox.height) / 2 + tooltip.background.leftSection.configuration.ARROW_LENGTH + height / 2;
 		tooltip.secondaryTextObject.attr({ "text-anchor": "middle" });
 		tooltip.secondaryTextObject.move(
 			xTracker,
@@ -290,10 +287,6 @@ return function(
 			xTracker,
 			yPosition
 		);
-	}
-	
-	if (fillColor) {
-		tooltip.background.attr("fill", fillColor.toHex());
 	}
 	
 	tooltip.unshift(tooltip.background);

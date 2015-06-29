@@ -35,119 +35,118 @@ function createTestContainer(titleText) {
 
 require(["QUnit", "svg-js", "Tooltip", "TwoSectionTooltip"], function(QUnit, SVG, Tooltip, TwoSectionTooltip) {
 
-	var paper = SVG(createTestContainer("Is background path string correct?"));
-	
+	var paperOne = SVG(createTestContainer("Is background path string correct?"));
+	var paperTwo = SVG(createTestContainer("Is background path string correct?"));
+	var paperThree = SVG(createTestContainer("Is background path string correct?"));
+	var paperFour = SVG(createTestContainer("Is background path string correct?"));
+	var paperFive = SVG(createTestContainer("Is background path string correct?"));
+	var paperSix = SVG(createTestContainer("Is background path string correct?"));
+	var paperSeven = SVG(createTestContainer("Is background path string correct?"));
+	var paperEight = SVG(createTestContainer("Is background path string correct?"));
+	var paperNine = SVG(createTestContainer("Is background path string correct?"));
+	var paperTen = SVG(createTestContainer("Is background path string correct?"));
+
 	var SPACING = 10;
 
 	var leftTooltip = Tooltip(
-		paper,
-		400,
-		180,
+		paperOne,
 		"Left tooltip",
 		"left"
-	);
+	)
+		.move(0, 20);
 
 	var rightTooltip = Tooltip(
-		paper,
-		100,
-		180,
+		paperTwo,
 		"Right tooltip",
 		"right"
-	);
+	)
+		.move(100, 20);
 
 	var topTooltip = Tooltip(
-		paper,
-		250,
-		350,
+		paperThree,
 		"Top tooltip",
 		"top"
-	);
+	)
+		.move(50, 0);
 
 	var bottomTooltip = Tooltip(
-		paper,
-		250,
-		90,
+		paperFour,
 		"Bottom tooltip",
 		"bottom"
-	);
+	)
+		.move(50, 50);
 
 	var topLeftTooltip = TwoSectionTooltip(
-		paper,
-		350,
-		275,
+		paperFive,
 		"Top left tooltip",
 		"50",
 		"topLeft"
-	);
+	)
+		.move(60, 20);
 	
 	var topRightTooltip = TwoSectionTooltip(
-		paper,
-		170,
-		275,
+		paperSix,
 		"Top right tooltip",
 		"50",
 		"topRight"
-	);
+	)
+		.move(130, 20);
 
 	var bottomLeftTooltip = TwoSectionTooltip(
-		paper,
-		350,
-		150,
+		paperSeven,
 		"Bottom left tooltip",
 		"50",
 		"bottomLeft"
-	);
+	)
+		.move(60, 50);
 	
 	var bottomRightTooltip = TwoSectionTooltip(
-		paper,
-		170,
-		150,
+		paperEight,
 		"Bottom right tooltip",
 		"50",
 		"bottomRight"
-	);
+	)
+		.move(140, 50);
 	
 	var twoSectionLeftTooltip = TwoSectionTooltip(
-		paper,
-		400,
-		240,
+		paperNine,
 		"Left tooltip",
 		"50",
 		"left"
-	);
+	)
+		.move(0, 30);
 	
 	var twoSectionRightTooltip = TwoSectionTooltip(
-		paper,
-		120,
-		240,
+		paperTen,
 		"Right tooltip",
 		"50",
 		"right"
-	);
+	)
+		.move(130, 30);
 
 	QUnit.test("A single section tooltip background should have the correct path string.", function() {
 
 		QUnit.equal(
 			leftTooltip.background.node.getAttribute("d"),
-			"M 400 180 L 407 175 L 407 170.492188 S 407 165.492188 412 165.492188 L 474.734375 165.492188 S 479.734375 165.492188 479.734375 170.492188 L 479.734375 189.507813 S 479.734375 194.507813 474.734375 194.507813 L 412 194.507813 S 407 194.507813 407 189.507813 L 407 185 Z ",
+			"M 0 20 L 7 15 L 7 10.492188 S 7 5.492188 12 5.492188 L 74.734375 5.492188 S 79.734375 5.492188 79.734375 10.492188 L 79.734375 29.507813 S 79.734375 34.507813 74.734375 34.507813 L 12 34.507813 S 7 34.507813 7 29.507813 L 7 25 Z ",
 			"A tooltip with the arrow on the left should have the correct path string."
 		);
 		
 		QUnit.equal(
 			rightTooltip.background.node.getAttribute("d"),
-			"M 100 180 L 107 175 L 107 170.492188 S 107 165.492188 112 165.492188 L 181.359375 165.492188 S 186.359375 165.492188 186.359375 170.492188 L 186.359375 189.507813 S 186.359375 194.507813 181.359375 194.507813 L 112 194.507813 S 107 194.507813 107 189.507813 L 107 185 Z ",
+			"M 100 20 L 107 15 L 107 10.492188 S 107 5.492188 112 5.492188 L 181.359375 5.492188 S 186.359375 5.492188 186.359375 10.492188 L 186.359375 29.507813 S 186.359375 34.507813 181.359375 34.507813 L 112 34.507813 S 107 34.507813 107 29.507813 L 107 25 Z ",
 			"A tooltip with the arrow on the right should have the correct path string."
 		);
 		
 		QUnit.equal(
 			topTooltip.background.node.getAttribute("d"),
-			"M 250 350 L 245 357 L 218.828125 357 S 213.828125 357 213.828125 362 L 213.828125 381.015625 S 213.828125 386.015625 218.828125 386.015625 L 281.171875 386.015625 S 286.171875 386.015625 286.171875 381.015625 L 286.171875 362 S 286.171875 357 281.171875 357 L 255 357 Z ",
+			"M 50 0 L 45 7 L 18.828125 7 S 13.828125 7 13.828125 12 L 13.828125 31.015625 S 13.828125 36.015625 18.828125 36.015625 L 81.171875 36.015625 S 86.171875 36.015625 86.171875 31.015625 L 86.171875 12 S 86.171875 7 81.171875 7 L 55 7 Z ",
 			"A tooltip with the arrow on the top should have the correct path string."
 		);
 		
 		QUnit.equal(
 			bottomTooltip.background.node.getAttribute("d"),
-			"M 250 90 L 245 97 L 209.21875 97 S 204.21875 97 204.21875 102 L 204.21875 121.015625 S 204.21875 126.015625 209.21875 126.015625 L 290.78125 126.015625 S 295.78125 126.015625 295.78125 121.015625 L 295.78125 102 S 295.78125 97 290.78125 97 L 255 97 Z ",
+			"M 50 50 L 45 57 L 9.21875 57 S 4.21875 57 4.21875 62 L 4.21875 81.015625 S 4.21875 86.015625 9.21875 86.015625 L 90.78125 86.015625 S 95.78125 86.015625 95.78125 81.015625 L 95.78125 62 S 95.78125 57 90.78125 57 L 55 57 Z ",
 			"A tooltip with the arrow on the bottom should have the correct path string."
 		);
 
@@ -157,37 +156,37 @@ require(["QUnit", "svg-js", "Tooltip", "TwoSectionTooltip"], function(QUnit, SVG
 
 		QUnit.equal(
 			topLeftTooltip.background.leftSection.node.getAttribute("d"),
-			"M 350 275 L 345 282 L 308.453125 282 S 303.453125 282 303.453125 287 L 303.453125 306.015625 S 303.453125 311.015625 308.453125 311.015625 L 396.546875 311.015625 L 396.546875 282 L 355 282 L 350 275",
+			"M 60 20 L 55 27 L 18.453125 27 S 13.453125 27 13.453125 32 L 13.453125 51.015625 S 13.453125 56.015625 18.453125 56.015625 L 106.546875 56.015625 L 106.546875 27 L 65 27 L 60 20",
 			"A left section with an arrow on the top should have the correct path string."
 		);
 		
 		QUnit.equal(
 			topLeftTooltip.background.rightSection.node.getAttribute("d"),
-			"M 398.546875 282 L 375.625 282 S 370.625 282 370.625 287 L 370.625 306.015625 S 370.625 311.015625 375.625 311.015625 L 398.546875 311.015625 Z ",
+			"M 107.546875 27 L 84.625 27 S 79.625 27 79.625 32 L 79.625 51.015625 S 79.625 56.015625 84.625 56.015625 L 107.546875 56.015625 Z ",
 			"A right section with no arrow should have the correct path string."
 		);
 		
 		QUnit.equal(
 			topRightTooltip.background.leftSection.node.getAttribute("d"),
-			"M 154.039063 275 L 59.132813 275 S 54.132813 275 54.132813 280 L 54.132813 299.015625 S 54.132813 304.015625 59.132813 304.015625 L 154.039063 304.015625 Z ",
+			"M 115.039063 20 L 20.132813 20 S 15.132813 20 15.132813 25 L 15.132813 44.015625 S 15.132813 49.015625 20.132813 49.015625 L 115.039063 49.015625 Z ",
 			"A left section with no arrow should have the correct path string."
 		);
 		
 		QUnit.equal(
 			topRightTooltip.background.rightSection.node.getAttribute("d"),
-			"M 170 275 L 165 282 L 161.039063 282 S 156.039063 282 156.039063 287 L 156.039063 306.015625 S 156.039063 311.015625 161.039063 311.015625 L 183.960938 311.015625 L 183.960938 282 L 175 282 L 170 275",
+			"M 130 20 L 125 27 L 121.039063 27 S 116.039063 27 116.039063 32 L 116.039063 51.015625 S 116.039063 56.015625 121.039063 56.015625 L 143.960938 56.015625 L 143.960938 27 L 135 27 L 130 20",
 			"A right section with an arrow on the top should have the correct path string."
 		);
 		
 		QUnit.equal(
 			bottomLeftTooltip.background.leftSection.node.getAttribute("d"),
-			"M 350 150 L 345 157 L 298.84375 157 S 293.84375 157 293.84375 162 L 293.84375 181.015625 S 293.84375 186.015625 298.84375 186.015625 L 406.15625 186.015625 L 406.15625 157 L 355 157 L 350 150",
+			"M 60 50 L 55 57 L 8.84375 57 S 3.84375 57 3.84375 62 L 3.84375 81.015625 S 3.84375 86.015625 8.84375 86.015625 L 116.15625 86.015625 L 116.15625 57 L 65 57 L 60 50",
 			"A left section with an arrow on the bottom should have the correct path string."
 		);
 		
 		QUnit.equal(
 			bottomRightTooltip.background.rightSection.node.getAttribute("d"),
-			"M 170 150 L 165 157 L 161.039063 157 S 156.039063 157 156.039063 162 L 156.039063 181.015625 S 156.039063 186.015625 161.039063 186.015625 L 183.960938 186.015625 L 183.960938 157 L 175 157 L 170 150",
+			"M 140 50 L 135 57 L 131.039063 57 S 126.039063 57 126.039063 62 L 126.039063 81.015625 S 126.039063 86.015625 131.039063 86.015625 L 153.960938 86.015625 L 153.960938 57 L 145 57 L 140 50",
 			"A right section with an arrow on the bottom should have the correct path string."
 		);
 		
