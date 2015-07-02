@@ -1,0 +1,31 @@
+{
+  "name": "factmint-graphs.charts-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.assembla.com/factmint-graphs.charts-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "requirejs": "~2.1.15",
+    "grunt": "~0.4.5",
+    "grunt-contrib-connect": "~0.9.0",
+    "grunt-contrib-qunit": "~0.5.2",
+    "qunitjs": "~1.17.1",
+    "grunt-openport": "~0.1.0",
+    "load-grunt-tasks": "~3.2.0",
+    "almond": "~0.3.1",
+    "grunt-contrib-requirejs": "~0.4.4"
+  },
+  "dependencies": {
+    "paths-js": "git+https://github.com/andreaferretti/paths-js.git",
+    "svg.js": "~2.0.0",
+    "requirejs": "~2.1.18"
+  }
+}
