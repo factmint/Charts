@@ -1,4 +1,7 @@
 module.exports = function(grunt) {
+	// Load all tasks
+	require('load-grunt-tasks')(grunt);
+	
 	grunt.initConfig ({
 		pkg: grunt.file.readJSON('package.json'),
 		connect: {
@@ -16,21 +19,33 @@ module.exports = function(grunt) {
 					port: 34157
 				}
 			}*/
-		}/*,
-		qunit: {
-			tests: {
+		},
+		requirejs: {
+			release: {
 				options: {
-					httpBase: 'http://localhost:34157'
-				},
-				src: 'test/runners/*.html'
+					baseUrl: ".",
+					name: "almond",
+					include: ["factmint-charts"],
+					out: "dist/factmint-charts.js",
+					paths: {
+						"almond": "node_modules/almond/almond",
+				        "classList": "node_modules/classList/classList",
+				        "path": "node_modules/paths-js/dist/amd/path",
+				        "svg-js": "node_modules/svg.js/dist/svg",
+				        "circle-segment": "inventions/circle-segment",
+				        "geometry": "utilities/geometry"
+					},
+					shim: {
+						'svg-js': {
+							exports: 'SVG'
+						}
+					},
+					optimize: 'none'
+				}
 			}
-		}*/
+		},
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	/*grunt.loadNpmTasks('grunt-contrib-qunit');*/
-	grunt.loadNpmTasks('grunt-openport');
-	
 	grunt.registerTask('serve', ['openport:connect.devel.options.port:15000:15010', 'connect:devel']);
-	/*grunt.registerTask('test', ['connect:test', 'qunit']);*/
+	grunt.registerTask('build', ['requirejs']);
 };

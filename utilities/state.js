@@ -53,9 +53,10 @@ var StateMachine = function() {
 	};
 
 	this.transition = function(stateName, data) {
-        this.currentState.leave();
+		var previousState = this.currentState.name;
+        this.currentState.leave(stateName);
 		setStateByName.call(this, stateName);
-        this.currentState.enter(data);
+        this.currentState.enter(data, previousState);
 	};
 
 	this.isInState = function(stateName) {

@@ -14,12 +14,12 @@ define([
 		inherit: SVG.Path,
 
 		construct: {
-			doughnutSegment: function(x, y, radius, innerRadius, startAngle, endAngle) {
+			doughnutSegment: function(xOrigin, yOrigin, radius, innerRadius, startAngle, endAngle) {
 
-				var point1 = Geometry.circle.getPointOnCircumference(x, y, radius, startAngle);
-				var point2 = Geometry.circle.getPointOnCircumference(x, y, radius, endAngle);
-				var point3 = Geometry.circle.getPointOnCircumference(x, y, innerRadius, endAngle);
-				var point4 = Geometry.circle.getPointOnCircumference(x, y, innerRadius, startAngle);
+				var point1 = Geometry.circle.getPointOnCircumference(xOrigin, yOrigin, radius, startAngle);
+				var point2 = Geometry.circle.getPointOnCircumference(xOrigin, yOrigin, radius, endAngle);
+				var point3 = Geometry.circle.getPointOnCircumference(xOrigin, yOrigin, innerRadius, endAngle);
+				var point4 = Geometry.circle.getPointOnCircumference(xOrigin, yOrigin, innerRadius, startAngle);
 
 				var large = ((endAngle - startAngle) > Math.PI) ? 1 : 0;
 

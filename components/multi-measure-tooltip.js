@@ -29,13 +29,13 @@ return function(
 
 	tooltip.configuration = configuration;
 
-	tooltip.title = chart.text(title)
+	tooltip.title = chart.text("" + title)
 		.attr({
 			"text-anchor": "middle"
 		})
 		.addClass("fm-multi-measure-tooltip-title");
 	tooltip.add(tooltip.title);
-	titleObjectBBox = tooltip.title.bbox();
+	var titleObjectBBox = tooltip.title.bbox();
 
 	tooltip.measures = [];
 	var measureGroup = chart.group();

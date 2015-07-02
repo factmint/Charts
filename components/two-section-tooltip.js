@@ -14,7 +14,7 @@ return function(
 	secondaryText,
 	arrowPosition
 ) {
-1
+
 	var PADDING = 7;
 	var GAP_SIZE = 1;
 
@@ -22,8 +22,8 @@ return function(
 	
 	secondaryText = (secondaryText) ? secondaryText : "";
 
-	tooltip.mainTextObject = chart.text(mainText);
-	tooltip.secondaryTextObject = chart.text(secondaryText);
+	tooltip.mainTextObject = chart.text("" + mainText);
+	tooltip.secondaryTextObject = chart.text("" + secondaryText);
 	tooltip.background = chart.group();
 	
 	tooltip.add(tooltip.mainTextObject);

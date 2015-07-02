@@ -23,7 +23,7 @@ return function(
 
 	tooltip.configuration = configuration;
 
-	tooltip.mainTextObject = chart.text(mainText);
+	tooltip.mainTextObject = chart.text("" + mainText);
 	tooltip.add(tooltip.mainTextObject);
 	var mainTextObjectBBox = tooltip.mainTextObject.bbox();
 
