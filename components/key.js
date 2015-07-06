@@ -10,47 +10,58 @@ define([
 	SVG
 ) {
 
-return function(chart, width, values, colorClasses) {
+return function(chart, width, values, colorClasses, colorOverrides) {
 
-var INDICATOR_SIZE = 13;
-var TITLE_PADDING_LEFT = 7;
-var KEY_ITEM_PADDING_LEFT = 10;
-var PADDING_TOP = 20;
-var PADDING_RIGHT = 20;
-var PADDING_BOTTOM = 20;
-var PADDING_LEFT = 20;
+var Configuration = {
+	INDICATOR_SIZE: 13,
+	TITLE_PADDING_LEFT: 7,
+	KEY_ITEM_PADDING_LEFT: 10,
+	PADDING_TOP: 20,
+	PADDING_RIGHT: 20,
+	PADDING_BOTTOM: 20,
+	PADDING_LEFT: 20
+};
 
 var key = chart.group()
 	.addClass('fm-key');
+	
+key.configuration = Configuration;
 
 var topBorder = chart.line(0, 0, width, 0)
 	.addClass('fm-key-top-border');
 
-var centredKeyItems;
+var centeredKeyItems;
 var isReDraw = false;
 
 key.backgroundColorClass = 'fm-datum-color-neutral';
 
-key.setValues = function(values) {
+key.setValues = function(values, colorOverrides) {
 	if (key.keyItems) {
 		isReDraw = true;
 		key.keyItems.clear();
-	} else {
-		key.keyItems = chart.flow(
-			width - PADDING_RIGHT - PADDING_LEFT,
-			KEY_ITEM_PADDING_LEFT,
-			PADDING_BOTTOM
-		);
 	}
+	
+	key.keyItems = chart.flow(
+		width - Configuration.PADDING_RIGHT - Configuration.PADDING_LEFT,
+		Configuration.KEY_ITEM_PADDING_LEFT,
+		Configuration.PADDING_BOTTOM
+	)
+		.addClass("fm-key-items");
 
 	values.forEach(function(value, valueIndex) {
 		var keyItem = chart.group();
 
 		var valueTitle = chart.text(value)
-			.move(INDICATOR_SIZE + TITLE_PADDING_LEFT, 0)
+			.move(Configuration.INDICATOR_SIZE + Configuration.TITLE_PADDING_LEFT, 0)
 			.addClass('fm-key-value-title');
-		var valueIndicator = chart.rect(INDICATOR_SIZE, INDICATOR_SIZE)
-			.addClass('fm-key-value-indicator ' + colorClasses[valueIndex]);
+		var valueIndicator = chart.rect(Configuration.INDICATOR_SIZE, Configuration.INDICATOR_SIZE)
+			.addClass('fm-key-value-indicator');
+		
+		if (colorOverrides && colorOverrides[valueIndex]) {
+			valueIndicator.attr({ fill: colorOverrides[valueIndex] });
+		} else {
+			valueIndicator.addClass(colorClasses[valueIndex]);
+		}
 
 		keyItem.add(valueTitle);
 		keyItem.add(valueIndicator);
@@ -60,7 +71,7 @@ key.setValues = function(values) {
 
 	key.keyItems.gridLeft();
 
-	var keyBackgroundHeight = key.keyItems.bbox().height + PADDING_TOP + PADDING_BOTTOM
+	var keyBackgroundHeight = key.keyItems.bbox().height + Configuration.PADDING_TOP + Configuration.PADDING_BOTTOM
 
 	if (isReDraw) {
 		key.background.attr('height', keyBackgroundHeight);
@@ -69,22 +80,22 @@ key.setValues = function(values) {
 			.addClass('fm-key-background ' + key.backgroundColorClass);
 	}
 
-	centredKeyItems = chart.flow(width, 100, 100);
+	centeredKeyItems = chart.flow(width, 100, 100);
 
-	centredKeyItems.add(key.keyItems);
-	centredKeyItems.centre();
-	centredKeyItems.move(0, PADDING_TOP);
+	centeredKeyItems.add(key.keyItems);
+	centeredKeyItems.centre();
+	centeredKeyItems.move(0, Configuration.PADDING_TOP);
 
 	key.add(key.background);
 	key.add(topBorder);
-	key.add(centredKeyItems);
+	key.add(centeredKeyItems);
 };
 
 key.clearItems = function() {
 	key.keyItems.clear();
 };
 
-key.setValues(values);
+key.setValues(values, colorOverrides);
 
 return key;
 	
