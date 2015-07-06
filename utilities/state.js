@@ -2,8 +2,6 @@ define(function() {
 
 var State = function(name, enter, leave) {
 	this.name = name;
-	this.enter;
-	this.leave;
 	
 	if (enter) {
 		this.enter = enter;
@@ -38,7 +36,6 @@ var StateMachine = function() {
 			return true;
 		} else {
 			throw "" + stateName + " is does not exist in this state machine.";
-			return false;
 		}
 	};
 
@@ -53,9 +50,10 @@ var StateMachine = function() {
 	};
 
 	this.transition = function(stateName, data) {
-        this.currentState.leave();
+		var previousState = this.currentState.name;
+        this.currentState.leave(stateName);
 		setStateByName.call(this, stateName);
-        this.currentState.enter(data);
+        this.currentState.enter(data, previousState);
 	};
 
 	this.isInState = function(stateName) {
