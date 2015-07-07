@@ -74,8 +74,12 @@ require([
             textArea: textAreaComponent
         }
         
-        window.factmint._onready();
+        if (window.factmint._onready instanceof Function) {
+            window.factmint._onready();
+        }
     } else {
-        window.factmint._onnotsupported();
+        if (window.factmint._onnotsupported instanceof Function) {
+            window.factmint._onnotsupported();
+        }
     }
 });
