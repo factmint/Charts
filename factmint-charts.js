@@ -1,6 +1,7 @@
 window['factmint'] = {
-  ready: function(callback) {
-    window.factmint._onready = callback;
+  ready: function(success, failure) {
+    window.factmint._onready = success;
+    window.factmint._onnotsupported = failure;
   }
 };
 
@@ -38,27 +39,43 @@ require([
     multiMeasureTooltipComponent,
     textAreaComponent
 ) {
-    window.factmint.draw = function(parent) {
-        return new SVG(parent);
+    if (SVG.supported) {
+        window.factmint.draw = function(parent, width, height) {
+            if (typeof width === "undefined") {
+                width = "100%";
+            }
+            
+            if (typeof height === "undefined") {
+                height = "500px";
+            }
+            
+            var draw = new SVG(parent);
+            
+            draw.size(width, height);
+            
+            return draw;
+        }
+        
+        window.factmint.utilities = {
+            color: colorUtils,
+            geometry: geometryUtils,
+            mapper: mapperUtils,
+            number: numberUtils,
+            scale: scaleUtils,
+            state: stateUtils
+        };
+        
+        window.factmint.components = {
+            key: keyComponent,
+            colorScaleKey: colorScaleKeyComponent,
+            tooltip: tooltipComponent,
+            twoSectionTooltip: twoSectionTooltipComponent,
+            multiMeasureTooltip: multiMeasureTooltipComponent,
+            textArea: textAreaComponent
+        }
+        
+        window.factmint._onready();
+    } else {
+        window.factmint._onnotsupported();
     }
-    
-    window.factmint.utilities = {
-        color: colorUtils,
-        geometry: geometryUtils,
-        mapper: mapperUtils,
-        number: numberUtils,
-        scale: scaleUtils,
-        state: stateUtils
-    };
-    
-    window.factmint.components = {
-        key: keyComponent,
-        colorScaleKey: colorScaleKeyComponent,
-        tooltip: tooltipComponent,
-        twoSectionTooltip: twoSectionTooltipComponent,
-        multiMeasureTooltip: multiMeasureTooltipComponent,
-        textArea: textAreaComponent
-    }
-    
-    window.factmint._onready();
 });
