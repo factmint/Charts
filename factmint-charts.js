@@ -77,9 +77,17 @@ require([
         if (window.factmint._onready instanceof Function) {
             window.factmint._onready();
         }
+        
+        window.factmint.ready = function(success, failure) {
+            success();
+        };
     } else {
         if (window.factmint._onnotsupported instanceof Function) {
             window.factmint._onnotsupported();
         }
+        
+        window.factmint.ready = function(success, failure) {
+            failure();
+        };
     }
 });
