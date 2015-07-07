@@ -21,8 +21,6 @@ SVG.TooltipBackground = SVG.invent({
 
 	construct: {
 		tooltipBackground: function(
-			x,
-			y,
 			type,
 			width,
 			height
@@ -43,20 +41,20 @@ SVG.TooltipBackground = SVG.invent({
 				var points = [];
 				var widthWithoutRoundedCorners = width - configuration.BORDER_RADIUS * 2;
 				
-				points.push({ x: x - configuration.ARROW_THICKNESS / 2, y: y + configuration.ARROW_LENGTH });
-				points.push({ x: x - widthWithoutRoundedCorners / 2, y: y + configuration.ARROW_LENGTH });
-				points.push({ x: x - width / 2, y: y + configuration.ARROW_LENGTH });
-				points.push({ x: x - width / 2, y: y + configuration.ARROW_LENGTH + configuration.BORDER_RADIUS });
-				points.push({ x: x - width / 2, y: y + configuration.ARROW_LENGTH + configuration.BORDER_RADIUS + heightWithoutRoundedCorners });
-				points.push({ x: x - width / 2, y: y + configuration.ARROW_LENGTH + height });
-				points.push({ x: x - width / 2 + configuration.BORDER_RADIUS, y: y + configuration.ARROW_LENGTH + height });
-				points.push({ x: x + widthWithoutRoundedCorners / 2, y: y + configuration.ARROW_LENGTH + height });
-				points.push({ x: x + width / 2, y: y + configuration.ARROW_LENGTH + height });
-				points.push({ x: x + width / 2, y: y + configuration.ARROW_LENGTH + configuration.BORDER_RADIUS + heightWithoutRoundedCorners });
-				points.push({ x: x + width / 2, y: y + configuration.ARROW_LENGTH + configuration.BORDER_RADIUS });
-				points.push({ x: x + width / 2, y: y + configuration.ARROW_LENGTH });
-				points.push({ x: x + widthWithoutRoundedCorners / 2, y: y + configuration.ARROW_LENGTH }); 
-				points.push({ x: x + configuration.ARROW_THICKNESS / 2, y: y + configuration.ARROW_LENGTH });
+				points.push({ x: -configuration.ARROW_THICKNESS / 2, y: configuration.ARROW_LENGTH });
+				points.push({ x: -widthWithoutRoundedCorners / 2, y: configuration.ARROW_LENGTH });
+				points.push({ x: -width / 2, y: configuration.ARROW_LENGTH });
+				points.push({ x: -width / 2, y: configuration.ARROW_LENGTH + configuration.BORDER_RADIUS });
+				points.push({ x: -width / 2, y: configuration.ARROW_LENGTH + configuration.BORDER_RADIUS + heightWithoutRoundedCorners });
+				points.push({ x: -width / 2, y: configuration.ARROW_LENGTH + height });
+				points.push({ x: -width / 2 + configuration.BORDER_RADIUS, y: configuration.ARROW_LENGTH + height });
+				points.push({ x: widthWithoutRoundedCorners / 2, y: configuration.ARROW_LENGTH + height });
+				points.push({ x: width / 2, y: configuration.ARROW_LENGTH + height });
+				points.push({ x: width / 2, y: configuration.ARROW_LENGTH + configuration.BORDER_RADIUS + heightWithoutRoundedCorners });
+				points.push({ x: width / 2, y: configuration.ARROW_LENGTH + configuration.BORDER_RADIUS });
+				points.push({ x: width / 2, y: configuration.ARROW_LENGTH });
+				points.push({ x: widthWithoutRoundedCorners / 2, y: configuration.ARROW_LENGTH }); 
+				points.push({ x: configuration.ARROW_THICKNESS / 2, y: configuration.ARROW_LENGTH });
 				
 				return points;
 			}
@@ -64,20 +62,20 @@ SVG.TooltipBackground = SVG.invent({
 			function getSingleSectionPointsWithLeftArrow() {
 				var points = [];
 				
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y - 1/2 * configuration.ARROW_THICKNESS });
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y - 1/2 * heightWithoutRoundedCorners });
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y - 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH + configuration.BORDER_RADIUS, y: y - 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH + width - configuration.BORDER_RADIUS, y: y - 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH + width, y: y - 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH + width, y: y - 1/2 * heightWithoutRoundedCorners });
-				points.push({ x: x + configuration.ARROW_LENGTH + width, y: y + 1/2 * heightWithoutRoundedCorners });
-				points.push({ x: x + configuration.ARROW_LENGTH + width, y: y + 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH + width - configuration.BORDER_RADIUS, y: y + 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH + configuration.BORDER_RADIUS, y: y + 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y + 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y + 1/2 * heightWithoutRoundedCorners });
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y + 1/2 * configuration.ARROW_THICKNESS });
+				points.push({ x: configuration.ARROW_LENGTH, y: -1/2 * configuration.ARROW_THICKNESS });
+				points.push({ x: configuration.ARROW_LENGTH, y: -1/2 * heightWithoutRoundedCorners });
+				points.push({ x: configuration.ARROW_LENGTH, y: -1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH + configuration.BORDER_RADIUS, y: -1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH + width - configuration.BORDER_RADIUS, y: -1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH + width, y: -1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH + width, y: -1/2 * heightWithoutRoundedCorners });
+				points.push({ x: configuration.ARROW_LENGTH + width, y: 1/2 * heightWithoutRoundedCorners });
+				points.push({ x: configuration.ARROW_LENGTH + width, y: 1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH + width - configuration.BORDER_RADIUS, y: 1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH + configuration.BORDER_RADIUS, y: 1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH, y: 1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH, y: 1/2 * heightWithoutRoundedCorners });
+				points.push({ x: configuration.ARROW_LENGTH, y: 1/2 * configuration.ARROW_THICKNESS });
 				
 				return points;
 			}
@@ -87,16 +85,16 @@ SVG.TooltipBackground = SVG.invent({
 
 				var widthWithoutRoundedCorners = width - configuration.BORDER_RADIUS * 2;
 				
-				points.push({ x: x - configuration.ARROW_THICKNESS / 2, y: y + configuration.ARROW_LENGTH });
-				points.push({ x: x - widthWithoutRoundedCorners / 2, y: y + configuration.ARROW_LENGTH });
-				points.push({ x: x - width / 2, y: y + configuration.ARROW_LENGTH });
-				points.push({ x: x - width / 2, y: y + configuration.ARROW_LENGTH + configuration.BORDER_RADIUS });
-				points.push({ x: x - width / 2, y: y + configuration.ARROW_LENGTH + configuration.BORDER_RADIUS + heightWithoutRoundedCorners });
-				points.push({ x: x - width / 2, y: y + configuration.ARROW_LENGTH + height });
-				points.push({ x: x - width / 2 + configuration.BORDER_RADIUS, y: y + configuration.ARROW_LENGTH + height });
-				points.push({ x: x + width / 2, y: y + configuration.ARROW_LENGTH + height });
-				points.push({ x: x + width / 2, y: y + configuration.ARROW_LENGTH });
-				points.push({ x: x + configuration.ARROW_THICKNESS / 2, y: y + configuration.ARROW_LENGTH });
+				points.push({ x: -configuration.ARROW_THICKNESS / 2, y: configuration.ARROW_LENGTH });
+				points.push({ x: -widthWithoutRoundedCorners / 2, y: configuration.ARROW_LENGTH });
+				points.push({ x: -width / 2, y: configuration.ARROW_LENGTH });
+				points.push({ x: -width / 2, y: configuration.ARROW_LENGTH + configuration.BORDER_RADIUS });
+				points.push({ x: -width / 2, y: configuration.ARROW_LENGTH + configuration.BORDER_RADIUS + heightWithoutRoundedCorners });
+				points.push({ x: -width / 2, y: configuration.ARROW_LENGTH + height });
+				points.push({ x: -width / 2 + configuration.BORDER_RADIUS, y: configuration.ARROW_LENGTH + height });
+				points.push({ x: width / 2, y: configuration.ARROW_LENGTH + height });
+				points.push({ x: width / 2, y: configuration.ARROW_LENGTH });
+				points.push({ x: configuration.ARROW_THICKNESS / 2, y: configuration.ARROW_LENGTH });
 				
 				return points;
 			}
@@ -104,16 +102,16 @@ SVG.TooltipBackground = SVG.invent({
 			function getSectionPointsWithLeftArrow() {
 				var points = [];
 				
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y - 1/2 * configuration.ARROW_THICKNESS });
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y - 1/2 * heightWithoutRoundedCorners });
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y - 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH + configuration.BORDER_RADIUS, y: y - 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH + width, y: y - 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH + width, y: y + 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH + configuration.BORDER_RADIUS, y: y + 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y + 1/2 * height });
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y + 1/2 * heightWithoutRoundedCorners });
-				points.push({ x: x + configuration.ARROW_LENGTH, y: y + 1/2 * configuration.ARROW_THICKNESS });
+				points.push({ x: configuration.ARROW_LENGTH, y: -1/2 * configuration.ARROW_THICKNESS });
+				points.push({ x: configuration.ARROW_LENGTH, y: -1/2 * heightWithoutRoundedCorners });
+				points.push({ x: configuration.ARROW_LENGTH, y: -1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH + configuration.BORDER_RADIUS, y: -1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH + width, y: -1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH + width, y: 1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH + configuration.BORDER_RADIUS, y: 1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH, y: 1/2 * height });
+				points.push({ x: configuration.ARROW_LENGTH, y: 1/2 * heightWithoutRoundedCorners });
+				points.push({ x: configuration.ARROW_LENGTH, y: 1/2 * configuration.ARROW_THICKNESS });
 				
 				return points;
 			}			
@@ -121,20 +119,20 @@ SVG.TooltipBackground = SVG.invent({
 			function getSectionPoints() {
 				var points = [];
 		
-				points.push({ x: x - width + configuration.BORDER_RADIUS, y: y });
-				points.push({ x: x - width, y: y });
-				points.push({ x: x - width, y: y + configuration.BORDER_RADIUS });
-				points.push({ x: x - width, y: y + height - configuration.BORDER_RADIUS });
-				points.push({ x: x - width, y: y + height });
-				points.push({ x: x - width + configuration.BORDER_RADIUS, y: y + height });
-				points.push({ x: x, y: y + height });
+				points.push({ x: -width + configuration.BORDER_RADIUS, y: 0 });
+				points.push({ x: -width, y: 0 });
+				points.push({ x: -width, y: configuration.BORDER_RADIUS });
+				points.push({ x: -width, y: height - configuration.BORDER_RADIUS });
+				points.push({ x: -width, y: height });
+				points.push({ x: -width + configuration.BORDER_RADIUS, y: height });
+				points.push({ x: 0, y: height });
 	
 				return points;
 			}
 			
 			function setUpSingleSectionWithTopOrBottomArrowPathString(points) {
 				return Path()
-					.moveto(x, y)
+					.moveto(0, 0)
 					.lineto(points[0].x, points[0].y)
 					.lineto(points[1].x, points[1].y)
 					.smoothcurveto(
@@ -163,7 +161,7 @@ SVG.TooltipBackground = SVG.invent({
 
 			function setUpSingleSectionWithLeftOrRightArrowPathString(points) {
 				return Path()
-					.moveto(x, y) 
+					.moveto(0, 0) 
 					.lineto(points[0].x, points[0].y)
 					.lineto(points[1].x, points[1].y)
 					.smoothcurveto(
@@ -192,7 +190,7 @@ SVG.TooltipBackground = SVG.invent({
 				
 			function setUpSectionPathString(points) {
 				return Path()
-					.moveto(x, y) 
+					.moveto(0, 0) 
 					.lineto(points[0].x, points[0].y)
 					.smoothcurveto(
 						points[1].x, points[1].y,
@@ -210,7 +208,7 @@ SVG.TooltipBackground = SVG.invent({
 			
 			function setUpSectionWithTopOrBottomArrowPathString(points) {
 				return Path()
-					.moveto(x, y)
+					.moveto(0, 0)
 					.lineto(points[0].x, points[0].y)
 					.lineto(points[1].x, points[1].y)
 					.smoothcurveto(
@@ -225,7 +223,7 @@ SVG.TooltipBackground = SVG.invent({
 					.lineto(points[7].x, points[7].y)
 					.lineto(points[8].x, points[8].y)
 					.lineto(points[9].x, points[9].y)
-					.lineto(x, y)
+					.lineto(0, 0)
 					.print();
 			}
 			
@@ -233,7 +231,7 @@ SVG.TooltipBackground = SVG.invent({
 				
 			function setUpSectionWithLeftOrRightArrowPathString(points) {
 				return Path()
-					.moveto(x, y)
+					.moveto(0, 0)
 					.lineto(points[0].x, points[0].y)
 					.lineto(points[1].x, points[1].y)
 					.smoothcurveto(
@@ -291,18 +289,18 @@ SVG.TooltipBackground = SVG.invent({
 				|| type == "rightSectionWithTopArrow"
 			) {
 				tooltipBackgroundPath
-					.translate(2 * x, 0)
+				//	.translate(2 * x, 0)
 					.scale(-1, 1);
 			} else if (
 				type == "singleBottom"
 				|| type == "leftSectionWithBottomArrow"
 			) {
 				tooltipBackgroundPath
-					.translate(0, 2 * y)
+				//	.translate(0, 2 * y)
 					.scale(1, -1);
 			} else if (type == "rightSectionWithBottomArrow") {
 				tooltipBackgroundPath
-					.translate(2 * x, 2 * y)
+				//	.translate(2 * x, 2 * y)
 					.scale(-1, -1);
 			}
 			

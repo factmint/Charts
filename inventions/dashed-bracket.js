@@ -21,21 +21,21 @@ SVG.DashedBracket = SVG.invent({
 		dashedBracket: function(
             x,
             y,
-            innerRadius,
+            insideRadius,
             middleRadius,
-            outerRadius,
+            outsideRadius,
             startAngle,
             endAngle
 		) {
 
-			var point1 = Geometry.circle.getPointOnCircumference(x, y, innerRadius, startAngle);
-			var point2 = Geometry.circle.getPointOnCircumference(x, y, innerRadius, endAngle);
+			var point1 = Geometry.circle.getPointOnCircumference(x, y, outsideRadius, startAngle);
+			var point2 = Geometry.circle.getPointOnCircumference(x, y, outsideRadius, endAngle);
 			var point3 = Geometry.circle.getPointOnCircumference(x, y, middleRadius, startAngle);
 			var point4 = Geometry.circle.getPointOnCircumference(x, y, middleRadius, endAngle);
-    		var point5 = Geometry.circle.getPointOnCircumference(x, y, outerRadius, startAngle);
-			var point6 = Geometry.circle.getPointOnCircumference(x, y, outerRadius, endAngle);
+    		var point5 = Geometry.circle.getPointOnCircumference(x, y, insideRadius, startAngle);
+			var point6 = Geometry.circle.getPointOnCircumference(x, y, insideRadius, endAngle);
             var point7 = Geometry.circle.getPointOnCircumference(x, y, middleRadius, (endAngle - (endAngle - startAngle) / 2));
-            var point8 = Geometry.circle.getPointOnCircumference(x, y, innerRadius, (endAngle - (endAngle - startAngle) / 2));
+            var point8 = Geometry.circle.getPointOnCircumference(x, y, outsideRadius, (endAngle - (endAngle - startAngle) / 2));
 			
     		var dashedBracketPathString = Path()
 				.moveto(point5.x, point5.y)

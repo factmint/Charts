@@ -10,8 +10,6 @@ define([
 
 return function(
 	chart,
-	x,
-	y,
 	mainText,
 	arrowPosition,
 	icon
@@ -25,7 +23,7 @@ return function(
 
 	tooltip.configuration = configuration;
 
-	tooltip.mainTextObject = chart.text(mainText);
+	tooltip.mainTextObject = chart.text("" + mainText);
 	tooltip.add(tooltip.mainTextObject);
 	var mainTextObjectBBox = tooltip.mainTextObject.bbox();
 
@@ -65,8 +63,6 @@ return function(
 	}
 
 	tooltip.background = chart.tooltipBackground(
-		x,
-		y,
 		backgroundType,
 		backgroundWidth,
 		backgroundHeight
@@ -76,12 +72,12 @@ return function(
 
 	var xTracker;
 	if (arrowPosition == "left") {
-		xTracker = x + tooltip.background.configuration.ARROW_LENGTH;
+		xTracker = tooltip.background.configuration.ARROW_LENGTH;
 		if (icon) {
 			xTracker += configuration.ICON_SPACING;
 			icon.move(
 				xTracker,
-				y - iconHeight / 2
+				-iconHeight / 2
 			);
 			xTracker += iconWidth + configuration.ICON_SPACING;
 		} else {
@@ -89,15 +85,15 @@ return function(
 		}
 		tooltip.mainTextObject.move(
 			xTracker,
-			y - mainTextObjectBBox.height / 2
+			-mainTextObjectBBox.height / 2
 		);
 	} else if (arrowPosition == "right") {
-		xTracker = x - tooltip.background.configuration.ARROW_LENGTH;
+		xTracker = -tooltip.background.configuration.ARROW_LENGTH;
 		if (icon) {
 			xTracker -= configuration.ICON_SPACING;
 			icon.move(
 				xTracker - iconWidth,
-				y - iconHeight / 2
+				-iconHeight / 2
 			);
 			xTracker -= iconWidth + configuration.ICON_SPACING;
 		} else {
@@ -106,15 +102,15 @@ return function(
 		tooltip.mainTextObject.attr({ "text-anchor": "end" });
 		tooltip.mainTextObject.move(
 			xTracker,
-			y - mainTextObjectBBox.height / 2
+			-mainTextObjectBBox.height / 2
 		);	
 	} else if (arrowPosition == "top") {
-		xTracker = x - configuration.PADDING;
+		xTracker = -configuration.PADDING;
 		if (icon) {
 			xTracker += configuration.ICON_SPACING;
 			icon.move(
 				xTracker,
-				y - iconHeight / 2
+				-iconHeight / 2
 			);
 			xTracker += iconWidth + configuration.ICON_SPACING;
 		} else {
@@ -123,15 +119,15 @@ return function(
 		tooltip.mainTextObject.attr({ "text-anchor": "middle" });
 		tooltip.mainTextObject.move(
 			xTracker,
-			y + tooltip.background.configuration.ARROW_LENGTH + mainTextObjectBBox.height / 2
+			tooltip.background.configuration.ARROW_LENGTH + mainTextObjectBBox.height / 2
 		);
 	} else if (arrowPosition == "bottom") {
-		xTracker = x - configuration.PADDING;
+		xTracker = -configuration.PADDING;
 		if (icon) {
 			xTracker += configuration.ICON_SPACING;
 			icon.move(
 				xTracker,
-				y - iconHeight / 2
+				-iconHeight / 2
 			);
 			xTracker += iconWidth + configuration.ICON_SPACING;
 		} else {
@@ -140,7 +136,7 @@ return function(
 		tooltip.mainTextObject.attr({ "text-anchor": "middle" });
 		tooltip.mainTextObject.move(
 			xTracker,
-			y - tooltip.background.configuration.ARROW_LENGTH - mainTextObjectBBox.height / 2 - backgroundHeight / 2
+			-tooltip.background.configuration.ARROW_LENGTH - mainTextObjectBBox.height / 2 - backgroundHeight / 2
 		);
 	}
 
