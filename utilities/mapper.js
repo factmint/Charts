@@ -86,7 +86,7 @@ define(function() {
 				rowObject.push(this.rows[rowIndex].children[columnIndex].textContent);
 			}
 			
-			reduction = callback(reduction, rowObject, rowIndex, headerRowObject, classes, attributes);
+			reduction = callback(reduction, rowObject, rowIndex, currentRow, headerRowObject, classes, attributes);
 		}
 
 		return reduction;
