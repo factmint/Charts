@@ -20,7 +20,7 @@ define(function() {
 			if (start >= 0 && start < niceIncrement) {
 				start = 0;
 			} else {
-				start -= (rangeOfTicks - range) / 2;
+				start -= (rangeOfIncrements - range) / 2;
 			}
 		}
 

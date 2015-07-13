@@ -20,7 +20,7 @@ var State = function(name, enter, leave) {
 			console.log("No leave() method has been defined for the state " + name);
 		}
 	}
-}
+};
 
 var StateMachine = function() {
 	this.states = Array.prototype.slice.call(arguments);
@@ -37,8 +37,7 @@ var StateMachine = function() {
 		if (stateFound) {
 			return true;
 		} else {
-			throw "" + stateName + " is does not exist in this state machine.";
-			return false;
+			throw "" + stateName + " does not exist in this state machine.";
 		}
 	};
 

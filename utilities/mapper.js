@@ -58,8 +58,6 @@ define(function() {
 			
 			callback(rowObject, rowIndex, currentRow, headerRowObject, classes, attributes);
 		}
-
-		return dataObject;
 	};
 
 	HtmlTable.prototype.reduceRows = function(callback, reduction) {

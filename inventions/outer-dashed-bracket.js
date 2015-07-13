@@ -8,7 +8,7 @@ define([
 	Geometry
 ) {
 
-SVG.DashedBracket = SVG.invent({
+SVG.OuterDashedBracket = SVG.invent({
 	create: 'path',
 
 	inherit: SVG.Path,
@@ -18,26 +18,26 @@ SVG.DashedBracket = SVG.invent({
 	},
 
 	construct: {
-		dashedBracket: function(
+		outerDashedBracket: function(
 			x,
 			y,
-			innerRadius,
+			insideRadius,
 			middleRadius,
-			outerRadius,
+			outsideRadius,
 			startAngle,
 			endAngle
 		) {
 
-			var point1 = Geometry.circle.getPointOnCircumference(x, y, innerRadius, startAngle);
-			var point2 = Geometry.circle.getPointOnCircumference(x, y, innerRadius, endAngle);
+			var point1 = Geometry.circle.getPointOnCircumference(x, y, outsideRadius, startAngle);
+			var point2 = Geometry.circle.getPointOnCircumference(x, y, outsideRadius, endAngle);
 			var point3 = Geometry.circle.getPointOnCircumference(x, y, middleRadius, startAngle);
 			var point4 = Geometry.circle.getPointOnCircumference(x, y, middleRadius, endAngle);
-    		var point5 = Geometry.circle.getPointOnCircumference(x, y, outerRadius, startAngle);
-			var point6 = Geometry.circle.getPointOnCircumference(x, y, outerRadius, endAngle);
-            var point7 = Geometry.circle.getPointOnCircumference(x, y, middleRadius, (endAngle - (endAngle - startAngle) / 2));
-            var point8 = Geometry.circle.getPointOnCircumference(x, y, innerRadius, (endAngle - (endAngle - startAngle) / 2));
+			var point5 = Geometry.circle.getPointOnCircumference(x, y, insideRadius, startAngle);
+			var point6 = Geometry.circle.getPointOnCircumference(x, y, insideRadius, endAngle);
+			var point7 = Geometry.circle.getPointOnCircumference(x, y, middleRadius, (endAngle - (endAngle - startAngle) / 2));
+			var point8 = Geometry.circle.getPointOnCircumference(x, y, outsideRadius, (endAngle - (endAngle - startAngle) / 2));
 			
-    		var dashedBracketPathString = Path()
+			var dashedBracketPathString = Path()
 				.moveto(point5.x, point5.y)
 				.lineto(point3.x, point3.y)
 				.arc(middleRadius, middleRadius, 0, ((endAngle - startAngle) > Math.PI) ? 1 : 0, 1, point4.x, point4.y)
@@ -51,7 +51,7 @@ SVG.DashedBracket = SVG.invent({
 				.attr({
 					d: dashedBracketPathString
 				})
-				.addClass("fm-dashed-bracket");
+				.addClass("fm-outer-dashed-bracket");
 		}
 	}
 });
