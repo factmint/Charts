@@ -9,7 +9,7 @@ require.config({
 		'flow': '/inventions/flow',
 		'float': '/etc/float',
 		'grid': '/etc/grid',
-		'centre': '/etc/centre'
+		'center': '/etc/center'
 	},
 	shim: {
 		"QUnit": {
@@ -35,9 +35,10 @@ function createTestContainer(titleText) {
 	return container;
 }
 
-require(["Color",  "path", "Key", "QUnit", "svg-js", "flow"], function(Color, path, key, QUnit, SVG, Flow) {
+require(["Color", "path", "Key", "QUnit", "svg-js", "flow"], function(Color, path, key, QUnit, SVG, Flow) {
 
-	var paper = SVG(createTestContainer("Test container"));
+	var paperOne = SVG(createTestContainer("Basic key"));
+	var paperTwo = SVG(createTestContainer("Single colour override"));
 
 	QUnit.test("The key component should render correctly.", function() {
 
@@ -45,7 +46,10 @@ require(["Color",  "path", "Key", "QUnit", "svg-js", "flow"], function(Color, pa
 		var values = ["One", "Two", "Three", "Four", "Five", "Six", "Seven"];
 		var colorClasses = Color.harmonious(7);
 
-		var testKey = key(paper, width, values, colorClasses);
+		var testKey = key(paperOne, width, values, colorClasses);
+		
+		var colorOverrides = ["", "#ff0000"];
+		var testKeyWithColorOverrides = key(paperTwo, width, values, colorClasses, colorOverrides);
 
 		QUnit.ok(testKey.node.querySelector(".fm-key-top-border"), "The key should have a top border.");
 
@@ -61,6 +65,18 @@ require(["Color",  "path", "Key", "QUnit", "svg-js", "flow"], function(Color, pa
 			7,
 			testKey.node.querySelectorAll(".fm-key-value-title").length,
 			"There should be seven value titles when seven values are passed to the key."
+		);
+		
+		QUnit.equal(
+			true,
+			testKeyWithColorOverrides.node.querySelectorAll(".fm-key-value-indicator")[0].classList.contains("fm-datum-color-wheel-a"),
+			"A value indicator should keep the default colour wheel class when a colour override array has been passed but the corresponding index has no value."
+		);
+		
+		QUnit.equal(
+			"#ff0000",
+			testKeyWithColorOverrides.node.querySelectorAll(".fm-key-value-indicator")[1].getAttribute("fill"),
+			"A value indicator should assume the fill colour specified in the colour override array."
 		);
 	});
 

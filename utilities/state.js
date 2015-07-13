@@ -2,8 +2,6 @@ define(function() {
 
 var State = function(name, enter, leave) {
 	this.name = name;
-	this.enter;
-	this.leave;
 	
 	if (enter) {
 		this.enter = enter;

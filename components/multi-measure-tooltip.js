@@ -10,8 +10,6 @@ define([
 
 return function(
 	chart,
-	x,
-	y,
 	title,
 	measures,
 	colorClasses,
@@ -44,12 +42,12 @@ return function(
 			configuration.INDICATOR_SIZE,
 			configuration.INDICATOR_SIZE
 		)
-			.addClass(colorClasses[measureIndex]);
+			.addClass("fm-multi-measure-tooltip-measure-indicator " + colorClasses[measureIndex]);
 
 		var measure = {
 			indicator: indicator,
-			title: chart.text(measureItem.title),
-			value: chart.text("" + measureItem.value)
+			title: chart.text(measureItem.title).addClass("fm-multi-measure-tooltip-measure-label"),
+			value: chart.text("" + measureItem.value).addClass("fm-multi-measure-tooltip-measure-value")
 		};
 
 		measureGroup.add(measure.indicator);
@@ -97,42 +95,44 @@ return function(
 		+ configuration.COLUMN_SPACING * 2
 		+ configuration.PADDING * 2;
 
+	var tooltipBackgroundType;
+	if (arrowPosition == "left") {
+		tooltipBackgroundType = "singleLeft";
+	} else if (arrowPosition == "right") {
+		tooltipBackgroundType = "singleRight";
+	} else {
+		throw "Invalid arrow position for multi-tier tooltip";
+	}
+	
 	tooltip.background = chart.tooltipBackground(
-		x,
-		y,
+		tooltipBackgroundType,
 		tooltipBackgroundWidth,
-		tooltipBackgroundHeight,
-		arrowPosition
+		tooltipBackgroundHeight
 	);
 
 	tooltip.unshift(tooltip.background);
 
 	if (arrowPosition == "left") {
-		var titleXPosition = x
-			+ tooltip.background.configuration.ARROW_WIDTH
+		var titleXPosition = tooltip.background.configuration.ARROW_LENGTH
 			+ tooltipBackgroundWidth / 2;
-
-		var baseYPosition = y
-			- (tooltipBackgroundHeight - configuration.PADDING * 2) / 2;
+	
+		var baseYPosition = -(tooltipBackgroundHeight - configuration.PADDING * 2) / 2;
 
 		tooltip.title.move(
 			titleXPosition,
 			baseYPosition
 		);
 
-		var measureTitleXPosition = x
-			+ tooltip.background.configuration.ARROW_WIDTH
+		var measureTitleXPosition = tooltip.background.configuration.ARROW_LENGTH
 			+ configuration.PADDING
 			+ configuration.INDICATOR_SIZE
 			+ configuration.COLUMN_SPACING;
 
-		var measureValueXPosition = x
-			+ tooltip.background.configuration.ARROW_WIDTH
+		var measureValueXPosition = tooltip.background.configuration.ARROW_LENGTH
 			+ tooltipBackgroundWidth
 			- configuration.PADDING;
 
-		var indicatorXPosition = x
-			+ tooltip.background.configuration.ARROW_WIDTH
+		var indicatorXPosition = tooltip.background.configuration.ARROW_LENGTH
 			+ configuration.PADDING;
 		var yTracker = baseYPosition + titleObjectBBox.height + configuration.LINE_SPACING;
 
@@ -143,7 +143,7 @@ return function(
 			measureItem.title.move(
 				measureTitleXPosition,
 				yTracker
-			)
+			);
 
 			measureItem.indicator.move(
 				indicatorXPosition,
@@ -165,32 +165,27 @@ return function(
 			) + configuration.LINE_SPACING;
 		});
 	} else {
-		var titleXPosition = x
-			- tooltip.background.configuration.ARROW_WIDTH
+		var titleXPosition = -tooltip.background.configuration.ARROW_LENGTH
 			- tooltipBackgroundWidth / 2;
 
-		var baseYPosition = y
-			- (tooltipBackgroundHeight - configuration.PADDING * 2) / 2;
+		var baseYPosition = -(tooltipBackgroundHeight - configuration.PADDING * 2) / 2;
 
 		tooltip.title.move(
 			titleXPosition,
 			baseYPosition
 		);
 
-		var measureTitleXPosition = x
-			- tooltipBackgroundWidth
-			- tooltip.background.configuration.ARROW_WIDTH
+		var measureTitleXPosition = -tooltipBackgroundWidth
+			- tooltip.background.configuration.ARROW_LENGTH
 			+ configuration.PADDING
 			+ configuration.INDICATOR_SIZE
 			+ configuration.COLUMN_SPACING;
 
-		var measureValueXPosition = x
-			- tooltip.background.configuration.ARROW_WIDTH
+		var measureValueXPosition = -tooltip.background.configuration.ARROW_LENGTH
 			- configuration.PADDING;
 
-		var indicatorXPosition = x
-			- tooltipBackgroundWidth
-			- tooltip.background.configuration.ARROW_WIDTH
+		var indicatorXPosition = -tooltipBackgroundWidth
+			- tooltip.background.configuration.ARROW_LENGTH
 			+ configuration.PADDING;
 		var yTracker = baseYPosition + titleObjectBBox.height + configuration.LINE_SPACING;
 

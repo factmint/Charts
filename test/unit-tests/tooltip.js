@@ -1,8 +1,10 @@
 "use strict";
 require.config({
 	paths: {
+		"color": "/utilities/color",
 		"QUnit": "/node_modules/qunitjs/qunit/qunit",
 		"svg-js": "/node_modules/svg.js/dist/svg",
+		"MultiMeasureTooltip": "/components/multi-measure-tooltip",
 		"Tooltip": "/components/tooltip",
 		"TwoSectionTooltip": "/components/two-section-tooltip",
 		"tooltip-background": "/inventions/tooltip-background",
@@ -33,7 +35,7 @@ function createTestContainer(titleText) {
 	return container;
 }
 
-require(["QUnit", "svg-js", "Tooltip", "TwoSectionTooltip"], function(QUnit, SVG, Tooltip, TwoSectionTooltip) {
+require(["color", "MultiMeasureTooltip", "QUnit", "svg-js", "Tooltip", "TwoSectionTooltip"], function(Color, MultiMeasureTooltip, QUnit, SVG, Tooltip, TwoSectionTooltip) {
 
 	var paperOne = SVG(createTestContainer("Is background path string correct?"));
 	var paperTwo = SVG(createTestContainer("Is background path string correct?"));
@@ -45,6 +47,8 @@ require(["QUnit", "svg-js", "Tooltip", "TwoSectionTooltip"], function(QUnit, SVG
 	var paperEight = SVG(createTestContainer("Is background path string correct?"));
 	var paperNine = SVG(createTestContainer("Is background path string correct?"));
 	var paperTen = SVG(createTestContainer("Is background path string correct?"));
+	
+	var paperEleven = SVG(createTestContainer("Are multiple measures displayed?"));
 
 	var SPACING = 10;
 
@@ -123,6 +127,28 @@ require(["QUnit", "svg-js", "Tooltip", "TwoSectionTooltip"], function(QUnit, SVG
 		"right"
 	)
 		.move(130, 30);
+		
+	var multiMeasureLeftTooltip = MultiMeasureTooltip(
+		paperEleven,
+		"Left multi-measure",
+		[
+			{
+				title: "Measure One",
+				value: 10
+			},
+			{
+				title: "Measure Two",
+				value: 300
+			},
+			{
+				title: "Measure Three",
+				value: 17
+			}
+		],
+		Color.harmonious(3),
+		"left"
+	)
+		.move(0, 50);
 
 	QUnit.test("A single section tooltip background should have the correct path string.", function() {
 
@@ -191,7 +217,15 @@ require(["QUnit", "svg-js", "Tooltip", "TwoSectionTooltip"], function(QUnit, SVG
 		);
 		
 	});
-
+	
+	QUnit.test("A multi-measure tooltip should display correctly.", function() {
+		QUnit.equal(
+			multiMeasureLeftTooltip.node.querySelectorAll(".fm-multi-measure-tooltip-measure-label").length,
+			3,
+			"A multi-measure tooltip should display all measure titles."
+		);
+	});
+	
 	QUnit.load();
 	QUnit.start();
 });
