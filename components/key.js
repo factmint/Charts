@@ -1,8 +1,8 @@
 define([
-	'flow',
-	'float',
-	'grid',
-	'svg-js'
+	"flow",
+	"float",
+	"grid",
+	"svg-js"
 ], function(
 	Float,
 	Flow,
@@ -10,8 +10,8 @@ define([
 	SVG
 ) {
 
-return function(chart, width, values, colorClasses, colorOverrides) {
-
+return function(chart, width, values, colorClasses, colorOverrides, lastItemIsOther) {
+	
 var Configuration = {
 	INDICATOR_SIZE: 13,
 	TITLE_PADDING_LEFT: 7,
@@ -23,17 +23,17 @@ var Configuration = {
 };
 
 var key = chart.group()
-	.addClass('fm-key');
+	.addClass("fm-key");
 	
 key.configuration = Configuration;
 
 var topBorder = chart.line(0, 0, width, 0)
-	.addClass('fm-key-top-border');
+	.addClass("fm-key-top-border");
 
 var centeredKeyItems;
 var isReDraw = false;
 
-key.backgroundColorClass = 'fm-datum-color-neutral';
+key.backgroundColorClass = "fm-datum-color-neutral";
 
 key.setValues = function(values, colorOverrides) {
 	if (key.keyItems) {
@@ -60,14 +60,18 @@ key.setValues = function(values, colorOverrides) {
 
 		var valueTitle = chart.text(value)
 			.move(Configuration.INDICATOR_SIZE + Configuration.TITLE_PADDING_LEFT, 0)
-			.addClass('fm-key-value-title');
+			.addClass("fm-key-value-title");
 		var valueIndicator = chart.rect(Configuration.INDICATOR_SIZE, Configuration.INDICATOR_SIZE)
-			.addClass('fm-key-value-indicator');
-		
-		if (colorOverrides && colorOverrides[valueIndex]) {
-			valueIndicator.attr({ fill: colorOverrides[valueIndex] });
+			.addClass("fm-key-value-indicator");
+			
+		if (lastItemIsOther && valueIndex == values.length - 1) {
+			valueIndicator.addClass("fm-datum-color-overflow");
 		} else {
-			valueIndicator.addClass(colorClasses[valueIndex]);
+			if (colorOverrides && colorOverrides[valueIndex]) {
+				valueIndicator.attr({ fill: colorOverrides[valueIndex] });
+			} else {
+				valueIndicator.addClass(colorClasses[valueIndex]);
+			}
 		}
 
 		keyItem.add(valueTitle);
@@ -81,10 +85,10 @@ key.setValues = function(values, colorOverrides) {
 	var keyBackgroundHeight = key.keyItems.bbox().height + Configuration.PADDING_TOP + Configuration.PADDING_BOTTOM
 
 	if (isReDraw) {
-		key.background.attr('height', keyBackgroundHeight);
+		key.background.attr("height", keyBackgroundHeight);
 	} else {
 		key.background = chart.rect(width, keyBackgroundHeight)
-			.addClass('fm-key-background ' + key.backgroundColorClass);
+			.addClass("fm-key-background " + key.backgroundColorClass);
 	}
 
 	centeredKeyItems = chart.flow(width, 100, 100);
