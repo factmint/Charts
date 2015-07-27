@@ -19,7 +19,8 @@ return function(
 		ICON_SPACING: 9
 	};
 
-	var tooltip = chart.group().addClass("fm-tooltip");
+	var tooltip = chart.group()
+		.addClass("fm-tooltip");
 
 	tooltip.configuration = configuration;
 
@@ -139,7 +140,7 @@ return function(
 			-tooltip.background.configuration.ARROW_LENGTH - mainTextObjectBBox.height / 2 - backgroundHeight / 2
 		);
 	}
-
+	
 	return tooltip;
 }
 
