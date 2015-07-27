@@ -6,11 +6,13 @@ define([
 	NumberUtilities
 ) {
 
-return function(chart, tickMarks, colorClass, scale, orientation) {
+return function(chart, tickMarks, maxTintNumber, scale, orientation, positiveColorClass, negativeColorClass) {
 	var colorScaleKey = chart.group();
 
 	var colorMarkers = chart.group();
 	var colorLabels = chart.group();
+
+	var scaleLength = scale.map(scale.domain.max);
 
 	var configuration = {
 		COLOR_MARKER_THICKNESS: 5,
@@ -21,25 +23,79 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 		VALUE_MARKER_LENGTH: 10,
 		VALUE_MARKER_MARGIN: 2		
 	};
-
 	colorScaleKey.configuration = configuration;
 
-	function drawVerticalScale() {
-		tickMarks.forEach(function(tickMark, tickMarkIndex) {
-			if (tickMarkIndex === tickMarks.length - 1) {
-				return;
+	if (tickMarks[tickMarks.length - 1].value >= 0) {
+		var positiveTickMarks = [];
+		var negativeTickMarks = [];
+	
+		tickMarks.some(function(tickMark, tickMarkIndex) {
+			if (tickMark.value >= 0) {
+				positiveTickMarks = tickMarks.slice(tickMarkIndex, tickMarks.length + 1);
+				negativeTickMarks = tickMarks.slice(0, tickMarkIndex);
+				
+				return true;
 			}
-
-			var markPosition = scale.map(tickMark.value);
-
-			var colorMarker = chart.rect(configuration.COLOR_MARKER_THICKNESS, scale.map(scale.domain.max) / (tickMarks.length - 1));
-			colorMarker.move(configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN, markPosition);
-			colorMarker.addClass(colorClass);
-
-			if (tickMark.tintClass) {
-				colorMarker.addClass(tickMark.tintClass);
-			}
+		});
+		
+		if (negativeTickMarks.length == tickMarks.length || positiveTickMarks.length == tickMarks.length) {
+			var tintStepSize = Math.ceil(maxTintNumber / (positiveTickMarks.length - 2));
+			tickMarks.forEach(function(tickMark, tickMarkIndex) {
+				var tintNumber = parseInt(maxTintNumber - tickMarkIndex * tintStepSize);
+				if (tintNumber > 0) {
+					tickMark.tintClass = "tint-" + tintNumber;
+				}
+			});
+		} else {
+			var positiveTintStepSize = Math.ceil(maxTintNumber / (positiveTickMarks.length - 1));
+			positiveTickMarks.forEach(function(tickMark, tickMarkIndex) {
+				var tintNumber = parseInt(maxTintNumber - tickMarkIndex * positiveTintStepSize);
+				if (tintNumber > 0) {
+					tickMark.tintClass = "tint-" + tintNumber;
+				}
+			});
 			
+			negativeTickMarks.reverse();
+			var negativeTintStepSize = Math.ceil(maxTintNumber / (negativeTickMarks.length - 1));
+			negativeTickMarks.forEach(function(tickMark, tickMarkIndex) {
+				var tintNumber = parseInt(maxTintNumber - tickMarkIndex * negativeTintStepSize);
+				if (tintNumber > 0) {
+					tickMark.tintClass = "tint-" + tintNumber;
+				}
+			});
+			negativeTickMarks.reverse();
+		}
+		
+		tickMarks = negativeTickMarks.concat(positiveTickMarks);
+	}
+	
+	colorScaleKey.tickMarks = tickMarks;
+
+	function drawVerticalScale() {
+		
+		var markerHeight = scaleLength / (tickMarks.length - 1);
+		
+		tickMarks.forEach(function(tickMark, tickMarkIndex) {
+
+			var markPosition = scaleLength - markerHeight * tickMarkIndex;
+
+			if (tickMarkIndex != tickMarks.length - 1) {
+				var colorMarker = chart.rect(configuration.COLOR_MARKER_THICKNESS, markerHeight);
+				colorMarker.move(configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN, markPosition - markerHeight);
+				
+				if (tickMark.value >= 0 || ! negativeColorClass) {
+					colorMarker.addClass(positiveColorClass);
+				} else {
+					colorMarker.addClass(negativeColorClass);
+				}
+				
+				if (tickMark.tintClass) {
+					colorMarker.addClass(tickMark.tintClass);
+				}
+				
+				colorMarkers.add(colorMarker);
+			}
+
 			var tickLine = chart.line(
 				configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN,
 				markPosition,
@@ -55,27 +111,10 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 			);
 			tickLabel.addClass("fm-color-scale-key-tick-label");
 
-			colorMarkers.add(colorMarker);
 			colorMarkers.add(tickLine);
 			colorLabels.add(tickLabel);
+			
 		});
-
-		var finalTickLine = chart.line(
-			configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN,
-			scale.map(tickMarks[tickMarks.length - 1].value),
-			configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN + configuration.COLOR_MARKER_THICKNESS + configuration.TICK_MARK_EXTRUDE,
-			scale.map(tickMarks[tickMarks.length - 1].value)
-		);
-		finalTickLine.addClass("fm-color-scale-key-tick-line");
-
-		var finalTickLabel = chart.text("" + NumberUtilities.renderValue(tickMarks[tickMarks.length - 1].value));
-		finalTickLabel.move(
-			configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN + configuration.COLOR_MARKER_THICKNESS + configuration.TICK_MARK_EXTRUDE + configuration.TICK_LABEL_MARGIN,
-			scale.map(tickMarks[tickMarks.length - 1].value) - configuration.TICK_LABEL_FONT_HEIGHT
-		);
-		finalTickLabel.addClass("fm-color-scale-key-tick-label");
-		colorMarkers.add(finalTickLine);
-		colorLabels.add(finalTickLabel);
 
 		colorScaleKey.add(colorMarkers);
 		colorScaleKey.add(colorLabels);
@@ -91,7 +130,12 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 
 			var colorMarker = chart.rect(scale.map(scale.domain.max) / (tickMarks.length - 1), configuration.COLOR_MARKER_THICKNESS);
 			colorMarker.move(markPosition, configuration.VALUE_MARKER_LENGTH + configuration.VALUE_MARKER_MARGIN);
-			colorMarker.addClass(colorClass);
+			
+			if (tickMark.value >= 0 || ! negativeColorClass) {
+				colorMarker.addClass(positiveColorClass);
+			} else {
+				colorMarker.addClass(negativeColorClass);
+			}
 			
 			if (tickMark.tintClass) {
 				colorMarker.addClass(tickMark.tintClass);
@@ -163,9 +207,9 @@ return function(chart, tickMarks, colorClass, scale, orientation) {
 			];
 		} else {
 			markerPoints = [
-				[0, markPosition - (1/2 * configuration.VALUE_MARKER_THICKNESS)],
-				[configuration.VALUE_MARKER_LENGTH, markPosition],
-				[0, markPosition + (1/2 * configuration.VALUE_MARKER_THICKNESS)]
+				[0, scaleLength - markPosition - (1/2 * configuration.VALUE_MARKER_THICKNESS)],
+				[configuration.VALUE_MARKER_LENGTH, scaleLength - markPosition],
+				[0, scaleLength - markPosition + (1/2 * configuration.VALUE_MARKER_THICKNESS)]
 			];
 		}
 
