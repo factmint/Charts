@@ -8,28 +8,60 @@ define(function() {
 		var proportion = this.domain.getProportion(value);
 		return this.range.getValue(proportion);
 	};
+	
+	function bottomUpIncrements(start, end, numberOfIncrements, incrementSize) {
+		var rangeOfScale = end - start;
+		var rangeOfIncrements = incrementSize * numberOfIncrements;
 
-	function getIncrements(start, end, numberOfIncrements) {
-		var range = end - start;
-		var numberOfRegions = numberOfIncrements - 1;
-		var niceIncrement = getNiceIncrement(range, numberOfRegions);
-
-		var rangeOfIncrements = niceIncrement * numberOfRegions;
-
-		if (rangeOfIncrements > range) {
-			if (start >= 0 && start < niceIncrement) {
+		if (rangeOfIncrements > end) {
+			if (start >= 0 && start < incrementSize) {
 				start = 0;
 			} else {
-				start -= (rangeOfIncrements - range) / 2;
+				start -= (rangeOfIncrements - rangeOfScale) / 2;
 			}
 		}
 
 		var increments = [];
 
 		var counter = start;
-		while (increments.length < numberOfIncrements) {
+		while (increments.length < numberOfIncrements + 1) {
 			increments.push(counter);
-			counter += niceIncrement;
+			counter += incrementSize;
+		}
+		
+		return increments;
+	}
+	
+	function middleOutIncrements(start, end, incrementSize) {
+		var increments = [];
+
+		var counter;
+		for (counter = 0; counter < end; counter += incrementSize) {
+			increments.push(counter);
+		}
+		increments.push(counter);
+		
+		for (counter = -incrementSize; counter > start; counter -= incrementSize) {
+			increments.unshift(counter);
+		}
+		increments.unshift(counter);
+		
+		return increments;
+	}
+
+	function getIncrements(start, end, numberOfIncrements) {
+		var straddlesZero = end * start < 0;
+		
+		var range = end - start;
+		
+		var numberOfRegions = numberOfIncrements - 1;
+		var incrementSize = getNiceIncrement(range, numberOfRegions);
+
+		var increments;
+		if (straddlesZero) {
+			increments = middleOutIncrements(start, end, incrementSize);
+		} else {
+			increments = bottomUpIncrements(start, end, numberOfIncrements, incrementSize);
 		}
 
 		return increments;
