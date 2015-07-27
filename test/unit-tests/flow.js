@@ -6,7 +6,7 @@ require.config({
 		'Flow': '/inventions/flow',
 		'float': '/etc/float',
 		'grid': '/etc/grid',
-		'centre': '/etc/centre'
+		'center': '/etc/center'
 	},
 	shim: {
 		'QUnit': {
