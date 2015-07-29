@@ -145,7 +145,7 @@ require(['QUnit', 'svg-js', 'Flow'], function(QUnit, SVG) {
 		flow.add(paper.rect(SQUARE_LENGTH, SQUARE_LENGTH));
 		flow.add(paper.rect(SQUARE_LENGTH, SQUARE_LENGTH));
 		
-		flow.centre();
+		flow.center();
 
 		QUnit.equal(flow.get(1).bbox().cx, flow.bbox().cx, 'The middle square is in the centre of the whole group.');
 
@@ -153,7 +153,7 @@ require(['QUnit', 'svg-js', 'Flow'], function(QUnit, SVG) {
 		flow.add(paper.rect(SQUARE_LENGTH, SQUARE_LENGTH));
 		flow.add(paper.rect(SQUARE_LENGTH, SQUARE_LENGTH));
 
-		flow.centre();
+		flow.center();
 
 		QUnit.equal(flow.get(2).bbox().x2 + (XPADDING * 1/2), (FLOW_WIDTH / 2), 'The middle square is still in the centre of the whole group even when all the squares will not fit within the flow width (no line breaking).');
 		

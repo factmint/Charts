@@ -73,7 +73,7 @@ require(["Color-scale-key", "number", "QUnit", "scale", "svg-js"], function(colo
 			"A vertical color scale key component should have segments with the correct tint class"
 		);
 		QUnit.ok(
-			verticalKey.node.querySelectorAll("rect")[1].classList.contains("tint-4"),
+			verticalKey.node.querySelectorAll("rect")[1].classList.contains("tint-5"),
 			"A vertical color scale key component should have segments with the correct tint class"
 		);
 	});
@@ -118,7 +118,7 @@ require(["Color-scale-key", "number", "QUnit", "scale", "svg-js"], function(colo
 			"A horizontal color scale key component should have segments with the correct tint class"
 		);
 		QUnit.ok(
-			horizontalKey.node.querySelectorAll("rect")[1].classList.contains("tint-4"),
+			horizontalKey.node.querySelectorAll("rect")[1].classList.contains("tint-5"),
 			"A horizontal color scale key component should have segments with the correct tint class"
 		);
 	});

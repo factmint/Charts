@@ -22,44 +22,21 @@ require(["QUnit", "svg-js", "Mapper"], function(QUnit, SVG, HtmlTable) {
 	var htmlTable = new HtmlTable(tableNode);
 
 	QUnit.test("Rows should be mapped to a data object.", function() {
-		var dataObject = htmlTable.mapRows(function(currentRow, rowIndex, headerRow) {
+		var dataObject = htmlTable.mapRows(function(rowObject, rowIndex, currentRow, headerRow) {
+			console.log(rowObject);
 			return {
-				title: currentRow[0],
-				value: currentRow[1],
-				rowTitle: headerRow[1]
+				title: rowObject[0],
+				value: rowObject[1],
+				titleLabel: headerRow[0],
+				valueLabel: headerRow[1]
 			};
 		});
 
 		QUnit.equal(dataObject.length, 3, "There are three rows in the HTML table so an object of length three should be produced.");
 		QUnit.equal(dataObject[0].title, "One", "The first column in the first row in the HTML table contains the string \"One\", so this should be the first title in the data object.");
-		QUnit.equal(dataObject[0].value, "A", "There are three rows in the HTML table so an object of length three should be produced.");
-		QUnit.equal(dataObject[0].rowTitle, "Value", "There are three rows in the HTML table so an object of length three should be produced.");
-	});
-
-	QUnit.test("Rows with no data should be ignored.", function() {
-		var dataObject = htmlTable.mapRows(function(currentRow, rowIndex) {
-			if (rowIndex === 1) {
-				return null;
-			}
-
-			return {
-				title: currentRow[0],
-				value: currentRow[1]
-			};
-		});
-
-		QUnit.equal(dataObject.length, 2, "There are three rows in the HTML table so an object of length three should be produced.");
-	});
-
-	QUnit.test("Columns should be mapped to a data object.", function() {
-		var dataObject = htmlTable.mapColumns(function(currentColumn, columnIndex) {
-			return {
-				title: currentColumn[0],
-				value: currentColumn[1]
-			};
-		});
-
-		QUnit.equal(dataObject.length, 2, "There are two columns in the HTML table so an object of length two should be produced.");
+		QUnit.equal(dataObject[0].value, "A", "The second column in the first row in the HTML table contains the string \"A\", so this should be the first value in the data object.");
+		QUnit.equal(dataObject[0].titleLabel, "Title", "The first column in the header row contains the string \"Title\", and this should be set as each data item's titleLabel property.");
+		QUnit.equal(dataObject[0].valueLabel, "Value", "The second column in the header row contains the string \"Value\", and this should be set as each data item's valueLabel property.");
 	});
 
 	QUnit.load();
