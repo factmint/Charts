@@ -1,0 +1,29 @@
+{
+  "name": "multi-tier-tooltip",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A tooltip that supports two groups of multi-line details",
+  "main": "dist/multi-tier-tooltip.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "3131c696ca",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3131c696ca7fc149ac5fe8b99a1f8d2605841be9"
+  },
+  "_source": "https://git.assembla.com/descartes_diaphragm.multi-tier-tooltip.git",
+  "_target": "*",
+  "_originalSource": "https://git.assembla.com/descartes_diaphragm.multi-tier-tooltip.git"
+}

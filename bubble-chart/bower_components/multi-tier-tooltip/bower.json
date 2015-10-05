@@ -1,0 +1,21 @@
+{
+  "name": "multi-tier-tooltip",
+  "version": "1.0.0",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A tooltip that supports two groups of multi-line details",
+  "main": "dist/multi-tier-tooltip.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

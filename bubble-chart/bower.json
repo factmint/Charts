@@ -1,0 +1,28 @@
+{
+  "name": "bubble-chart",
+  "version": "3.4.1",
+  "authors": [
+    "Dan Palmer <dan.palmer@telegraph.co.uk>",
+    "Ben Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A variation on the scatter chart that also includes a third variable mapped onto the area of the circle",
+  "dependencies": {
+    "Snap.svg": "*",
+    "axis": "https://git.assembla.com/descartes_diaphragm.axis.git",
+    "grid-lines": "https://git.assembla.com/descartes_diaphragm.grid-lines.git",
+    "scale-utils": "https://git.assembla.com/descartes_diaphragm.scale-utilities.git",
+    "number-utils": "https://git.assembla.com/descartes_diaphragm.number-utils.git",
+    "bubble-point": "https://git.assembla.com/descartes_diaphragm.bubble-point.git",
+    "color-utils": "https://git.assembla.com/descartes_diaphragm.color-utils.git",
+    "bubble-key": "https://git.assembla.com/descartes_diaphragm.bubble-key.git",
+    "multitext": "https://git.assembla.com/descartes_diaphragm.multitext.git",
+    "multi-tier-tooltip": "https://git.assembla.com/descartes_diaphragm.multi-tier-tooltip.git",
+    "tooltip": "https://git.assembla.com/descartes_diaphragm.tooltip.git",
+    "classList.js": "https://github.com/eligrey/classList.js.git",
+    "classlist": "~2014.7.23"
+  },
+  "devDependencies": {
+    "qunit": "~1.15.0",
+    "requirejs": "~2.1.15"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "scale-utilities",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A set of utilities for dealing with scales and axes",
+  "main": "dist/scale-utilities.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "5d2b853b8c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5d2b853b8c1500017a9143e8e8ec9b58c0acb99e"
+  },
+  "_source": "https://git.assembla.com/descartes_diaphragm.scale-utilities.git",
+  "_target": "*",
+  "_originalSource": "https://git.assembla.com/descartes_diaphragm.scale-utilities.git"
+}
