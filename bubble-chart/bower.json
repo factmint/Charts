@@ -18,7 +18,7 @@
     "multitext": "https://github.com/factmint/multitext.git",
     "multi-tier-tooltip": "https://github.com/factmint/multi-tier-tooltip.git",
     "tooltip": "https://github.com/factmint/tooltip.git",
-    "classList.js": "https://github.com/factmint/classList.js.git",
+    "classList.js": "git://github.com/components/classList.js.git#~2014.7.23",
     "classlist": "~2014.7.23"
   },
   "devDependencies": {
