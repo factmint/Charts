@@ -1,0 +1,6 @@
+disableSpillover
+height
+showTrendLines
+width
+xLabel
+yLabel
