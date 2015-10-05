@@ -1,0 +1,32 @@
+{
+  "name": "scatter-key",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Key for scatter graph",
+  "main": "dist/scatter-key.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "key": "https://git.assembla.com/descartes_diaphragm.key.git"
+  },
+  "_release": "f2414ec4b6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f2414ec4b678793dfa5ca21d7d16661e1bf3f521"
+  },
+  "_source": "https://git.assembla.com/descartes_diaphragm.scatter-key.git",
+  "_target": "*",
+  "_originalSource": "https://git.assembla.com/descartes_diaphragm.scatter-key.git"
+}

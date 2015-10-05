@@ -1,0 +1,34 @@
+{
+  "name": "Tooltip",
+  "authors": [
+    "Dan.Palmer@telegraph.co.uk",
+    "ben.brown@factmint.com"
+  ],
+  "description": "Tooltip class that displays a name and value, or a title followed by a list of title/value pairs",
+  "main": "dist/tooltip.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "multitext": "https://git.assembla.com/descartes_diaphragm.multitext.git"
+  },
+  "_release": "594a6c7871",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "594a6c7871389d0864d3f06d514fc8e0da54b272"
+  },
+  "_source": "https://git.assembla.com/descartes_diaphragm.tooltip.git",
+  "_target": "*",
+  "_originalSource": "https://git.assembla.com/descartes_diaphragm.tooltip.git"
+}

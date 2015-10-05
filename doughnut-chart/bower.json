@@ -1,0 +1,26 @@
+{
+  "name": "doughnut-chart",
+  "version": "2.4.3",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Factmint doughnut chart implementation.",
+  "dependencies": {
+    "Snap.svg": "*",
+    "doughnut-segment": "https://git.assembla.com/descartes_diaphragm.doughnut-segment.git",
+    "key": "https://git.assembla.com/descartes_diaphragm.key.git",
+    "two-section-tooltip": "https://git.assembla.com/descartes_diaphragm.two-section-tooltip.git",
+    "multitext": "https://git.assembla.com/descartes_diaphragm.multitext.git",
+    "dashed-bracket": "https://git.assembla.com/descartes_diaphragm.dashed-bracket.git",
+    "pie-segment": "https://git.assembla.com/descartes_diaphragm.pie-segment.git",
+    "central-data": "https://git.assembla.com/descartes_diaphragm.central-data.git",
+    "number-utils": "https://git.assembla.com/descartes_diaphragm.number-utils.git",
+    "circle-utils": "https://git.assembla.com/descartes_diaphragm.circle-utils.git",
+    "color-utils": "https://git.assembla.com/descartes_diaphragm.color-utils.git",
+    "requirejs": "^2.1.15",
+    "classlist": "git://github.com/components/classList.js.git#~2014.7.23"
+  },
+  "devDependencies": {
+    "classlist": "git://github.com/components/classList.js.git#~2014.7.23"
+  }
+}

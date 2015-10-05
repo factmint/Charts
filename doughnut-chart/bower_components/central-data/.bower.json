@@ -1,0 +1,34 @@
+{
+  "name": "central-data",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A Snap.svg plugin for drawing information inside a doughnut chart",
+  "dependencies": {
+    "Snap.svg": "*",
+    "number-utils": "https://git.assembla.com/descartes_diaphragm.number-utils.git"
+  },
+  "main": "dist/central-data.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "acece7a7a9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "acece7a7a965c583b6698f1bed98e506f6007e72"
+  },
+  "_source": "https://git.assembla.com/descartes_diaphragm.central-data.git",
+  "_target": "*",
+  "_originalSource": "https://git.assembla.com/descartes_diaphragm.central-data.git"
+}

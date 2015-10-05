@@ -1,0 +1,30 @@
+{
+  "name": "circle-utils",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A namespace containing utilities to help when working with circle geometry inJavasscript",
+  "main": "dist/circle.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "d21357a2eb",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d21357a2eb1cdd96dad05ac8097dd3dbc5b4ccc1"
+  },
+  "_source": "https://git.assembla.com/descartes_diaphragm.circle-utils.git",
+  "_target": "*",
+  "_originalSource": "https://git.assembla.com/descartes_diaphragm.circle-utils.git"
+}
