@@ -1,0 +1,69 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'classList' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 warn package.json circle-segment-example@0.0.0 No description
+5 warn package.json circle-segment-example@0.0.0 No repository field.
+6 warn package.json circle-segment-example@0.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'classList', null ]
+9 verbose cache add name=undefined spec="classList" args=["classList",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'classList',
+10 verbose parsed url   path: 'classList',
+10 verbose parsed url   href: 'classList' }
+11 silly lockFile 26757f0e-classList classList
+12 verbose lock classList /home/ben/.npm/26757f0e-classList.lock
+13 silly lockFile 26757f0e-classList classList
+14 silly lockFile 26757f0e-classList classList
+15 verbose addNamed [ 'classList', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile de25a74a-classList classList@
+18 verbose lock classList@ /home/ben/.npm/de25a74a-classList.lock
+19 silly addNameRange { name: 'classList', range: '*', hasData: false }
+20 verbose url raw classList
+21 verbose url resolving [ 'https://registry.npmjs.org/', './classList' ]
+22 verbose url resolved https://registry.npmjs.org/classList
+23 info trying registry request attempt 1 at 14:14:22
+24 http GET https://registry.npmjs.org/classList
+25 http 404 https://registry.npmjs.org/classList
+26 silly registry.get cb [ 404,
+26 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=0',
+26 silly registry.get     'content-length': '51',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     date: 'Mon, 29 Jun 2015 14:10:26 GMT',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     connection: 'keep-alive',
+26 silly registry.get     'x-served-by': 'cache-atl6224-ATL',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1435587026.634864,VS0,VE36' } ]
+27 silly lockFile de25a74a-classList classList@
+28 silly lockFile de25a74a-classList classList@
+29 error 404 'classList' is not in the npm registry.
+29 error 404 You should bug the author to publish it
+29 error 404
+29 error 404 Note that you can also install from a
+29 error 404 tarball, folder, or http url, or git url.
+30 error System Linux 3.13.0-29-generic
+31 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "--save" "classList"
+32 error cwd /home/ben/circle-segment-example
+33 error node -v v0.10.25
+34 error npm -v 1.3.10
+35 error code E404
+36 verbose exit [ 1, true ]
