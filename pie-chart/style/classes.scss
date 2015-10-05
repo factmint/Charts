@@ -1,0 +1,60 @@
+/* ==========================================================================
+	 Colour
+	 ========================================================================== */
+
+/* Basic colour wheel classes */
+
+@each $letter, $color in $color-wheel {
+
+	.fm-datum-color-wheel-#{$letter} {
+		fill: $color;
+		&.with-stroke {
+			stroke: $color;
+		}
+		&.no-fill {
+			fill: none;
+		}
+	}
+
+}
+
+.fm-datum-color-overflow {
+	fill: $fm-color-overflow;
+	&.with-stroke {
+		stroke: $fm-color-overflow;
+	}
+	&.no-fill {
+		fill: none;
+	}
+}
+
+.fm-datum-color-neutral {
+	fill: $fm-color-neutral;
+	&.with-stroke {
+		stroke: $fm-color-neutral;
+	}
+	&.no-fill {
+		fill: none;
+	}
+}
+
+/* Colour tint classes */
+
+@each $letter, $color in $color-wheel {
+
+	@for $i from 1 through 9 {
+		.fm-datum-color-wheel-#{$letter}.tint-#{$i} {
+			fill: mix(white, $color, $i * 5%);
+		}
+	}
+
+	.fm-datum-color-wheel-#{$letter}.inactive {
+		fill: mix(white, $color, 30%);
+	}
+
+}
+
+
+.fm-white-fill {
+	fill: white;
+}
