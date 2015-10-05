@@ -1,0 +1,26 @@
+{
+  "name": "pictorial-bar",
+  "version": "1.2.1",
+  "authors": [
+    "Chris <chris.scott@factmint.com>",
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Factmint pictorial bar chart",
+  "dependencies": {
+    "Snap.svg": "*",
+    "axis": "https://git.assembla.com/descartes_diaphragm.axis.git",
+    "grid-lines": "https://git.assembla.com/descartes_diaphragm.grid-lines.git",
+    "number-utils": "https://git.assembla.com/descartes_diaphragm.number-utils.git",
+    "color-utils": "https://git.assembla.com/descartes_diaphragm.color-utils.git",
+    "multitext": "https://git.assembla.com/descartes_diaphragm.multitext.git",
+    "scale-utilities": "https://git.assembla.com/descartes_diaphragm.scale-utilities.git",
+    "Tooltip": "https://git.assembla.com/descartes_diaphragm.tooltip.git",
+    "pictorial-key": "https://git.assembla.com/descartes_diaphragm.pictorial-key.git",
+    "classList.js": "https://github.com/eligrey/classList.js.git"
+  },
+  "devDependencies": {
+    "qunit": "~1.15.0",
+    "requirejs": "~2.1.15",
+    "requirejs-text": "~2.0.12"
+  }
+}
