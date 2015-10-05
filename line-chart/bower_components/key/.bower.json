@@ -1,0 +1,33 @@
+{
+  "name": "key",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Factmint visualization key/legend design implemented as a Snap.svg plugin",
+  "dependencies": {
+    "color-utils": "https://git.assembla.com/descartes_diaphragm.color-utils.git"
+  },
+  "main": "dist/key.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "f6a664a77e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f6a664a77ec04cc00c6fad7baf923ca92748ed12"
+  },
+  "_source": "https://git.assembla.com/descartes_diaphragm.key.git",
+  "_target": "*",
+  "_originalSource": "https://git.assembla.com/descartes_diaphragm.key.git"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "scale-utilities",
+  "version": "0.1.0",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A set of utilities for dealing with scales and axes",
+  "main": "dist/scale-utilities.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
