@@ -2,7 +2,7 @@
 
 Factmint Charts allows you to create interactive data visualizations, which can be rendered from an HTML table or directly from JSON. For more information and live examples, see [http://factmint.com/charts-overview/](http://factmint.com/charts-overview/). This repo includes the visualization plugins as well as the API that you can use to create your own (see the /factmint-charts directory).
 
-It should be noted that some visualizations are built using the new API (version 2.x, as found in the /factmint-charts directory) while others are build using a legacy framework. Please see below for details. 
+It should be noted that some visualizations are built using the new API (version 2.x, as found in the /factmint-charts directory) while others are built using a legacy framework. Please see below for details. 
  
 ### /bubble-chart
 
