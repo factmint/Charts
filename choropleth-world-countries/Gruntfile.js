@@ -8,7 +8,6 @@ module.exports = function(grunt) {
 	
 	grunt.initConfig ({
 		pkg: grunt.file.readJSON('package.json'),
-		aws: grunt.file.readJSON('../aws-keys.json'),
 		connect: {
 			options: {
 				base: '../'
@@ -126,42 +125,6 @@ module.exports = function(grunt) {
 			js: {
 				files: ['src/scripts/*.js'],
 			}
-		},
-		aws_s3: {
-			options: {
-				accessKeyId: '<%= aws.accessKey %>',
-				secretAccessKey: '<%= aws.secretKey %>'
-			},
-			release: {
-				options: {
-					bucket: 'factmint-charts'
-				},
-				files: [
-					{src: 'dist/<%= pkg.releaseName %>.min.js', dest: '<%= pkg.releaseName %>/current/free.min.js', params: {ContentType: 'application/javascript'}},
-					{src: 'dist/<%= pkg.releaseName %>.min.css', dest: '<%= pkg.releaseName %>/current/default.min.css', params: {ContentType: 'text/css'}},
-					{src: 'dist/options.txt', dest: '<%= pkg.releaseName %>/current/options.txt', params: {ContentType: 'text/css'}},
-
-					{src: 'dist/<%= pkg.releaseName %>.min.js', dest: '<%= pkg.releaseName %>/archive/<%= pkg.version %>/free.min.js', params: {ContentType: 'application/javascript'}},
-					{src: 'dist/<%= pkg.releaseName %>-commercial.min.js', dest: '<%= pkg.releaseName %>/archive/<%= pkg.version %>/commercial.min.js', params: {ContentType: 'application/javascript'}},
-					{src: 'dist/<%= pkg.releaseName %>.min.css', dest: '<%= pkg.releaseName %>/archive/<%= pkg.version %>/default.min.css', params: {ContentType: 'text/css'}},
-					{src: 'dist/options.txt', dest: '<%= pkg.releaseName %>/archive/<%= pkg.version %>/options.txt', params: {ContentType: 'text/css'}}
-				]
-			}
-		},
-		gittag: {
-			release: {
-				options: {
-					tag: '<%= pkg.releaseName %>-<%= pkg.version %>',
-					message: 'Tagging a release'
-				}
-			}
-		},
-		gitpush: {
-			release: {
-				options: {
-					tags: true
-				}
-			}
 		}
 	});
 
@@ -177,18 +140,5 @@ module.exports = function(grunt) {
 		'autoprefixer:release',		// Prefix CSS
 		'clean:up',					// Clean up the temp directory(s)
 		'exec:document',			// Document the use of any options (looks for pattern /options.[a-zA-Z]*/)
-	]);
-	grunt.registerTask('release', [
-		'clean:release',			// Make sure no files from previous releases are left around
-		'requirejs',				// Build the r.js single file script
-		'copy',						// Remove //NODRM and //COMMERCIALUSE comments
-		'closurecompiler',			// Minify
-		'sass:release',				// Generate CSS
-		'autoprefixer:release',		// Prefix CSS
-		'clean:up',					// Clean up the temp directory(s)
-		'exec:document',			// Document the use of any options (looks for pattern /options.[a-zA-Z]*/)
-		'gittag',					// Tag the release (will fail if you haven't changed the version number, so do)
-		'gitpush',					// Push the new tag to the upstream repo
-		'aws_s3'					// Transfer the released artifacts to S3
 	]);
 };
