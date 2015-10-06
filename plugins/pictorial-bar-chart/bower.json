@@ -16,7 +16,7 @@
     "scale-utilities": "https://github.com/factmint/scale-utilities.git",
     "Tooltip": "https://github.com/factmint/tooltip.git",
     "pictorial-key": "https://github.com/factmint/pictorial-key.git",
-    "classList.js": "https://github.com/factmint/classList.js.git"
+    "classList.js": "git://github.com/components/classList.js.git#~2014.7.23"
   },
   "devDependencies": {
     "qunit": "~1.15.0",

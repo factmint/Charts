@@ -21,28 +21,6 @@ require.config({
 });
 
 require(['render'], function(render) {
-	// This is at the top to distance if from the throw - to make it as harder to reverse engineer
-	/**
-	 * Check origin is Factmint.io
-	 */
-	var checkDrm = function() {
-		var verified = false;
-		var scriptTags = document.querySelectorAll('script');
-		
-		for (var scriptNumber = 0; scriptNumber < scriptTags.length; scriptNumber++) {
-			var src = scriptTags[scriptNumber].getAttribute('src');
-			if (src) {
-	 			var offset = (src[4] == 's') ? 1 : 0;
-				if (src[7 + offset] == 'f' && src[16 + offset] == 'i' && src[9 + offset] == 'c' && src[15 + offset] == '.') {
-					verified = true;
-					break;
-				}
-			}
-		}
-		
-		return verified;
-	};
-	
 	/**
 	 * Check if the browser supports SVG
 	 */
@@ -84,7 +62,6 @@ require(['render'], function(render) {
 	} else if (! supportsGetBoundingClientRectForSvg()) {
 		console.log("Your browser does not correctly support getBoundingClientRect() for SVG elements: visualizations disabled");
 	} else {
-		//NODRM if(! checkDrm()) throw 'Licence error'; // This check will be un-commented by the grunt release task
 		for (var tableIndex = 0; tableIndex < tables.length; tableIndex++) {
 			if (inPreviewMode() || ! tables[tableIndex].hasAttribute('data-fm-rendered')) {
 				tables[tableIndex].setAttribute('data-fm-rendered', 'true');
