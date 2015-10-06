@@ -3,27 +3,24 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Column/bar chart</title>
-		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="stylesheet" href="../src/style/column-bar.css">
+		<link rel="stylesheet" href="../../src/style/column-bar.css">
 
-		<!--<script src="dist/main.min.js"></script>-->
-		<script data-main="../src/scripts/main" src="../bower_components/requirejs/require.js"></script>
+		<script data-main="../../src/scripts/main" src="../../bower_components/requirejs/require.js"></script>
 		<style>
 			p {
 				word-wrap: break-word;
 				width: 50%;
 			}
 		</style>
-
 	</head>
 	<body>
 
-		<div style="width: 1200px; height: 400px">
+		<div style="width: 800px; height: 400px">
 			<script>
 				window['1'] = {
-					valueLabel: "Share performance",
+					yLabel: "Share performance",
+					xLabel: "Date",
 					includeZero: false,
 					dateFormat: 'DD/MM/YYYY',
 					valuePrefix: '£',
@@ -40,7 +37,7 @@
 				<tbody>
 					<tr>
 						<td>Berlin</td>
-						<td>325</td>
+						<td>125</td>
 					</tr>
 					<tr>
 						<td>Budapest</td>
@@ -56,15 +53,15 @@
 					</tr>
 					<tr>
 						<td>London</td>
-						<td>490</td>
+						<td>140</td>
 					</tr>
 					<tr>
 						<td>Madrid</td>
-						<td>75</td>
+						<td>-100</td>
 					</tr>
 					<tr>
 						<td>Berlin</td>
-						<td>325</td>
+						<td>125</td>
 					</tr>
 				</tbody>
 			</table>

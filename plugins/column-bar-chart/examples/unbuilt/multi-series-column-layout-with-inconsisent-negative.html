@@ -3,20 +3,16 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Column/bar chart</title>
-		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="stylesheet" href="../src/style/column-bar.css">
+		<link rel="stylesheet" href="../../src/style/column-bar.css">
 
-		<!--<script src="dist/main.min.js"></script>-->
-		<script data-main="../src/scripts/main" src="../bower_components/requirejs/require.js"></script>
+		<script data-main="../../src/scripts/main" src="../../bower_components/requirejs/require.js"></script>
 		<style>
 			p {
 				word-wrap: break-word;
 				width: 50%;
 			}
 		</style>
-
 	</head>
 	<body>
 
@@ -31,7 +27,7 @@
 					valueSuffix: null
 				};
 			</script>
-			<table 	class="fm-column-bar" data-fm-disable-spillover="true">
+			<table 	data-fm-config="1" class="fm-column-bar" data-fm-disable-spillover="true">
 	<thead>
 		<tr>
 			<th>Product</th>
@@ -57,8 +53,8 @@
 		</tr>
 		<tr>
 			<td>Pencils</td>
-			<td>-0.2</td>
 			<td>-0.8</td>
+			<td>0.8</td>
 		</tr>
 		<tr>
 			<td>Mugs</td>
