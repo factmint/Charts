@@ -3,10 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Line Over Bar Chart</title>
-		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="stylesheet" href="../src/style/line-over-bar.css">
+		<link rel="stylesheet" href="../../src/style/line-over-bar.css">
 
 		<style>
 			p {
@@ -14,7 +12,6 @@
 				width: 50%;
 			}
 		</style>
-
 	</head>
 	<body>
 
@@ -27,10 +24,7 @@
 					dateFormat: 'DD/MM/YYYY',
 					rebase: false,
 					valuePrefix: '£',
-					valueSuffix: null,
-					pulloutTitle: "Pull out",
-					startPullout: "20/03/2014",
-					endPullout: "24/03/2014"
+					valueSuffix: null
 				};
 			</script>
 			<table data-fm-config="myconf" class="fm-line-over-bar">
@@ -100,7 +94,7 @@
 				</tbody>
 			</table>
 			<!--<script src="../dist/line-commercial.min.js"></script>-->
-			<script data-main="../src/scripts/main" src="../bower_components/requirejs/require.js"></script>
+			<script data-main="../../src/scripts/main" src="../../bower_components/requirejs/require.js"></script>
 		</div>
 	</body>
 </html>
