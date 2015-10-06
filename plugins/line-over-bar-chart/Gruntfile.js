@@ -107,16 +107,13 @@ module.exports = function(grunt) {
 				options: {
 					'language_in': 'ECMASCRIPT5_STRICT',
 					'compilation_level': 'SIMPLE_OPTIMIZATIONS',
-					'banner': '/* Copyright Factmint Ltd, not for distribution without consent; version <%= pkg.version %>; includes SnapSVG, https://github.com/adobe-webplatform/Snap.svg/blob/master/LICENSE */'
+					'banner': '/* <%= pkg.name %> version <%= pkg.version %>; Copyright (c) Factmint Ltd (http://factmint.com); Licensed under the MIT License (http://opensource.org/licenses/MIT); Includes SnapSVG, https://github.com/adobe-webplatform/Snap.svg/blob/master/LICENSE */'
 				}
 			}
 		},
 		exec: {
 			bower: 'bower update',
-			document: 'grep --only-matching --no-filename "options\\.[a-zA-Z]*" src/scripts/*.js | sort | uniq | cut -d. -f2 > dist/options.txt',
-			isMaster: 'git branch | grep \\* | awk \'{print $2}\' | grep ^master$',
-			areChangesOutstanding: 'if git status | grep modified: ; then exit 1; fi',
-			areCommitsPushed: 'if git status | grep "Your branch is ahead"; then exit 1; fi'
+			document: 'grep --only-matching --no-filename "options\\.[a-zA-Z]*" src/scripts/*.js | sort | uniq | cut -d. -f2 > dist/options.txt'
 		},
 		watch: {
             options: {
@@ -138,7 +135,6 @@ module.exports = function(grunt) {
 		'exec:bower',					// Make sure we are using latest bower components
 		'clean:release',				// Make sure no files from previous releases are left around
 		'requirejs',					// Build the r.js single file script
-		'copy',							// Remove //NODRM and //COMMERCIALUSE comments
 		'closurecompiler',				// Minify
 		'sass:release',					// Generate CSS
 		'autoprefixer:release',			// Prefix CSS

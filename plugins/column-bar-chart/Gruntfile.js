@@ -94,10 +94,7 @@ module.exports = function(grunt) {
 		},
 		exec: {
 			bower: 'bower update',
-			document: 'grep --only-matching --no-filename "options\\.[a-zA-Z]*" src/scripts/*.js | sort | uniq | cut -d. -f2 > dist/options.txt',
-			isMaster: 'git branch | grep \\* | awk \'{print $2}\' | grep ^master$',
-			areChangesOutstanding: 'if git status | grep modified: ; then exit 1; fi',
-			areCommitsPushed: 'if git status | grep "Your branch is ahead"; then exit 1; fi'
+			document: 'grep --only-matching --no-filename "options\\.[a-zA-Z]*" src/scripts/*.js | sort | uniq | cut -d. -f2 > dist/options.txt'
 		},
 		watch: {
             options: {
