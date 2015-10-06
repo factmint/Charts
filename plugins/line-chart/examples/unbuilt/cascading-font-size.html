@@ -3,12 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Line Graph</title>
-		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="stylesheet" href="../src/style/line.css">
+		<link rel="stylesheet" href="../../src/style/line.css">
 
 		<style>
+			body {
+				font-size: 62.5%;
+			}
 			p {
 				word-wrap: break-word;
 				width: 50%;
@@ -34,8 +35,8 @@
 				<thead>
 					<tr>
 						<th>Date</th>
-						<th data-fm-color="#ff0000">Etiam porta sem malesuada magna mollis euismod</th>
-						<th data-fm-color="#0000ff">Cras justo odio, dapibus ac facilisis in, egestas eget quam</th>
+						<th>Etiam porta sem malesuada magna mollis euismod</th>
+						<th>Cras justo odio, dapibus ac facilisis in, egestas eget quam</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -52,7 +53,7 @@
 					<tr>
 						<td>24/03/2014</td>
 						<td>10</td>
-						<td>7.6#A</td>
+						<td>7.6#A really really long annotation</td>
 					</tr>
 					<tr>
 						<td>25/03/2014</td>
@@ -91,8 +92,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<!--<script src="../dist/line-commercial.min.js"></script>-->
-			<script data-main="../src/scripts/main" src="../bower_components/requirejs/require.js"></script>
+			<script data-main="../../src/scripts/main" src="../../bower_components/requirejs/require.js"></script>
 		</div>
 	</body>
 </html>

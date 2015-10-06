@@ -5,7 +5,7 @@
   ],
   "description": "Factmint visualization key/legend design implemented as a Snap.svg plugin",
   "dependencies": {
-    "color-utils": "https://git.assembla.com/descartes_diaphragm.color-utils.git"
+    "color-utils": "https://github.com/factmint/color-utils.git"
   },
   "main": "dist/key.js",
   "moduleType": [
@@ -21,13 +21,13 @@
     "test",
     "tests"
   ],
-  "_release": "f6a664a77e",
+  "_release": "3d1934d343",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "f6a664a77ec04cc00c6fad7baf923ca92748ed12"
+    "commit": "3d1934d3434d170b3a3b4730e7b0b866260f2cf7"
   },
-  "_source": "https://git.assembla.com/descartes_diaphragm.key.git",
+  "_source": "https://github.com/factmint/key.git",
   "_target": "*",
-  "_originalSource": "https://git.assembla.com/descartes_diaphragm.key.git"
+  "_originalSource": "https://github.com/factmint/key.git"
 }

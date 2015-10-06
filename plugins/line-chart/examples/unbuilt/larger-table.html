@@ -2,35 +2,33 @@
 <html class="">
 	<head>
 		<meta charset="utf-8">
-		<title>Scatter Graph</title>
-		<meta name="description" content="">
+		<title>Line chart</title>
 		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="stylesheet" href="../dist/line.min.css">
+		<link rel="stylesheet" href="../../src/style/line.css">
+
 		<style>
 			p {
 				word-wrap: break-word;
 				width: 50%;
 			}
 		</style>
-
 	</head>
 	<body>
 
-		<div>
+		<div data-factmint-visualization="line" style="width:100%; height: 300px" id="aaaa-aaaaa-aa-aaa">
 			<script>
-				window['1'] = {
+				window['aaaa-aaaaa-aa-aaa'] = {
 					yLabel: "Share performance",
 					xLabel: "Date",
-					smoothCurve: false,
+					smoothCurve: true,
 					includeZero: false,
 					dateFormat: 'DD/MM/YYYY',
-					rebase: true,
+					rebase: false,
 					valuePrefix: '£',
 					valueSuffix: null
 				};
 			</script>
-			<table id="1" class="fm-line">
+			<table style="display: none;" class="fm-hidden">
 				<thead>
 					<tr>
 						<th>Date</th>
@@ -57,7 +55,7 @@
 					<tr>
 						<td>25/03/2014</td>
 						<td>10.1</td>
-						<td>8</td>
+						<td>8#Nexus 7</td>
 					</tr>
 					<tr>
 						<td>26/03/2014</td>
@@ -66,7 +64,7 @@
 					</tr>
 					<tr>
 						<td>27/03/2014</td>
-						<td>10.2</td>
+						<td>10.2#iPad 2</td>
 						<td>9.3</td>
 					</tr>
 					<tr>
@@ -89,8 +87,59 @@
 						<td>10.2</td>
 						<td>11.1</td>
 					</tr>
+					<tr>
+						<td>01/04/2014</td>
+						<td>9</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>02/04/2014</td>
+						<td>9.6</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>03/04/2014</td>
+						<td>10</td>
+						<td>7.6</td>
+					</tr>
+					<tr>
+						<td>05/04/2014</td>
+						<td>10.1</td>
+						<td>8#Nexus 7</td>
+					</tr>
+					<tr>
+						<td>06/04/2014</td>
+						<td>9.9</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>07/04/2014</td>
+						<td>10.2#iPad 2</td>
+						<td>9.3</td>
+					</tr>
+					<tr>
+						<td>08/04/2014</td>
+						<td>9.8</td>
+						<td>10</td>
+					</tr>
+					<tr>
+						<td>09/04/2014</td>
+						<td>10.1</td>
+						<td>10.6</td>
+					</tr>
+					<tr>
+						<td>10/04/2014</td>
+						<td></td>
+						<td>10.7</td>
+					</tr>
+					<tr>
+						<td>11/04/2014</td>
+						<td>10.2</td>
+						<td>11.1</td>
+					</tr>
 				</tbody>
-			</table><script src="/dist/line-free.js"></script>
+			</table>
+			<script data-main="../../src/scripts/main" src="../../bower_components/requirejs/require.js"></script>
 		</div>
 	</body>
 </html>

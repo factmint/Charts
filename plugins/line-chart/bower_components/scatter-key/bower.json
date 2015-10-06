@@ -19,6 +19,6 @@
     "tests"
   ],
   "dependencies": {
-    "key": "https://git.assembla.com/descartes_diaphragm.key.git"
+    "key": "https://github.com/factmint/key.git"
   }
 }
