@@ -1,0 +1,33 @@
+{
+  "name": "bubble-key",
+  "authors": [
+    "Dan.Palmer@telegraph.co.uk"
+  ],
+  "dependencies": {
+    "key": "https://github.com/factmint/key.git"
+  },
+  "description": "A key for that include a bubble scale group.",
+  "main": "dist/bubble-key.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "f5960f27e4",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f5960f27e4ca3315c9371a56a014ff9866367bab"
+  },
+  "_source": "https://github.com/factmint/bubble-key.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/factmint/bubble-key.git"
+}

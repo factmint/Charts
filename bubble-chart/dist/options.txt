@@ -1,6 +1,0 @@
-bubbleScaleLabel
-disableSpillover
-height
-width
-xLabel
-yLabel
