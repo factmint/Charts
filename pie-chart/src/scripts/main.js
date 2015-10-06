@@ -31,6 +31,7 @@ require.config({
 });
 
 require(['svg-builder'], function(buildSVG) {
+	
 	// This is at the top to distance if from the throw - to make it as harder to reverse engineer
 	/**
 	 * Check origin is Factmint.io
@@ -88,28 +89,31 @@ require(['svg-builder'], function(buildSVG) {
 	}
 	
 	var tables = document.querySelectorAll('table.fm-pie');
-
-	if (! supportsSvg()) {
-		console.log("SVG not supported: visualizations disabled");
-	} else if (! supportsGetBoundingClientRectForSvg()) {
-		console.log("Your browser does not correctly support getBoundingClientRect() for SVG elements: visualizations disabled");
-	} else {
-		//NODRM if(! checkDrm()) throw 'Licence error'; // This check will be un-commented by the grunt release task
-		for (var tableIndex = 0; tableIndex < tables.length; tableIndex++) {
-			if (inPreviewMode() || ! tables[tableIndex].hasAttribute('data-fm-rendered')) {
-				tables[tableIndex].setAttribute('data-fm-rendered', 'true');
-				
-				try {
-					buildSVG(tables[tableIndex]);
-				} catch(exception) {
-					console.log('ERROR: chart rendering failed');
-					if (exception instanceof Error) {
-						console.log(exception.stack);
-					} else {
-						console.log(exception);
-					}
-				}				
+	
+	if (tables.length > 0) {
+		if (! supportsSvg()) {
+			console.log("SVG not supported: visualizations disabled");
+		} else if (! supportsGetBoundingClientRectForSvg()) {
+			console.log("Your browser does not correctly support getBoundingClientRect() for SVG elements: visualizations disabled");
+		} else {
+			//NODRM if(! checkDrm()) throw 'Licence error'; // This check will be un-commented by the grunt release task
+			for (var tableIndex = 0; tableIndex < tables.length; tableIndex++) {
+				if (inPreviewMode() || ! tables[tableIndex].hasAttribute('data-fm-rendered')) {
+					tables[tableIndex].setAttribute('data-fm-rendered', 'true');
+					
+					try {
+						buildSVG(tables[tableIndex]);
+					} catch(exception) {
+						console.log('ERROR: chart rendering failed');
+						if (exception instanceof Error) {
+							console.log(exception.stack);
+						} else {
+							console.log(exception);
+						}
+					}				
+				}
 			}
 		}
+
 	}
 });

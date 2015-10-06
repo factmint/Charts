@@ -134,8 +134,6 @@ define([
 		rows.forEach(function(row, index) {
 			tooltipGroup.add(TwoSectionTooltip(
 				chart,
-				0,
-				0,
 				row.title,
 				row.renderedValue,
 				"left"
@@ -144,7 +142,7 @@ define([
 		
 		var tooltipGroupBBox = tooltipGroup.bbox();
 		tooltipGroup.remove();
-		
+
 		return {
 			height: tooltipGroupBBox.height,
 			width: tooltipGroupBBox.width
@@ -217,11 +215,22 @@ define([
 	 * Set up options with default values if not manually set
 	 */
 	function setDefaultOptions(options) {
-		options.valuePrefix = (options.valuePrefix) ? options.valuePrefix : "";
-		options.valueSuffix = (options.valueSuffix) ? options.valueSuffix : "";
-		options.showInnerLabels = (options.showInnerLabels === "true") ? true : false;
-		options.useOuterLabels = (options.useOuterLabels === "true") ? true : false;
-		options.hideKey = (options.hideKey === "true") ? true : false;
+		if (typeof(options.valuePrefix) == "undefined") {
+			options.valuePrefix = "";
+		}
+		if (typeof(options.valueSuffix) == "undefined") {
+			options.valueSuffix = "";
+		}
+
+		if (typeof(options.showInnerLabels) == "undefined") {
+			options.showInnerLabels = false;
+		}
+		if (typeof(options.useOuterLabels) == "undefined") {
+			options.useOuterLabels = false;
+		}
+		if (typeof(options.hideKey) == "undefined") {
+			options.hideKey = false;
+		}
 		
 		return options;
 	}

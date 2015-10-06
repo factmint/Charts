@@ -6,7 +6,7 @@ define(function() {
 
 		// Spillover size
 		SPILLOVER_TOP: 0.07,
-		SPILLOVER_RIGHT: 0,
+		SPILLOVER_RIGHT: 0.02,
 		SPILLOVER_BOTTOM: 0.05,
 		SPILLOVER_LEFT: 0,
 		

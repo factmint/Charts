@@ -51,28 +51,45 @@ var debounce = function() {
 };
 window.addEventListener("resize", debounce, false);
 
-return function(table) {
+return function(data) {
+	
+	var table;
+	var renderMode = "json";
+	if (data.nodeType == 1 && data.tagName.toLowerCase() == "table") {
+		table = data;
+		renderMode = "htmlTable";
+	}
 
 	var drawSVGNode = function(redraw) {
-		var configObject = table.getAttribute('data-fm-config');
+		var configObject = (renderMode == "htmlTable") ? table.getAttribute('data-fm-config') : data.config;
 		var options = (configObject && window[configObject]) ? window[configObject] : {};
-		var dataOptions = [].filter.call(table.attributes, function(attribute) {
-			if (attribute.name === 'data-fm-config') {
-				return false;
-			} else {
-				return /^data-fm-/.test(attribute.name);	
-			}
-		}).forEach(function(dataAttribute) {
+
+		var attributes = [];
+		if (renderMode == "htmlTable") {
+			attributes = [].filter.call(table.attributes, function(attribute) {
+				if (attribute.name === 'data-fm-config') {
+					return false;
+				} else {
+					return /^data-fm-/.test(attribute.name);	
+				}
+			});
+		}
+		
+		attributes.forEach(function(dataAttribute) {
 			var optionKey = dataAttribute.name.replace(/^data-fm-/, '');
 			optionKey = attributeToCamelCase(optionKey);
 			options[optionKey] = dataAttribute.value;
 		});
-
+		
 		var svgNode = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 		svgNode.className.baseVal += "fm-unrendered-chart fm-chart";
 
-		table.parentNode.insertBefore(svgNode, table);
-
+		if (renderMode == "htmlTable") {
+			table.parentNode.insertBefore(svgNode, table);
+		} else {
+			document.body.appendChild(svgNode);
+		}
+		
 		var lengthRegex = /([0-9]+)(px|%|rem|em|ex|ch|vw|vh|vmin|vmax|mm|cm|in|pt|pc)/;
 
 		function setWidth() {
@@ -150,8 +167,9 @@ return function(table) {
 			primaryWidth,
 			primaryHeight,
 			options,
-			table,
-			chart
+			data,
+			chart,
+			renderMode
 		);
 
 		svgNode.className.baseVal = svgNode.className.baseVal.replace("fm-unrendered-chart", "");

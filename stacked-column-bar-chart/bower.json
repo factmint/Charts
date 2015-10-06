@@ -17,7 +17,7 @@
     "Tooltip": "https://github.com/factmint/tooltip.git",
     "key": "https://github.com/factmint/key.git",
     "classlist": "git://github.com/components/classList.js.git#~2014.7.23",
-    "multi-tier-tooltip": "https://git.assembla.com/descartes_diaphragm.multi-tier-tooltip.git"
+    "multi-tier-tooltip": "https://github.com/factmint/multi-tier-tooltip.git"
   },
   "devDependencies": {
     "qunit": "~1.15.0",

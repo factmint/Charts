@@ -15,8 +15,6 @@ $fm-color-pull-out-indicator: #B2B2B2;
    Plugin style definitions
    ========================================================================== */
 
-@import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
-
 .fm-hidden {
 	display: none;
 }
@@ -26,7 +24,7 @@ $fm-color-pull-out-indicator: #B2B2B2;
 }
 
 .fm-axis text {
-	font-family: Lato, sans-serif;
+	font-family: $fm-font-family-default;
 	font-size: 12px;
 	
 	&.fm-squeezed-label {
@@ -76,7 +74,7 @@ $fm-color-pull-out-indicator: #B2B2B2;
 
 .fm-column-bar-tooltip {
 	text {
-		font-family: 'Lato', sans-serif;
+		font-family: $fm-font-family-default;
 		font-size: 13px;
 		fill: black;
 		stroke: none;

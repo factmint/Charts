@@ -16,7 +16,9 @@ $break-large: 1200px;
    Typography
    ========================================================================== */
 
-$fm-font-family-default: "Lato", sans-serif;
+@import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
+
+$fm-font-family-default: 'Lato', sans-serif;
 $fm-font-weight-light: 300;
 $fm-font-weight-normal: 400;
 $fm-font-weight-bold: 900;

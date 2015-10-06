@@ -1,0 +1,22 @@
+{
+  "name": "grid-lines",
+  "version": "1.0.0",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Plugin for drawing a series of lines of a specified length for a given set of points",
+  "main": "dist/grid-lines.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

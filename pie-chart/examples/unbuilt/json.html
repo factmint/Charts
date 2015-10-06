@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pie chart</title>
+		
+		<link rel="stylesheet" href="../../src/style/chart.css">
+
+		<style>
+			.container {
+				margin: auto;
+				width: 70%;
+				padding: 100px;
+			}
+		</style>
+
+		<script data-main="../../src/scripts/main.js" src="../../node_modules/requirejs/require.js"></script>
+
+		<script>
+			require(['svg-builder'], function(buildSVG) {
+			    var data = [
+				  {
+				    "title": "Rowing",
+				    "details": "\n\t\t\t\t\t\t\tMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.\n\t\t\t\t\t\t",
+				    "value": 27,
+				    "renderedValue": "%27€"
+				  },
+				  {
+				    "title": "Kayaking",
+				    "details": "\n\t\t\t\t\t\t\tMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.\n\t\t\t\t\t\t",
+				    "value": 18,
+				    "renderedValue": "%18€"
+				  },
+				  {
+				    "title": "Cycling",
+				    "details": "\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.\nMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.\n\t\t\t\t\t\t",
+				    "value": 50,
+				    "renderedValue": "%50€",
+				    "colorOverride": "#ff0000"
+				  },
+				  {
+				    "title": "Skating",
+				    "details": "\n\t\t\t\t\t\t\tMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.\n\t\t\t\t\t\t",
+				    "value": 8,
+				    "renderedValue": "%8€"
+				  },
+				  {
+				    "title": "Climbing",
+				    "details": "\n\t\t\t\t\t\t\tMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.\n\t\t\t\t\t\t",
+				    "value": 5,
+				    "renderedValue": "%5€"
+				  },
+				  {
+				    "title": "Skydiving",
+				    "details": "\n\t\t\t\t\t\t\tMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.\n\t\t\t\t\t\t",
+				    "value": 5,
+				    "renderedValue": "%5€"
+				  },
+				  {
+				    "title": "Climbing",
+				    "details": "\n\t\t\t\t\t\t\tMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.\n\t\t\t\t\t\t",
+				    "value": 2,
+				    "renderedValue": "%2€"
+				  },
+				  {
+				    "title": "Skating",
+				    "details": "\n\t\t\t\t\t\t\tMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.\n\t\t\t\t\t\t",
+				    "value": 3,
+				    "renderedValue": "%3€"
+				  },
+				  {
+				    "title": "Rowing",
+				    "details": "\n\t\t\t\t\t\t\tMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.\n\t\t\t\t\t\t",
+				    "value": 2,
+				    "renderedValue": "%2€"
+				  },
+				  {
+				    "title": "Kayaking",
+				    "details": "\n\t\t\t\t\t\t\tMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.\n\t\t\t\t\t\t",
+				    "value": 1,
+				    "renderedValue": "%1€"
+				  },
+				  {
+				    "title": "Cycling",
+				    "details": "\n\t\t\t\t\t\t\tMaecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.\n\t\t\t\t\t\t",
+				    "value": 2,
+				    "renderedValue": "%2€"
+				  }
+				];
+			    
+			    data.config = {
+		            dataFmMaxKeyEntries: 1,
+					dataFmValuePrefix: "%",
+				    dataFmValueSuffix: "€",
+					dataFmHideKey: "true"
+		        };
+			    
+		    	buildSVG(data);
+			    
+			});
+		    
+		</script>
+	</head>
+
+	<body>
+		<div class="container">
+			<p>Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor.
+
+Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue.
+
+Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+
+			<p>Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor.
+
+Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue.
+
+Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+		</div>
+	</body>
+<html>

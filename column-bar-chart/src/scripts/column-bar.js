@@ -34,9 +34,32 @@ define([
 				var prefix = (options.valuePrefix) ? options.valuePrefix : '';
 				var suffix = (options.valueSuffix) ? options.valueSuffix : '';
 
-				var rangeTickMarks = ScaleUtils.getTickMarks(data.range.min, data.range.max, Config.TARGET_MARKER_COUNT, false);
-				
-				console.log(ScaleUtils.getTickMarks(-987, 254, Config.TARGET_MARKER_COUNT, false));
+				var rangeTickMarks;
+				if (typeof(options.rangeStart) !== "undefined" && typeof(options.rangeEnd) !== "undefined") {
+					var increment = (options.gridlineSpacing) ?options.gridlineSpacing : Math.abs(options.rangeEnd - options.rangeStart) / Config.TARGET_MARKER_COUNT;
+					
+					rangeTickMarks = [];
+					
+					if (options.rangeStart < options.rangeEnd) {
+						for (var gridline = options.rangeStart; gridline <= options.rangeEnd; gridline += increment) {
+							rangeTickMarks.push(gridline);
+							
+							if (gridline < 0 && gridline + increment > 0) {
+								rangeTickMarks.push(0);
+							}
+						}
+					} else {
+						for (var gridline = options.rangeStart; gridline >= options.rangeEnd; gridline -= increment) {
+							rangeTickMarks.push(gridline);
+							
+							if (gridline > 0 && gridline - increment < 0) {
+								rangeTickMarks.push(0);
+							}
+						}
+					}
+				} else {
+					rangeTickMarks = ScaleUtils.getTickMarks(data.range.min, data.range.max, Config.TARGET_MARKER_COUNT, false);
+				}
 				
 				var firstRangeTickMark = rangeTickMarks[0];
 				var lastRangeTickMark = rangeTickMarks[rangeTickMarks.length - 1];
@@ -165,8 +188,49 @@ define([
 				
 				var labelAxis = Bar.drawYLabelAxis(paper, xOrigin + Config.LEFT_PADDING, yOrigin + Config.TOP_PADDING + chartHeight, chartHeight, labels, groupThickness, groupPadding, prefix, suffix);
 				
-				var tickMarks = ScaleUtils.getTickMarks(data.range.min, data.range.max, Config.TARGET_MARKER_COUNT, false);
-				
+				var tickMarks;
+				if (typeof(options.rangeStart) !== "undefined" && typeof(options.rangeEnd) !== "undefined") {
+					if (options.rangeStart == "min") {
+						options.rangeStart = data.range.min;
+					} else if (options.rangeStart == "max") {
+						options.rangeStart = data.range.max;
+					} else {
+						options.rangeStart = parseFloat(options.rangeStart);
+					}
+					
+					if (options.rangeEnd == "min") {
+						options.rangeEnd = data.range.min;
+					} else if (options.rangeEnd == "max") {
+						options.rangeEnd = data.range.max;
+					} else {
+						options.rangeEnd = parseFloat(options.rangeEnd);
+					}
+					
+					var increment = (options.gridlineSpacing) ?options.gridlineSpacing : Math.abs(options.rangeEnd - options.rangeStart) / Config.TARGET_MARKER_COUNT;
+					
+					tickMarks = [];
+					
+					if (options.rangeStart < options.rangeEnd) {
+						for (var gridline = options.rangeStart; gridline <= options.rangeEnd; gridline += increment) {
+							tickMarks.push(gridline);
+							
+							if (gridline < 0 && gridline + increment > 0) {
+								tickMarks.push(0);
+							}
+						}
+					} else {
+						for (var gridline = options.rangeStart; gridline >= options.rangeEnd; gridline -= increment) {
+							tickMarks.push(gridline);
+							
+							if (gridline > 0 && gridline - increment < 0) {
+								tickMarks.push(0);
+							}
+						}
+					}
+				} else {
+					tickMarks = ScaleUtils.getTickMarks(data.range.min, data.range.max, Config.TARGET_MARKER_COUNT, false);
+				}
+
 				var xAxisXOrigin = labelAxis.getBBox().x2 + Config.TICK_MARK_HORIZONTAL_PADDING;
 				var rangeScale = new ScaleUtils.Scale(xAxisXOrigin, width - Config.RIGHT_PADDING - xAxisXOrigin, tickMarks[0], tickMarks[tickMarks.length - 1]);
 				var rangeAxis = Bar.drawXRangeAxis(paper, yOrigin + Config.TOP_PADDING + chartHeight, chartHeight, rangeScale, tickMarks, prefix, suffix, options.axisLabel);

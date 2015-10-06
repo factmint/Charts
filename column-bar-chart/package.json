@@ -2,7 +2,7 @@
 	"name": "column-bar-chart",
 	"releaseName": "column-bar",
 	"description": "Factmint column/bar widget",
-	"version": "1.5.0",
+	"version": "1.6.4",
 	"devDependencies": {
 		"almond": "^0.3.0",
 		"bower": "1.3.*",

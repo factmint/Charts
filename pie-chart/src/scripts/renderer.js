@@ -21,7 +21,7 @@ function(
 	Utilities
 ) {
 
-return function(left, top, width, height, options, table, chart) {
+return function(left, top, width, height, options, data, chart, renderMode) {
 
 	options = Utilities.setDefaultOptions(options);
 	
@@ -39,18 +39,47 @@ return function(left, top, width, height, options, table, chart) {
 		};
 		
 		var colorOverride = attributes.getNamedItem("data-fm-color");
-		if (colorOverride) {
+		if (colorOverride && colorOverride.value !== "") {
 			row.colorOverride = colorOverride.value;
 		}
 		
 		return row;
 	};
 	
+	/**
+	 *
+	 * Method to check for boolean values, etc
+	 * 
+	 */
+	var fixOptions = function(options) {
+		if (typeof(options.useOuterLabels) != "undefined") {
+			if (options.useOuterLabels === "false") {
+				options.useOuterLabels = false;
+			} else if (options.useOuterLabels === "true") {
+				options.useOuterLabels = true;
+			}
+		}
+		
+		if (typeof(options.showInnerLabels) != "undefined") {
+			if (options.showInnerLabels === "false") {
+				options.showInnerLabels = false;
+			} else if (options.showInnerLabels === "true") {
+				options.showInnerLabels = true;
+			}
+		}
+		
+		if (typeof(options.hideKey) != "undefined") {
+			if (options.hideKey === "false") {
+				options.hideKey = false;
+			} else if (options.hideKey === "true") {
+				options.hideKey = true;
+			}
+		}
+		
+		return options;
+	};
+	
 	var drawChart = function() {
-		
-		var dataTable = new HtmlTable(table);
-		
-		var mappedRows = dataTable.mapRows(dataTableMapper);
 		
 		var dataTotal = NumberUtils.getDataTotal(mappedRows);
 		var overflowItemCount = Utilities.getOverflowItemCount(mappedRows, dataTotal);
@@ -58,7 +87,7 @@ return function(left, top, width, height, options, table, chart) {
 		var rows = Utilities.processOverflowData(mappedRows, dataTotal, overflowItemCount);
 		
 		var maxTooltipDimensions = Utilities.getMaxTooltipDimensions(chart, rows);
-			
+		
 		var whitespace = Utilities.drawBackground(chart, width, height, left, top)
 			.addClass("fm-whitespace");
 		
@@ -69,7 +98,7 @@ return function(left, top, width, height, options, table, chart) {
 			layout: {
 				drawRegions: {}
 			},
-			options: options,
+			options: fixOptions(options),
 			radius: radius,
 			top: top
 		};
@@ -88,10 +117,6 @@ return function(left, top, width, height, options, table, chart) {
 			keyAreaWidth = 3/10 * width;
 			pieAreaWidth = width - keyAreaWidth;
 			pieAreaHeight = height;
-			
-			if (maxTooltipDimensions.width > 1/4 * width) {
-				options.basicMode = true;
-			}
 			
 			chartDescription.layout.drawRegions.keyArea = {
 				x: left + width - keyAreaWidth,
@@ -237,7 +262,16 @@ return function(left, top, width, height, options, table, chart) {
 		
 		Chart.applyMouseEventHandlers(rows, chartDescription, stateMachine, whitespace, innerSegments, outerSegments, key);
 		
-		table.classList.add("fm-hidden");
+		if (renderMode == "htmlTable") {
+			table.classList.add("fm-hidden");
+		}
+	}
+	
+	var table;
+	var mappedRows = data;
+	if (renderMode == "htmlTable") {
+		mappedRows = new HtmlTable(data).mapRows(dataTableMapper);
+		table = data;
 	}
 
 	drawChart();
