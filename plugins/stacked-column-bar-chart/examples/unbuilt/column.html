@@ -1,0 +1,81 @@
+<!doctype html>
+<html class="">
+	<head>
+		<meta charset="utf-8">
+		<title>Stacked Column/Bar Chart</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="stylesheet" href="../../src/style/stacked-column-bar.css">
+
+		<style>
+			p {
+				word-wrap: break-word;
+				width: 50%;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<div>
+			<script>
+				window['myconf'] = {
+					yLabel: "Share performance",
+					smoothCurve: true,
+					includeZero: false,
+					dateFormat: 'DD/MM/YYYY',
+					rebase: false,
+					valuePrefix: '£',
+					valueSuffix: null
+				};
+			</script>
+			<table data-fm-config="myconf" class="fm-stacked-column-bar">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Public Pensions</th>
+						<th>National Health Care</th>
+						<th>State Education</th>
+						<th>Defence</th>
+						<th>Social Security</th>
+						<th>State Protection</th>
+						<th>Transport</th>
+						<th>General Government</th>
+						<th>Other Public Services</th>
+						<th>Public Sector Interest</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2016</td>
+						<td>155000000000</td>
+						<td>135000000000</td>
+						<td>92000000000</td>
+						<td>43000000000</td>
+						<td>112000000000</td>
+						<td>29000000000</td>
+						<td>21000000000</td>
+						<td>14000000000</td>
+						<td>88000000000</td>
+						<td>60000000000</td>
+					</tr>
+					<tr>
+						<td>2015</td>
+						<td>150000000000</td>
+						<td>133000000000</td>
+						<td>90000000000</td>
+						<td>46000000000</td>
+						<td>110000000000</td>
+						<td>30000000000</td>
+						<td>20000000000</td>
+						<td>14000000000</td>
+						<td>86000000000</td>
+						<td>52000000000</td>
+					</tr>
+				</tbody>
+			</table>
+			<script data-main="../../src/scripts/main" src="../../bower_components/requirejs/require.js"></script>
+		</div>
+	</body>
+</html>

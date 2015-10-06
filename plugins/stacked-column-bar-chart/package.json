@@ -17,7 +17,7 @@
 		"grunt-contrib-requirejs": "0.4.*",
 		"grunt-contrib-watch": "0.6.*",
 		"grunt-openport": "^0.1.0",
-		"grunt-contrib-sass": "0.14.*",
+	    "grunt-contrib-sass": "0.9.*",
 		"grunt-aws-s3": "~0.9.4",
 		"grunt-git": "~0.3.2",
 		"grunt-closurecompiler": "~0.9.9",

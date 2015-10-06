@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 			},
 			dev: {
 				options: {
-					port: 8000
+					port: 15009
 				}
 			},
 			test: {
@@ -93,7 +93,8 @@ module.exports = function(grunt) {
 			}
 		},
 		exec: {
-			bower: 'bower update'
+			bower: 'bower update',
+			document: 'grep --only-matching --no-filename "options\\.[a-zA-Z]*" src/scripts/*.js | sort | uniq | cut -d. -f2 > dist/options.txt'
 		},
 		watch: {
             options: {
