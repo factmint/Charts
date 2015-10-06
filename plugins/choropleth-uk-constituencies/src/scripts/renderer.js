@@ -175,6 +175,8 @@ return function(left, top, width, height, options, table, chart) {
 			options.keyType = "scalar";
 			rows = dataTable.mapRows(dataTableMapper);
 		}
+		
+		console.log(rows);
 
 		chartDescription.layout = getLayoutSchema();
 		chartDescription.layout.keyOrientation = getKeyOrientation();

@@ -1,9 +1,11 @@
 define([
 	"renderer",
+	"svg-js",
 	"configuration"
 ],
 function(
 	renderer,
+	SVG,
 	Configuration
 ) {
 

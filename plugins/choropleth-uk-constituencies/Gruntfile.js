@@ -3,12 +3,14 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 	// Show elapsed time
 	require('time-grunt')(grunt);
-		
+	
+	var dependencies = grunt.file.readJSON('dependencies.json');
+	
 	grunt.initConfig ({
 		pkg: grunt.file.readJSON('package.json'),
 		connect: {
 			options: {
-				base: '../'
+				base: '../../'
 			},
 			dev: {
 				options: {
@@ -61,58 +63,14 @@ module.exports = function(grunt) {
 				dest: 'dist/'
 			}
 		},
-		copy: {
-			freeTier: {
-				expand: true,
-				cwd: 'dist',
-				src: '<%= pkg.releaseName %>-commercial.js',
-				dest: 'dist/',
-				rename: function(dest, src) {
-					return dest + src.replace(/-commercial/, '');
-				},
-				options: {
-					process: function(content, path) {
-						return content
-							.replace(/\/\/COMMERCIALUSE /, '')
-							.replace(/\/\/NODRM /, '');
-					}
-				}
-			}
-		},
 		requirejs: {
 			release: {
 				options: {
 					baseUrl: "./src/scripts",
 					name: "almond",
 					include: ["main"],
-					out: "dist/<%= pkg.releaseName %>-commercial.js",
-					paths: {
-						"almond": "../../node_modules/almond/almond",
-						// Vendor
-						"classList": "../../node_modules/classList/classList",
-						"path": "../../node_modules/paths-js/dist/amd/path",
-						"svg-js": "../../node_modules/svg.js/dist/svg",
-						// Factmint Charts API
-						"centre": "../../../factmint-charts/etc/centre",
-						"circle-segment": "../../../factmint-charts/inventions/circle-segment",
-						"color": "../../../factmint-charts/utilities/color",
-						"color-scale-key": "../../../factmint-charts/components/color-scale-key",
-						"configuration-builder": "../../../factmint-charts/utilities/configuration-builder",
-						"doughnut-segment": "../../../factmint-charts/inventions/doughnut-segment",
-						"flow": "../../../factmint-charts/inventions/flow",
-						"float": "../../../factmint-charts/etc/float",
-						"geometry": "../../../factmint-charts/utilities/geometry",
-						"grid": "../../../factmint-charts/etc/grid",
-						"key": "../../../factmint-charts/components/key",
-						"mapper": "../../../factmint-charts/utilities/mapper",
-						"multi-measure-tooltip": "../../../factmint-charts/components/multi-measure-tooltip",
-						"number": "../../../factmint-charts/utilities/number",
-						"scale": "../../../factmint-charts/utilities/scale",
-						"state": "../../../factmint-charts/utilities/state",
-						"tooltip": "../../../factmint-charts/components/tooltip",
-						"tooltip-background": "../../../factmint-charts/inventions/tooltip-background",
-						"G.unshift": "../../../factmint-charts/extensions/G.unshift"
-					},
+					out: "dist/<%= pkg.releaseName %>.js",
+					paths: dependencies,
 					shim: {
 						'svg-js': {
 							exports: 'SVG'
@@ -125,8 +83,7 @@ module.exports = function(grunt) {
 		closurecompiler: {
 			release: {
 				files: {
-					'dist/<%= pkg.releaseName %>.min.js': ['dist/<%= pkg.releaseName %>.js'],
-					'dist/<%= pkg.releaseName %>-commercial.min.js': ['dist/<%= pkg.releaseName %>-commercial.js']
+					'dist/<%= pkg.releaseName %>.min.js': ['dist/<%= pkg.releaseName %>.js']
 				},
 				options: {
 					'language_in': 'ECMASCRIPT5',
