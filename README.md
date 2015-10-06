@@ -17,7 +17,7 @@ npm install && grunt serve
 
 If the plugin was not built using API 2.x then You will also need to run `bower install` before running `grunt serve`.
 
-This will start a web server. You should see a message telling you which port it is running on (e.g. "Started connect web server on http://0.0.0.0:15009"). You can now navigate to http://locahost:15009 (the port number will be different if 15009 was not open when you ran `grunt serve`, so be sure to check), where you will see the directory listing for the charts repository. If you look in the directory for the given plugin you will find an examples directory, containing HTML examples.
+This will start a web server. You should see a message telling you which port it is running on (e.g. "Started connect web server on http://0.0.0.0:15009"). You can now navigate to http://locahost:15009 (the port number will be different if 15009 was not open when you ran `grunt serve`, so be sure to check), where you will see the directory listing for the charts repository (or the root directory for the plugin, if it was not built using API 2.x). If you look in the directory for the given plugin you will find an examples directory, containing HTML examples.
 
 To see unit tests for the API, run `grunt serve` from the `/factmint-charts` directory and navigate to http://localhost:1500X/test in your browser.
 
