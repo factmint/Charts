@@ -169,15 +169,15 @@ define([
 			var yPosition = yOrigin - Config.LABEL_AXIS_PADDING;
 
 			data.rows.forEach(function(row) {
-			/*	if (row.pullout) {
-					var pulloutHeight = groupPadding * 2 + datumThickness * data.series.length + datumSpacing * (data.series.length - 1);
-					var pullout = Utils.drawPullout(paper, rangeScale.start, yPosition - pulloutHeight, rangeScale.end - rangeScale.start, pulloutHeight);
+				yPosition -= groupPadding;
+				
+				if (row.pullout) {
+					var pulloutHeight = groupPadding * 2 + datumThickness;
+					var pullout = Utils.drawPullout(paper, rangeScale.start, yPosition - groupPadding, rangeScale.end - rangeScale.start, pulloutHeight);
 					pullouts.append(pullout);
-				}*/
+				}
 
 				var barGroup = paper.group().addClass("fm-stacked-bar");
-				
-				yPosition -= groupPadding;
 				
 				var lengthSoFar = xOrigin;
 				

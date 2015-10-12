@@ -147,7 +147,7 @@ define([
 
 			data.rows.forEach(function(row, rowIndex) {
 				if (row.pullout) {
-					var pulloutWidth = groupPadding * 2 + datumThickness * data.series.length + datumSpacing * (data.series.length - 1);
+					var pulloutWidth = groupPadding * 2 + datumThickness;
 					var pullout = Utils.drawPullout(paper, xPosition, rangeScale.end, pulloutWidth, rangeScale.start - rangeScale.end);
 					pullouts.append(pullout);
 				}
