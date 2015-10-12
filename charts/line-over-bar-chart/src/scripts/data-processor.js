@@ -34,7 +34,7 @@ define(['config', 'number-utils', 'moment'],
 			tableToJSON: function(container, options) {
 			//dateFormat, includeZero, prefix, suffix, abbreviateLabels) {
 				var dateFormat = (options.dateFormat) ? options.dateFormat : 'DD/MM/YYYY';
-				var includeZero = options.includeZero;
+				var includeZero = (options.includeZero === true) ? true : false;
 				var prefix = (options.valuePrefix) ? options.valuePrefix : '';
 				var suffix = (options.valueSuffix) ? options.valueSuffix : '';
 				var abbreviateLabels = (options.width < Config.ABBREVIATE_LABELS_THRESHOLD);
@@ -220,7 +220,7 @@ define(['config', 'number-utils', 'moment'],
 					}
 				});
 				
-				var showAllTicks = (options.showAllTicks === "true" || options.showAllTicks === true);
+				var showAllTicks = (options.showAllTicks === true);
 				if (! showAllTicks) {
 					while (
 						(data.xLabels.length - 1) % Config.TARGET_MARKER_COUNT !== 0
@@ -272,12 +272,11 @@ define(['config', 'number-utils', 'moment'],
 					data.yRange.min = 0;
 				}
 				
-				if (options.rebase) {
+				if (options.rebase === true) {
 					this.rebase(data);
 					options.valuePrefix = '';
 					options.valueSuffix = ' %';
 				}
-				console.log(data);
 
 				return data;
 

@@ -54,6 +54,14 @@ return function(table) {
 		optionKey = attributeToCamelCase(optionKey);
 		options[optionKey] = dataAttribute.value;
 	});
+	
+	for (key in options) {
+		if (options[key] === "true") {
+			options[key] = true;
+		} else if (options[key] === "false") {
+			options[key] = false;
+		}
+	}
 
 	if (! options.width) {
 		options.width = "100%";

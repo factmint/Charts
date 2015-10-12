@@ -456,7 +456,7 @@ define([
 				 * @param {Boolean} should the line be smoothed?
 				 */
 				function drawLine(path, smooth) {
-					if (smooth) {
+					if (smooth === true) {
 						return drawSmoothLine(path);
 					} else {
 						return drawStraightLine(path);
