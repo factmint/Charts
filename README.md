@@ -29,43 +29,43 @@ To see unit tests for the API, run `grunt serve` from the `/api` directory and n
 
 ## Charts
 
-* /bubble-chart
+* Bubble Chart
 See [http://factmint.com/documentation/bubble-chart/](http://factmint.com/documentation/bubble-chart/)
 
-* /candlestick-chart
+* Candlestick Chart
 See [http://factmint.com/documentation/candlestick-chart/](http://factmint.com/documentation/candlestick-chart/)
  
-* /choropleth-uk-constituencies
+* Choropleth (UK constituencies)
 Built using API v2. See [http://factmint.com/documentation/choropleth/](http://factmint.com/documentation/choropleth/) 
 
-* /choropleth-world-continents
+* Choropleth (world continents)
 Built using API v2. See [http://factmint.com/documentation/world-countries-choropleth/](http://factmint.com/documentation/world-countries-choropleth/) 
 
-* /column-bar-chart
+* Column/Bar Chart
 See [http://factmint.com/documentation/column-bar-chart/](http://factmint.com/documentation/column-bar-chart)
 
-* /doughnut-chart
+* Doughnut Chart
 See [http://factmint.com/documentation/doughnut-chart/](http://factmint.com/documentation/doughnut-chart/) 
 
-* /line-chart
+* Line Chart
 See [http://factmint.com/documentation/line-chart/](http://factmint.com/documentation/line-chart/)
 
-* /line-over-bar-chart
+* Line Over Bar Chart
 Built using API v2. See [http://factmint.com/documentation/line-over-column-chart/](http://factmint.com/documentation/line-over-column-chart/)
  
-* /pictorial-bar-chart
+* Pictorial Bar Chart
 See [http://factmint.com/documentation/pictorial-bar-chart/](http://factmint.com/documentation/pictorial-bar-chart/)
 
-* /pie-chart
+* Pie Chart
 Built using API v2. See [http://factmint.com/documentation/pie-chart/](http://factmint.com/documentation/pie-chart/) 
 
-* /scatter-graph
+* Scatter Graph
 See [http://factmint.com/documentation/scatter-graph/](http://factmint.com/documentation/scatter-graph/) 
 
-* /stacked-area-chart
+* Stacked Area Chart
 See [http://factmint.com/documentation/stacked-area-chart/](http://factmint.com/documentation/stacked-area-chart/) 
 
-* /stacked-column-bar-chart
+* Stacked Column Bar Chart
 Built using API v2. See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/) 
 
 ### API
