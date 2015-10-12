@@ -2,8 +2,6 @@
 
 Factmint Charts allows you to create interactive data visualizations, which can be rendered from an HTML table or directly from JSON. For more information and live examples, see [http://factmint.com/charts-overview/](http://factmint.com/charts-overview/). This repo includes the visualization plugins as well as the API that you can use to create your own (see the `/api` directory).
 
-It should be noted that some visualizations are built using the new API (version 2.x, as found in the `/api` directory) while others are built using a legacy framework. Please see below for details. 
-
 ## Getting started
 
 First, clone this repository with `git clone https://github.com/factmint/Charts.git`. Then navigate to `/api` and run `npm install`.
@@ -19,7 +17,7 @@ grunt install
 grunt serve
 ```
 
-This will start a web server. You should see a message telling you which port it is running on (e.g. "Started connect web server on http://0.0.0.0:15009"). You can now navigate to http://locahost:15009 (the port number will be different if 15009 was not open when you ran `grunt serve`, so be sure to check), where you will see the directory listing for the charts repository (or the root directory for the plugin, if it was not built using API 2.x). If you look in the directory for the given plugin you will find an `examples/unbuilt/` directory, containing example use cases.
+This will start a web server. You should see a message telling you which port it is running on (e.g. "Started connect web server on http://0.0.0.0:15009"). You can now navigate to http://locahost:15009 (the port number will be different if 15009 was not open when you ran `grunt serve`, so be sure to check), where you will see a directory listing. If you look in the `examples/unbuilt/` directory, you will find example use cases.
 
 ## Building a plugin
 
@@ -38,10 +36,10 @@ To see unit tests for the API, run `grunt serve` from the `/api` directory and n
   * See [http://factmint.com/documentation/candlestick-chart/](http://factmint.com/documentation/candlestick-chart/)
  
 * Choropleth (UK constituencies)
-  * Built using API v2. See [http://factmint.com/documentation/choropleth/](http://factmint.com/documentation/choropleth/) 
+  * See [http://factmint.com/documentation/choropleth/](http://factmint.com/documentation/choropleth/) 
 
 * Choropleth (world continents)
-  * Built using API v2. See [http://factmint.com/documentation/world-countries-choropleth/](http://factmint.com/documentation/world-countries-choropleth/) 
+  * See [http://factmint.com/documentation/world-countries-choropleth/](http://factmint.com/documentation/world-countries-choropleth/) 
 
 * Column/Bar Chart
   * See [http://factmint.com/documentation/column-bar-chart/](http://factmint.com/documentation/column-bar-chart)
@@ -53,13 +51,13 @@ To see unit tests for the API, run `grunt serve` from the `/api` directory and n
   * See [http://factmint.com/documentation/line-chart/](http://factmint.com/documentation/line-chart/)
 
 * Line Over Bar Chart
-  * Built using API v2. See [http://factmint.com/documentation/line-over-column-chart/](http://factmint.com/documentation/line-over-column-chart/)
+  * See [http://factmint.com/documentation/line-over-column-chart/](http://factmint.com/documentation/line-over-column-chart/)
  
 * Pictorial Bar Chart
   * See [http://factmint.com/documentation/pictorial-bar-chart/](http://factmint.com/documentation/pictorial-bar-chart/)
 
 * Pie Chart
-  * Built using API v2. See [http://factmint.com/documentation/pie-chart/](http://factmint.com/documentation/pie-chart/) 
+  * See [http://factmint.com/documentation/pie-chart/](http://factmint.com/documentation/pie-chart/) 
 
 * Scatter Graph
   * See [http://factmint.com/documentation/scatter-graph/](http://factmint.com/documentation/scatter-graph/) 
@@ -68,7 +66,7 @@ To see unit tests for the API, run `grunt serve` from the `/api` directory and n
   * See [http://factmint.com/documentation/stacked-area-chart/](http://factmint.com/documentation/stacked-area-chart/) 
 
 * Stacked Column Bar Chart
-  * Built using API v2. See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/) 
+  * See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/) 
 
 ### API
 The `/api` directory contains the API, which can be used to build your own visualization plugins. See [https://github.com/factmint/Charts/blob/master/api/README.md](https://github.com/factmint/Charts/blob/master/api/README.md) for more information.
