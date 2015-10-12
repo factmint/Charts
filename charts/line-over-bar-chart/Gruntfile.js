@@ -110,6 +110,9 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.registerTask('install', [
+		'exec:bower' // Run bower update
+	]);
 	grunt.registerTask('serve', ['sass', 'connect:dev', 'openport:watch.options.livereload:35729:40000', 'watch']);
 	grunt.registerTask('test', ['sass', 'autoprefixer', 'closurecompiler', 'connect:test', 'qunit']);
 	grunt.registerTask('build', [

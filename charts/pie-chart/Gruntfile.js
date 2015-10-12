@@ -122,6 +122,8 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.registerTask('install', [
+	]);
 	grunt.registerTask('serve', ['sass:dev', 'connect:dev', 'openport:watch.options.livereload:35729:40000', 'watch']);
 	grunt.registerTask('test', ['sass:dev', 'autoprefixer', 'closurecompiler', 'connect:test', 'qunit']);
 	grunt.registerTask('build', [
