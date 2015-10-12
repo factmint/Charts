@@ -30,43 +30,43 @@ To see unit tests for the API, run `grunt serve` from the `/api` directory and n
 ## Charts
 
 * Bubble Chart
-See [http://factmint.com/documentation/bubble-chart/](http://factmint.com/documentation/bubble-chart/)
+  * See [http://factmint.com/documentation/bubble-chart/](http://factmint.com/documentation/bubble-chart/)
 
 * Candlestick Chart
-See [http://factmint.com/documentation/candlestick-chart/](http://factmint.com/documentation/candlestick-chart/)
+  * See [http://factmint.com/documentation/candlestick-chart/](http://factmint.com/documentation/candlestick-chart/)
  
 * Choropleth (UK constituencies)
-Built using API v2. See [http://factmint.com/documentation/choropleth/](http://factmint.com/documentation/choropleth/) 
+  * Built using API v2. See [http://factmint.com/documentation/choropleth/](http://factmint.com/documentation/choropleth/) 
 
 * Choropleth (world continents)
-Built using API v2. See [http://factmint.com/documentation/world-countries-choropleth/](http://factmint.com/documentation/world-countries-choropleth/) 
+  * Built using API v2. See [http://factmint.com/documentation/world-countries-choropleth/](http://factmint.com/documentation/world-countries-choropleth/) 
 
 * Column/Bar Chart
-See [http://factmint.com/documentation/column-bar-chart/](http://factmint.com/documentation/column-bar-chart)
+  * See [http://factmint.com/documentation/column-bar-chart/](http://factmint.com/documentation/column-bar-chart)
 
 * Doughnut Chart
-See [http://factmint.com/documentation/doughnut-chart/](http://factmint.com/documentation/doughnut-chart/) 
+  * See [http://factmint.com/documentation/doughnut-chart/](http://factmint.com/documentation/doughnut-chart/) 
 
 * Line Chart
-See [http://factmint.com/documentation/line-chart/](http://factmint.com/documentation/line-chart/)
+  * See [http://factmint.com/documentation/line-chart/](http://factmint.com/documentation/line-chart/)
 
 * Line Over Bar Chart
-Built using API v2. See [http://factmint.com/documentation/line-over-column-chart/](http://factmint.com/documentation/line-over-column-chart/)
+  * Built using API v2. See [http://factmint.com/documentation/line-over-column-chart/](http://factmint.com/documentation/line-over-column-chart/)
  
 * Pictorial Bar Chart
-See [http://factmint.com/documentation/pictorial-bar-chart/](http://factmint.com/documentation/pictorial-bar-chart/)
+  * See [http://factmint.com/documentation/pictorial-bar-chart/](http://factmint.com/documentation/pictorial-bar-chart/)
 
 * Pie Chart
-Built using API v2. See [http://factmint.com/documentation/pie-chart/](http://factmint.com/documentation/pie-chart/) 
+  * Built using API v2. See [http://factmint.com/documentation/pie-chart/](http://factmint.com/documentation/pie-chart/) 
 
 * Scatter Graph
-See [http://factmint.com/documentation/scatter-graph/](http://factmint.com/documentation/scatter-graph/) 
+  * See [http://factmint.com/documentation/scatter-graph/](http://factmint.com/documentation/scatter-graph/) 
 
 * Stacked Area Chart
-See [http://factmint.com/documentation/stacked-area-chart/](http://factmint.com/documentation/stacked-area-chart/) 
+  * See [http://factmint.com/documentation/stacked-area-chart/](http://factmint.com/documentation/stacked-area-chart/) 
 
 * Stacked Column Bar Chart
-Built using API v2. See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/) 
+  * Built using API v2. See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/) 
 
 ### API
 The `/api` directory contains the API, which can be used to build your own visualization plugins. See [https://github.com/factmint/Charts/blob/master/api/README.md](https://github.com/factmint/Charts/blob/master/api/README.md) for more information.
