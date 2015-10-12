@@ -116,11 +116,10 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		'clean:release',			// Make sure no files from previous releases are left around
 		'requirejs',				// Build the r.js single file script
-		'copy',						// Remove //NODRM and //COMMERCIALUSE comments
 		'closurecompiler',			// Minify
 		'sass:release',				// Generate CSS
 		'autoprefixer:release',		// Prefix CSS
 		'clean:up',					// Clean up the temp directory(s)
-		'exec:document',			// Document the use of any options (looks for pattern /options.[a-zA-Z]*/)
+		'exec:document'				// Document the use of any options (looks for pattern /options.[a-zA-Z]*/)
 	]);
 };

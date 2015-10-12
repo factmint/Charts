@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		connect: {
 			options: {
-				base: '../'
+				base: '../../'
 			},
 			dev: {
 				options: {
@@ -63,31 +63,13 @@ module.exports = function(grunt) {
 				dest: 'dist/'
 			}
 		},
-		copy: {
-			freeTier: {
-				expand: true,
-				cwd: 'dist',
-				src: '<%= pkg.releaseName %>-commercial.js',
-				dest: 'dist/',
-				rename: function(dest, src) {
-					return dest + src.replace(/-commercial/, '');
-				},
-				options: {
-					process: function(content, path) {
-						return content
-							.replace(/\/\/COMMERCIALUSE /, '')
-							.replace(/\/\/NODRM /, '');
-					}
-				}
-			}
-		},
 		requirejs: {
 			release: {
 				options: {
 					baseUrl: "./src/scripts",
 					name: "almond",
 					include: ["main"],
-					out: "dist/<%= pkg.releaseName %>-commercial.js",
+					out: "dist/<%= pkg.releaseName %>.js",
 					paths: dependencies,
 					shim: {
 						'svg-js': {
@@ -101,8 +83,7 @@ module.exports = function(grunt) {
 		closurecompiler: {
 			release: {
 				files: {
-					'dist/<%= pkg.releaseName %>.min.js': ['dist/<%= pkg.releaseName %>.js'],
-					'dist/<%= pkg.releaseName %>-commercial.min.js': ['dist/<%= pkg.releaseName %>-commercial.js']
+					'dist/<%= pkg.releaseName %>.min.js': ['dist/<%= pkg.releaseName %>.js']
 				},
 				options: {
 					'language_in': 'ECMASCRIPT5',
@@ -135,7 +116,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		'clean:release',			// Make sure no files from previous releases are left around
 		'requirejs',				// Build the r.js single file script
-		'copy',						// Remove //NODRM and //COMMERCIALUSE comments
 		'closurecompiler',			// Minify
 		'sass:release',				// Generate CSS
 		'autoprefixer:release',		// Prefix CSS

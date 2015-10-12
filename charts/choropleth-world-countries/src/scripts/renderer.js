@@ -25,7 +25,7 @@ function(
 	Utilities
 ) {
 
-return function(left, top, width, height, options, table, chart) {
+return function(left, top, width, height, options, data, chart, renderMode) {
 
 	/*
 	 * Set up the chart layout regions. Needs to be called with the layout definition object as the context
@@ -163,26 +163,7 @@ return function(left, top, width, height, options, table, chart) {
 	/*
 	 *	Draw the chart with the aid of utility functions above
 	 */
-	var drawChart = function() {
-
-		var dataTable = new HtmlTable(table);
-
-		var chartDescription = {};
-
-		var rows;
-		if (dataTable.keys.length > 2) {
-			options.keyType = "non-scalar";
-			rows = dataTable.mapRows(multiMeasureDataTableMapper);
-			chartDescription.groups = Utilities.getGroupsFromKeys(dataTable.keys);
-			chartDescription.colorClasses = Color.harmonious(chartDescription.groups.length);
-			chartDescription.colorGroupMap = Utilities.buildColorGroupMap(
-				chartDescription.groups, chartDescription.colorClasses
-			);
-		} else {
-			options.keyType = "scalar";
-			rows = dataTable.mapRows(dataTableMapper);
-		}
-
+	var drawChart = function(rows, chartDescription) {
 		chartDescription.layout = getLayoutSchema();
 		chartDescription.layout.keyOrientation = getKeyOrientation();
 
@@ -244,11 +225,48 @@ return function(left, top, width, height, options, table, chart) {
 			Chart.reset(chartDescription, key, map, stateMachine);
 		});
 
-		table.classList.add("fm-hidden");
-
+		if (renderMode == "htmlTable") {
+			table.classList.add("fm-hidden");
+		}
+	}
+	
+	var table;
+	var rows = data;
+	var chartDescription = {};
+	
+	if (renderMode == "htmlTable") {
+		var dataTable = new HtmlTable(data);
+		
+		if (dataTable.keys.length > 2) {
+			options.keyType = "non-scalar";
+			rows = dataTable.mapRows(multiMeasureDataTableMapper);
+			chartDescription.groups = Utilities.getGroupsFromKeys(dataTable.keys);
+			chartDescription.colorClasses = Color.harmonious(chartDescription.groups.length);
+			chartDescription.colorGroupMap = Utilities.buildColorGroupMap(
+				chartDescription.groups, chartDescription.colorClasses
+			);
+		} else {
+			options.keyType = "scalar";
+			rows = dataTable.mapRows(dataTableMapper);
+		}
+		table = data;
+	} else {
+		if (! data.groups) {
+			data.groups = [];
+		}
+		if (data.groups.length > 2) {
+			options.keyType = "non-scalar";
+			chartDescription.groups = data.groups;
+			chartDescription.colorClasses = Color.harmonious(chartDescription.groups.length);
+			chartDescription.colorGroupMap = Utilities.buildColorGroupMap(
+				chartDescription.groups, chartDescription.colorClasses
+			);
+		} else {
+			options.keyType = "scalar";
+		}
 	}
 
-	drawChart();
+	drawChart(rows, chartDescription);
 }
 
 });

@@ -243,8 +243,6 @@ function tooltipMouseOverHandler(chartDescription, tooltipDescription, stateMach
 	if (isMultiMeasure) {
 		newTooltip = MultiMeasureTooltip(
 			chartDescription.chart,
-			tooltipDescription.invertedLeftPoint,
-			tooltipDescription.arrowTopPoint,
 			tooltipDescription.title,
 			tooltipDescription.values,
 			chartDescription.colorClasses,
@@ -253,12 +251,15 @@ function tooltipMouseOverHandler(chartDescription, tooltipDescription, stateMach
 	} else {
 		newTooltip = Tooltip(
 			chartDescription.chart,
-			tooltipDescription.invertedLeftPoint,
-			tooltipDescription.arrowTopPoint,
 			tooltipDescription.title,
 			arrowPosition
 		);
 	}
+	
+	newTooltip.move(
+		tooltipDescription.invertedLeftPoint,
+		tooltipDescription.arrowTopPoint
+	);
 
 	tooltipDescription.arrowPosition = arrowPosition;
 	var newInvertedLeftPoint = tooltipDescription.arrowLeftPoint;
@@ -338,11 +339,13 @@ function showTooltip(area, chartDescription, secondary, showingZoomRegion, state
 			tooltip.remove();
 			tooltip = Tooltip(
 				chartDescription.chart,
-				tooltipDescription.invertedLeftPoint,
-				tooltipDescription.arrowTopPoint,
 				tooltipDescription.title,
 				tooltipDescription.arrowPosition
-			);
+			)
+				.move(
+					tooltipDescription.invertedLeftPoint,
+					tooltipDescription.arrowTopPoint
+				);
 		}
 
 		chartDescription.chart.secondaryTooltip = tooltip;
