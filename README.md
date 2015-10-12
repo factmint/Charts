@@ -8,11 +8,12 @@ It should be noted that some visualizations are built using the new API (version
 
 First, clone this repository with `git clone https://github.com/factmint/Charts.git`. Then navigate to `/api` and run `npm install`.
 
-To see running examples, navigate to the directory of a given plugin in the terminal and run `npm install && grunt serve` e.g.
+To see running examples, navigate to the directory of a given plugin in the terminal and run `grunt install` (if you haven't already), then ` grunt serve` e.g.
 
 ```
 cd choropleth-uk-constituencies
-npm install && grunt serve
+grunt install
+grunt serve
 ```
 
 If the plugin was not built using API 2.x then You will also need to run `bower install` before running `grunt serve`.
