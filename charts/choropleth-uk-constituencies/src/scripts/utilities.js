@@ -67,7 +67,7 @@ function buildColorGroupMap(groups, classes) {
 function collateColorClasses(groups, options) {
 	var classes = Color.harmonious(groups.length);
 	groups.forEach(function(group, groupIndex) {
-		var camelCaseGroupName = group.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
+		var camelCaseGroupName = group.toLowerCase().replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
 				return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
 			}).replace(/\s+/g, '');
 		var optionName = "colorClass" + camelCaseGroupName.charAt(0).toUpperCase() + camelCaseGroupName.substring(1);

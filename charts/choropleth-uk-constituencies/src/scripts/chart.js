@@ -210,16 +210,17 @@ function applyAreaPathMouseHandlers(areaPath, map, chartDescription, stateMachin
 function applyRegionMouseHandlers(region, map, chartDescription, stateMachine, key) {
 	region.on("mouseover", function() {
 		var currentRegion = this;
-		this.remove();
+		currentRegion.remove();
 		map.add(currentRegion);
-		this.attr({
+		currentRegion.attr({
 			"filter": "url(#black-border)"
 		});
 		showTooltip(region, chartDescription, false, false, stateMachine, true);
 	});
 
 	region.on("mouseout", function() {
-		this.attr({
+		var currentRegion = this;
+		currentRegion.attr({
 			"filter": ""
 		});
 		removeTooltip(chartDescription.chart);
@@ -227,7 +228,7 @@ function applyRegionMouseHandlers(region, map, chartDescription, stateMachine, k
 
 	region.on("click", function() {
 		var currentRegion = this;
-		currentRegionBBox = currentRegion.bbox();
+		var currentRegionBBox = currentRegion.bbox();
 		reset(chartDescription, key, map, stateMachine);
 
 		map.addClass("fm-hidden");
@@ -243,8 +244,6 @@ function tooltipMouseOverHandler(chartDescription, tooltipDescription, stateMach
 	if (isMultiMeasure) {
 		newTooltip = MultiMeasureTooltip(
 			chartDescription.chart,
-			tooltipDescription.invertedLeftPoint,
-			tooltipDescription.arrowTopPoint,
 			tooltipDescription.title,
 			tooltipDescription.values,
 			chartDescription.colorClasses,
@@ -253,16 +252,20 @@ function tooltipMouseOverHandler(chartDescription, tooltipDescription, stateMach
 	} else {
 		newTooltip = Tooltip(
 			chartDescription.chart,
-			tooltipDescription.invertedLeftPoint,
-			tooltipDescription.arrowTopPoint,
 			tooltipDescription.title,
 			arrowPosition
 		);
 	}
+	
+	newTooltip.move(
+		tooltipDescription.invertedLeftPoint,
+		tooltipDescription.arrowTopPoint
+	);
 
 	var newInvertedLeftPoint = tooltipDescription.arrowLeftPoint;
 	tooltipDescription.arrowLeftPoint = tooltipDescription.invertedLeftPoint;
 	tooltipDescription.invertedLeftPoint = newInvertedLeftPoint;
+	tooltipDescription.arrowPosition = arrowPosition;
 
 	newTooltip.on("mouseover", function() {
 		tooltipMouseOverHandler(chartDescription, tooltipDescription, stateMachine, isMultiMeasure);
@@ -390,14 +393,17 @@ function showMultiMeasureTooltip(area, chartDescription, secondary, stateMachine
 
 	var tooltip = MultiMeasureTooltip(
 		chartDescription.chart,
-		tooltipDescription.arrowLeftPoint,
-		tooltipDescription.arrowTopPoint,
 		tooltipDescription.title,
 		tooltipDescription.values,
 		chartDescription.colorClasses,
 		tooltipDescription.arrowPosition
 	);
-
+	
+	tooltip.move(
+		tooltipDescription.arrowLeftPoint,
+		tooltipDescription.arrowTopPoint
+	);
+	
 	var tooltipBBox = tooltip.bbox();
 
 	if (secondary) {
@@ -422,7 +428,7 @@ var drawMap = function(chartDescription, key, mapData, rows, scale, stateMachine
 	 * Draw an area on the map based on the provided path string
 	 */
 	function drawArea(pathString, title) {
-		areaPath = chartDescription.chart.path(pathString);
+		var areaPath = chartDescription.chart.path(pathString);
 		
 		areaPath.title = title;
 
@@ -449,7 +455,8 @@ var drawMap = function(chartDescription, key, mapData, rows, scale, stateMachine
 	 */
 	function drawMapAreas() {
 		var areas = {};
-		for (mapDataKey in mapData) {
+		var regionGroups = [];
+		for (var mapDataKey in mapData) {
 			var area;
 			if (typeof mapData[mapDataKey] === "object") {
 				var regionGroup = chartDescription.chart.group();
@@ -462,7 +469,7 @@ var drawMap = function(chartDescription, key, mapData, rows, scale, stateMachine
 					stateMachine,
 					key
 				);
-				for (groupAreaKey in mapData[mapDataKey]) {
+				for (var groupAreaKey in mapData[mapDataKey]) {
 					area = drawArea(mapData[mapDataKey][groupAreaKey], groupAreaKey, true);
 					regionGroup.add(area);
 					area.title = groupAreaKey;
@@ -473,6 +480,8 @@ var drawMap = function(chartDescription, key, mapData, rows, scale, stateMachine
 
 					areas[groupAreaKey] = area;
 				}
+				
+				regionGroups.push(regionGroup);
 			} else {
 				area = drawArea(mapData[mapDataKey], mapDataKey);
 				area.title = mapDataKey;

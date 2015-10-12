@@ -98,7 +98,7 @@ return function(left, top, width, height, options, data, chart, renderMode) {
 	/*
 	 * Function to pass to HtmlTable.map() method, mapping row data to a new JSON array
 	 */
-	var dataTableMapper = function(rowObject, rowIndex, headerRowObject) {
+	var dataTableMapper = function(rowObject, rowIndex, currentRow, headerRowObject, colorClasses, attributes) {
 		var value = parseFloat(rowObject[1].replace(/,([0-9]{3})/g, "$1"));
 
 		return {
@@ -107,7 +107,7 @@ return function(left, top, width, height, options, data, chart, renderMode) {
 		};
 	}
 
-	var multiMeasureDataTableMapper = function(rowObject, rowIndex, headerRowObject) {
+	var multiMeasureDataTableMapper = function(rowObject, rowIndex, currentRow, headerRowObject, colorClasses, attributes) {
 		var dataItem = {
 			title: rowObject[0],
 			majority: {},
@@ -115,12 +115,12 @@ return function(left, top, width, height, options, data, chart, renderMode) {
 		};
 
 		var rowObjectIndex = 1;
-		while(rowObject[rowObjectIndex]) {
+		while (rowObject[rowObjectIndex]) {
 			dataItem.values[headerRowObject[rowObjectIndex]] = parseFloat(rowObject[rowObjectIndex].replace(/,([0-9]{3})/g, "$1"));
 			rowObjectIndex++;
 		}
 
-		for (key in dataItem.values) {
+		for (var key in dataItem.values) {
 			if (Object.keys(dataItem.majority).length === 0
 					|| dataItem.values[key] > dataItem.majority.value) {
 				dataItem.majority.title = key;
@@ -156,28 +156,8 @@ return function(left, top, width, height, options, data, chart, renderMode) {
 	/*
 	 *	Draw the chart with the aid of utility functions above
 	 */
-	var drawChart = function() {
-
-		var dataTable = new HtmlTable(table);
-
-		var chartDescription = {};
-
-		var rows;
-		if (dataTable.keys.length > 2) {
-			options.keyType = "non-scalar";
-			rows = dataTable.mapRows(multiMeasureDataTableMapper);
-			chartDescription.groups = Utilities.getGroupsFromKeys(dataTable.keys);
-			chartDescription.colorClasses = Utilities.collateColorClasses(chartDescription.groups, options);
-			chartDescription.colorGroupMap = Utilities.buildColorGroupMap(
-				chartDescription.groups, chartDescription.colorClasses
-			);
-		} else {
-			options.keyType = "scalar";
-			rows = dataTable.mapRows(dataTableMapper);
-		}
+	var drawChart = function(rows, chartDescription) {
 		
-		console.log(rows);
-
 		chartDescription.layout = getLayoutSchema();
 		chartDescription.layout.keyOrientation = getKeyOrientation();
 
@@ -239,11 +219,49 @@ return function(left, top, width, height, options, data, chart, renderMode) {
 			Chart.reset(chartDescription, key, map, stateMachine);
 		});
 
-		table.classList.add("fm-hidden");
-
+		if (renderMode == "htmlTable") {
+			table.classList.add("fm-hidden");
+		}
 	}
 
-	drawChart();
+	var table;
+	var rows = data;
+	var chartDescription = {};
+	
+	if (renderMode == "htmlTable") {
+		var dataTable = new HtmlTable(data);
+		
+		if (dataTable.keys.length > 2) {
+			options.keyType = "non-scalar";
+			rows = dataTable.mapRows(multiMeasureDataTableMapper);
+			chartDescription.groups = Utilities.getGroupsFromKeys(dataTable.keys);
+			chartDescription.colorClasses = Utilities.collateColorClasses(chartDescription.groups, options);
+			chartDescription.colorGroupMap = Utilities.buildColorGroupMap(
+				chartDescription.groups, chartDescription.colorClasses
+			);
+		} else {
+			options.keyType = "scalar";
+			rows = dataTable.mapRows(dataTableMapper);
+		}
+		table = data;
+	} else {
+		if (! data.groups) {
+			data.groups = [];
+		}
+		if (data.groups.length > 2) {
+			options.keyType = "non-scalar";
+			chartDescription.groups = data.groups;
+			chartDescription.colorClasses = Utilities.collateColorClasses(chartDescription.groups, options);
+			chartDescription.colorGroupMap = Utilities.buildColorGroupMap(
+				chartDescription.groups, chartDescription.colorClasses
+			);
+		} else {
+			options.keyType = "scalar";
+		}
+	}
+	
+
+	drawChart(rows, chartDescription);
 }
 
 });

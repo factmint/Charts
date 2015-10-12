@@ -1,11 +1,9 @@
 define([
 	"renderer",
-	"svg-js",
 	"configuration"
 ],
 function(
 	renderer,
-	SVG,
 	Configuration
 ) {
 
@@ -63,7 +61,7 @@ return function(data) {
 	var drawSVGNode = function(redraw) {
 		var configObject = (renderMode == "htmlTable") ? table.getAttribute('data-fm-config') : data.config;
 		var options = (configObject && window[configObject]) ? window[configObject] : {};
-		
+
 		var attributes = [];
 		if (renderMode == "htmlTable") {
 			attributes = [].filter.call(table.attributes, function(attribute) {
@@ -80,7 +78,7 @@ return function(data) {
 			optionKey = attributeToCamelCase(optionKey);
 			options[optionKey] = dataAttribute.value;
 		});
-
+		
 		var svgNode = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 		svgNode.className.baseVal += "fm-unrendered-chart fm-chart";
 
@@ -89,6 +87,7 @@ return function(data) {
 		} else {
 			document.body.appendChild(svgNode);
 		}
+
 		var lengthRegex = /([0-9]+)(px|%|rem|em|ex|ch|vw|vh|vmin|vmax|mm|cm|in|pt|pc)/;
 
 		function setWidth() {
@@ -180,16 +179,11 @@ return function(data) {
 
 	var svgNode = drawSVGNode();
 
-	var originalWidth = window.innerWidth;
 	window.addEventListener("resizefinished", function() {
-		var newWidth = window.innerWidth;
-		if (newWidth != originalWidth) {
-			svgNode.parentNode.removeChild(svgNode);
-			var poweredByFactmintLink = document.querySelector(".fm-powered-by-factmint");
-			poweredByFactmintLink.parentNode.removeChild(poweredByFactmintLink);
-			svgNode = drawSVGNode();
-			originalWidth = newWidth;
-		}
+		svgNode.parentNode.removeChild(svgNode);
+		var poweredByFactmintLink = document.querySelector(".fm-powered-by-factmint");
+		poweredByFactmintLink.parentNode.removeChild(poweredByFactmintLink);
+		svgNode = drawSVGNode();
 	}, false);
 
 }

@@ -79,7 +79,7 @@ return function(left, top, width, height, options, data, chart, renderMode) {
 		return options;
 	};
 	
-	var drawChart = function() {
+	var drawChart = function(mappedRows) {
 		
 		var dataTotal = NumberUtils.getDataTotal(mappedRows);
 		var overflowItemCount = Utilities.getOverflowItemCount(mappedRows, dataTotal);
