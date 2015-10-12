@@ -1,12 +1,12 @@
 # Factmint Charts
 
-Factmint Charts allows you to create interactive data visualizations, which can be rendered from an HTML table or directly from JSON. For more information and live examples, see [http://factmint.com/charts-overview/](http://factmint.com/charts-overview/). This repo includes the visualization plugins as well as the API that you can use to create your own (see the `/factmint-charts` directory).
+Factmint Charts allows you to create interactive data visualizations, which can be rendered from an HTML table or directly from JSON. For more information and live examples, see [http://factmint.com/charts-overview/](http://factmint.com/charts-overview/). This repo includes the visualization plugins as well as the API that you can use to create your own (see the `/api` directory).
 
-It should be noted that some visualizations are built using the new API (version 2.x, as found in the `/factmint-charts` directory) while others are built using a legacy framework. Please see below for details. 
+It should be noted that some visualizations are built using the new API (version 2.x, as found in the `/api` directory) while others are built using a legacy framework. Please see below for details. 
 
 ## Getting started
 
-First, clone this repository with `git clone https://github.com/factmint/Charts.git`. Then navigate to `/factmint-charts` and run `npm install`.
+First, clone this repository with `git clone https://github.com/factmint/Charts.git`. Then navigate to `/api` and run `npm install`.
 
 To see running examples, navigate to the directory of a given plugin in the terminal and run `npm install && grunt serve` e.g.
 
@@ -23,7 +23,7 @@ This will start a web server. You should see a message telling you which port it
 
 Once you have tested a plugin and decided you would like to use it in a live scenario, you will probably want to build a standalone minified script. To achieve this, run `grunt build` from the plugin's root directory. This will create a `dist/` directory containing four files: a standalone script, a minified standalone script, a minified CSS file, and a text file containing all of the available options for the given plugin. Having generated these files, you can see an example using a built script by running `grunt serve` from the plugin's root directory, and navigating to the `examples/built/` directory in your browser.
 
-To see unit tests for the API, run `grunt serve` from the `/factmint-charts` directory and navigate to http://localhost:1500X/test in your browser.
+To see unit tests for the API, run `grunt serve` from the `/api` directory and navigate to http://localhost:1500X/test in your browser.
 
 ### /bubble-chart
 See [http://factmint.com/documentation/bubble-chart/](http://factmint.com/documentation/bubble-chart/)
@@ -43,7 +43,7 @@ See [http://factmint.com/documentation/column-bar-chart/](http://factmint.com/do
 ### /doughnut-chart
 See [http://factmint.com/documentation/doughnut-chart/](http://factmint.com/documentation/doughnut-chart/) 
 
-### /factmint-charts
+### /api
 This directory contains the API, which can be used to build your own visualization plugins.
 
 ## /line-chart
