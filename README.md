@@ -23,47 +23,50 @@ This will start a web server. You should see a message telling you which port it
 
 Once you have tested a plugin and decided you would like to use it in a live scenario, you will probably want to build a standalone minified script. To achieve this, run `grunt build` from the plugin's root directory. This will create a `dist/` directory containing four files: a standalone script, a minified standalone script, a minified CSS file, and a text file containing all of the available options for the given plugin. Having generated these files, you can see an example using a built script by running `grunt serve` from the plugin's root directory, and navigating to the `examples/built/` directory in your browser.
 
+## Tests
+
 To see unit tests for the API, run `grunt serve` from the `/api` directory and navigate to http://localhost:1500X/test in your browser.
 
-### /bubble-chart
+## Charts
+
+* /bubble-chart
 See [http://factmint.com/documentation/bubble-chart/](http://factmint.com/documentation/bubble-chart/)
 
-### /candlestick-chart
+* /candlestick-chart
 See [http://factmint.com/documentation/candlestick-chart/](http://factmint.com/documentation/candlestick-chart/)
  
-### /choropleth-uk-constituencies
+* /choropleth-uk-constituencies
 Built using API v2. See [http://factmint.com/documentation/choropleth/](http://factmint.com/documentation/choropleth/) 
 
-### /choropleth-world-continents
+* /choropleth-world-continents
 Built using API v2. See [http://factmint.com/documentation/world-countries-choropleth/](http://factmint.com/documentation/world-countries-choropleth/) 
 
-### /column-bar-chart
+* /column-bar-chart
 See [http://factmint.com/documentation/column-bar-chart/](http://factmint.com/documentation/column-bar-chart)
 
-### /doughnut-chart
+* /doughnut-chart
 See [http://factmint.com/documentation/doughnut-chart/](http://factmint.com/documentation/doughnut-chart/) 
 
-### /api
-This directory contains the API, which can be used to build your own visualization plugins.
-
-## /line-chart
+* /line-chart
 See [http://factmint.com/documentation/line-chart/](http://factmint.com/documentation/line-chart/)
 
-## /line-over-bar-chart
+* /line-over-bar-chart
 Built using API v2. See [http://factmint.com/documentation/line-over-column-chart/](http://factmint.com/documentation/line-over-column-chart/)
  
-## /pictorial-bar-chart
+* /pictorial-bar-chart
 See [http://factmint.com/documentation/pictorial-bar-chart/](http://factmint.com/documentation/pictorial-bar-chart/)
 
-## /pie-chart
+* /pie-chart
 Built using API v2. See [http://factmint.com/documentation/pie-chart/](http://factmint.com/documentation/pie-chart/) 
 
-## /scatter-graph
+* /scatter-graph
 See [http://factmint.com/documentation/scatter-graph/](http://factmint.com/documentation/scatter-graph/) 
 
-## /stacked-area-chart
+* /stacked-area-chart
 See [http://factmint.com/documentation/stacked-area-chart/](http://factmint.com/documentation/stacked-area-chart/) 
 
-## /stacked-column-bar-chart
+* /stacked-column-bar-chart
 Built using API v2. See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/) 
 
+### API
+The `/api` directory contains the API, which can be used to build your own visualization plugins. See [https://github.com/factmint/Charts/blob/master/api/README.md](https://github.com/factmint/Charts/blob/master/api/README.md) for more information.
