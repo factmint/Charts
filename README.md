@@ -1,12 +1,12 @@
 # Factmint Charts
 
-Factmint Charts allows you to create interactive data visualizations, which can be rendered from an HTML table or directly from JSON. For more information and live examples, see [http://factmint.com/charts-overview/](http://factmint.com/charts-overview/). This repo includes the visualization plugins as well as the API that you can use to create your own (see the `/api` directory).
+Factmint Charts allows you to create interactive data visualizations, which can be rendered from an HTML table or directly from JSON. For more information and live examples, see [http://factmint.com/charts-overview/](http://factmint.com/charts-overview/). This repo includes the charts as well as the API that you can use to create your own (see the `/api` directory).
 
 ## Getting started
 
 First, clone this repository with `git clone https://github.com/factmint/Charts.git`. Then navigate to `/api` and run `npm install`.
 
-To see running examples, navigate to the directory of a given plugin in the terminal and (if it's the first time) `npm install` and `grunt install`. Finally, run `grunt serve`.
+To see running examples, navigate to the directory of a given chart in the terminal and (if it's the first time) `npm install` and `grunt install`. Finally, run `grunt serve`.
 
 e.g.
 
@@ -19,13 +19,13 @@ grunt serve
 
 This will start a web server. You should see a message telling you which port it is running on (e.g. "Started connect web server on http://0.0.0.0:15009"). You can now navigate to http://locahost:15009 (the port number will be different if 15009 was not open when you ran `grunt serve`, so be sure to check), where you will see a directory listing. If you look in the `examples/unbuilt/` directory, you will find example use cases.
 
-## Building a plugin
+## Building a chart
 
-Once you have tested a plugin and decided you would like to use it in a live scenario, you will probably want to build a standalone minified script. To achieve this, run `grunt build` from the plugin's root directory. This will create a `dist/` directory containing four files: a standalone script, a minified standalone script, a minified CSS file, and a text file containing all of the available options for the given plugin. Having generated these files, you can see an example using a built script by running `grunt serve` from the plugin's root directory, and navigating to the `examples/built/` directory in your browser.
+Once you have tested a chart and decided you would like to use it in a live scenario, you will probably want to build a standalone minified script. To achieve this, run `grunt build` from the chart's root directory. This will create a `dist/` directory containing four files: a standalone script, a minified standalone script, a minified CSS file, and a text file containing all of the available options for the given chart. Having generated these files, you can see an example using a built script by running `grunt serve` from the chart's root directory, and navigating to the `examples/built/` directory in your browser.
 
 ## Tests
 
-To see unit tests for the API, run `grunt serve` from the `/api` directory and navigate to http://localhost:1500X/test in your browser.
+To see unit tests for the API, run `grunt serve` from the `/api` directory and navigate to http://localhost:1500X/test in your browser. To see unit tests for each chart, run `grunt serve` from the chart's directory and navigate to `test/`.
 
 ## Charts
 
@@ -69,4 +69,4 @@ To see unit tests for the API, run `grunt serve` from the `/api` directory and n
   * See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/) 
 
 ### API
-The `/api` directory contains the API, which can be used to build your own visualization plugins. See [https://github.com/factmint/Charts/blob/master/api/README.md](https://github.com/factmint/Charts/blob/master/api/README.md) for more information.
+The `/api` directory contains the API, which can be used to build your own chart. See [https://github.com/factmint/Charts/blob/master/api/README.md](https://github.com/factmint/Charts/blob/master/api/README.md) for more information.
