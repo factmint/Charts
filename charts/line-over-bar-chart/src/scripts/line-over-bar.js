@@ -331,7 +331,7 @@ define([
 						yScale = new ScaleUtils.Scale(startY + Config.TOP_PADDING, height - Config.TOP_PADDING - Config.BOTTOM_PADDING, yTickMarks[yTickMarks.length - 1], yTickMarks[0]);
 						scale = yScale;
 					}
-					
+	
 					var prefix = (options.valuePrefix) ? options.valuePrefix : '';
 					var suffix = (options.valueSuffix) ? options.valueSuffix : '';
 					
@@ -721,19 +721,21 @@ define([
 
 				var yTickMarks = ScaleUtils.getTickMarks(data.yRange.min, data.yRange.max, Config.TARGET_MARKER_COUNT, true);
 
-				var dualAxes = true;
+				var dualAxes = false;
 				
-				var secondaryYTickMarks = ScaleUtils.getTickMarks(data.secondaryYRange.min, data.secondaryYRange.max, Config.TARGET_MARKER_COUNT, true);
-				
-				var maxY = Math.max(yTickMarks[yTickMarks.length - 1], secondaryYTickMarks[secondaryYTickMarks.length - 1]);
-				var maxYDifference = maxY - Math.min(yTickMarks[yTickMarks.length - 1], secondaryYTickMarks[secondaryYTickMarks.length - 1]);
-				
-				var percentDifference = maxYDifference / maxY * 100;
-
-				if (percentDifference <= Config.AXIS_MERGE_PERCENT_MARGIN) {
-					dualAxes = false;
+				if (! options.rebase) {
+					var secondaryYTickMarks = ScaleUtils.getTickMarks(data.secondaryYRange.min, data.secondaryYRange.max, Config.TARGET_MARKER_COUNT, true);
 					
-					yTickMarks = ScaleUtils.getTickMarks(Math.min(data.yRange.min, data.secondaryYRange.min), Math.max(data.yRange.max, data.secondaryYRange.max), Config.TARGET_MARKER_COUNT, true);
+					var maxY = Math.max(yTickMarks[yTickMarks.length - 1], secondaryYTickMarks[secondaryYTickMarks.length - 1]);
+					var maxYDifference = maxY - Math.min(yTickMarks[yTickMarks.length - 1], secondaryYTickMarks[secondaryYTickMarks.length - 1]);
+					
+					var percentDifference = maxYDifference / maxY * 100;
+	
+					if (percentDifference <= Config.AXIS_MERGE_PERCENT_MARGIN) {
+						yTickMarks = ScaleUtils.getTickMarks(Math.min(data.yRange.min, data.secondaryYRange.min), Math.max(data.yRange.max, data.secondaryYRange.max), Config.TARGET_MARKER_COUNT, true);
+					} else {
+						dualAxes = true;
+					}
 				}
 
 				var yAxis = drawYAxis(yTickMarks, options.yLabel);
