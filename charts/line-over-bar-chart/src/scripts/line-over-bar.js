@@ -721,21 +721,19 @@ define([
 
 				var yTickMarks = ScaleUtils.getTickMarks(data.yRange.min, data.yRange.max, Config.TARGET_MARKER_COUNT, true);
 
-				var dualAxes = false;
+				var dualAxes = true;
 				
-				if (! options.rebase) {
-					var secondaryYTickMarks = ScaleUtils.getTickMarks(data.secondaryYRange.min, data.secondaryYRange.max, Config.TARGET_MARKER_COUNT, true);
+				var secondaryYTickMarks = ScaleUtils.getTickMarks(data.secondaryYRange.min, data.secondaryYRange.max, Config.TARGET_MARKER_COUNT, true);
+				
+				var maxY = Math.max(yTickMarks[yTickMarks.length - 1], secondaryYTickMarks[secondaryYTickMarks.length - 1]);
+				var maxYDifference = maxY - Math.min(yTickMarks[yTickMarks.length - 1], secondaryYTickMarks[secondaryYTickMarks.length - 1]);
+				
+				var percentDifference = maxYDifference / maxY * 100;
+
+				if (percentDifference <= Config.AXIS_MERGE_PERCENT_MARGIN) {
+					dualAxes = false;
 					
-					var maxY = Math.max(yTickMarks[yTickMarks.length - 1], secondaryYTickMarks[secondaryYTickMarks.length - 1]);
-					var maxYDifference = maxY - Math.min(yTickMarks[yTickMarks.length - 1], secondaryYTickMarks[secondaryYTickMarks.length - 1]);
-					
-					var percentDifference = maxYDifference / maxY * 100;
-	
-					if (percentDifference <= Config.AXIS_MERGE_PERCENT_MARGIN) {
-						yTickMarks = ScaleUtils.getTickMarks(Math.min(data.yRange.min, data.secondaryYRange.min), Math.max(data.yRange.max, data.secondaryYRange.max), Config.TARGET_MARKER_COUNT, true);
-					} else {
-						dualAxes = true;
-					}
+					yTickMarks = ScaleUtils.getTickMarks(Math.min(data.yRange.min, data.secondaryYRange.min), Math.max(data.yRange.max, data.secondaryYRange.max), Config.TARGET_MARKER_COUNT, true);
 				}
 
 				var yAxis = drawYAxis(yTickMarks, options.yLabel);

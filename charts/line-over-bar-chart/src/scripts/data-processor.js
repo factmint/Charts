@@ -291,6 +291,11 @@ define(['config', 'number-utils', 'moment'],
 					max: 0
 				};
 				
+				data.secondaryYRange = {
+					min: 0,
+					max: 0
+				};
+				
 				data.rows.forEach(function (row) {
 					if (! row.isFill) {
 						row.ySeries = row.ySeries.map(function(y, index) {
@@ -302,9 +307,11 @@ define(['config', 'number-utils', 'moment'],
 							
 							if (percentFromBase < data.yRange.min) {
 								data.yRange.min = percentFromBase;
+								data.secondaryYRange.min = percentFromBase;
 							}
 							if (percentFromBase > data.yRange.max) {
 								data.yRange.max = percentFromBase;
+								data.secondaryYRange.max = percentFromBase;
 							}
 							
 							return {
