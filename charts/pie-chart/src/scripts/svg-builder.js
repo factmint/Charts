@@ -132,7 +132,7 @@ return function(data) {
 		var primaryWidth = boundingBox.width;
 		var primaryHeight = boundingBox.height;
 
-		if (! options.disableSpillover || options.disableSpillover == "false") {
+		if (options.enableSpillover == "true") {
 			var totalHeight = Configuration.SPILLOVER_TOP + Configuration.SPILLOVER_BOTTOM + primaryHeight;
 			var totalWidth = Configuration.SPILLOVER_LEFT + Configuration.SPILLOVER_RIGHT + primaryWidth;
 
