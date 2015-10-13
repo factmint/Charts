@@ -1,0 +1,27 @@
+{
+  "name": "line-over-bar",
+  "version": "1.0.1",
+  "authors": [
+    "Chris <chris.scott@factmint.com>",
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Factmint line over bar chart plugin",
+  "dependencies": {
+    "Snap.svg": "*",
+    "axis": "https://github.com/factmint/axis.git",
+    "grid-lines": "https://github.com/factmint/grid-lines.git",
+    "number-utils": "https://github.com/factmint/number-utils.git",
+    "color-utils": "https://github.com/factmint/color-utils.git",
+    "multitext": "https://github.com/factmint/multitext.git",
+    "scale-utilities": "https://github.com/factmint/scale-utilities.git",
+    "Tooltip": "https://github.com/factmint/tooltip.git",
+    "scatter-key": "https://github.com/factmint/scatter-key.git",
+    "moment": "~2.8.3",
+    "classList.js": "https://github.com/eligrey/classList.js.git"
+  },
+  "devDependencies": {
+    "qunit": "~1.15.0",
+    "requirejs": "~2.1.15",
+    "requirejs-text": "~2.0.12"
+  }
+}

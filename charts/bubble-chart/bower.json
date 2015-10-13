@@ -1,0 +1,28 @@
+{
+  "name": "bubble-chart",
+  "version": "3.4.2",
+  "authors": [
+    "Dan Palmer <dan.palmer@telegraph.co.uk>",
+    "Ben Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A variation on the scatter chart that also includes a third variable mapped onto the area of the circle",
+  "dependencies": {
+    "Snap.svg": "*",
+    "axis": "https://github.com/factmint/axis.git",
+    "grid-lines": "https://github.com/factmint/grid-lines.git",
+    "scale-utils": "https://github.com/factmint/scale-utilities.git",
+    "number-utils": "https://github.com/factmint/number-utils.git",
+    "bubble-point": "https://github.com/factmint/bubble-point.git",
+    "color-utils": "https://github.com/factmint/color-utils.git",
+    "bubble-key": "https://github.com/factmint/bubble-key.git",
+    "multitext": "https://github.com/factmint/multitext.git",
+    "multi-tier-tooltip": "https://github.com/factmint/multi-tier-tooltip.git",
+    "tooltip": "https://github.com/factmint/tooltip.git",
+    "classList.js": "git://github.com/components/classList.js.git#~2014.7.23",
+    "classlist": "~2014.7.23"
+  },
+  "devDependencies": {
+    "qunit": "~1.15.0",
+    "requirejs": "~2.1.15"
+  }
+}

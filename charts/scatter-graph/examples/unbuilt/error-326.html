@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>Scatter Graph</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="../../src/style/scatter.css">
+
+		<script data-main="../../src/scripts/main" src="../../bower_components/requirejs/require.js"></script>
+		<style>
+			p {
+				word-wrap: break-word;
+				width: 50%;
+			}
+		</style>
+
+	</head>
+	<body>
+		<!--[if lt IE 10]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		<div data-factmint-visualization="scatter" style="width:500px; height:500px" id="aaaa-aaaaa-aa-aaa">
+<table style="display: none;" class="fm-hidden fm-hidden fm-hidden fm-hidden fm-hidden fm-hidden">
+			<thead>
+				<tr>
+					<!-- ngRepeat: header in data[0] track by $index --><th data-ng-repeat="header in data[0] track by $index" class="ng-binding ng-scope">Date</th><!-- end ngRepeat: header in data[0] track by $index --><th data-ng-repeat="header in data[0] track by $index" class="ng-binding ng-scope">Ice cream sales</th><!-- end ngRepeat: header in data[0] track by $index --><th data-ng-repeat="header in data[0] track by $index" class="ng-binding ng-scope">Umbrella sales</th><!-- end ngRepeat: header in data[0] track by $index -->
+				</tr>
+			</thead>
+			<tbody>
+				<!-- ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/04/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1500</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">6500</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/02/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1045</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">6001</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/09/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">6400</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1500</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/10/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1400</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">3500</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/01/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1000</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">7500</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/11/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1090</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">4500</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/12/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1010</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">5600</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/07/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">5500</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1400</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/03/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1100</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">8000</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/05/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">3400</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">2500</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/06/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">6000</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1700</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index --><!-- ngIf: ! $first --><tr data-ng-if="! $first" data-ng-repeat="row in data track by $index" class="ng-scope">
+					<!-- ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">01/08/2013</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">6500</td><!-- end ngRepeat: cell in row track by $index --><td data-ng-repeat="cell in row track by $index" class="ng-binding ng-scope">1000</td><!-- end ngRepeat: cell in row track by $index -->
+				</tr><!-- end ngIf: ! $first --><!-- end ngRepeat: row in data track by $index -->
+			</tbody>
+		</table>
+	</body>
+</html>

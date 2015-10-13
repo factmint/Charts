@@ -1,42 +1,72 @@
 # Factmint Charts
 
-A library for building beautiful SVG data visualizations rendered from HTML tables, using a programmatic paradigm rather than a data binding approach. [SVG.js](https://github.com/wout/svg.js) is used for manipulating and animating SVG, while [Paths.js](https://github.com/andreaferretti/paths-js) is used for generating SVG paths. To learn how to begin using our API, see [Getting started](https://bitbucket.org/factmint/factmint-charts/wiki/Getting%20started).
+Factmint Charts allows you to create interactive data visualizations, which can be rendered from an HTML table or directly from JSON. For more information and live examples, see [http://factmint.com/charts-overview/](http://factmint.com/charts-overview/). This repo includes the charts as well as the API that you can use to create your own (see the `/api` directory).
 
-## Components
+## Getting started
 
-Components are functional parts of a chart that may have multiple elements to them.
+First, clone this repository with `git clone https://github.com/factmint/Charts.git`. Then navigate to `/api` and run `npm install`.
 
-*   [Color scale key](https://bitbucket.org/factmint/factmint-charts/wiki/Components/Colour%20scale%20key) (components/color-scale-key.js)
-*   [Key](https://bitbucket.org/factmint/factmint-charts/wiki/Components/Key) (components/key.js)
-*   [Multi-measure tooltip](https://bitbucket.org/factmint/factmint-charts/wiki/Components/Multi-measure%20tooltip) (components/multi-measure-tooltip.js)
-*   [Text area](https://bitbucket.org/factmint/factmint-charts/wiki/Components/Text%20area) (components/text-area.js)
-*   [Tooltip](https://bitbucket.org/factmint/factmint-charts/wiki/Components/Tooltip) (components/tooltip.js)
-*   [Two-section tooltip](https://bitbucket.org/factmint/factmint-charts/wiki/Components/Two-section%20tooltip) (components/two-section-tooltip.js)
+To see running examples, navigate to the directory of a given chart in the terminal and (if it's the first time) `npm install` and `grunt install`. Finally, run `grunt serve`.
 
-## Extensions
+e.g.
 
-Extensions use the SVG.js SVG.extend() to add extra methods that do not come with the library.
+```
+cd choropleth-uk-constituencies
+npm install
+grunt install
+grunt serve
+```
 
-*   [Unshift](https://bitbucket.org/factmint/factmint-charts/wiki/Extensions/Group%20unshift) (extensions/G.unshift.js)
+This will start a web server. You should see a message telling you which port it is running on (e.g. "Started connect web server on http://0.0.0.0:15009"). You can now navigate to http://locahost:15009 (the port number will be different if 15009 was not open when you ran `grunt serve`, so be sure to check), where you will see a directory listing. If you look in the `examples/unbuilt/` directory, you will find example use cases.
 
-## Inventions
+## Building a chart
 
-Inventions use the SVG.js SVG.invent() syntax to create a custom SVG element. These differ from components in that they generally consist of just a single element, such as a path or a group.
+Once you have tested a chart and decided you would like to use it in a live scenario, you will probably want to build a standalone minified script. To achieve this, run `grunt build` from the chart's root directory. This will create a `dist/` directory containing four files: a standalone script, a minified standalone script, a minified CSS file, and a text file containing all of the available options for the given chart. Having generated these files, you can see an example using a built script by running `grunt serve` from the chart's root directory, and navigating to the `examples/built/` directory in your browser.
 
-*   [Circle segment](https://bitbucket.org/factmint/factmint-charts/wiki/Inventions/Circle%20segment) (inventions/circle-segment.js)
-*   [Dashed bracket](https://bitbucket.org/factmint/factmint-charts/wiki/Inventions/Dashed%20bracket) (inventions/dashed-bracket.js)
-*   [Doughnut segment](https://bitbucket.org/factmint/factmint-charts/wiki/Inventions/Doughnut%20segment) (inventions/doughnut-segment.js)
-*   [Flow](https://bitbucket.org/factmint/factmint-charts/wiki/Inventions/Flow) (inventions/flow.js)
-*   [Tooltip background](https://bitbucket.org/factmint/factmint-charts/wiki/Inventions/Tooltip%20background) (inventions/tooltip-background.js)
+## Tests
 
-## Utilities
+To see unit tests for the API, run `grunt serve` from the `/api` directory and navigate to http://localhost:1500X/test in your browser. To see unit tests for each chart, run `grunt serve` from the chart's directory and navigate to `test/`.
 
-Utilities are used for non-SVG specific functions that will help when building a visualization.
+## Charts
 
-*   [Colour](https://bitbucket.org/factmint/factmint-charts/wiki/Utilities/Colour) (utilities/color.js)
-*   [Configuration builder](https://bitbucket.org/factmint/factmint-charts/wiki/Utilities/Configuration%20builder) (utilities/configuration-builder.js)
-*   [Geometry](https://bitbucket.org/factmint/factmint-charts/wiki/Utilities/Geometry) (utilities/geometry.js)
-*   [Mapper](https://bitbucket.org/factmint/factmint-charts/wiki/Utilities/Mapper) (utilities/mapper.js)
-*   [Number](https://bitbucket.org/factmint/factmint-charts/wiki/Utilities/Number) (utilities/number.js)
-*   [Scale](https://bitbucket.org/factmint/factmint-charts/wiki/Utilities/Scale) (utilities/scale.js)
-*   [State](https://bitbucket.org/factmint/factmint-charts/wiki/Utilities/State) (utilities/state.js)
+* Bubble Chart
+  * See [http://factmint.com/documentation/bubble-chart/](http://factmint.com/documentation/bubble-chart/)
+
+* Candlestick Chart
+  * See [http://factmint.com/documentation/candlestick-chart/](http://factmint.com/documentation/candlestick-chart/)
+ 
+* Choropleth (UK constituencies)
+  * See [http://factmint.com/documentation/choropleth/](http://factmint.com/documentation/choropleth/) 
+
+* Choropleth (world continents)
+  * See [http://factmint.com/documentation/world-countries-choropleth/](http://factmint.com/documentation/world-countries-choropleth/) 
+
+* Column/Bar Chart
+  * See [http://factmint.com/documentation/column-bar-chart/](http://factmint.com/documentation/column-bar-chart)
+
+* Doughnut Chart
+  * See [http://factmint.com/documentation/doughnut-chart/](http://factmint.com/documentation/doughnut-chart/) 
+
+* Line Chart
+  * See [http://factmint.com/documentation/line-chart/](http://factmint.com/documentation/line-chart/)
+
+* Line Over Bar Chart
+  * See [http://factmint.com/documentation/line-over-column-chart/](http://factmint.com/documentation/line-over-column-chart/)
+ 
+* Pictorial Bar Chart
+  * See [http://factmint.com/documentation/pictorial-bar-chart/](http://factmint.com/documentation/pictorial-bar-chart/)
+
+* Pie Chart
+  * See [http://factmint.com/documentation/pie-chart/](http://factmint.com/documentation/pie-chart/) 
+
+* Scatter Graph
+  * See [http://factmint.com/documentation/scatter-graph/](http://factmint.com/documentation/scatter-graph/) 
+
+* Stacked Area Chart
+  * See [http://factmint.com/documentation/stacked-area-chart/](http://factmint.com/documentation/stacked-area-chart/) 
+
+* Stacked Column Bar Chart
+  * See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/) 
+
+### API
+The `/api` directory contains the API, which can be used to build your own chart. See [https://github.com/factmint/Charts/blob/master/api/README.md](https://github.com/factmint/Charts/blob/master/api/README.md) for more information.

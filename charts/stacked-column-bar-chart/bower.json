@@ -1,0 +1,27 @@
+{
+  "name": "column-bar-chart",
+  "version": "1.5.0",
+  "authors": [
+    "Chris Scott <chris.scott@factmint.com>",
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Factmint column/bar chart widget",
+  "dependencies": {
+    "Snap.svg": "*",
+    "axis": "https://github.com/factmint/axis.git",
+    "grid-lines": "https://github.com/factmint/grid-lines.git",
+    "number-utils": "https://github.com/factmint/number-utils.git",
+    "color-utils": "https://github.com/factmint/color-utils.git",
+    "multitext": "https://github.com/factmint/multitext.git",
+    "scale-utilities": "https://github.com/factmint/scale-utilities.git",
+    "Tooltip": "https://github.com/factmint/tooltip.git",
+    "key": "https://github.com/factmint/key.git",
+    "classlist": "git://github.com/components/classList.js.git#~2014.7.23",
+    "multi-tier-tooltip": "https://github.com/factmint/multi-tier-tooltip.git"
+  },
+  "devDependencies": {
+    "qunit": "~1.15.0",
+    "requirejs": "~2.1.15",
+    "requirejs-text": "~2.0.12"
+  }
+}

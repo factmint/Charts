@@ -1,0 +1,3387 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Choropleth (UK constituencies)</title>
+		
+		<link rel="stylesheet" href="../../src/style/chart.css">
+
+		<style>
+			.container {
+				margin: auto;
+				width: 70%;
+				padding: 100px;
+			}
+		</style>
+
+		<script data-main="../../src/scripts/main.js" src="../../node_modules/requirejs/require.js"></script>
+
+		<script>
+			require(['svg-builder'], function(buildSVG) {
+			    var data = [
+            {
+              "title": "Algeria",
+              "majority": {
+                "title": "undefined",
+                "value": 27851
+              },
+              "values": {
+                "Spanish": 16442,
+                "English": 18939,
+                "Arabic": 17067,
+                "Portuguese": 9564,
+                "French": 16953,
+                "Japanese": 26487,
+                "undefined": 27851
+              }
+            },
+            {
+              "title": "Angola",
+              "majority": {
+                "title": "undefined",
+                "value": 30603
+              },
+              "values": {
+                "Spanish": 28394,
+                "English": 6639,
+                "Arabic": 17134,
+                "Portuguese": 12939,
+                "French": 16072,
+                "Japanese": 5632,
+                "undefined": 30603
+              }
+            },
+            {
+              "title": "Benin",
+              "majority": {
+                "title": "Japanese",
+                "value": 27523
+              },
+              "values": {
+                "Spanish": 14299,
+                "English": 21840,
+                "Arabic": 8920,
+                "Portuguese": 18398,
+                "French": 13802,
+                "Japanese": 27523,
+                "undefined": 15752
+              }
+            },
+            {
+              "title": "Botswana",
+              "majority": {
+                "title": "Arabic",
+                "value": 30864
+              },
+              "values": {
+                "Spanish": 3465,
+                "English": 28517,
+                "Arabic": 30864,
+                "Portuguese": 14437,
+                "French": 30638,
+                "Japanese": 11374,
+                "undefined": 17446
+              }
+            },
+            {
+              "title": "Burkina Faso",
+              "majority": {
+                "title": "Arabic",
+                "value": 31323
+              },
+              "values": {
+                "Spanish": 11615,
+                "English": 17433,
+                "Arabic": 31323,
+                "Portuguese": 20857,
+                "French": 14882,
+                "Japanese": 24364,
+                "undefined": 11059
+              }
+            },
+            {
+              "title": "Burundi",
+              "majority": {
+                "title": "French",
+                "value": 30567
+              },
+              "values": {
+                "Spanish": 28438,
+                "English": 25071,
+                "Arabic": 5774,
+                "Portuguese": 20713,
+                "French": 30567,
+                "Japanese": 12599,
+                "undefined": 19091
+              }
+            },
+            {
+              "title": "Cameroon",
+              "majority": {
+                "title": "Arabic",
+                "value": 32508
+              },
+              "values": {
+                "Spanish": 12374,
+                "English": 3590,
+                "Arabic": 32508,
+                "Portuguese": 19049,
+                "French": 26616,
+                "Japanese": 26050,
+                "undefined": 26600
+              }
+            },
+            {
+              "title": "Cape Verde",
+              "majority": {
+                "title": "undefined",
+                "value": 29052
+              },
+              "values": {
+                "Spanish": 18184,
+                "English": 18028,
+                "Arabic": 23410,
+                "Portuguese": 24362,
+                "French": 2263,
+                "Japanese": 3245,
+                "undefined": 29052
+              }
+            },
+            {
+              "title": "Central African Republic",
+              "majority": {
+                "title": "Portuguese",
+                "value": 30755
+              },
+              "values": {
+                "Spanish": 28948,
+                "English": 21535,
+                "Arabic": 6154,
+                "Portuguese": 30755,
+                "French": 4981,
+                "Japanese": 10289,
+                "undefined": 12265
+              }
+            },
+            {
+              "title": "Chad",
+              "majority": {
+                "title": "Portuguese",
+                "value": 29502
+              },
+              "values": {
+                "Spanish": 28308,
+                "English": 8119,
+                "Arabic": 17749,
+                "Portuguese": 29502,
+                "French": 26800,
+                "Japanese": 21177,
+                "undefined": 9593
+              }
+            },
+            {
+              "title": "Comoros",
+              "majority": {
+                "title": "Arabic",
+                "value": 28266
+              },
+              "values": {
+                "Spanish": 8649,
+                "English": 1432,
+                "Arabic": 28266,
+                "Portuguese": 21398,
+                "French": 15634,
+                "Japanese": 17145,
+                "undefined": 22826
+              }
+            },
+            {
+              "title": "Democratic Republic of the Congo",
+              "majority": {
+                "title": "French",
+                "value": 24247
+              },
+              "values": {
+                "Spanish": 19937,
+                "English": 15653,
+                "Arabic": 14620,
+                "Portuguese": 22241,
+                "French": 24247,
+                "Japanese": 21773,
+                "undefined": 2989
+              }
+            },
+            {
+              "title": "Djibouti",
+              "majority": {
+                "title": "undefined",
+                "value": 26804
+              },
+              "values": {
+                "Spanish": 14299,
+                "English": 6213,
+                "Arabic": 787,
+                "Portuguese": 6982,
+                "French": 6506,
+                "Japanese": 24314,
+                "undefined": 26804
+              }
+            },
+            {
+              "title": "Egypt",
+              "majority": {
+                "title": "Japanese",
+                "value": 29810
+              },
+              "values": {
+                "Spanish": 17347,
+                "English": 5178,
+                "Arabic": 11950,
+                "Portuguese": 9827,
+                "French": 13125,
+                "Japanese": 29810,
+                "undefined": 1679
+              }
+            },
+            {
+              "title": "Equatorial Guinea",
+              "majority": {
+                "title": "Arabic",
+                "value": 22416
+              },
+              "values": {
+                "Spanish": 14083,
+                "English": 9730,
+                "Arabic": 22416,
+                "Portuguese": 10192,
+                "French": 1826,
+                "Japanese": 4819,
+                "undefined": 19457
+              }
+            },
+            {
+              "title": "Eritrea",
+              "majority": {
+                "title": "French",
+                "value": 28810
+              },
+              "values": {
+                "Spanish": 4880,
+                "English": 17399,
+                "Arabic": 5243,
+                "Portuguese": 20099,
+                "French": 28810,
+                "Japanese": 7706,
+                "undefined": 7096
+              }
+            },
+            {
+              "title": "Ethiopia",
+              "majority": {
+                "title": "Arabic",
+                "value": 31749
+              },
+              "values": {
+                "Spanish": 16699,
+                "English": 20226,
+                "Arabic": 31749,
+                "Portuguese": 13836,
+                "French": 14485,
+                "Japanese": 25963,
+                "undefined": 22606
+              }
+            },
+            {
+              "title": "Gabon",
+              "majority": {
+                "title": "Spanish",
+                "value": 30024
+              },
+              "values": {
+                "Spanish": 30024,
+                "English": 14816,
+                "Arabic": 17241,
+                "Portuguese": 18338,
+                "French": 17373,
+                "Japanese": 18341,
+                "undefined": 7209
+              }
+            },
+            {
+              "title": "Ghana",
+              "majority": {
+                "title": "Spanish",
+                "value": 25217
+              },
+              "values": {
+                "Spanish": 25217,
+                "English": 12770,
+                "Arabic": 22474,
+                "Portuguese": 6386,
+                "French": 3771,
+                "Japanese": 1765,
+                "undefined": 3947
+              }
+            },
+            {
+              "title": "Guinea",
+              "majority": {
+                "title": "English",
+                "value": 25774
+              },
+              "values": {
+                "Spanish": 23850,
+                "English": 25774,
+                "Arabic": 9330,
+                "Portuguese": 24692,
+                "French": 10776,
+                "Japanese": 11325,
+                "undefined": 1379
+              }
+            },
+            {
+              "title": "Guinea-Bissau",
+              "majority": {
+                "title": "Portuguese",
+                "value": 26093
+              },
+              "values": {
+                "Spanish": 25854,
+                "English": 19710,
+                "Arabic": 11663,
+                "Portuguese": 26093,
+                "French": 5231,
+                "Japanese": 17410,
+                "undefined": 20876
+              }
+            },
+            {
+              "title": "Ivory Coast",
+              "majority": {
+                "title": "Japanese",
+                "value": 30445
+              },
+              "values": {
+                "Spanish": 24679,
+                "English": 11856,
+                "Arabic": 17888,
+                "Portuguese": 19992,
+                "French": 2778,
+                "Japanese": 30445,
+                "undefined": 6226
+              }
+            },
+            {
+              "title": "Kenya",
+              "majority": {
+                "title": "English",
+                "value": 24905
+              },
+              "values": {
+                "Spanish": 23053,
+                "English": 24905,
+                "Arabic": 8622,
+                "Portuguese": 24890,
+                "French": 9467,
+                "Japanese": 2245,
+                "undefined": 1336
+              }
+            },
+            {
+              "title": "Lesotho",
+              "majority": {
+                "title": "Portuguese",
+                "value": 30019
+              },
+              "values": {
+                "Spanish": 24213,
+                "English": 3743,
+                "Arabic": 14127,
+                "Portuguese": 30019,
+                "French": 12576,
+                "Japanese": 23076,
+                "undefined": 19403
+              }
+            },
+            {
+              "title": "Liberia",
+              "majority": {
+                "title": "French",
+                "value": 32404
+              },
+              "values": {
+                "Spanish": 24121,
+                "English": 9671,
+                "Arabic": 22811,
+                "Portuguese": 25738,
+                "French": 32404,
+                "Japanese": 10706,
+                "undefined": 19004
+              }
+            },
+            {
+              "title": "Libya",
+              "majority": {
+                "title": "Arabic",
+                "value": 21967
+              },
+              "values": {
+                "Spanish": 0,
+                "English": 0,
+                "Arabic": 21967,
+                "Portuguese": 0,
+                "French": 0,
+                "Japanese": 0,
+                "undefined": 0
+              }
+            },
+            {
+              "title": "Madagascar",
+              "majority": {
+                "title": "English",
+                "value": 29522
+              },
+              "values": {
+                "Spanish": 25128,
+                "English": 29522,
+                "Arabic": 4361,
+                "Portuguese": 24829,
+                "French": 16686,
+                "Japanese": 20704,
+                "undefined": 29262
+              }
+            },
+            {
+              "title": "Malawi",
+              "majority": {
+                "title": "English",
+                "value": 27273
+              },
+              "values": {
+                "Spanish": 6777,
+                "English": 27273,
+                "Arabic": 25157,
+                "Portuguese": 21555,
+                "French": 9617,
+                "Japanese": 18149,
+                "undefined": 11962
+              }
+            },
+            {
+              "title": "Mali",
+              "majority": {
+                "title": "Japanese",
+                "value": 32565
+              },
+              "values": {
+                "Spanish": 24591,
+                "English": 15178,
+                "Arabic": 17211,
+                "Portuguese": 9784,
+                "French": 5067,
+                "Japanese": 32565,
+                "undefined": 10699
+              }
+            },
+            {
+              "title": "Mauritania",
+              "majority": {
+                "title": "Arabic",
+                "value": 31137
+              },
+              "values": {
+                "Spanish": 19654,
+                "English": 22844,
+                "Arabic": 31137,
+                "Portuguese": 3800,
+                "French": 20099,
+                "Japanese": 14147,
+                "undefined": 2176
+              }
+            },
+            {
+              "title": "Mauritius",
+              "majority": {
+                "title": "Arabic",
+                "value": 30886
+              },
+              "values": {
+                "Spanish": 19751,
+                "English": 18547,
+                "Arabic": 30886,
+                "Portuguese": 29466,
+                "French": 20021,
+                "Japanese": 21001,
+                "undefined": 25773
+              }
+            },
+            {
+              "title": "Morocco",
+              "majority": {
+                "title": "undefined",
+                "value": 29882
+              },
+              "values": {
+                "Spanish": 3187,
+                "English": 6715,
+                "Arabic": 4984,
+                "Portuguese": 25980,
+                "French": 4221,
+                "Japanese": 27618,
+                "undefined": 29882
+              }
+            },
+            {
+              "title": "Mozambique",
+              "majority": {
+                "title": "Arabic",
+                "value": 17350
+              },
+              "values": {
+                "Spanish": 14388,
+                "English": 10238,
+                "Arabic": 17350,
+                "Portuguese": 12637,
+                "French": 712,
+                "Japanese": 16191,
+                "undefined": 14253
+              }
+            },
+            {
+              "title": "Namibia",
+              "majority": {
+                "title": "Portuguese",
+                "value": 31108
+              },
+              "values": {
+                "Spanish": 23824,
+                "English": 27551,
+                "Arabic": 7034,
+                "Portuguese": 31108,
+                "French": 9457,
+                "Japanese": 3822,
+                "undefined": 23297
+              }
+            },
+            {
+              "title": "Niger",
+              "majority": {
+                "title": "Arabic",
+                "value": 28115
+              },
+              "values": {
+                "Spanish": 21021,
+                "English": 22932,
+                "Arabic": 28115,
+                "Portuguese": 19502,
+                "French": 2986,
+                "Japanese": 3539,
+                "undefined": 13106
+              }
+            },
+            {
+              "title": "Nigeria",
+              "majority": {
+                "title": "Japanese",
+                "value": 32365
+              },
+              "values": {
+                "Spanish": 18190,
+                "English": 2041,
+                "Arabic": 22104,
+                "Portuguese": 27216,
+                "French": 30156,
+                "Japanese": 32365,
+                "undefined": 30187
+              }
+            },
+            {
+              "title": "Republic of the Congo",
+              "majority": {
+                "title": "French",
+                "value": 16562
+              },
+              "values": {
+                "Spanish": 817,
+                "English": 14303,
+                "Arabic": 7616,
+                "Portuguese": 636,
+                "French": 16562,
+                "Japanese": 3059,
+                "undefined": 3450
+              }
+            },
+            {
+              "title": "Rwanda",
+              "majority": {
+                "title": "English",
+                "value": 27749
+              },
+              "values": {
+                "Spanish": 20208,
+                "English": 27749,
+                "Arabic": 11417,
+                "Portuguese": 2864,
+                "French": 9644,
+                "Japanese": 27695,
+                "undefined": 19373
+              }
+            },
+            {
+              "title": "Sao Tome and Principe",
+              "majority": {
+                "title": "undefined",
+                "value": 23325
+              },
+              "values": {
+                "Spanish": 8061,
+                "English": 8162,
+                "Arabic": 5539,
+                "Portuguese": 6283,
+                "French": 9922,
+                "Japanese": 9630,
+                "undefined": 23325
+              }
+            },
+            {
+              "title": "Senegal",
+              "majority": {
+                "title": "Spanish",
+                "value": 31985
+              },
+              "values": {
+                "Spanish": 31985,
+                "English": 10653,
+                "Arabic": 25231,
+                "Portuguese": 11934,
+                "French": 15538,
+                "Japanese": 16682,
+                "undefined": 15254
+              }
+            },
+            {
+              "title": "Seychelles",
+              "majority": {
+                "title": "English",
+                "value": 25632
+              },
+              "values": {
+                "Spanish": 13931,
+                "English": 25632,
+                "Arabic": 764,
+                "Portuguese": 4368,
+                "French": 12132,
+                "Japanese": 12599,
+                "undefined": 12506
+              }
+            },
+            {
+              "title": "Sierra Leone",
+              "majority": {
+                "title": "Arabic",
+                "value": 25481
+              },
+              "values": {
+                "Spanish": 23012,
+                "English": 6437,
+                "Arabic": 25481,
+                "Portuguese": 10297,
+                "French": 25419,
+                "Japanese": 2014,
+                "undefined": 7917
+              }
+            },
+            {
+              "title": "Somalia",
+              "majority": {
+                "title": "French",
+                "value": 28400
+              },
+              "values": {
+                "Spanish": 19837,
+                "English": 16738,
+                "Arabic": 14323,
+                "Portuguese": 19687,
+                "French": 28400,
+                "Japanese": 15473,
+                "undefined": 16211
+              }
+            },
+            {
+              "title": "South Africa",
+              "majority": {
+                "title": "Portuguese",
+                "value": 30872
+              },
+              "values": {
+                "Spanish": 10454,
+                "English": 23422,
+                "Arabic": 18169,
+                "Portuguese": 30872,
+                "French": 25312,
+                "Japanese": 10551,
+                "undefined": 18559
+              }
+            },
+            {
+              "title": "South Sudan",
+              "majority": {
+                "title": "French",
+                "value": 31093
+              },
+              "values": {
+                "Spanish": 995,
+                "English": 1438,
+                "Arabic": 26497,
+                "Portuguese": 18715,
+                "French": 31093,
+                "Japanese": 2694,
+                "undefined": 14624
+              }
+            },
+            {
+              "title": "Sudan",
+              "majority": {
+                "title": "French",
+                "value": 21832
+              },
+              "values": {
+                "Spanish": 18879,
+                "English": 10766,
+                "Arabic": 18716,
+                "Portuguese": 4583,
+                "French": 21832,
+                "Japanese": 2310,
+                "undefined": 11480
+              }
+            },
+            {
+              "title": "Swaziland",
+              "majority": {
+                "title": "Japanese",
+                "value": 32140
+              },
+              "values": {
+                "Spanish": 5179,
+                "English": 5703,
+                "Arabic": 7212,
+                "Portuguese": 24022,
+                "French": 19021,
+                "Japanese": 32140,
+                "undefined": 3426
+              }
+            },
+            {
+              "title": "Tanzania",
+              "majority": {
+                "title": "Japanese",
+                "value": 31499
+              },
+              "values": {
+                "Spanish": 18496,
+                "English": 14099,
+                "Arabic": 17782,
+                "Portuguese": 14836,
+                "French": 11899,
+                "Japanese": 31499,
+                "undefined": 24061
+              }
+            },
+            {
+              "title": "The Gambia",
+              "majority": {
+                "title": "Japanese",
+                "value": 32617
+              },
+              "values": {
+                "Spanish": 23485,
+                "English": 12820,
+                "Arabic": 2223,
+                "Portuguese": 3452,
+                "French": 10232,
+                "Japanese": 32617,
+                "undefined": 9399
+              }
+            },
+            {
+              "title": "Togo",
+              "majority": {
+                "title": "English",
+                "value": 32743
+              },
+              "values": {
+                "Spanish": 21055,
+                "English": 32743,
+                "Arabic": 2071,
+                "Portuguese": 11793,
+                "French": 20689,
+                "Japanese": 3878,
+                "undefined": 30759
+              }
+            },
+            {
+              "title": "Tunisia",
+              "majority": {
+                "title": "Arabic",
+                "value": 29644
+              },
+              "values": {
+                "Spanish": 27041,
+                "English": 23298,
+                "Arabic": 29644,
+                "Portuguese": 20984,
+                "French": 19896,
+                "Japanese": 23482,
+                "undefined": 19527
+              }
+            },
+            {
+              "title": "Uganda",
+              "majority": {
+                "title": "Spanish",
+                "value": 23786
+              },
+              "values": {
+                "Spanish": 23786,
+                "English": 2390,
+                "Arabic": 13185,
+                "Portuguese": 18164,
+                "French": 21199,
+                "Japanese": 17184,
+                "undefined": 20938
+              }
+            },
+            {
+              "title": "Western Sahara",
+              "majority": {
+                "title": "English",
+                "value": 30738
+              },
+              "values": {
+                "Spanish": 3969,
+                "English": 30738,
+                "Arabic": 19487,
+                "Portuguese": 5890,
+                "French": 13827,
+                "Japanese": 2725,
+                "undefined": 16958
+              }
+            },
+            {
+              "title": "Zambia",
+              "majority": {
+                "title": "English",
+                "value": 27606
+              },
+              "values": {
+                "Spanish": 19293,
+                "English": 27606,
+                "Arabic": 13228,
+                "Portuguese": 24194,
+                "French": 13915,
+                "Japanese": 12856,
+                "undefined": 26603
+              }
+            },
+            {
+              "title": "Zimbabwe",
+              "majority": {
+                "title": "Spanish",
+                "value": 27399
+              },
+              "values": {
+                "Spanish": 27399,
+                "English": 8988,
+                "Arabic": 22180,
+                "Portuguese": 25328,
+                "French": 7358,
+                "Japanese": 23913,
+                "undefined": 22768
+              }
+            },
+            {
+              "title": "Afghanistan",
+              "majority": {
+                "title": "Arabic",
+                "value": 29566
+              },
+              "values": {
+                "Spanish": 10496,
+                "English": 19688,
+                "Arabic": 29566,
+                "Portuguese": 5925,
+                "French": 15298,
+                "Japanese": 20049,
+                "undefined": 18585
+              }
+            },
+            {
+              "title": "Armenia",
+              "majority": {
+                "title": "English",
+                "value": 28077
+              },
+              "values": {
+                "Spanish": 23330,
+                "English": 28077,
+                "Arabic": 23117,
+                "Portuguese": 17475,
+                "French": 9711,
+                "Japanese": 51,
+                "undefined": 20852
+              }
+            },
+            {
+              "title": "Azerbaijan",
+              "majority": {
+                "title": "Japanese",
+                "value": 31860
+              },
+              "values": {
+                "Spanish": 10849,
+                "English": 21730,
+                "Arabic": 30891,
+                "Portuguese": 19485,
+                "French": 26618,
+                "Japanese": 31860,
+                "undefined": 22527
+              }
+            },
+            {
+              "title": "Bahrain",
+              "majority": {
+                "title": "French",
+                "value": 30010
+              },
+              "values": {
+                "Spanish": 13979,
+                "English": 24773,
+                "Arabic": 5344,
+                "Portuguese": 8473,
+                "French": 30010,
+                "Japanese": 2426,
+                "undefined": 21633
+              }
+            },
+            {
+              "title": "Bangladesh",
+              "majority": {
+                "title": "French",
+                "value": 29705
+              },
+              "values": {
+                "Spanish": 23054,
+                "English": 19448,
+                "Arabic": 23253,
+                "Portuguese": 21481,
+                "French": 29705,
+                "Japanese": 1539,
+                "undefined": 26986
+              }
+            },
+            {
+              "title": "Bhutan",
+              "majority": {
+                "title": "French",
+                "value": 23651
+              },
+              "values": {
+                "Spanish": 22465,
+                "English": 17910,
+                "Arabic": 6390,
+                "Portuguese": 11820,
+                "French": 23651,
+                "Japanese": 1522,
+                "undefined": 16340
+              }
+            },
+            {
+              "title": "Brunei",
+              "majority": {
+                "title": "undefined",
+                "value": 29757
+              },
+              "values": {
+                "Spanish": 19387,
+                "English": 16184,
+                "Arabic": 28021,
+                "Portuguese": 18880,
+                "French": 23665,
+                "Japanese": 8659,
+                "undefined": 29757
+              }
+            },
+            {
+              "title": "Burma",
+              "majority": {
+                "title": "Arabic",
+                "value": 25290
+              },
+              "values": {
+                "Spanish": 6274,
+                "English": 5419,
+                "Arabic": 25290,
+                "Portuguese": 19961,
+                "French": 2746,
+                "Japanese": 18647,
+                "undefined": 18520
+              }
+            },
+            {
+              "title": "Cambodia",
+              "majority": {
+                "title": "undefined",
+                "value": 23967
+              },
+              "values": {
+                "Spanish": 5819,
+                "English": 19938,
+                "Arabic": 6338,
+                "Portuguese": 14516,
+                "French": 23066,
+                "Japanese": 21509,
+                "undefined": 23967
+              }
+            },
+            {
+              "title": "China",
+              "majority": {
+                "title": "Japanese",
+                "value": 29469
+              },
+              "values": {
+                "Spanish": 7215,
+                "English": 24874,
+                "Arabic": 26945,
+                "Portuguese": 5462,
+                "French": 17680,
+                "Japanese": 29469,
+                "undefined": 9469
+              }
+            },
+            {
+              "title": "Cyprus",
+              "majority": {
+                "title": "Japanese",
+                "value": 31060
+              },
+              "values": {
+                "Spanish": 24978,
+                "English": 31024,
+                "Arabic": 29878,
+                "Portuguese": 13035,
+                "French": 25353,
+                "Japanese": 31060,
+                "undefined": 4721
+              }
+            },
+            {
+              "title": "East Timor",
+              "majority": {
+                "title": "English",
+                "value": 32138
+              },
+              "values": {
+                "Spanish": 12221,
+                "English": 32138,
+                "Arabic": 8781,
+                "Portuguese": 24948,
+                "French": 5542,
+                "Japanese": 20680,
+                "undefined": 977
+              }
+            },
+            {
+              "title": "Georgia",
+              "majority": {
+                "title": "English",
+                "value": 29847
+              },
+              "values": {
+                "Spanish": 9011,
+                "English": 29847,
+                "Arabic": 29160,
+                "Portuguese": 2328,
+                "French": 6118,
+                "Japanese": 29238,
+                "undefined": 12748
+              }
+            },
+            {
+              "title": "India",
+              "majority": {
+                "title": "Portuguese",
+                "value": 31773
+              },
+              "values": {
+                "Spanish": 3894,
+                "English": 2988,
+                "Arabic": 19870,
+                "Portuguese": 31773,
+                "French": 1339,
+                "Japanese": 2684,
+                "undefined": 25306
+              }
+            },
+            {
+              "title": "Indonesia",
+              "majority": {
+                "title": "undefined",
+                "value": 32528
+              },
+              "values": {
+                "Spanish": 6939,
+                "English": 29196,
+                "Arabic": 26320,
+                "Portuguese": 27166,
+                "French": 27684,
+                "Japanese": 31744,
+                "undefined": 32528
+              }
+            },
+            {
+              "title": "Iran",
+              "majority": {
+                "title": "undefined",
+                "value": 30665
+              },
+              "values": {
+                "Spanish": 28363,
+                "English": 20741,
+                "Arabic": 20026,
+                "Portuguese": 28095,
+                "French": 14881,
+                "Japanese": 27140,
+                "undefined": 30665
+              }
+            },
+            {
+              "title": "Iraq",
+              "majority": {
+                "title": "undefined",
+                "value": 27473
+              },
+              "values": {
+                "Spanish": 4199,
+                "English": 11713,
+                "Arabic": 25770,
+                "Portuguese": 8321,
+                "French": 4421,
+                "Japanese": 18922,
+                "undefined": 27473
+              }
+            },
+            {
+              "title": "Israel",
+              "majority": {
+                "title": "English",
+                "value": 24501
+              },
+              "values": {
+                "Spanish": 12183,
+                "English": 24501,
+                "Arabic": 23408,
+                "Portuguese": 368,
+                "French": 16382,
+                "Japanese": 17244,
+                "undefined": 3451
+              }
+            },
+            {
+              "title": "Japan",
+              "majority": {
+                "title": "English",
+                "value": 32389
+              },
+              "values": {
+                "Spanish": 22697,
+                "English": 32389,
+                "Arabic": 30231,
+                "Portuguese": 23301,
+                "French": 27279,
+                "Japanese": 19885,
+                "undefined": 28839
+              }
+            },
+            {
+              "title": "Jordan",
+              "majority": {
+                "title": "English",
+                "value": 25401
+              },
+              "values": {
+                "Spanish": 7185,
+                "English": 25401,
+                "Arabic": 19275,
+                "Portuguese": 22041,
+                "French": 10924,
+                "Japanese": 10376,
+                "undefined": 5090
+              }
+            },
+            {
+              "title": "Kazakhstan",
+              "majority": {
+                "title": "undefined",
+                "value": 26279
+              },
+              "values": {
+                "Spanish": 10742,
+                "English": 23461,
+                "Arabic": 2615,
+                "Portuguese": 24510,
+                "French": 15663,
+                "Japanese": 18188,
+                "undefined": 26279
+              }
+            },
+            {
+              "title": "Kuwait",
+              "majority": {
+                "title": "undefined",
+                "value": 32455
+              },
+              "values": {
+                "Spanish": 21968,
+                "English": 32199,
+                "Arabic": 7275,
+                "Portuguese": 20584,
+                "French": 12365,
+                "Japanese": 5438,
+                "undefined": 32455
+              }
+            },
+            {
+              "title": "Kyrgyzstan",
+              "majority": {
+                "title": "Portuguese",
+                "value": 9301
+              },
+              "values": {
+                "Spanish": 135,
+                "English": 3845,
+                "Arabic": 449,
+                "Portuguese": 9301,
+                "French": 8602,
+                "Japanese": 4996,
+                "undefined": 5651
+              }
+            },
+            {
+              "title": "Laos",
+              "majority": {
+                "title": "undefined",
+                "value": 27018
+              },
+              "values": {
+                "Spanish": 13820,
+                "English": 16268,
+                "Arabic": 8938,
+                "Portuguese": 3129,
+                "French": 10894,
+                "Japanese": 26665,
+                "undefined": 27018
+              }
+            },
+            {
+              "title": "Lebanon",
+              "majority": {
+                "title": "Portuguese",
+                "value": 31813
+              },
+              "values": {
+                "Spanish": 5864,
+                "English": 6598,
+                "Arabic": 18536,
+                "Portuguese": 31813,
+                "French": 7599,
+                "Japanese": 17153,
+                "undefined": 21116
+              }
+            },
+            {
+              "title": "Malaysia",
+              "majority": {
+                "title": "Japanese",
+                "value": 31312
+              },
+              "values": {
+                "Spanish": 13221,
+                "English": 4068,
+                "Arabic": 17341,
+                "Portuguese": 14489,
+                "French": 7353,
+                "Japanese": 31312,
+                "undefined": 14802
+              }
+            },
+            {
+              "title": "Maldives",
+              "majority": {
+                "title": "French",
+                "value": 29672
+              },
+              "values": {
+                "Spanish": 18567,
+                "English": 7091,
+                "Arabic": 19354,
+                "Portuguese": 19826,
+                "French": 29672,
+                "Japanese": 7234,
+                "undefined": 29556
+              }
+            },
+            {
+              "title": "Mongolia",
+              "majority": {
+                "title": "Arabic",
+                "value": 27568
+              },
+              "values": {
+                "Spanish": 24290,
+                "English": 4424,
+                "Arabic": 27568,
+                "Portuguese": 18567,
+                "French": 21493,
+                "Japanese": 8681,
+                "undefined": 6331
+              }
+            },
+            {
+              "title": "Nepal",
+              "majority": {
+                "title": "Portuguese",
+                "value": 30005
+              },
+              "values": {
+                "Spanish": 24863,
+                "English": 16717,
+                "Arabic": 10316,
+                "Portuguese": 30005,
+                "French": 19094,
+                "Japanese": 27473,
+                "undefined": 23423
+              }
+            },
+            {
+              "title": "North Korea",
+              "majority": {
+                "title": "French",
+                "value": 26869
+              },
+              "values": {
+                "Spanish": 5466,
+                "English": 19330,
+                "Arabic": 23277,
+                "Portuguese": 17194,
+                "French": 26869,
+                "Japanese": 7326,
+                "undefined": 525
+              }
+            },
+            {
+              "title": "Oman",
+              "majority": {
+                "title": "English",
+                "value": 18993
+              },
+              "values": {
+                "Spanish": 2135,
+                "English": 18993,
+                "Arabic": 17529,
+                "Portuguese": 11223,
+                "French": 1796,
+                "Japanese": 7744,
+                "undefined": 480
+              }
+            },
+            {
+              "title": "Pakistan",
+              "majority": {
+                "title": "Portuguese",
+                "value": 28940
+              },
+              "values": {
+                "Spanish": 13482,
+                "English": 27754,
+                "Arabic": 25518,
+                "Portuguese": 28940,
+                "French": 17883,
+                "Japanese": 28171,
+                "undefined": 19074
+              }
+            },
+            {
+              "title": "Philippines",
+              "majority": {
+                "title": "Arabic",
+                "value": 25982
+              },
+              "values": {
+                "Spanish": 22412,
+                "English": 4394,
+                "Arabic": 25982,
+                "Portuguese": 12825,
+                "French": 17137,
+                "Japanese": 18438,
+                "undefined": 23802
+              }
+            },
+            {
+              "title": "Qatar",
+              "majority": {
+                "title": "English",
+                "value": 26171
+              },
+              "values": {
+                "Spanish": 10435,
+                "English": 26171,
+                "Arabic": 19077,
+                "Portuguese": 22692,
+                "French": 18714,
+                "Japanese": 25094,
+                "undefined": 18977
+              }
+            },
+            {
+              "title": "Saudi Arabia",
+              "majority": {
+                "title": "Spanish",
+                "value": 26777
+              },
+              "values": {
+                "Spanish": 26777,
+                "English": 4390,
+                "Arabic": 25460,
+                "Portuguese": 23604,
+                "French": 20409,
+                "Japanese": 3890,
+                "undefined": 17881
+              }
+            },
+            {
+              "title": "Singapore",
+              "majority": {
+                "title": "English",
+                "value": 19257
+              },
+              "values": {
+                "Spanish": 14385,
+                "English": 19257,
+                "Arabic": 108,
+                "Portuguese": 9002,
+                "French": 7592,
+                "Japanese": 18151,
+                "undefined": 15679
+              }
+            },
+            {
+              "title": "South Korea",
+              "majority": {
+                "title": "Spanish",
+                "value": 32547
+              },
+              "values": {
+                "Spanish": 32547,
+                "English": 7672,
+                "Arabic": 2620,
+                "Portuguese": 3953,
+                "French": 31034,
+                "Japanese": 17873,
+                "undefined": 10788
+              }
+            },
+            {
+              "title": "Sri Lanka",
+              "majority": {
+                "title": "Arabic",
+                "value": 25201
+              },
+              "values": {
+                "Spanish": 19964,
+                "English": 12614,
+                "Arabic": 25201,
+                "Portuguese": 19340,
+                "French": 23212,
+                "Japanese": 19183,
+                "undefined": 24218
+              }
+            },
+            {
+              "title": "State of Palestine",
+              "majority": {
+                "title": "Portuguese",
+                "value": 29525
+              },
+              "values": {
+                "Spanish": 687,
+                "English": 23932,
+                "Arabic": 15316,
+                "Portuguese": 29525,
+                "French": 23329,
+                "Japanese": 22961,
+                "undefined": 20607
+              }
+            },
+            {
+              "title": "Syria",
+              "majority": {
+                "title": "Arabic",
+                "value": 30900
+              },
+              "values": {
+                "Spanish": 10345,
+                "English": 21656,
+                "Arabic": 30900,
+                "Portuguese": 5130,
+                "French": 24730,
+                "Japanese": 24701,
+                "undefined": 9904
+              }
+            },
+            {
+              "title": "Taiwan",
+              "majority": {
+                "title": "English",
+                "value": 28066
+              },
+              "values": {
+                "Spanish": 1677,
+                "English": 28066,
+                "Arabic": 11319,
+                "Portuguese": 23792,
+                "French": 20047,
+                "Japanese": 26609,
+                "undefined": 17458
+              }
+            },
+            {
+              "title": "Tajikistan",
+              "majority": {
+                "title": "undefined",
+                "value": 28741
+              },
+              "values": {
+                "Spanish": 13814,
+                "English": 20392,
+                "Arabic": 17955,
+                "Portuguese": 23473,
+                "French": 10074,
+                "Japanese": 22455,
+                "undefined": 28741
+              }
+            },
+            {
+              "title": "Thailand",
+              "majority": {
+                "title": "English",
+                "value": 32105
+              },
+              "values": {
+                "Spanish": 17753,
+                "English": 32105,
+                "Arabic": 17865,
+                "Portuguese": 19144,
+                "French": 26745,
+                "Japanese": 29817,
+                "undefined": 24452
+              }
+            },
+            {
+              "title": "Turkey",
+              "majority": {
+                "title": "Spanish",
+                "value": 30017
+              },
+              "values": {
+                "Spanish": 30017,
+                "English": 16154,
+                "Arabic": 3085,
+                "Portuguese": 15319,
+                "French": 14566,
+                "Japanese": 10443,
+                "undefined": 28590
+              }
+            },
+            {
+              "title": "Turkmenistan",
+              "majority": {
+                "title": "Spanish",
+                "value": 28834
+              },
+              "values": {
+                "Spanish": 28834,
+                "English": 25289,
+                "Arabic": 7721,
+                "Portuguese": 4484,
+                "French": 28452,
+                "Japanese": 1490,
+                "undefined": 4400
+              }
+            },
+            {
+              "title": "United Arab Emirates",
+              "majority": {
+                "title": "Japanese",
+                "value": 26863
+              },
+              "values": {
+                "Spanish": 21175,
+                "English": 15144,
+                "Arabic": 24701,
+                "Portuguese": 1605,
+                "French": 21896,
+                "Japanese": 26863,
+                "undefined": 25177
+              }
+            },
+            {
+              "title": "Uzbekistan",
+              "majority": {
+                "title": "English",
+                "value": 21805
+              },
+              "values": {
+                "Spanish": 12799,
+                "English": 21805,
+                "Arabic": 3548,
+                "Portuguese": 3388,
+                "French": 10169,
+                "Japanese": 8049,
+                "undefined": 4066
+              }
+            },
+            {
+              "title": "Vietnam",
+              "majority": {
+                "title": "Portuguese",
+                "value": 32686
+              },
+              "values": {
+                "Spanish": 11847,
+                "English": 25816,
+                "Arabic": 3080,
+                "Portuguese": 32686,
+                "French": 10909,
+                "Japanese": 17628,
+                "undefined": 3507
+              }
+            },
+            {
+              "title": "Yemen",
+              "majority": {
+                "title": "Spanish",
+                "value": 27027
+              },
+              "values": {
+                "Spanish": 27027,
+                "English": 23522,
+                "Arabic": 10793,
+                "Portuguese": 14616,
+                "French": 18745,
+                "Japanese": 14453,
+                "undefined": 26515
+              }
+            },
+            {
+              "title": "Albania",
+              "majority": {
+                "title": "Spanish",
+                "value": 23903
+              },
+              "values": {
+                "Spanish": 23903,
+                "English": 3077,
+                "Arabic": 17262,
+                "Portuguese": 13996,
+                "French": 2700,
+                "Japanese": 20039,
+                "undefined": 86
+              }
+            },
+            {
+              "title": "Andorra",
+              "majority": {
+                "title": "Portuguese",
+                "value": 26281
+              },
+              "values": {
+                "Spanish": 18125,
+                "English": 8607,
+                "Arabic": 16167,
+                "Portuguese": 26281,
+                "French": 12517,
+                "Japanese": 19053,
+                "undefined": 22348
+              }
+            },
+            {
+              "title": "Austria",
+              "majority": {
+                "title": "undefined",
+                "value": 32289
+              },
+              "values": {
+                "Spanish": 4364,
+                "English": 23556,
+                "Arabic": 27452,
+                "Portuguese": 20049,
+                "French": 9294,
+                "Japanese": 7846,
+                "undefined": 32289
+              }
+            },
+            {
+              "title": "Belarus",
+              "majority": {
+                "title": "Spanish",
+                "value": 31465
+              },
+              "values": {
+                "Spanish": 31465,
+                "English": 10784,
+                "Arabic": 10432,
+                "Portuguese": 24602,
+                "French": 2508,
+                "Japanese": 23445,
+                "undefined": 652
+              }
+            },
+            {
+              "title": "Belgium",
+              "majority": {
+                "title": "undefined",
+                "value": 32687
+              },
+              "values": {
+                "Spanish": 30187,
+                "English": 14185,
+                "Arabic": 5976,
+                "Portuguese": 11285,
+                "French": 17081,
+                "Japanese": 30793,
+                "undefined": 32687
+              }
+            },
+            {
+              "title": "Bosnia and Herzegovina",
+              "majority": {
+                "title": "Portuguese",
+                "value": 31795
+              },
+              "values": {
+                "Spanish": 10626,
+                "English": 19560,
+                "Arabic": 15428,
+                "Portuguese": 31795,
+                "French": 2082,
+                "Japanese": 27060,
+                "undefined": 14439
+              }
+            },
+            {
+              "title": "Bulgaria",
+              "majority": {
+                "title": "Portuguese",
+                "value": 25505
+              },
+              "values": {
+                "Spanish": 6988,
+                "English": 10299,
+                "Arabic": 22033,
+                "Portuguese": 25505,
+                "French": 3951,
+                "Japanese": 22418,
+                "undefined": 10051
+              }
+            },
+            {
+              "title": "Croatia",
+              "majority": {
+                "title": "French",
+                "value": 23502
+              },
+              "values": {
+                "Spanish": 4656,
+                "English": 17431,
+                "Arabic": 2234,
+                "Portuguese": 189,
+                "French": 23502,
+                "Japanese": 18052,
+                "undefined": 13085
+              }
+            },
+            {
+              "title": "Czech Republic",
+              "majority": {
+                "title": "Arabic",
+                "value": 32310
+              },
+              "values": {
+                "Spanish": 8379,
+                "English": 14490,
+                "Arabic": 32310,
+                "Portuguese": 10188,
+                "French": 8990,
+                "Japanese": 200,
+                "undefined": 28968
+              }
+            },
+            {
+              "title": "Denmark",
+              "majority": {
+                "title": "Spanish",
+                "value": 26374
+              },
+              "values": {
+                "Spanish": 26374,
+                "English": 5643,
+                "Arabic": 15112,
+                "Portuguese": 4045,
+                "French": 17034,
+                "Japanese": 15426,
+                "undefined": 26039
+              }
+            },
+            {
+              "title": "Estonia",
+              "majority": {
+                "title": "English",
+                "value": 22684
+              },
+              "values": {
+                "Spanish": 17611,
+                "English": 22684,
+                "Arabic": 6462,
+                "Portuguese": 9928,
+                "French": 17530,
+                "Japanese": 13273,
+                "undefined": 8978
+              }
+            },
+            {
+              "title": "Finland",
+              "majority": {
+                "title": "undefined",
+                "value": 25068
+              },
+              "values": {
+                "Spanish": 3696,
+                "English": 22555,
+                "Arabic": 7100,
+                "Portuguese": 13822,
+                "French": 22677,
+                "Japanese": 8408,
+                "undefined": 25068
+              }
+            },
+            {
+              "title": "France",
+              "majority": {
+                "title": "Japanese",
+                "value": 32276
+              },
+              "values": {
+                "Spanish": 9684,
+                "English": 22772,
+                "Arabic": 3712,
+                "Portuguese": 14411,
+                "French": 2317,
+                "Japanese": 32276,
+                "undefined": 1535
+              }
+            },
+            {
+              "title": "Germany",
+              "majority": {
+                "title": "Portuguese",
+                "value": 29598
+              },
+              "values": {
+                "Spanish": 23487,
+                "English": 6570,
+                "Arabic": 5870,
+                "Portuguese": 29598,
+                "French": 8126,
+                "Japanese": 18380,
+                "undefined": 18265
+              }
+            },
+            {
+              "title": "Greece",
+              "majority": {
+                "title": "Arabic",
+                "value": 23058
+              },
+              "values": {
+                "Spanish": 17664,
+                "English": 9884,
+                "Arabic": 23058,
+                "Portuguese": 22327,
+                "French": 1752,
+                "Japanese": 21140,
+                "undefined": 14262
+              }
+            },
+            {
+              "title": "Hungary",
+              "majority": {
+                "title": "Japanese",
+                "value": 30409
+              },
+              "values": {
+                "Spanish": 18530,
+                "English": 8811,
+                "Arabic": 15256,
+                "Portuguese": 14439,
+                "French": 24404,
+                "Japanese": 30409,
+                "undefined": 13784
+              }
+            },
+            {
+              "title": "Iceland",
+              "majority": {
+                "title": "French",
+                "value": 23389
+              },
+              "values": {
+                "Spanish": 5604,
+                "English": 2712,
+                "Arabic": 18891,
+                "Portuguese": 13588,
+                "French": 23389,
+                "Japanese": 21748,
+                "undefined": 19659
+              }
+            },
+            {
+              "title": "Italy",
+              "majority": {
+                "title": "English",
+                "value": 28297
+              },
+              "values": {
+                "Spanish": 6306,
+                "English": 28297,
+                "Arabic": 20051,
+                "Portuguese": 12582,
+                "French": 11326,
+                "Japanese": 3718,
+                "undefined": 6005
+              }
+            },
+            {
+              "title": "Kosovo",
+              "majority": {
+                "title": "Portuguese",
+                "value": 31829
+              },
+              "values": {
+                "Spanish": 2163,
+                "English": 27029,
+                "Arabic": 25717,
+                "Portuguese": 31829,
+                "French": 27776,
+                "Japanese": 18064,
+                "undefined": 465
+              }
+            },
+            {
+              "title": "Latvia",
+              "majority": {
+                "title": "undefined",
+                "value": 29518
+              },
+              "values": {
+                "Spanish": 18781,
+                "English": 11025,
+                "Arabic": 7265,
+                "Portuguese": 26771,
+                "French": 18252,
+                "Japanese": 29015,
+                "undefined": 29518
+              }
+            },
+            {
+              "title": "Liechtenstein",
+              "majority": {
+                "title": "Japanese",
+                "value": 32083
+              },
+              "values": {
+                "Spanish": 30984,
+                "English": 2531,
+                "Arabic": 13106,
+                "Portuguese": 16192,
+                "French": 24941,
+                "Japanese": 32083,
+                "undefined": 18982
+              }
+            },
+            {
+              "title": "Lithuania",
+              "majority": {
+                "title": "English",
+                "value": 27472
+              },
+              "values": {
+                "Spanish": 22795,
+                "English": 27472,
+                "Arabic": 24166,
+                "Portuguese": 2079,
+                "French": 16507,
+                "Japanese": 17062,
+                "undefined": 2415
+              }
+            },
+            {
+              "title": "Luxembourg",
+              "majority": {
+                "title": "English",
+                "value": 29474
+              },
+              "values": {
+                "Spanish": 14821,
+                "English": 29474,
+                "Arabic": 4779,
+                "Portuguese": 19443,
+                "French": 21853,
+                "Japanese": 25572,
+                "undefined": 5245
+              }
+            },
+            {
+              "title": "Malta",
+              "majority": {
+                "title": "Portuguese",
+                "value": 27511
+              },
+              "values": {
+                "Spanish": 9492,
+                "English": 20357,
+                "Arabic": 24383,
+                "Portuguese": 27511,
+                "French": 8385,
+                "Japanese": 22061,
+                "undefined": 26715
+              }
+            },
+            {
+              "title": "Moldova",
+              "majority": {
+                "title": "Japanese",
+                "value": 28086
+              },
+              "values": {
+                "Spanish": 27470,
+                "English": 14751,
+                "Arabic": 26998,
+                "Portuguese": 23253,
+                "French": 9198,
+                "Japanese": 28086,
+                "undefined": 4364
+              }
+            },
+            {
+              "title": "Montenegro",
+              "majority": {
+                "title": "Japanese",
+                "value": 31653
+              },
+              "values": {
+                "Spanish": 23883,
+                "English": 20242,
+                "Arabic": 29148,
+                "Portuguese": 10531,
+                "French": 28839,
+                "Japanese": 31653,
+                "undefined": 12258
+              }
+            },
+            {
+              "title": "Netherlands",
+              "majority": {
+                "title": "Portuguese",
+                "value": 31616
+              },
+              "values": {
+                "Spanish": 818,
+                "English": 10284,
+                "Arabic": 4828,
+                "Portuguese": 31616,
+                "French": 22130,
+                "Japanese": 22082,
+                "undefined": 4880
+              }
+            },
+            {
+              "title": "Norway",
+              "majority": {
+                "title": "undefined",
+                "value": 31103
+              },
+              "values": {
+                "Spanish": 10752,
+                "English": 15381,
+                "Arabic": 14849,
+                "Portuguese": 7260,
+                "French": 30893,
+                "Japanese": 13127,
+                "undefined": 31103
+              }
+            },
+            {
+              "title": "Poland",
+              "majority": {
+                "title": "Portuguese",
+                "value": 29914
+              },
+              "values": {
+                "Spanish": 11003,
+                "English": 28155,
+                "Arabic": 26853,
+                "Portuguese": 29914,
+                "French": 7006,
+                "Japanese": 8563,
+                "undefined": 16128
+              }
+            },
+            {
+              "title": "Portugal",
+              "majority": {
+                "title": "English",
+                "value": 21520
+              },
+              "values": {
+                "Spanish": 15876,
+                "English": 21520,
+                "Arabic": 5733,
+                "Portuguese": 20496,
+                "French": 16721,
+                "Japanese": 12618,
+                "undefined": 5452
+              }
+            },
+            {
+              "title": "Republic of Ireland",
+              "majority": {
+                "title": "English",
+                "value": 27330
+              },
+              "values": {
+                "Spanish": 27128,
+                "English": 27330,
+                "Arabic": 3670,
+                "Portuguese": 12287,
+                "French": 15550,
+                "Japanese": 21519,
+                "undefined": 2212
+              }
+            },
+            {
+              "title": "Republic of Macedonia",
+              "majority": {
+                "title": "Spanish",
+                "value": 23709
+              },
+              "values": {
+                "Spanish": 23709,
+                "English": 14598,
+                "Arabic": 18294,
+                "Portuguese": 22701,
+                "French": 21302,
+                "Japanese": 23123,
+                "undefined": 9030
+              }
+            },
+            {
+              "title": "Romania",
+              "majority": {
+                "title": "undefined",
+                "value": 32754
+              },
+              "values": {
+                "Spanish": 23691,
+                "English": 6713,
+                "Arabic": 22781,
+                "Portuguese": 27178,
+                "French": 12373,
+                "Japanese": 28066,
+                "undefined": 32754
+              }
+            },
+            {
+              "title": "Russia",
+              "majority": {
+                "title": "English",
+                "value": 28732
+              },
+              "values": {
+                "Spanish": 3126,
+                "English": 28732,
+                "Arabic": 27872,
+                "Portuguese": 8749,
+                "French": 13491,
+                "Japanese": 103,
+                "undefined": 15239
+              }
+            },
+            {
+              "title": "San Marino",
+              "majority": {
+                "title": "Arabic",
+                "value": 30350
+              },
+              "values": {
+                "Spanish": 27638,
+                "English": 10411,
+                "Arabic": 30350,
+                "Portuguese": 186,
+                "French": 3038,
+                "Japanese": 563,
+                "undefined": 344
+              }
+            },
+            {
+              "title": "Serbia",
+              "majority": {
+                "title": "Spanish",
+                "value": 29014
+              },
+              "values": {
+                "Spanish": 29014,
+                "English": 28537,
+                "Arabic": 21627,
+                "Portuguese": 26997,
+                "French": 20703,
+                "Japanese": 4057,
+                "undefined": 1175
+              }
+            },
+            {
+              "title": "Slovakia",
+              "majority": {
+                "title": "undefined",
+                "value": 32225
+              },
+              "values": {
+                "Spanish": 2171,
+                "English": 5419,
+                "Arabic": 2511,
+                "Portuguese": 25354,
+                "French": 20866,
+                "Japanese": 6352,
+                "undefined": 32225
+              }
+            },
+            {
+              "title": "Slovenia",
+              "majority": {
+                "title": "Japanese",
+                "value": 32095
+              },
+              "values": {
+                "Spanish": 21015,
+                "English": 18302,
+                "Arabic": 2127,
+                "Portuguese": 29706,
+                "French": 1224,
+                "Japanese": 32095,
+                "undefined": 30205
+              }
+            },
+            {
+              "title": "Spain",
+              "majority": {
+                "title": "Arabic",
+                "value": 31722
+              },
+              "values": {
+                "Spanish": 16180,
+                "English": 8891,
+                "Arabic": 31722,
+                "Portuguese": 16565,
+                "French": 7286,
+                "Japanese": 23728,
+                "undefined": 10581
+              }
+            },
+            {
+              "title": "Svalbard",
+              "majority": {
+                "title": "undefined",
+                "value": 17864
+              },
+              "values": {
+                "Spanish": 14655,
+                "English": 2573,
+                "Arabic": 15826,
+                "Portuguese": 3749,
+                "French": 12927,
+                "Japanese": 4636,
+                "undefined": 17864
+              }
+            },
+            {
+              "title": "Sweden",
+              "majority": {
+                "title": "Japanese",
+                "value": 27000
+              },
+              "values": {
+                "Spanish": 5832,
+                "English": 26717,
+                "Arabic": 1316,
+                "Portuguese": 6011,
+                "French": 9073,
+                "Japanese": 27000,
+                "undefined": 24641
+              }
+            },
+            {
+              "title": "Switzerland",
+              "majority": {
+                "title": "Arabic",
+                "value": 28554
+              },
+              "values": {
+                "Spanish": 18598,
+                "English": 5047,
+                "Arabic": 28554,
+                "Portuguese": 23338,
+                "French": 7711,
+                "Japanese": 6253,
+                "undefined": 21145
+              }
+            },
+            {
+              "title": "Ukraine",
+              "majority": {
+                "title": "undefined",
+                "value": 30097
+              },
+              "values": {
+                "Spanish": 23014,
+                "English": 16615,
+                "Arabic": 29247,
+                "Portuguese": 739,
+                "French": 15951,
+                "Japanese": 14322,
+                "undefined": 30097
+              }
+            },
+            {
+              "title": "United Kingdom",
+              "majority": {
+                "title": "undefined",
+                "value": 28792
+              },
+              "values": {
+                "Spanish": 13703,
+                "English": 21832,
+                "Arabic": 12983,
+                "Portuguese": 28696,
+                "French": 12275,
+                "Japanese": 23486,
+                "undefined": 28792
+              }
+            },
+            {
+              "title": "Vatican City",
+              "majority": {
+                "title": "English",
+                "value": 24081
+              },
+              "values": {
+                "Spanish": 19508,
+                "English": 24081,
+                "Arabic": 22367,
+                "Portuguese": 20559,
+                "French": 3604,
+                "Japanese": 7984,
+                "undefined": 16157
+              }
+            },
+            {
+              "title": "Antigua and Barbuda",
+              "majority": {
+                "title": "Arabic",
+                "value": 30132
+              },
+              "values": {
+                "Spanish": 22012,
+                "English": 1672,
+                "Arabic": 30132,
+                "Portuguese": 12129,
+                "French": 12144,
+                "Japanese": 22437,
+                "undefined": 1406
+              }
+            },
+            {
+              "title": "Barbados",
+              "majority": {
+                "title": "Japanese",
+                "value": 12011
+              },
+              "values": {
+                "Spanish": 9743,
+                "English": 1816,
+                "Arabic": 10011,
+                "Portuguese": 3353,
+                "French": 574,
+                "Japanese": 12011,
+                "undefined": 6741
+              }
+            },
+            {
+              "title": "Belize",
+              "majority": {
+                "title": "Portuguese",
+                "value": 30805
+              },
+              "values": {
+                "Spanish": 17833,
+                "English": 17332,
+                "Arabic": 28722,
+                "Portuguese": 30805,
+                "French": 21908,
+                "Japanese": 17956,
+                "undefined": 3098
+              }
+            },
+            {
+              "title": "Canada",
+              "majority": {
+                "title": "Arabic",
+                "value": 29735
+              },
+              "values": {
+                "Spanish": 3406,
+                "English": 16877,
+                "Arabic": 29735,
+                "Portuguese": 14587,
+                "French": 11262,
+                "Japanese": 2725,
+                "undefined": 11770
+              }
+            },
+            {
+              "title": "Costa Rica",
+              "majority": {
+                "title": "Japanese",
+                "value": 27319
+              },
+              "values": {
+                "Spanish": 10342,
+                "English": 26834,
+                "Arabic": 23920,
+                "Portuguese": 24573,
+                "French": 25073,
+                "Japanese": 27319,
+                "undefined": 2937
+              }
+            },
+            {
+              "title": "Cuba",
+              "majority": {
+                "title": "English",
+                "value": 32450
+              },
+              "values": {
+                "Spanish": 1255,
+                "English": 32450,
+                "Arabic": 28097,
+                "Portuguese": 11717,
+                "French": 4042,
+                "Japanese": 4572,
+                "undefined": 21375
+              }
+            },
+            {
+              "title": "Dominica",
+              "majority": {
+                "title": "English",
+                "value": 31178
+              },
+              "values": {
+                "Spanish": 9319,
+                "English": 31178,
+                "Arabic": 18732,
+                "Portuguese": 23832,
+                "French": 23657,
+                "Japanese": 28573,
+                "undefined": 4946
+              }
+            },
+            {
+              "title": "Dominican Republic",
+              "majority": {
+                "title": "Spanish",
+                "value": 27438
+              },
+              "values": {
+                "Spanish": 27438,
+                "English": 2165,
+                "Arabic": 23234,
+                "Portuguese": 22065,
+                "French": 24431,
+                "Japanese": 14407,
+                "undefined": 17025
+              }
+            },
+            {
+              "title": "El Salvador",
+              "majority": {
+                "title": "English",
+                "value": 31739
+              },
+              "values": {
+                "Spanish": 565,
+                "English": 31739,
+                "Arabic": 31443,
+                "Portuguese": 16549,
+                "French": 3687,
+                "Japanese": 23673,
+                "undefined": 30517
+              }
+            },
+            {
+              "title": "Gaudeloupe",
+              "majority": {
+                "title": "Arabic",
+                "value": 25847
+              },
+              "values": {
+                "Spanish": 1532,
+                "English": 10546,
+                "Arabic": 25847,
+                "Portuguese": 10332,
+                "French": 10891,
+                "Japanese": 10738,
+                "undefined": 17029
+              }
+            },
+            {
+              "title": "Greenland",
+              "majority": {
+                "title": "Portuguese",
+                "value": 22929
+              },
+              "values": {
+                "Spanish": 10102,
+                "English": 17809,
+                "Arabic": 3906,
+                "Portuguese": 22929,
+                "French": 12571,
+                "Japanese": 2370,
+                "undefined": 5634
+              }
+            },
+            {
+              "title": "Grenada",
+              "majority": {
+                "title": "Japanese",
+                "value": 25026
+              },
+              "values": {
+                "Spanish": 15873,
+                "English": 20793,
+                "Arabic": 24128,
+                "Portuguese": 13610,
+                "French": 4371,
+                "Japanese": 25026,
+                "undefined": 15065
+              }
+            },
+            {
+              "title": "Guatemala",
+              "majority": {
+                "title": "Japanese",
+                "value": 26145
+              },
+              "values": {
+                "Spanish": 2642,
+                "English": 24820,
+                "Arabic": 18454,
+                "Portuguese": 12804,
+                "French": 765,
+                "Japanese": 26145,
+                "undefined": 7474
+              }
+            },
+            {
+              "title": "Haiti",
+              "majority": {
+                "title": "Spanish",
+                "value": 30232
+              },
+              "values": {
+                "Spanish": 30232,
+                "English": 20137,
+                "Arabic": 14977,
+                "Portuguese": 11414,
+                "French": 19282,
+                "Japanese": 26007,
+                "undefined": 26175
+              }
+            },
+            {
+              "title": "Honduras",
+              "majority": {
+                "title": "Spanish",
+                "value": 30200
+              },
+              "values": {
+                "Spanish": 30200,
+                "English": 9733,
+                "Arabic": 12378,
+                "Portuguese": 24169,
+                "French": 7594,
+                "Japanese": 28830,
+                "undefined": 7202
+              }
+            },
+            {
+              "title": "Jamaica",
+              "majority": {
+                "title": "English",
+                "value": 30668
+              },
+              "values": {
+                "Spanish": 20810,
+                "English": 30668,
+                "Arabic": 13662,
+                "Portuguese": 10182,
+                "French": 23687,
+                "Japanese": 6705,
+                "undefined": 10199
+              }
+            },
+            {
+              "title": "Martinique",
+              "majority": {
+                "title": "Portuguese",
+                "value": 18979
+              },
+              "values": {
+                "Spanish": 13715,
+                "English": 2300,
+                "Arabic": 8466,
+                "Portuguese": 18979,
+                "French": 11734,
+                "Japanese": 10324,
+                "undefined": 4725
+              }
+            },
+            {
+              "title": "Mexico",
+              "majority": {
+                "title": "French",
+                "value": 28939
+              },
+              "values": {
+                "Spanish": 10727,
+                "English": 15915,
+                "Arabic": 28778,
+                "Portuguese": 3163,
+                "French": 28939,
+                "Japanese": 16772,
+                "undefined": 28771
+              }
+            },
+            {
+              "title": "Nicaragua",
+              "majority": {
+                "title": "French",
+                "value": 18915
+              },
+              "values": {
+                "Spanish": 10668,
+                "English": 17975,
+                "Arabic": 7416,
+                "Portuguese": 15240,
+                "French": 18915,
+                "Japanese": 14604,
+                "undefined": 7505
+              }
+            },
+            {
+              "title": "Panama",
+              "majority": {
+                "title": "Japanese",
+                "value": 26899
+              },
+              "values": {
+                "Spanish": 26084,
+                "English": 10105,
+                "Arabic": 13863,
+                "Portuguese": 8532,
+                "French": 11937,
+                "Japanese": 26899,
+                "undefined": 16086
+              }
+            },
+            {
+              "title": "Puerto Rico",
+              "majority": {
+                "title": "English",
+                "value": 29731
+              },
+              "values": {
+                "Spanish": 7374,
+                "English": 29731,
+                "Arabic": 6507,
+                "Portuguese": 24728,
+                "French": 16483,
+                "Japanese": 19938,
+                "undefined": 12798
+              }
+            },
+            {
+              "title": "Saint Kitts and Nevis",
+              "majority": {
+                "title": "undefined",
+                "value": 31950
+              },
+              "values": {
+                "Spanish": 10327,
+                "English": 21014,
+                "Arabic": 26632,
+                "Portuguese": 9338,
+                "French": 3428,
+                "Japanese": 663,
+                "undefined": 31950
+              }
+            },
+            {
+              "title": "Saint Lucia",
+              "majority": {
+                "title": "Arabic",
+                "value": 19280
+              },
+              "values": {
+                "Spanish": 3814,
+                "English": 4150,
+                "Arabic": 19280,
+                "Portuguese": 1942,
+                "French": 1679,
+                "Japanese": 2274,
+                "undefined": 8494
+              }
+            },
+            {
+              "title": "Saint Vincent and the Grenadines",
+              "majority": {
+                "title": "Arabic",
+                "value": 24922
+              },
+              "values": {
+                "Spanish": 3529,
+                "English": 9654,
+                "Arabic": 24922,
+                "Portuguese": 2096,
+                "French": 6510,
+                "Japanese": 18427,
+                "undefined": 14181
+              }
+            },
+            {
+              "title": "The Bahamas",
+              "majority": {
+                "title": "Japanese",
+                "value": 23628
+              },
+              "values": {
+                "Spanish": 21424,
+                "English": 16783,
+                "Arabic": 8583,
+                "Portuguese": 8802,
+                "French": 8052,
+                "Japanese": 23628,
+                "undefined": 7421
+              }
+            },
+            {
+              "title": "Trinidad and Tobago",
+              "majority": {
+                "title": "undefined",
+                "value": 28295
+              },
+              "values": {
+                "Spanish": 6332,
+                "English": 19828,
+                "Arabic": 14012,
+                "Portuguese": 11294,
+                "French": 12588,
+                "Japanese": 5225,
+                "undefined": 28295
+              }
+            },
+            {
+              "title": "United States",
+              "majority": {
+                "title": "Spanish",
+                "value": 30526
+              },
+              "values": {
+                "Spanish": 30526,
+                "English": 15282,
+                "Arabic": 27418,
+                "Portuguese": 18756,
+                "French": 5994,
+                "Japanese": 28241,
+                "undefined": 23654
+              }
+            },
+            {
+              "title": "Argentina",
+              "majority": {
+                "title": "French",
+                "value": 25082
+              },
+              "values": {
+                "Spanish": 9619,
+                "English": 18262,
+                "Arabic": 8589,
+                "Portuguese": 4112,
+                "French": 25082,
+                "Japanese": 14089,
+                "undefined": 22693
+              }
+            },
+            {
+              "title": "Bolivia",
+              "majority": {
+                "title": "Arabic",
+                "value": 28231
+              },
+              "values": {
+                "Spanish": 5197,
+                "English": 21888,
+                "Arabic": 28231,
+                "Portuguese": 4497,
+                "French": 13327,
+                "Japanese": 13836,
+                "undefined": 27074
+              }
+            },
+            {
+              "title": "Brazil",
+              "majority": {
+                "title": "undefined",
+                "value": 30338
+              },
+              "values": {
+                "Spanish": 6330,
+                "English": 26127,
+                "Arabic": 2171,
+                "Portuguese": 24319,
+                "French": 23676,
+                "Japanese": 8349,
+                "undefined": 30338
+              }
+            },
+            {
+              "title": "Chile",
+              "majority": {
+                "title": "English",
+                "value": 31836
+              },
+              "values": {
+                "Spanish": 21257,
+                "English": 31836,
+                "Arabic": 7719,
+                "Portuguese": 9802,
+                "French": 28633,
+                "Japanese": 4105,
+                "undefined": 24203
+              }
+            },
+            {
+              "title": "Colombia",
+              "majority": {
+                "title": "Portuguese",
+                "value": 28956
+              },
+              "values": {
+                "Spanish": 28613,
+                "English": 17536,
+                "Arabic": 25108,
+                "Portuguese": 28956,
+                "French": 3025,
+                "Japanese": 23578,
+                "undefined": 6767
+              }
+            },
+            {
+              "title": "Ecuador",
+              "majority": {
+                "title": "undefined",
+                "value": 30070
+              },
+              "values": {
+                "Spanish": 21366,
+                "English": 6420,
+                "Arabic": 22387,
+                "Portuguese": 5287,
+                "French": 28930,
+                "Japanese": 4754,
+                "undefined": 30070
+              }
+            },
+            {
+              "title": "Falkland Islands",
+              "majority": {
+                "title": "Spanish",
+                "value": 24033
+              },
+              "values": {
+                "Spanish": 24033,
+                "English": 3912,
+                "Arabic": 5134,
+                "Portuguese": 13914,
+                "French": 5782,
+                "Japanese": 13048,
+                "undefined": 2087
+              }
+            },
+            {
+              "title": "French Guiana",
+              "majority": {
+                "title": "Japanese",
+                "value": 23965
+              },
+              "values": {
+                "Spanish": 1419,
+                "English": 13326,
+                "Arabic": 18870,
+                "Portuguese": 7213,
+                "French": 5721,
+                "Japanese": 23965,
+                "undefined": 9385
+              }
+            },
+            {
+              "title": "Guyana",
+              "majority": {
+                "title": "undefined",
+                "value": 32310
+              },
+              "values": {
+                "Spanish": 5576,
+                "English": 24418,
+                "Arabic": 24992,
+                "Portuguese": 4034,
+                "French": 26183,
+                "Japanese": 24768,
+                "undefined": 32310
+              }
+            },
+            {
+              "title": "Paraguay",
+              "majority": {
+                "title": "Portuguese",
+                "value": 31167
+              },
+              "values": {
+                "Spanish": 4556,
+                "English": 6089,
+                "Arabic": 8435,
+                "Portuguese": 31167,
+                "French": 8504,
+                "Japanese": 28686,
+                "undefined": 3213
+              }
+            },
+            {
+              "title": "Peru",
+              "majority": {
+                "title": "Japanese",
+                "value": 32307
+              },
+              "values": {
+                "Spanish": 18198,
+                "English": 22950,
+                "Arabic": 25882,
+                "Portuguese": 9376,
+                "French": 12686,
+                "Japanese": 32307,
+                "undefined": 16271
+              }
+            },
+            {
+              "title": "Suriname",
+              "majority": {
+                "title": "Arabic",
+                "value": 21637
+              },
+              "values": {
+                "Spanish": 10215,
+                "English": 19629,
+                "Arabic": 21637,
+                "Portuguese": 1736,
+                "French": 8887,
+                "Japanese": 9131,
+                "undefined": 9367
+              }
+            },
+            {
+              "title": "Uruguay",
+              "majority": {
+                "title": "Portuguese",
+                "value": 26949
+              },
+              "values": {
+                "Spanish": 4789,
+                "English": 4515,
+                "Arabic": 25769,
+                "Portuguese": 26949,
+                "French": 24441,
+                "Japanese": 754,
+                "undefined": 945
+              }
+            },
+            {
+              "title": "Venezuela",
+              "majority": {
+                "title": "English",
+                "value": 32453
+              },
+              "values": {
+                "Spanish": 32151,
+                "English": 32453,
+                "Arabic": 25282,
+                "Portuguese": 4465,
+                "French": 21197,
+                "Japanese": 17138,
+                "undefined": 24056
+              }
+            },
+            {
+              "title": "Australia",
+              "majority": {
+                "title": "Arabic",
+                "value": 32737
+              },
+              "values": {
+                "Spanish": 16823,
+                "English": 31535,
+                "Arabic": 32737,
+                "Portuguese": 2031,
+                "French": 23980,
+                "Japanese": 5521,
+                "undefined": 32147
+              }
+            },
+            {
+              "title": "Cook Islands",
+              "majority": {
+                "title": "Portuguese",
+                "value": 30855
+              },
+              "values": {
+                "Spanish": 11996,
+                "English": 7632,
+                "Arabic": 26024,
+                "Portuguese": 30855,
+                "French": 2819,
+                "Japanese": 10169,
+                "undefined": 9488
+              }
+            },
+            {
+              "title": "Federated states of Micronesia",
+              "majority": {
+                "title": "undefined",
+                "value": 23862
+              },
+              "values": {
+                "Spanish": 19415,
+                "English": 13467,
+                "Arabic": 11147,
+                "Portuguese": 22809,
+                "French": 8465,
+                "Japanese": 3202,
+                "undefined": 23862
+              }
+            },
+            {
+              "title": "Fiji",
+              "majority": {
+                "title": "French",
+                "value": 29410
+              },
+              "values": {
+                "Spanish": 14677,
+                "English": 16854,
+                "Arabic": 929,
+                "Portuguese": 17778,
+                "French": 29410,
+                "Japanese": 26421,
+                "undefined": 27933
+              }
+            },
+            {
+              "title": "Kiribati",
+              "majority": {
+                "title": "French",
+                "value": 28813
+              },
+              "values": {
+                "Spanish": 9852,
+                "English": 21623,
+                "Arabic": 8901,
+                "Portuguese": 18243,
+                "French": 28813,
+                "Japanese": 12081,
+                "undefined": 15748
+              }
+            },
+            {
+              "title": "Marshall Islands",
+              "majority": {
+                "title": "Arabic",
+                "value": 30747
+              },
+              "values": {
+                "Spanish": 10032,
+                "English": 543,
+                "Arabic": 30747,
+                "Portuguese": 10354,
+                "French": 13123,
+                "Japanese": 12255,
+                "undefined": 30335
+              }
+            },
+            {
+              "title": "Nauru",
+              "majority": {
+                "title": "Spanish",
+                "value": 23277
+              },
+              "values": {
+                "Spanish": 23277,
+                "English": 22596,
+                "Arabic": 20592,
+                "Portuguese": 2800,
+                "French": 15051,
+                "Japanese": 9553,
+                "undefined": 18406
+              }
+            },
+            {
+              "title": "New Caledonia",
+              "majority": {
+                "title": "Arabic",
+                "value": 31372
+              },
+              "values": {
+                "Spanish": 23314,
+                "English": 27193,
+                "Arabic": 31372,
+                "Portuguese": 20221,
+                "French": 28208,
+                "Japanese": 5974,
+                "undefined": 30342
+              }
+            },
+            {
+              "title": "New Zealand",
+              "majority": {
+                "title": "Spanish",
+                "value": 29213
+              },
+              "values": {
+                "Spanish": 29213,
+                "English": 1659,
+                "Arabic": 10639,
+                "Portuguese": 20074,
+                "French": 1038,
+                "Japanese": 17187,
+                "undefined": 26809
+              }
+            },
+            {
+              "title": "Niue",
+              "majority": {
+                "title": "Spanish",
+                "value": 31977
+              },
+              "values": {
+                "Spanish": 31977,
+                "English": 123,
+                "Arabic": 22296,
+                "Portuguese": 31216,
+                "French": 29673,
+                "Japanese": 6696,
+                "undefined": 24733
+              }
+            },
+            {
+              "title": "Palau",
+              "majority": {
+                "title": "Arabic",
+                "value": 28915
+              },
+              "values": {
+                "Spanish": 20017,
+                "English": 15597,
+                "Arabic": 28915,
+                "Portuguese": 11665,
+                "French": 24249,
+                "Japanese": 13378,
+                "undefined": 11148
+              }
+            },
+            {
+              "title": "Papua New Guinea",
+              "majority": {
+                "title": "undefined",
+                "value": 31578
+              },
+              "values": {
+                "Spanish": 30845,
+                "English": 21277,
+                "Arabic": 19183,
+                "Portuguese": 28916,
+                "French": 27228,
+                "Japanese": 27942,
+                "undefined": 31578
+              }
+            },
+            {
+              "title": "Samoa",
+              "majority": {
+                "title": "Spanish",
+                "value": 32182
+              },
+              "values": {
+                "Spanish": 32182,
+                "English": 27950,
+                "Arabic": 22130,
+                "Portuguese": 23738,
+                "French": 20712,
+                "Japanese": 6971,
+                "undefined": 11212
+              }
+            },
+            {
+              "title": "Solomon Islands",
+              "majority": {
+                "title": "Japanese",
+                "value": 26551
+              },
+              "values": {
+                "Spanish": 320,
+                "English": 11489,
+                "Arabic": 22312,
+                "Portuguese": 25158,
+                "French": 2821,
+                "Japanese": 26551,
+                "undefined": 22715
+              }
+            },
+            {
+              "title": "Tonga",
+              "majority": {
+                "title": "French",
+                "value": 29512
+              },
+              "values": {
+                "Spanish": 25116,
+                "English": 9138,
+                "Arabic": 18303,
+                "Portuguese": 14957,
+                "French": 29512,
+                "Japanese": 17137,
+                "undefined": 26180
+              }
+            },
+            {
+              "title": "Tuvalu",
+              "majority": {
+                "title": "Arabic",
+                "value": 28567
+              },
+              "values": {
+                "Spanish": 21429,
+                "English": 22500,
+                "Arabic": 28567,
+                "Portuguese": 22979,
+                "French": 27663,
+                "Japanese": 12356,
+                "undefined": 26510
+              }
+            },
+            {
+              "title": "Vanuatu",
+              "majority": {
+                "title": "French",
+                "value": 26905
+              },
+              "values": {
+                "Spanish": 6892,
+                "English": 4814,
+                "Arabic": 1231,
+                "Portuguese": 23172,
+                "French": 26905,
+                "Japanese": 10151,
+                "undefined": 4513
+              }
+            },
+            {
+              "title": "",
+              "majority": {
+                "title": "Arabic",
+                "value": 24569
+              },
+              "values": {
+                "Spanish": 9045,
+                "English": 9484,
+                "Arabic": 24569,
+                "Portuguese": 12259,
+                "French": 11321,
+                "Japanese": 24491,
+                "undefined": 21725
+              }
+            }
+          ];
+			    
+          data.config = {
+          
+          };
+          
+          data.groups = [
+            "Chinese (all dialects)",
+						"Spanish",
+						"English",
+						"Arabic",
+						"Portuguese",
+						"French",
+						"Japanese"
+					];
+			    
+		    	buildSVG(data);
+			    
+			});
+		    
+		</script>
+	</head>
+
+	<body>
+		<div class="container">
+			<p>Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor.
+
+Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue.
+
+Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+
+			<p>Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor.
+
+Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue.
+
+Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+		</div>
+	</body>
+<html>
