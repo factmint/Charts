@@ -1,7 +1,0 @@
-	if (! FACTMINT['pieChartHasLoaded'] || document.querySelector("#visualization-preview")) {
-        renderer();
-        FACTMINT['pieChartHasLoaded'] = true;
-    }
-
-    return FACTMINT;
-})(window['factmint'] || {});
