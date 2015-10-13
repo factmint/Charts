@@ -1,0 +1,71 @@
+/*!
+ * Doughnut chart styles
+ */
+
+/* ==========================================================================
+   Configuration
+   ========================================================================== */
+
+@import 'variables';
+@import 'classes';
+
+/* ==========================================================================
+   Plugin style definitions
+   ========================================================================== */
+
+@import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
+
+.fm-hidden {
+	display: none;
+}
+
+.fm-segment {
+	&:hover {
+	  cursor: pointer;
+	}
+	stroke: white;
+	stroke-width: 1;
+}
+
+.fm-label {
+	text {
+		fill: white;
+	}
+}
+
+.fm-doughnnut-tooltip {
+	text {
+		fill: white;
+	}
+}
+
+.fm-bracket {
+	fill: 'none';
+	stroke: #A3ADAD;
+	stroke-dasharray: 2,2;
+}
+
+.fm-doughnut-segment {
+	stroke: white;
+	stroke-width: 1;
+}
+
+.fm-overlay-segment {
+	opacity: 0.5;
+}
+
+.fm-key {
+	text, tspan {
+		font: {
+			size: 12px;
+			family: 'Lato', serif;
+		}
+	}
+	tspan {
+		font-size: 11px;
+	}
+}
+
+.fm-key-container {
+	stroke-width: 1;
+}

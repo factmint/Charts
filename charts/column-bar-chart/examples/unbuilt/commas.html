@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="">
+	<head>
+		<meta charset="utf-8">
+		<title>Column/bar chart</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="../../src/style/column-bar.css">
+
+		<script data-main="../../src/scripts/main" src="../../bower_components/requirejs/require.js"></script>
+		<style>
+			p {
+				word-wrap: break-word;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div style="width: 600px; height: 400px">
+			<script>
+				window['1'] = {
+					yLabel: "Share performance",
+					xLabel: "Date"
+				};
+			</script>
+			<table data-fm-config="1" class="fm-column-bar">
+<thead>
+					<tr>
+						<th>Date</th>
+						<th>High</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>20/03/2014</td>
+						<td>9,000</td>
+					</tr>
+					<tr>
+						<td>21/03/2014</td>
+						<td>9,000</td>
+					</tr>
+					<tr>
+						<td>22/03/2014</td>
+						<td>9,000</td>
+					</tr>
+					<tr>
+						<td>23/03/2014</td>
+						<td>9,000</td>
+					</tr>
+					<tr>
+						<td>24/03/2014</td>
+						<td>10,000</td>
+					</tr>
+					<tr>
+						<td>25/03/2014</td>
+						<td>10,000</td>
+					</tr>
+					<tr>
+						<td>26/03/2014</td>
+						<td>9,000</td>
+					</tr>
+					<tr>
+						<td>27/03/2014</td>
+						<td>10,000</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

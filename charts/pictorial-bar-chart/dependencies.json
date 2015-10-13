@@ -1,0 +1,15 @@
+{
+	"Config": "./config",
+	"snap": "../../bower_components/Snap.svg/dist/snap.svg",
+	"almond": "../../node_modules/almond/almond",
+	"classList": "../../bower_components/classList.js/classList.min",
+	"axis": "../../bower_components/axis/dist/axis",
+	"grid-lines": "../../bower_components/grid-lines/dist/grid-lines",
+	"scale-utils": "../../bower_components/scale-utilities/dist/scale-utils",
+	"number-utils": "../../bower_components/number-utils/dist/number-utils",
+	"color-utils": "../../bower_components/color-utils/dist/color",
+	"tick-mark": "../../bower_components/tick-mark/dist/tick-mark",
+	"multitext": "../../bower_components/multitext/dist/multitext",
+	"pictorial-key": "../../bower_components/pictorial-key/dist/pictorial-key",
+	"Tooltip": "../../bower_components/Tooltip/dist/Tooltip"
+}

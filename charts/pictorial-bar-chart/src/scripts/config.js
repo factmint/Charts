@@ -1,0 +1,42 @@
+define(function() {
+	return {
+		// Global settings
+		FONT_FAMILY: "'Lato', sans-serif",
+		TEXT_SIZE_SMALL: 12,
+		TEXT_SIZE_MEDIUM: 14.4,
+		TOP_PADDING: 50,
+		BOTTOM_PADDING: 80,
+		LEFT_PADDING: 10,
+		RIGHT_PADDING: 10,
+		
+		// Spillover size
+		SPILLOVER_TOP: 0.1,
+		SPILLOVER_RIGHT: 0,
+		SPILLOVER_BOTTOM: 0,
+		SPILLOVER_LEFT: 0,
+		
+		// Tick mark configuration
+		TICK_MARK_HORIZONTAL_PADDING: 10,
+		TICK_MARK_VERTICAL_PADDING: 10,
+		TICK_MARK_FONT_WEIGHT: 300,
+		TOTAL_WIDTH_TO_X_TICK_RATIO: 1,
+		ABBREVIATE_LABELS_THRESHOLD: 380,
+		
+		// Group axis
+		NUMBER_OF_Y_PADDING_POINTS: 1/4,
+		NUMBER_OF_X_PADDING_POINTS: 1/2,
+		
+		// Symbol specific stuff
+		GLYPH_BLACK_PROPORTION: 0.7,
+		GLYPHS_ACROSS: 10, // TODO: this could be an option
+		
+		// Key config
+		KEY_PADDING: 20,
+		KEY_GLYPH_BOTTOM_PADDING: 15,
+		KEY_GLYPH_LEFT_PADDING: 20,
+		KEY_GLYPH_RIGHT_PADDING: 10,
+		KEY_GLYPH_FONT_SIZE: 32,
+		KEY_LABEL_FONT_SIZE: 18,
+		KEY_LABEL_FONT_FAMILY: 'Lato, sans-serif'
+	}
+});
