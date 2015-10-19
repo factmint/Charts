@@ -1,5 +1,0 @@
-enableSpillover
-height
-valuePrefix
-valueSuffix
-width

@@ -1,9 +1,0 @@
-dateFormat
-enableSpillover
-height
-includeZero
-percent
-valuePrefix
-valueSuffix
-width
-yLabel

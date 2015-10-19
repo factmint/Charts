@@ -1,5 +1,0 @@
-disableSpillover
-height
-keyType
-targetNumberOfIncrements
-width

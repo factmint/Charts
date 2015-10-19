@@ -1,7 +1,0 @@
-basicMode
-enableSpillover
-height
-maxKeyEntries
-valuePrefix
-valueSuffix
-width
