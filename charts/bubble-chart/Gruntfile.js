@@ -33,8 +33,15 @@ module.exports = function(grunt) {
 			}
 		},
 		clean: {
+			options: {
+				force: true
+			},
 			release: {
-				src: ['dist/'],
+				src: [
+					'../../dist/<%= pkg.releaseName %>-options.txt',
+					'../../dist/<%= pkg.releaseName %>.min.js',
+					'../../dist/<%= pkg.releaseName %>.min.css'
+				],
 			},
 			up: {
 				src: ['temp']
@@ -60,7 +67,7 @@ module.exports = function(grunt) {
 				expand: true,
 				flatten: true,
 				src: 'temp/<%= pkg.releaseName %>.min.css',
-				dest: 'dist/'
+				dest: '../../dist/'
 			}
 		},
 		requirejs: {
@@ -69,7 +76,7 @@ module.exports = function(grunt) {
 					baseUrl: "./src/scripts",
 					name: "almond",
 					include: ["main"],
-					out: "dist/<%= pkg.releaseName %>.js",
+					out: "temp/<%= pkg.releaseName %>.js",
 					paths: dependencies,
 					shim: {
 						'snap': {
@@ -83,7 +90,7 @@ module.exports = function(grunt) {
 		closurecompiler: {
 			release: {
 				files: {
-					'dist/<%= pkg.releaseName %>.min.js': ['dist/<%= pkg.releaseName %>.js'],
+					'../../dist/<%= pkg.releaseName %>.min.js': ['temp/<%= pkg.releaseName %>.js'],
 				},
 				options: {
 					'language_in': 'ECMASCRIPT5_STRICT',
@@ -94,7 +101,7 @@ module.exports = function(grunt) {
 		},
 		exec: {
 			bower: 'bower update',
-			document: 'grep --only-matching --no-filename "options\\.[a-zA-Z]*" src/scripts/*.js | sort | uniq | cut -d. -f2 > dist/options.txt'
+			document: 'grep --only-matching --no-filename "options\\.[a-zA-Z]*" src/scripts/*.js | sort | uniq | cut -d. -f2 > ../../dist/<%= pkg.releaseName %>-options.txt'
 		},
 		watch: {
             options: {

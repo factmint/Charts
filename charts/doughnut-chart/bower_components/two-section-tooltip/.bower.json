@@ -1,0 +1,32 @@
+{
+  "name": "two-section-tooltip",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A tooltip with a main section and a secondary section (both on same line)",
+  "main": "dist/two-section-tooltip.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Tooltip": "https://github.com/factmint/tooltip.git"
+  },
+  "_release": "2c187b5f01",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "2c187b5f01e19caa3e3566eccc1c4024d1c5da23"
+  },
+  "_source": "https://github.com/factmint/two-section-tooltip.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/factmint/two-section-tooltip.git"
+}

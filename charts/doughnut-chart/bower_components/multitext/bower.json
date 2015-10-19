@@ -1,0 +1,22 @@
+{
+  "name": "multitext",
+  "version": "0.1.0",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Create multi-line text using Snap.svg by splitting a single string by \\n",
+  "main": "dist/multiline.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

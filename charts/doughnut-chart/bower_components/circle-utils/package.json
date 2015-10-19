@@ -1,0 +1,15 @@
+{
+  "name": "circle-utils",
+  "version": "1.0.1",
+  "description": "Utilities for dealing with circles",
+  "main": "dist/circle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.assembla.com/descartes_diaphragm.circle-utils.git"
+  },
+  "author": "Benjamin Brown",
+  "license": "ISC"
+}

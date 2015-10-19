@@ -1,0 +1,22 @@
+{
+  "name": "color-utils",
+  "version": "0.1.0",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A namespace to help when working with the colour wheel according to the Factmint design spec",
+  "main": "dist/color.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

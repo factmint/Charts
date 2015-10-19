@@ -1,0 +1,30 @@
+{
+  "name": "scale-utilities",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "A set of utilities for dealing with scales and axes",
+  "main": "dist/scale-utilities.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "fe7cdc0563",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "fe7cdc0563d6a03b036c0f6f05d367e5a5e5a319"
+  },
+  "_source": "https://github.com/factmint/scale-utilities.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/factmint/scale-utilities.git"
+}

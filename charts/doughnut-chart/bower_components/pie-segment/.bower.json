@@ -1,0 +1,33 @@
+{
+  "name": "pie-segment",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Draw a segment of a circle using Snap.svg",
+  "dependencies": {
+    "circle-utils": "https://git.assembla.com/descartes_diaphragm.circle-utils.git"
+  },
+  "main": "dist/pie-segment.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "e4d1d3b108",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e4d1d3b1083a278cb8a20c05abd6c61c14e2ad78"
+  },
+  "_source": "https://github.com/factmint/pie-segment.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/factmint/pie-segment.git"
+}

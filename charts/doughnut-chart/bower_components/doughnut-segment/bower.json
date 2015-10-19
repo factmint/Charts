@@ -1,0 +1,25 @@
+{
+  "name": "doughnut-segment",
+  "version": "0.1.0",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Draw a segment of a doughnut shape (a circle with a hole in the middle)using Snap.svg",
+  "dependencies": {
+    "circle-utils": "https://github.com/factmint/circle-utils.git"
+  },
+  "main": "dist/doughnut-segment.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

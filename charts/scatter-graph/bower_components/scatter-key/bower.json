@@ -1,0 +1,24 @@
+{
+  "name": "scatter-key",
+  "version": "1.0.0",
+  "authors": [
+    "Benjamin Brown <ben.brown@factmint.com>"
+  ],
+  "description": "Key for scatter graph",
+  "main": "dist/scatter-key.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://factmint.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "key": "https://github.com/factmint/key.git"
+  }
+}
