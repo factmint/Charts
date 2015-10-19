@@ -4,24 +4,24 @@ Factmint Charts allows you to create interactive data visualizations, which can 
 
 ## Getting started
 
-First, clone this repository with `git clone https://github.com/factmint/Charts.git`. Then navigate to `/api` and run `npm install`.
+First, clone this repository with `git clone https://github.com/factmint/Charts.git`. Then run `npm install` from the project root.
 
-To see running examples, navigate to the directory of a given chart in the terminal and (if it's the first time) `npm install` and `grunt install`. Finally, run `grunt serve`.
+To see running examples, navigate to the directory of a given chart in the terminal and (if it's the first time) `npm install` and `grunt install`. Finally, run `grunt serve` from the project root (not the chart directory).
 
 e.g.
 
 ```
 cd choropleth-uk-constituencies
-npm install
-grunt install
+npm install && grunt install
+cd ../../
 grunt serve
 ```
 
-This will start a web server. You should see a message telling you which port it is running on (e.g. "Started connect web server on http://0.0.0.0:15009"). You can now navigate to http://locahost:15009 (the port number will be different if 15009 was not open when you ran `grunt serve`, so be sure to check), where you will see a directory listing. If you look in the `examples/unbuilt/` directory, you will find example use cases.
+This will start a web server. You should see a message telling you which port it is running on (e.g. "Started connect web server on http://0.0.0.0:15002"). You can now navigate to http://locahost:15002 (the port number will be different if 15002 was not open when you ran `grunt serve`, so be sure to check), where you will see a directory listing. If you look in the `examples/unbuilt/` directory, you will find example use cases.
 
 ## Building a chart
 
-Once you have tested a chart and decided you would like to use it in a live scenario, you will probably want to build a standalone minified script. To achieve this, run `grunt build` from the chart's root directory. This will create a `dist/` directory containing four files: a standalone script, a minified standalone script, a minified CSS file, and a text file containing all of the available options for the given chart. Having generated these files, you can see an example using a built script by running `grunt serve` from the chart's root directory, and navigating to the `examples/built/` directory in your browser.
+Once you have tested a chart and decided you would like to use it in a live scenario, you will probably want to build a standalone minified script. To achieve this, run `grunt build` from the chart's root directory. This will create three files in the `/dist/` directory: a minified standalone script, a minified CSS file, and a text file containing all of the available options for the given chart. You can see examples using the built script under `examples/built/` in the chart's directory.
 
 ## Tests
 
