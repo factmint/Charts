@@ -25,7 +25,7 @@ Once you have tested a chart and decided you would like to use it in a live scen
 
 ## Tests
 
-To see unit tests for the API, run `grunt serve` from the `/api` directory and navigate to http://localhost:1500X/test in your browser. To see unit tests for each chart, run `grunt serve` from the chart's directory and navigate to `test/`.
+To see unit tests for the API, navigate to `api/test` in your browser.
 
 ## Charts
 
