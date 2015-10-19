@@ -1,10 +1,10 @@
 "use strict";
 require.config({
 	paths: {
-		"Color-scale-key": "/components/color-scale-key",
-		"number": "/utilities/number",
+		"Color-scale-key": "/api/components/color-scale-key",
+		"number": "/api/utilities/number",
 		"QUnit": "/node_modules/qunitjs/qunit/qunit",
-		"scale": "/utilities/scale",
+		"scale": "/api/utilities/scale",
 		"svg-js": "/node_modules/svg.js/dist/svg"
 	},
 	shim: {

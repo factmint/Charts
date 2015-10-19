@@ -8,30 +8,6 @@ module.exports = function(grunt) {
 	
 	grunt.initConfig ({
 		pkg: grunt.file.readJSON('package.json'),
-		connect: {
-			options: {
-				base: '.'
-			},
-			dev: {
-				options: {
-					port: 15009
-				}
-			},
-			test: {
-				options: {
-					keepalive: false,
-					port: 15008
-				}
-			}
-		},
-		qunit: {
-			tests: {
-				options: {
-					httpBase: 'http://localhost:15008'
-				},
-				src: 'test/*.html'
-			}
-		},
 		clean: {
 			options: {
 				force: true
@@ -102,26 +78,10 @@ module.exports = function(grunt) {
 		exec: {
 			bower: 'bower update',
 			document: 'grep --only-matching --no-filename "options\\.[a-zA-Z]*" src/scripts/*.js | sort | uniq | cut -d. -f2 > ../../dist/<%= pkg.releaseName %>-options.txt'
-		},
-		watch: {
-            options: {
-                livereload: true
-            },
-			css: {
-				files: ['src/style/*.scss'],
-				tasks: ['sass']
-			},
-			js: {
-				files: ['src/scripts/*.js'],
-			}
 		}
 	});
 
-	grunt.registerTask('install', [
-		'exec:bower' // Run bower update
-	]);
-	grunt.registerTask('serve', ['sass', 'connect:dev', 'openport:watch.options.livereload:35729:40000', 'watch']);
-	grunt.registerTask('test', ['sass', 'autoprefixer', 'closurecompiler', 'connect:test', 'qunit']);
+	grunt.registerTask('install', ['exec:bower']);
 	grunt.registerTask('build', [
 		'clean:release', // Make sure no files from previous releases are left around
 		'requirejs', // Build the r.js single file script

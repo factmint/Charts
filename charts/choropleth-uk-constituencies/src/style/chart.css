@@ -118,133 +118,133 @@
 
 /* Colour tint classes */
 .fm-datum-color-wheel-a.tint-1 {
-  fill: #ecb847; }
+  fill: #edb948; }
 
 .fm-datum-color-wheel-a.tint-2 {
-  fill: #edbc51; }
+  fill: #eebc51; }
 
 .fm-datum-color-wheel-a.tint-3 {
-  fill: #eec05a; }
+  fill: #efc05b; }
 
 .fm-datum-color-wheel-a.tint-4 {
-  fill: #efc364; }
+  fill: #f0c465; }
 
 .fm-datum-color-wheel-a.tint-5 {
-  fill: #f0c76e; }
+  fill: #f1c86e; }
 
 .fm-datum-color-wheel-a.tint-6 {
-  fill: #f1cb77; }
+  fill: #f2cb78; }
 
 .fm-datum-color-wheel-a.tint-7 {
-  fill: #f2ce81; }
+  fill: #f3cf82; }
 
 .fm-datum-color-wheel-a.tint-8 {
-  fill: #f3d28b; }
+  fill: #f4d38b; }
 
 .fm-datum-color-wheel-a.tint-9 {
-  fill: #f4d694; }
+  fill: #f5d695; }
 
 .fm-datum-color-wheel-a.tint-10 {
-  fill: #f5da9e; }
+  fill: #f6da9f; }
 
 .fm-datum-color-wheel-a.inactive {
   fill: #faeac9; }
 
 .fm-datum-color-wheel-b.tint-1 {
-  fill: #8fc684; }
+  fill: #90c684; }
 
 .fm-datum-color-wheel-b.tint-2 {
-  fill: #95c98a; }
+  fill: #96c98b; }
 
 .fm-datum-color-wheel-b.tint-3 {
-  fill: #9bcc91; }
+  fill: #9ccc91; }
 
 .fm-datum-color-wheel-b.tint-4 {
-  fill: #a1cf97; }
+  fill: #a1cf98; }
 
 .fm-datum-color-wheel-b.tint-5 {
   fill: #a7d29e; }
 
 .fm-datum-color-wheel-b.tint-6 {
-  fill: #add5a4; }
+  fill: #add5a5; }
 
 .fm-datum-color-wheel-b.tint-7 {
-  fill: #b2d8ab; }
+  fill: #b3d8ab; }
 
 .fm-datum-color-wheel-b.tint-8 {
-  fill: #b8dbb1; }
+  fill: #b9dbb2; }
 
 .fm-datum-color-wheel-b.tint-9 {
-  fill: #bedeb8; }
+  fill: #bfdeb8; }
 
 .fm-datum-color-wheel-b.tint-10 {
-  fill: #c4e1be; }
+  fill: #c5e1bf; }
 
 .fm-datum-color-wheel-b.inactive {
   fill: #e9f4e6; }
 
 .fm-datum-color-wheel-c.tint-1 {
-  fill: #8db563; }
+  fill: #8eb663; }
 
 .fm-datum-color-wheel-c.tint-2 {
-  fill: #93b96b; }
+  fill: #94ba6b; }
 
 .fm-datum-color-wheel-c.tint-3 {
-  fill: #99bd73; }
+  fill: #9abe74; }
 
 .fm-datum-color-wheel-c.tint-4 {
-  fill: #9fc17b; }
+  fill: #a0c17c; }
 
 .fm-datum-color-wheel-c.tint-5 {
-  fill: #a5c584; }
+  fill: #a6c584; }
 
 .fm-datum-color-wheel-c.tint-6 {
-  fill: #abc98c; }
+  fill: #acc98c; }
 
 .fm-datum-color-wheel-c.tint-7 {
-  fill: #b1cc94; }
+  fill: #b2cd94; }
 
 .fm-datum-color-wheel-c.tint-8 {
-  fill: #b7d09c; }
+  fill: #b8d19d; }
 
 .fm-datum-color-wheel-c.tint-9 {
-  fill: #bdd4a4; }
+  fill: #bed5a5; }
 
 .fm-datum-color-wheel-c.tint-10 {
-  fill: #c3d8ad; }
+  fill: #c4d9ad; }
 
 .fm-datum-color-wheel-c.inactive {
   fill: #d4e3c3; }
 
 .fm-datum-color-wheel-d.tint-1 {
-  fill: #4ea07c; }
+  fill: #4ea17d; }
 
 .fm-datum-color-wheel-d.tint-2 {
-  fill: #57a583; }
+  fill: #58a684; }
 
 .fm-datum-color-wheel-d.tint-3 {
-  fill: #60aa8a; }
+  fill: #61ab8b; }
 
 .fm-datum-color-wheel-d.tint-4 {
-  fill: #6aaf91; }
+  fill: #6ab091; }
 
 .fm-datum-color-wheel-d.tint-5 {
-  fill: #73b498; }
+  fill: #74b598; }
 
 .fm-datum-color-wheel-d.tint-6 {
-  fill: #7cb99f; }
+  fill: #7dba9f; }
 
 .fm-datum-color-wheel-d.tint-7 {
-  fill: #86bea5; }
+  fill: #86bfa6; }
 
 .fm-datum-color-wheel-d.tint-8 {
-  fill: #8fc3ac; }
+  fill: #8fc4ad; }
 
 .fm-datum-color-wheel-d.tint-9 {
-  fill: #98c8b3; }
+  fill: #99c9b4; }
 
 .fm-datum-color-wheel-d.tint-10 {
-  fill: #a2cdba; }
+  fill: #a2cebb; }
 
 .fm-datum-color-wheel-d.inactive {
   fill: #a3d7c0; }
@@ -253,163 +253,163 @@
   fill: #3cb3e6; }
 
 .fm-datum-color-wheel-e.tint-2 {
-  fill: #46b7e7; }
+  fill: #47b7e8; }
 
 .fm-datum-color-wheel-e.tint-3 {
-  fill: #50bbe8; }
+  fill: #51bbe9; }
 
 .fm-datum-color-wheel-e.tint-4 {
   fill: #5bbfea; }
 
 .fm-datum-color-wheel-e.tint-5 {
-  fill: #65c3eb; }
+  fill: #65c3ec; }
 
 .fm-datum-color-wheel-e.tint-6 {
-  fill: #6fc7ec; }
+  fill: #70c7ed; }
 
 .fm-datum-color-wheel-e.tint-7 {
-  fill: #79cbee; }
+  fill: #7acbee; }
 
 .fm-datum-color-wheel-e.tint-8 {
   fill: #84cfef; }
 
 .fm-datum-color-wheel-e.tint-9 {
-  fill: #8ed3f0; }
+  fill: #8ed3f1; }
 
 .fm-datum-color-wheel-e.tint-10 {
-  fill: #98d7f2; }
+  fill: #99d7f2; }
 
 .fm-datum-color-wheel-e.inactive {
   fill: #bae4f6; }
 
 .fm-datum-color-wheel-f.tint-1 {
-  fill: #3485bc; }
+  fill: #3585bd; }
 
 .fm-datum-color-wheel-f.tint-2 {
-  fill: #3f8bc0; }
+  fill: #3f8cc0; }
 
 .fm-datum-color-wheel-f.tint-3 {
-  fill: #4992c3; }
+  fill: #4a92c4; }
 
 .fm-datum-color-wheel-f.tint-4 {
-  fill: #5498c7; }
+  fill: #5599c7; }
 
 .fm-datum-color-wheel-f.tint-5 {
-  fill: #5f9fca; }
+  fill: #5f9fcb; }
 
 .fm-datum-color-wheel-f.tint-6 {
-  fill: #69a5ce; }
+  fill: #6aa5ce; }
 
 .fm-datum-color-wheel-f.tint-7 {
-  fill: #74abd1; }
+  fill: #75acd2; }
 
 .fm-datum-color-wheel-f.tint-8 {
   fill: #7fb2d5; }
 
 .fm-datum-color-wheel-f.tint-9 {
-  fill: #89b8d8; }
+  fill: #8ab9d9; }
 
 .fm-datum-color-wheel-f.tint-10 {
-  fill: #94bfdc; }
+  fill: #95bfdc; }
 
 .fm-datum-color-wheel-f.inactive {
   fill: #95c6e7; }
 
 .fm-datum-color-wheel-g.tint-1 {
-  fill: #416791; }
+  fill: #426792; }
 
 .fm-datum-color-wheel-g.tint-2 {
-  fill: #4b6f97; }
+  fill: #4c6f98; }
 
 .fm-datum-color-wheel-g.tint-3 {
-  fill: #55779d; }
+  fill: #56779d; }
 
 .fm-datum-color-wheel-g.tint-4 {
-  fill: #5f7fa3; }
+  fill: #607fa3; }
 
 .fm-datum-color-wheel-g.tint-5 {
-  fill: #6987a8; }
+  fill: #6a87a9; }
 
 .fm-datum-color-wheel-g.tint-6 {
-  fill: #738fae; }
+  fill: #748faf; }
 
 .fm-datum-color-wheel-g.tint-7 {
-  fill: #7d97b4; }
+  fill: #7e97b4; }
 
 .fm-datum-color-wheel-g.tint-8 {
-  fill: #879fba; }
+  fill: #889fba; }
 
 .fm-datum-color-wheel-g.tint-9 {
-  fill: #91a7bf; }
+  fill: #92a7c0; }
 
 .fm-datum-color-wheel-g.tint-10 {
-  fill: #9bafc5; }
+  fill: #9cafc6; }
 
 .fm-datum-color-wheel-g.inactive {
   fill: #8cacd1; }
 
 .fm-datum-color-wheel-h.tint-1 {
-  fill: #b27ab3; }
+  fill: #b27bb3; }
 
 .fm-datum-color-wheel-h.tint-2 {
-  fill: #b681b7; }
+  fill: #b682b7; }
 
 .fm-datum-color-wheel-h.tint-3 {
-  fill: #ba88bb; }
+  fill: #ba89bb; }
 
 .fm-datum-color-wheel-h.tint-4 {
-  fill: #be8fbf; }
+  fill: #be90bf; }
 
 .fm-datum-color-wheel-h.tint-5 {
-  fill: #c296c3; }
+  fill: #c297c3; }
 
 .fm-datum-color-wheel-h.tint-6 {
-  fill: #c69dc7; }
+  fill: #c69ec7; }
 
 .fm-datum-color-wheel-h.tint-7 {
-  fill: #caa4cb; }
+  fill: #caa5cb; }
 
 .fm-datum-color-wheel-h.tint-8 {
-  fill: #ceabcf; }
+  fill: #ceaccf; }
 
 .fm-datum-color-wheel-h.tint-9 {
-  fill: #d2b2d3; }
+  fill: #d2b3d3; }
 
 .fm-datum-color-wheel-h.tint-10 {
-  fill: #d6b9d7; }
+  fill: #d7bad7; }
 
 .fm-datum-color-wheel-h.inactive {
   fill: #e7d5e7; }
 
 .fm-datum-color-wheel-i.tint-1 {
-  fill: #7a4e8e; }
+  fill: #7b4e8f; }
 
 .fm-datum-color-wheel-i.tint-2 {
-  fill: #815794; }
+  fill: #825895; }
 
 .fm-datum-color-wheel-i.tint-3 {
-  fill: #88609a; }
+  fill: #89619b; }
 
 .fm-datum-color-wheel-i.tint-4 {
-  fill: #8f6aa0; }
+  fill: #906aa1; }
 
 .fm-datum-color-wheel-i.tint-5 {
-  fill: #9673a6; }
+  fill: #9774a7; }
 
 .fm-datum-color-wheel-i.tint-6 {
-  fill: #9d7cac; }
+  fill: #9e7dac; }
 
 .fm-datum-color-wheel-i.tint-7 {
-  fill: #a486b2; }
+  fill: #a586b2; }
 
 .fm-datum-color-wheel-i.tint-8 {
-  fill: #ab8fb8; }
+  fill: #ac8fb8; }
 
 .fm-datum-color-wheel-i.tint-9 {
-  fill: #b298be; }
+  fill: #b399be; }
 
 .fm-datum-color-wheel-i.tint-10 {
-  fill: #b9a2c4; }
+  fill: #baa2c4; }
 
 .fm-datum-color-wheel-i.inactive {
   fill: #bd9bcc; }
@@ -418,97 +418,97 @@
   fill: #ab3a65; }
 
 .fm-datum-color-wheel-j.tint-2 {
-  fill: #af446d; }
+  fill: #b0456d; }
 
 .fm-datum-color-wheel-j.tint-3 {
   fill: #b44f75; }
 
 .fm-datum-color-wheel-j.tint-4 {
-  fill: #b8597d; }
+  fill: #b9597d; }
 
 .fm-datum-color-wheel-j.tint-5 {
-  fill: #bd6385; }
+  fill: #bd6486; }
 
 .fm-datum-color-wheel-j.tint-6 {
-  fill: #c16e8d; }
+  fill: #c16e8e; }
 
 .fm-datum-color-wheel-j.tint-7 {
-  fill: #c57895; }
+  fill: #c67896; }
 
 .fm-datum-color-wheel-j.tint-8 {
-  fill: #ca829d; }
+  fill: #ca839e; }
 
 .fm-datum-color-wheel-j.tint-9 {
-  fill: #ce8da5; }
+  fill: #cf8da6; }
 
 .fm-datum-color-wheel-j.tint-10 {
-  fill: #d397ae; }
+  fill: #d398ae; }
 
 .fm-datum-color-wheel-j.inactive {
   fill: #df91ae; }
 
 .fm-datum-color-wheel-k.tint-1 {
-  fill: #d2444c; }
+  fill: #d2454c; }
 
 .fm-datum-color-wheel-k.tint-2 {
-  fill: #d44e55; }
+  fill: #d54f56; }
 
 .fm-datum-color-wheel-k.tint-3 {
   fill: #d7585f; }
 
 .fm-datum-color-wheel-k.tint-4 {
-  fill: #d96268; }
+  fill: #d96269; }
 
 .fm-datum-color-wheel-k.tint-5 {
-  fill: #db6c72; }
+  fill: #dc6c72; }
 
 .fm-datum-color-wheel-k.tint-6 {
-  fill: #de757b; }
+  fill: #de767b; }
 
 .fm-datum-color-wheel-k.tint-7 {
-  fill: #e07f84; }
+  fill: #e08085; }
 
 .fm-datum-color-wheel-k.tint-8 {
-  fill: #e2898e; }
+  fill: #e3898e; }
 
 .fm-datum-color-wheel-k.tint-9 {
-  fill: #e59397; }
+  fill: #e59398; }
 
 .fm-datum-color-wheel-k.tint-10 {
-  fill: #e79da1; }
+  fill: #e89da1; }
 
 .fm-datum-color-wheel-k.inactive {
   fill: #eeb6b9; }
 
 .fm-datum-color-wheel-l.tint-1 {
-  fill: #dd8940; }
+  fill: #de8940; }
 
 .fm-datum-color-wheel-l.tint-2 {
-  fill: #df8f4a; }
+  fill: #e08f4a; }
 
 .fm-datum-color-wheel-l.tint-3 {
-  fill: #e19554; }
+  fill: #e19654; }
 
 .fm-datum-color-wheel-l.tint-4 {
-  fill: #e39b5e; }
+  fill: #e39c5e; }
 
 .fm-datum-color-wheel-l.tint-5 {
-  fill: #e4a268; }
+  fill: #e5a268; }
 
 .fm-datum-color-wheel-l.tint-6 {
-  fill: #e6a872; }
+  fill: #e7a872; }
 
 .fm-datum-color-wheel-l.tint-7 {
   fill: #e8ae7c; }
 
 .fm-datum-color-wheel-l.tint-8 {
-  fill: #eab486; }
+  fill: #eab586; }
 
 .fm-datum-color-wheel-l.tint-9 {
-  fill: #ebba90; }
+  fill: #ecbb90; }
 
 .fm-datum-color-wheel-l.tint-10 {
-  fill: #edc19a; }
+  fill: #eec19b; }
 
 .fm-datum-color-wheel-l.inactive {
   fill: #f3d3b8; }

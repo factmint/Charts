@@ -3,9 +3,9 @@ require.config({
 	paths: {
 		"QUnit": "/node_modules/qunitjs/qunit/qunit",
 		"svg-js": "/node_modules/svg.js/dist/svg",
-		"Circle-segment": "/inventions/circle-segment",
-		"path": "../../node_modules/paths-js/dist/amd/path",
-		"geometry": "/utilities/geometry"
+		"Circle-segment": "/api/inventions/circle-segment",
+		"path": "/node_modules/paths-js/dist/amd/path",
+		"geometry": "/api/utilities/geometry"
 	},
 	shim: {
 		"QUnit": {

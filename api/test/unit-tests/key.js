@@ -1,15 +1,15 @@
 "use strict";
 require.config({
 	paths: {
-		"Color": "/utilities/color",
-		"path": "../../node_modules/paths-js/dist/amd/path",
-		"Key": "/components/key",
+		"Color": "/api/utilities/color",
+		"path": "/node_modules/paths-js/dist/amd/path",
+		"Key": "/api/components/key",
 		"QUnit": "/node_modules/qunitjs/qunit/qunit",
 		"svg-js": "/node_modules/svg.js/dist/svg",
-		'flow': '/inventions/flow',
-		'float': '/etc/float',
-		'grid': '/etc/grid',
-		'center': '/etc/center'
+		'flow': '/api/inventions/flow',
+		'float': '/api/etc/float',
+		'grid': '/api/etc/grid',
+		'center': '/api/etc/center'
 	},
 	shim: {
 		"QUnit": {

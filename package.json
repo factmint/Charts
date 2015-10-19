@@ -1,7 +1,7 @@
 {
   "name": "factmint-charts-api",
   "version": "0.1.3",
-  "description": "Some tools build on SVG.js and Paths.js for building data visualizations",
+  "description": "Some tools built on SVG.js and Paths.js for creating data visualizations",
   "repository": {
     "type": "git",
     "url": "https://chrismichaelscott@bitbucket.org/factmint/factmint-charts.git"

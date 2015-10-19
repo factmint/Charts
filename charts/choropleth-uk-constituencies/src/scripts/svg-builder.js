@@ -1,10 +1,12 @@
 define([
 	"renderer",
-	"configuration"
+	"configuration",
+	"svg-js"
 ],
 function(
 	renderer,
-	Configuration
+	Configuration,
+	SVG
 ) {
 
 function attributeToCamelCase(attribute) {

@@ -1,15 +1,15 @@
 "use strict";
 require.config({
 	paths: {
-		"color": "/utilities/color",
+		"color": "/api/utilities/color",
 		"QUnit": "/node_modules/qunitjs/qunit/qunit",
 		"svg-js": "/node_modules/svg.js/dist/svg",
-		"MultiMeasureTooltip": "/components/multi-measure-tooltip",
-		"Tooltip": "/components/tooltip",
-		"TwoSectionTooltip": "/components/two-section-tooltip",
-		"tooltip-background": "/inventions/tooltip-background",
-		"G.unshift": "/extensions/G.unshift",
-		"path": "../../node_modules/paths-js/dist/amd/path"
+		"MultiMeasureTooltip": "/api/components/multi-measure-tooltip",
+		"Tooltip": "/api/components/tooltip",
+		"TwoSectionTooltip": "/api/components/two-section-tooltip",
+		"tooltip-background": "/api/inventions/tooltip-background",
+		"G.unshift": "/api/extensions/G.unshift",
+		"path": "/node_modules/paths-js/dist/amd/path"
 	},
 	shim: {
 		"QUnit": {

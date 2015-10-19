@@ -3,7 +3,7 @@ require.config({
 	paths: {
 		"QUnit": "/node_modules/qunitjs/qunit/qunit",
 		"svg-js": "/node_modules/svg.js/dist/svg",
-		"State": "/utilities/state"
+		"State": "/api/utilities/state"
 	},
 	shim: {
 		"QUnit": {

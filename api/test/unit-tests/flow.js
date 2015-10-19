@@ -3,10 +3,10 @@ require.config({
 	paths: {
 		'QUnit': '/node_modules/qunitjs/qunit/qunit',
 		'svg-js': '/node_modules/svg.js/dist/svg',
-		'Flow': '/inventions/flow',
-		'float': '/etc/float',
-		'grid': '/etc/grid',
-		'center': '/etc/center'
+		'Flow': '/api/inventions/flow',
+		'float': '/api/etc/float',
+		'grid': '/api/etc/grid',
+		'center': '/api/etc/center'
 	},
 	shim: {
 		'QUnit': {
