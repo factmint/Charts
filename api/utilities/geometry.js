@@ -17,6 +17,5 @@ define(function() {
 				return (totalSize / dataTotal) * value;
 			}
 		}
-		
 	}
 });
