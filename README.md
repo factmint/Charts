@@ -32,67 +32,76 @@ To see unit tests for the API, navigate to `api/test` in your browser.
 #### Bubble Chart
 
 ![Bubble chart](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/bubble.png)
-See [http://factmint.com/documentation/bubble-chart/](http://factmint.com/documentation/bubble-chart/)
+
+(See [http://factmint.com/documentation/bubble-chart/](http://factmint.com/documentation/bubble-chart/))
 
 #### Candlestick Chart
 
 ![Candlestick chart](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/candlestick.png)
-See [http://factmint.com/documentation/candlestick-chart/](http://factmint.com/documentation/candlestick-chart/)
+
+(See [http://factmint.com/documentation/candlestick-chart/](http://factmint.com/documentation/candlestick-chart/))
  
 #### Choropleth (UK constituencies)
 
 ![Choropleth UK constituencies](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/choropleth.png)
-See [http://factmint.com/documentation/choropleth/](http://factmint.com/documentation/choropleth/) 
+
+(See [http://factmint.com/documentation/choropleth/](http://factmint.com/documentation/choropleth/))
 
 #### Choropleth (world continents)
 
-![]()
-See [http://factmint.com/documentation/world-countries-choropleth/](http://factmint.com/documentation/world-countries-choropleth/) 
+(See [http://factmint.com/documentation/world-countries-choropleth/](http://factmint.com/documentation/world-countries-choropleth/))
 
 #### Column/Bar Chart
 
 ![Column/bar chart](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/column.png)
-See [http://factmint.com/documentation/column-bar-chart/](http://factmint.com/documentation/column-bar-chart)
+
+(See [http://factmint.com/documentation/column-bar-chart/](http://factmint.com/documentation/column-bar-chart))
 
 #### Doughnut Chart
 
 ![Doughnut chart](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/doughnut.png)
-See [http://factmint.com/documentation/doughnut-chart/](http://factmint.com/documentation/doughnut-chart/) 
+
+(See [http://factmint.com/documentation/doughnut-chart/](http://factmint.com/documentation/doughnut-chart/))
 
 #### Line Chart
 
 ![Line chart](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/line.png)
-See [http://factmint.com/documentation/line-chart/](http://factmint.com/documentation/line-chart/)
+
+(See [http://factmint.com/documentation/line-chart/](http://factmint.com/documentation/line-chart/))
 
 #### Line Over Bar Chart
 
 ![]()
-See [http://factmint.com/documentation/line-over-column-chart/](http://factmint.com/documentation/line-over-column-chart/)
+
+(See [http://factmint.com/documentation/line-over-column-chart/](http://factmint.com/documentation/line-over-column-chart/))
  
 #### Pictorial Bar Chart
 
 ![Pictorial bar chart](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/pictorial.png)
-See [http://factmint.com/documentation/pictorial-bar-chart/](http://factmint.com/documentation/pictorial-bar-chart/)
+
+(See [http://factmint.com/documentation/pictorial-bar-chart/](http://factmint.com/documentation/pictorial-bar-chart/))
 
 #### Pie Chart
 
 ![Pie chart](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/pie.png)
-See [http://factmint.com/documentation/pie-chart/](http://factmint.com/documentation/pie-chart/)
+
+(See [http://factmint.com/documentation/pie-chart/](http://factmint.com/documentation/pie-chart/))
 
 #### Scatter Graph
 
 ![Scatter graph](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/scatter.png)
-See [http://factmint.com/documentation/scatter-graph/](http://factmint.com/documentation/scatter-graph/) 
+
+(See [http://factmint.com/documentation/scatter-graph/](http://factmint.com/documentation/scatter-graph/))
 
 #### Stacked Area Chart
 
 ![Stacked area chart](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/stacked-area.png)
-See [http://factmint.com/documentation/stacked-area-chart/](http://factmint.com/documentation/stacked-area-chart/) 
+
+(See [http://factmint.com/documentation/stacked-area-chart/](http://factmint.com/documentation/stacked-area-chart/))
 
 #### Stacked Column Bar Chart
 
-![]()
-See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/) 
+(See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/))
 
 ## API
 The `/api` directory contains the API, which can be used to build your own chart. See [https://github.com/factmint/Charts/blob/master/api/README.md](https://github.com/factmint/Charts/blob/master/api/README.md) for more information.
