@@ -2,2622 +2,4574 @@
 <html>
 <head>
 	<title>Choropleth</title>
+
+	<link rel="stylesheet" href="../../src/style/chart.css">
+
+	<script data-main="../../src/scripts/main" src="../../node_modules/requirejs/require.js"></script>
 </head>
 
 <body>
 	<div class="container">
-<table class="fm-uk-constituencies">
-	<thead>
-		<tr>
-			<th>Constituency</th>
-			<th>Random Value</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Cleethorpes</td>
-			<td>32</td>
-		</tr>
-		<tr>
-			<td>Great Grimsby</td>
-			<td>15</td>
-		</tr>
-		<tr>
-			<td>Scunthorpe</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>Sheffield Hallam</td>
-			<td>81</td>
-		</tr>
-		<tr>
-			<td>Penistone and Stocksbridge</td>
-			<td>23</td>
-		</tr>
-		<tr>
-			<td>Sheffield Brightside and Hillsborough</td>
-			<td>49</td>
-		</tr>
-		<tr>
-			<td>Sheffield Central</td>
-			<td>40</td>
-		</tr>
-		<tr>
-			<td>Sheffield Heeley</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Sheffield South East</td>
-			<td>67</td>
-		</tr>
-		<tr>
-			<td>Rother Valley</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Rotherham</td>
-			<td>76</td>
-		</tr>
-		<tr>
-			<td>Wentworth and Dearne</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>Barnsley Central</td>
-			<td>71</td>
-		</tr>
-		<tr>
-			<td>Barnsley East</td>
-			<td>73</td>
-		</tr>
-		<tr>
-			<td>Doncaster Central</td>
-			<td>43</td>
-		</tr>
-		<tr>
-			<td>Don Valley</td>
-			<td>59</td>
-		</tr>
-		<tr>
-			<td>Doncaster North</td>
-			<td>70</td>
-		</tr>
-		<tr>
-			<td>Wakefield</td>
-			<td>65</td>
-		</tr>
-		<tr>
-			<td>Hemsworth</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Normanton Pontefract and Castleford</td>
-			<td>11</td>
-		</tr>
-		<tr>
-			<td>Dewsbury</td>
-			<td>85</td>
-		</tr>
-		<tr>
-			<td>Huddersfield</td>
-			<td>17</td>
-		</tr>
-		<tr>
-			<td>Colne Valley</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Keighley</td>
-			<td>46</td>
-		</tr>
-		<tr>
-			<td>Calder Valley</td>
-			<td>43</td>
-		</tr>
-		<tr>
-			<td>Halifax</td>
-			<td>73</td>
-		</tr>
-		<tr>
-			<td>Shipley</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>Bradford West</td>
-			<td>82</td>
-		</tr>
-		<tr>
-			<td>Bradford South</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Bradford East</td>
-			<td>41</td>
-		</tr>
-		<tr>
-			<td>Pudsey</td>
-			<td>90</td>
-		</tr>
-		<tr>
-			<td>Leeds West</td>
-			<td>78</td>
-		</tr>
-		<tr>
-			<td>Batley and Spen</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>Morley and Outwood</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>Leeds North West</td>
-			<td>69</td>
-		</tr>
-		<tr>
-			<td>Elmet and Rothwell</td>
-			<td>60</td>
-		</tr>
-		<tr>
-			<td>Leeds North East</td>
-			<td>19</td>
-		</tr>
-		<tr>
-			<td>Leeds East</td>
-			<td>18</td>
-		</tr>
-		<tr>
-			<td>Leeds Central</td>
-			<td>57</td>
-		</tr>
-		<tr>
-			<td>Selby and Ainsty</td>
-			<td>77</td>
-		</tr>
-		<tr>
-			<td>York Outer</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>York Central</td>
-			<td>42</td>
-		</tr>
-		<tr>
-			<td>Harrogate and Knaresborough</td>
-			<td>39</td>
-		</tr>
-		<tr>
-			<td>Skipton and Ripon</td>
-			<td>41</td>
-		</tr>
-		<tr>
-			<td>Thirsk and Malton</td>
-			<td>25</td>
-		</tr>
-		<tr>
-			<td>East Yorkshire</td>
-			<td>72</td>
-		</tr>
-		<tr>
-			<td>Beverley and Holderness</td>
-			<td>90</td>
-		</tr>
-		<tr>
-			<td>Haltemprice and Howden</td>
-			<td>85</td>
-		</tr>
-		<tr>
-			<td>Kingston-upon-Hull East</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>Kingston-upon-Hull North</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Kingston-upon-Hull West and Hessle</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Brigg and Goole</td>
-			<td>42</td>
-		</tr>
-		<tr>
-			<td>Scarborough and Whitby</td>
-			<td>23</td>
-		</tr>
-		<tr>
-			<td>Richmond Yorks</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td>Monmouth</td>
-			<td>78</td>
-		</tr>
-		<tr>
-			<td>Newport East</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Newport West</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>Torfaen</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>Blaenau Gwent</td>
-			<td>48</td>
-		</tr>
-		<tr>
-			<td>Islwyn</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>Merthyr Tydfil and Rhymney</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Cynon Valley</td>
-			<td>48</td>
-		</tr>
-		<tr>
-			<td>Caerphilly</td>
-			<td>43</td>
-		</tr>
-		<tr>
-			<td>Cardiff North</td>
-			<td>44</td>
-		</tr>
-		<tr>
-			<td>Cardiff South and Penarth</td>
-			<td>19</td>
-		</tr>
-		<tr>
-			<td>Cardiff Central</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>Vale of Glamorgan</td>
-			<td>13</td>
-		</tr>
-		<tr>
-			<td>Cardiff West</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Bridgend</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Pontypridd</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>Ogmore</td>
-			<td>15</td>
-		</tr>
-		<tr>
-			<td>Aberavon</td>
-			<td>80</td>
-		</tr>
-		<tr>
-			<td>Rhondda</td>
-			<td>12</td>
-		</tr>
-		<tr>
-			<td>Neath</td>
-			<td>45</td>
-		</tr>
-		<tr>
-			<td>Swansea East</td>
-			<td>31</td>
-		</tr>
-		<tr>
-			<td>Swansea West</td>
-			<td>27</td>
-		</tr>
-		<tr>
-			<td>Gower</td>
-			<td>27</td>
-		</tr>
-		<tr>
-			<td>Llanelli</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Carmarthen East And Dinefwr</td>
-			<td>22</td>
-		</tr>
-		<tr>
-			<td>Carmarthen West and South Pembrokeshire</td>
-			<td>65</td>
-		</tr>
-		<tr>
-			<td>Preseli Pembrokeshire</td>
-			<td>37</td>
-		</tr>
-		<tr>
-			<td>Ceredigion</td>
-			<td>19</td>
-		</tr>
-		<tr>
-			<td>Dwyfor Meirionnydd</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Arfon</td>
-			<td>50</td>
-		</tr>
-		<tr>
-			<td>Ynys Mon</td>
-			<td>35</td>
-		</tr>
-		<tr>
-			<td>Aberconwy</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Clwyd West</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Vale of Clwyd</td>
-			<td>34</td>
-		</tr>
-		<tr>
-			<td>Clwyd South</td>
-			<td>49</td>
-		</tr>
-		<tr>
-			<td>Montgomeryshire</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>Brecon and Radnorshire</td>
-			<td>79</td>
-		</tr>
-		<tr>
-			<td>Delyn</td>
-			<td>46</td>
-		</tr>
-		<tr>
-			<td>Alyn and Deeside</td>
-			<td>12</td>
-		</tr>
-		<tr>
-			<td>Wrexham</td>
-			<td>32</td>
-		</tr>
-		<tr>
-			<td>St Ives</td>
-			<td>81</td>
-		</tr>
-		<tr>
-			<td>Camborne and Redruth</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>Truro and Falmouth</td>
-			<td>44</td>
-		</tr>
-		<tr>
-			<td>St Austell and Newquay</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>South East Cornwall</td>
-			<td>40</td>
-		</tr>
-		<tr>
-			<td>North Cornwall</td>
-			<td>63</td>
-		</tr>
-		<tr>
-			<td>Torridge and West Devon</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>Plymouth Moor View</td>
-			<td>46</td>
-		</tr>
-		<tr>
-			<td>Plymouth Sutton and Devonport</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>South West Devon</td>
-			<td>57</td>
-		</tr>
-		<tr>
-			<td>North Devon</td>
-			<td>81</td>
-		</tr>
-		<tr>
-			<td>Central Devon</td>
-			<td>75</td>
-		</tr>
-		<tr>
-			<td>Totnes</td>
-			<td>75</td>
-		</tr>
-		<tr>
-			<td>Torbay</td>
-			<td>17</td>
-		</tr>
-		<tr>
-			<td>Newton Abbot</td>
-			<td>15</td>
-		</tr>
-		<tr>
-			<td>Exeter</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>East Devon</td>
-			<td>72</td>
-		</tr>
-		<tr>
-			<td>Bridgwater and West Somerset</td>
-			<td>42</td>
-		</tr>
-		<tr>
-			<td>Tiverton and Honiton</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Taunton Deane</td>
-			<td>78</td>
-		</tr>
-		<tr>
-			<td>Yeovil</td>
-			<td>83</td>
-		</tr>
-		<tr>
-			<td>West Dorset</td>
-			<td>41</td>
-		</tr>
-		<tr>
-			<td>South Dorset</td>
-			<td>72</td>
-		</tr>
-		<tr>
-			<td>Mid Dorset and North Poole</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>Poole</td>
-			<td>66</td>
-		</tr>
-		<tr>
-			<td>Bournemouth West</td>
-			<td>31</td>
-		</tr>
-		<tr>
-			<td>Bournemouth East</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>North Dorset</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>Salisbury</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>South West Wiltshire</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Somerton and Frome</td>
-			<td>77</td>
-		</tr>
-		<tr>
-			<td>Wells</td>
-			<td>58</td>
-		</tr>
-		<tr>
-			<td>Weston-super-Mare</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>North Somerset</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Bristol North West</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Bristol West</td>
-			<td>18</td>
-		</tr>
-		<tr>
-			<td>Bristol South</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Bristol East</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Christchurch</td>
-			<td>54</td>
-		</tr>
-		<tr>
-			<td>Kingswood</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>Filton and Bradley Stoke</td>
-			<td>64</td>
-		</tr>
-		<tr>
-			<td>Thornbury and Yate</td>
-			<td>44</td>
-		</tr>
-		<tr>
-			<td>North East Somerset</td>
-			<td>31</td>
-		</tr>
-		<tr>
-			<td>Bath</td>
-			<td>48</td>
-		</tr>
-		<tr>
-			<td>Chippenham</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>The Cotswolds</td>
-			<td>36</td>
-		</tr>
-		<tr>
-			<td>North Wiltshire</td>
-			<td>45</td>
-		</tr>
-		<tr>
-			<td>North Swindon</td>
-			<td>33</td>
-		</tr>
-		<tr>
-			<td>South Swindon</td>
-			<td>69</td>
-		</tr>
-		<tr>
-			<td>Devizes</td>
-			<td>51</td>
-		</tr>
-		<tr>
-			<td>Tewkesbury</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>Gloucester</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>Stroud</td>
-			<td>83</td>
-		</tr>
-		<tr>
-			<td>Forest of Dean</td>
-			<td>83</td>
-		</tr>
-		<tr>
-			<td>Hereford and South Herefordshire</td>
-			<td>59</td>
-		</tr>
-		<tr>
-			<td>North Shropshire</td>
-			<td>59</td>
-		</tr>
-		<tr>
-			<td>Shrewsbury and Atcham</td>
-			<td>24</td>
-		</tr>
-		<tr>
-			<td>Ludlow</td>
-			<td>22</td>
-		</tr>
-		<tr>
-			<td>North Herefordshire</td>
-			<td>23</td>
-		</tr>
-		<tr>
-			<td>Telford</td>
-			<td>82</td>
-		</tr>
-		<tr>
-			<td>The Wrekin</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>Newcastle-under-Lyme</td>
-			<td>10</td>
-		</tr>
-		<tr>
-			<td>Stoke-on-Trent North</td>
-			<td>50</td>
-		</tr>
-		<tr>
-			<td>Stoke-on-Trent Central</td>
-			<td>45</td>
-		</tr>
-		<tr>
-			<td>Stoke-on-Trent South</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Stone</td>
-			<td>12</td>
-		</tr>
-		<tr>
-			<td>Stafford</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>South Staffordshire</td>
-			<td>24</td>
-		</tr>
-		<tr>
-			<td>Staffordshire Moorlands</td>
-			<td>18</td>
-		</tr>
-		<tr>
-			<td>Burton</td>
-			<td>17</td>
-		</tr>
-		<tr>
-			<td>Cannock Chase</td>
-			<td>62</td>
-		</tr>
-		<tr>
-			<td>Aldridge-Brownhills</td>
-			<td>72</td>
-		</tr>
-		<tr>
-			<td>Sutton Coldfield</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Birmingham Erdington</td>
-			<td>83</td>
-		</tr>
-		<tr>
-			<td>Walsall North</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Wolverhampton South West</td>
-			<td>13</td>
-		</tr>
-		<tr>
-			<td>Wolverhampton North East</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Dudley North</td>
-			<td>65</td>
-		</tr>
-		<tr>
-			<td>Wolverhampton South East</td>
-			<td>36</td>
-		</tr>
-		<tr>
-			<td>Walsall South</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>West Bromwich West</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td>Birmingham Perry Barr</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>Warley</td>
-			<td>59</td>
-		</tr>
-		<tr>
-			<td>Birmingham Edgbaston</td>
-			<td>19</td>
-		</tr>
-		<tr>
-			<td>Birmingham Northfield</td>
-			<td>40</td>
-		</tr>
-		<tr>
-			<td>Birmingham Selly Oak</td>
-			<td>28</td>
-		</tr>
-		<tr>
-			<td>Birmingham Ladywood</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>Birmingham Hodge Hill</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>Birmingham Hall Green</td>
-			<td>40</td>
-		</tr>
-		<tr>
-			<td>Solihull</td>
-			<td>81</td>
-		</tr>
-		<tr>
-			<td>Birmingham Yardley</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>Mid Worcestershire</td>
-			<td>18</td>
-		</tr>
-		<tr>
-			<td>Redditch</td>
-			<td>81</td>
-		</tr>
-		<tr>
-			<td>Dudley South</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Halesowen and Rowley Regis</td>
-			<td>54</td>
-		</tr>
-		<tr>
-			<td>Stourbridge</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>Bromsgrove</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>Meriden</td>
-			<td>17</td>
-		</tr>
-		<tr>
-			<td>Lichfield</td>
-			<td>36</td>
-		</tr>
-		<tr>
-			<td>Tamworth</td>
-			<td>17</td>
-		</tr>
-		<tr>
-			<td>North Warwickshire</td>
-			<td>24</td>
-		</tr>
-		<tr>
-			<td>Nuneaton</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Coventry North West</td>
-			<td>80</td>
-		</tr>
-		<tr>
-			<td>Coventry South</td>
-			<td>66</td>
-		</tr>
-		<tr>
-			<td>Coventry North East</td>
-			<td>81</td>
-		</tr>
-		<tr>
-			<td>Kenilworth and Southam</td>
-			<td>19</td>
-		</tr>
-		<tr>
-			<td>Warwick and Leamington</td>
-			<td>70</td>
-		</tr>
-		<tr>
-			<td>Rugby</td>
-			<td>20</td>
-		</tr>
-		<tr>
-			<td>West Bromwich East</td>
-			<td>74</td>
-		</tr>
-		<tr>
-			<td>Stratford-on-Avon</td>
-			<td>15</td>
-		</tr>
-		<tr>
-			<td>Worcester</td>
-			<td>18</td>
-		</tr>
-		<tr>
-			<td>West Worcestershire</td>
-			<td>10</td>
-		</tr>
-		<tr>
-			<td>Isle of Wight</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>New Forest West</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>New Forest East</td>
-			<td>19</td>
-		</tr>
-		<tr>
-			<td>Southampton Test</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Southampton Itchen</td>
-			<td>86</td>
-		</tr>
-		<tr>
-			<td>Eastleigh</td>
-			<td>78</td>
-		</tr>
-		<tr>
-			<td>Romsey and Southampton North</td>
-			<td>48</td>
-		</tr>
-		<tr>
-			<td>Fareham</td>
-			<td>36</td>
-		</tr>
-		<tr>
-			<td>Gosport</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>Portsmouth North</td>
-			<td>85</td>
-		</tr>
-		<tr>
-			<td>Portsmouth South</td>
-			<td>45</td>
-		</tr>
-		<tr>
-			<td>Winchester</td>
-			<td>59</td>
-		</tr>
-		<tr>
-			<td>Meon Valley</td>
-			<td>82</td>
-		</tr>
-		<tr>
-			<td>Havant</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>Chichester</td>
-			<td>71</td>
-		</tr>
-		<tr>
-			<td>Bognor Regis and Littlehampton</td>
-			<td>80</td>
-		</tr>
-		<tr>
-			<td>Worthing West</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>East Worthing and Shoreham</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Hove</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Brighton Pavilion</td>
-			<td>31</td>
-		</tr>
-		<tr>
-			<td>Arundel and South Downs</td>
-			<td>13</td>
-		</tr>
-		<tr>
-			<td>Brighton Kemptown</td>
-			<td>77</td>
-		</tr>
-		<tr>
-			<td>Mid Sussex</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Horsham</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Crawley</td>
-			<td>86</td>
-		</tr>
-		<tr>
-			<td>South West Surrey</td>
-			<td>67</td>
-		</tr>
-		<tr>
-			<td>East Hampshire</td>
-			<td>14</td>
-		</tr>
-		<tr>
-			<td>North West Hampshire</td>
-			<td>70</td>
-		</tr>
-		<tr>
-			<td>Newbury</td>
-			<td>73</td>
-		</tr>
-		<tr>
-			<td>Wantage</td>
-			<td>22</td>
-		</tr>
-		<tr>
-			<td>Witney</td>
-			<td>71</td>
-		</tr>
-		<tr>
-			<td>Oxford West and Abingdon</td>
-			<td>35</td>
-		</tr>
-		<tr>
-			<td>Oxford East</td>
-			<td>80</td>
-		</tr>
-		<tr>
-			<td>Basingstoke</td>
-			<td>80</td>
-		</tr>
-		<tr>
-			<td>North East Hampshire</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Aldershot</td>
-			<td>76</td>
-		</tr>
-		<tr>
-			<td>Surrey Heath</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>Woking</td>
-			<td>67</td>
-		</tr>
-		<tr>
-			<td>Wokingham</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>Reading West</td>
-			<td>46</td>
-		</tr>
-		<tr>
-			<td>Reading East</td>
-			<td>62</td>
-		</tr>
-		<tr>
-			<td>Bracknell</td>
-			<td>57</td>
-		</tr>
-		<tr>
-			<td>Windsor</td>
-			<td>14</td>
-		</tr>
-		<tr>
-			<td>Maidenhead</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>Guildford</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Mole Valley</td>
-			<td>76</td>
-		</tr>
-		<tr>
-			<td>Reigate</td>
-			<td>43</td>
-		</tr>
-		<tr>
-			<td>East Surrey</td>
-			<td>62</td>
-		</tr>
-		<tr>
-			<td>Lewes</td>
-			<td>82</td>
-		</tr>
-		<tr>
-			<td>Eastbourne</td>
-			<td>40</td>
-		</tr>
-		<tr>
-			<td>Bexhill and Battle</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Hastings and Rye</td>
-			<td>86</td>
-		</tr>
-		<tr>
-			<td>Folkestone and Hythe</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td>Dover</td>
-			<td>81</td>
-		</tr>
-		<tr>
-			<td>South Thanet</td>
-			<td>80</td>
-		</tr>
-		<tr>
-			<td>North Thanet</td>
-			<td>22</td>
-		</tr>
-		<tr>
-			<td>Canterbury</td>
-			<td>57</td>
-		</tr>
-		<tr>
-			<td>Ashford</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Maidstone and the Weald</td>
-			<td>82</td>
-		</tr>
-		<tr>
-			<td>Tunbridge Wells</td>
-			<td>40</td>
-		</tr>
-		<tr>
-			<td>Faversham and Mid-Kent</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Sittingbourne and Sheppey</td>
-			<td>62</td>
-		</tr>
-		<tr>
-			<td>Gillingham and Rainham</td>
-			<td>66</td>
-		</tr>
-		<tr>
-			<td>Chatham and Aylesford</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Rochester and Strood</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Gravesham</td>
-			<td>85</td>
-		</tr>
-		<tr>
-			<td>Dartford</td>
-			<td>72</td>
-		</tr>
-		<tr>
-			<td>Sevenoaks</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Runnymede and Weybridge</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>Esher and Walton</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Spelthorne</td>
-			<td>66</td>
-		</tr>
-		<tr>
-			<td>Epsom and Ewell</td>
-			<td>33</td>
-		</tr>
-		<tr>
-			<td>Sutton and Cheam</td>
-			<td>50</td>
-		</tr>
-		<tr>
-			<td>Henley</td>
-			<td>71</td>
-		</tr>
-		<tr>
-			<td>Wycombe</td>
-			<td>76</td>
-		</tr>
-		<tr>
-			<td>Buckingham</td>
-			<td>15</td>
-		</tr>
-		<tr>
-			<td>Aylesbury</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Chesham and Amersham</td>
-			<td>28</td>
-		</tr>
-		<tr>
-			<td>Beaconsfield</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>Slough</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>Wealden</td>
-			<td>58</td>
-		</tr>
-		<tr>
-			<td>Tonbridge and Malling</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>Milton Keynes North</td>
-			<td>43</td>
-		</tr>
-		<tr>
-			<td>Milton Keynes South</td>
-			<td>75</td>
-		</tr>
-		<tr>
-			<td>Banbury</td>
-			<td>51</td>
-		</tr>
-		<tr>
-			<td>Dumfriesshire Clydesdale and Tweeddale</td>
-			<td>32</td>
-		</tr>
-		<tr>
-			<td>Berwickshire Roxburgh and Selkirk</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>East Lothian</td>
-			<td>18</td>
-		</tr>
-		<tr>
-			<td>Midlothian</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td>Edinburgh East</td>
-			<td>79</td>
-		</tr>
-		<tr>
-			<td>Edinburgh South</td>
-			<td>48</td>
-		</tr>
-		<tr>
-			<td>Edinburgh North and Leith</td>
-			<td>32</td>
-		</tr>
-		<tr>
-			<td>Edinburgh South West</td>
-			<td>51</td>
-		</tr>
-		<tr>
-			<td>Edinburgh West</td>
-			<td>24</td>
-		</tr>
-		<tr>
-			<td>Livingston</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Linlithgow and East Falkirk</td>
-			<td>13</td>
-		</tr>
-		<tr>
-			<td>Dunfermline and West Fife</td>
-			<td>18</td>
-		</tr>
-		<tr>
-			<td>Kirkcaldy and Cowdenbeath</td>
-			<td>10</td>
-		</tr>
-		<tr>
-			<td>Glenrothes</td>
-			<td>33</td>
-		</tr>
-		<tr>
-			<td>Falkirk</td>
-			<td>70</td>
-		</tr>
-		<tr>
-			<td>Airdrie and Shotts</td>
-			<td>85</td>
-		</tr>
-		<tr>
-			<td>Motherwell and Wishaw</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>Cumbernauld Kilsyth and Kirkintilloch East</td>
-			<td>12</td>
-		</tr>
-		<tr>
-			<td>East Dunbartonshire</td>
-			<td>45</td>
-		</tr>
-		<tr>
-			<td>Coatbridge Chryston and Bellshill</td>
-			<td>69</td>
-		</tr>
-		<tr>
-			<td>Glasgow East</td>
-			<td>79</td>
-		</tr>
-		<tr>
-			<td>Glasgow North East</td>
-			<td>50</td>
-		</tr>
-		<tr>
-			<td>Glasgow North</td>
-			<td>35</td>
-		</tr>
-		<tr>
-			<td>Lanark and Hamilton East</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Glasgow Central</td>
-			<td>28</td>
-		</tr>
-		<tr>
-			<td>Rutherglen and Hamilton West</td>
-			<td>72</td>
-		</tr>
-		<tr>
-			<td>Glasgow South</td>
-			<td>65</td>
-		</tr>
-		<tr>
-			<td>Glasgow North West</td>
-			<td>79</td>
-		</tr>
-		<tr>
-			<td>Glasgow South West</td>
-			<td>25</td>
-		</tr>
-		<tr>
-			<td>East Kilbride Strathaven and Lesmahagow</td>
-			<td>50</td>
-		</tr>
-		<tr>
-			<td>East Renfrewshire</td>
-			<td>40</td>
-		</tr>
-		<tr>
-			<td>Kilmarnock and Loudoun</td>
-			<td>48</td>
-		</tr>
-		<tr>
-			<td>Central Ayrshire</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>North Ayrshire and Arran</td>
-			<td>49</td>
-		</tr>
-		<tr>
-			<td>Ayr Carrick and Cumnock</td>
-			<td>64</td>
-		</tr>
-		<tr>
-			<td>Dumfries and Galloway</td>
-			<td>35</td>
-		</tr>
-		<tr>
-			<td>Paisley and Renfrewshire South</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Paisley and Renfrewshire North</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Inverclyde</td>
-			<td>77</td>
-		</tr>
-		<tr>
-			<td>West Dunbartonshire</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>Stirling</td>
-			<td>25</td>
-		</tr>
-		<tr>
-			<td>Na h-Eileanan an Iar</td>
-			<td>80</td>
-		</tr>
-		<tr>
-			<td>Caithness Sutherland and Easter Ross</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Inverness Nairn Badenoch and Strathspey</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td>Moray</td>
-			<td>23</td>
-		</tr>
-		<tr>
-			<td>Banff and Buchan</td>
-			<td>90</td>
-		</tr>
-		<tr>
-			<td>Gordon</td>
-			<td>20</td>
-		</tr>
-		<tr>
-			<td>West Aberdeenshire and Kincardine</td>
-			<td>22</td>
-		</tr>
-		<tr>
-			<td>Aberdeen South</td>
-			<td>11</td>
-		</tr>
-		<tr>
-			<td>Aberdeen North</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>North East Fife</td>
-			<td>82</td>
-		</tr>
-		<tr>
-			<td>Angus</td>
-			<td>80</td>
-		</tr>
-		<tr>
-			<td>Dundee East</td>
-			<td>15</td>
-		</tr>
-		<tr>
-			<td>Dundee West</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td>Ochil and South Perthshire</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Perth and North Perthshire</td>
-			<td>33</td>
-		</tr>
-		<tr>
-			<td>Ross Skye and Lochaber</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>Argyll and Bute</td>
-			<td>62</td>
-		</tr>
-		<tr>
-			<td>Wyre Forest</td>
-			<td>22</td>
-		</tr>
-		<tr>
-			<td>City of Chester</td>
-			<td>23</td>
-		</tr>
-		<tr>
-			<td>Ellesmere Port and Neston</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>Wirral South</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Wirral West</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>Birkenhead</td>
-			<td>58</td>
-		</tr>
-		<tr>
-			<td>Wallasey</td>
-			<td>10</td>
-		</tr>
-		<tr>
-			<td>Crewe and Nantwich</td>
-			<td>35</td>
-		</tr>
-		<tr>
-			<td>Eddisbury</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Weaver Vale</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Halton</td>
-			<td>31</td>
-		</tr>
-		<tr>
-			<td>Garston and Halewood</td>
-			<td>70</td>
-		</tr>
-		<tr>
-			<td>Liverpool Riverside</td>
-			<td>18</td>
-		</tr>
-		<tr>
-			<td>Liverpool Wavertree</td>
-			<td>46</td>
-		</tr>
-		<tr>
-			<td>Knowsley</td>
-			<td>60</td>
-		</tr>
-		<tr>
-			<td>Liverpool West Derby</td>
-			<td>38</td>
-		</tr>
-		<tr>
-			<td>Liverpool Walton</td>
-			<td>62</td>
-		</tr>
-		<tr>
-			<td>Bootle</td>
-			<td>73</td>
-		</tr>
-		<tr>
-			<td>Sefton Central</td>
-			<td>37</td>
-		</tr>
-		<tr>
-			<td>Southport</td>
-			<td>73</td>
-		</tr>
-		<tr>
-			<td>West Lancashire</td>
-			<td>86</td>
-		</tr>
-		<tr>
-			<td>St Helens South and Whiston</td>
-			<td>39</td>
-		</tr>
-		<tr>
-			<td>St Helens North</td>
-			<td>37</td>
-		</tr>
-		<tr>
-			<td>Warrington South</td>
-			<td>77</td>
-		</tr>
-		<tr>
-			<td>Warrington North</td>
-			<td>28</td>
-		</tr>
-		<tr>
-			<td>Makerfield</td>
-			<td>43</td>
-		</tr>
-		<tr>
-			<td>Wigan</td>
-			<td>12</td>
-		</tr>
-		<tr>
-			<td>Bolton West</td>
-			<td>25</td>
-		</tr>
-		<tr>
-			<td>Chorley</td>
-			<td>66</td>
-		</tr>
-		<tr>
-			<td>Leigh</td>
-			<td>11</td>
-		</tr>
-		<tr>
-			<td>Bolton South East</td>
-			<td>77</td>
-		</tr>
-		<tr>
-			<td>Bolton North East</td>
-			<td>78</td>
-		</tr>
-		<tr>
-			<td>Rossendale and Darwen</td>
-			<td>24</td>
-		</tr>
-		<tr>
-			<td>Bury North</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Worsley and Eccles South</td>
-			<td>40</td>
-		</tr>
-		<tr>
-			<td>Altrincham and Sale West</td>
-			<td>76</td>
-		</tr>
-		<tr>
-			<td>Wythenshawe and Sale East</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Tatton</td>
-			<td>40</td>
-		</tr>
-		<tr>
-			<td>Cheadle</td>
-			<td>20</td>
-		</tr>
-		<tr>
-			<td>Manchester Withington</td>
-			<td>49</td>
-		</tr>
-		<tr>
-			<td>Hazel Grove</td>
-			<td>37</td>
-		</tr>
-		<tr>
-			<td>Stockport</td>
-			<td>42</td>
-		</tr>
-		<tr>
-			<td>Manchester Gorton</td>
-			<td>28</td>
-		</tr>
-		<tr>
-			<td>Stretford and Urmston</td>
-			<td>46</td>
-		</tr>
-		<tr>
-			<td>Salford and Eccles</td>
-			<td>78</td>
-		</tr>
-		<tr>
-			<td>Bury South</td>
-			<td>79</td>
-		</tr>
-		<tr>
-			<td>Blackley and Broughton</td>
-			<td>74</td>
-		</tr>
-		<tr>
-			<td>Manchester Central</td>
-			<td>50</td>
-		</tr>
-		<tr>
-			<td>Heywood and Middleton</td>
-			<td>62</td>
-		</tr>
-		<tr>
-			<td>Rochdale</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>Oldham West and Royton</td>
-			<td>33</td>
-		</tr>
-		<tr>
-			<td>Congleton</td>
-			<td>57</td>
-		</tr>
-		<tr>
-			<td>Macclesfield</td>
-			<td>50</td>
-		</tr>
-		<tr>
-			<td>Oldham East and Saddleworth</td>
-			<td>60</td>
-		</tr>
-		<tr>
-			<td>Stalybridge and Hyde</td>
-			<td>43</td>
-		</tr>
-		<tr>
-			<td>Ashton-under-Lyne</td>
-			<td>69</td>
-		</tr>
-		<tr>
-			<td>Denton and Reddish</td>
-			<td>13</td>
-		</tr>
-		<tr>
-			<td>South Ribble</td>
-			<td>46</td>
-		</tr>
-		<tr>
-			<td>Fylde</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Preston</td>
-			<td>69</td>
-		</tr>
-		<tr>
-			<td>Blackpool South</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>Blackpool North and Cleveleys</td>
-			<td>71</td>
-		</tr>
-		<tr>
-			<td>Wyre and Preston North</td>
-			<td>57</td>
-		</tr>
-		<tr>
-			<td>Lancaster and Fleetwood</td>
-			<td>62</td>
-		</tr>
-		<tr>
-			<td>Morecambe and Lunesdale</td>
-			<td>69</td>
-		</tr>
-		<tr>
-			<td>Ribble Valley</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Blackburn</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>Hyndburn</td>
-			<td>34</td>
-		</tr>
-		<tr>
-			<td>Burnley</td>
-			<td>36</td>
-		</tr>
-		<tr>
-			<td>Pendle</td>
-			<td>58</td>
-		</tr>
-		<tr>
-			<td>Westmorland and Lonsdale</td>
-			<td>74</td>
-		</tr>
-		<tr>
-			<td>Barrow and Furness</td>
-			<td>64</td>
-		</tr>
-		<tr>
-			<td>Copeland</td>
-			<td>90</td>
-		</tr>
-		<tr>
-			<td>Workington</td>
-			<td>12</td>
-		</tr>
-		<tr>
-			<td>Carlisle</td>
-			<td>20</td>
-		</tr>
-		<tr>
-			<td>Penrith and the Border</td>
-			<td>78</td>
-		</tr>
-		<tr>
-			<td>Newry and Armagh</td>
-			<td>81</td>
-		</tr>
-		<tr>
-			<td>South Down</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Strangford</td>
-			<td>38</td>
-		</tr>
-		<tr>
-			<td>North Down</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Belfast East</td>
-			<td>14</td>
-		</tr>
-		<tr>
-			<td>Belfast South</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>Belfast West</td>
-			<td>18</td>
-		</tr>
-		<tr>
-			<td>Belfast North</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>Lagan Valley</td>
-			<td>31</td>
-		</tr>
-		<tr>
-			<td>Upper Bann</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Mid Ulster</td>
-			<td>33</td>
-		</tr>
-		<tr>
-			<td>South Antrim</td>
-			<td>34</td>
-		</tr>
-		<tr>
-			<td>East Antrim</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>North Antrim</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td>East Londonderry</td>
-			<td>12</td>
-		</tr>
-		<tr>
-			<td>West Tyrone</td>
-			<td>45</td>
-		</tr>
-		<tr>
-			<td>Foyle</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Fermanagh and South Tyrone</td>
-			<td>60</td>
-		</tr>
-		<tr>
-			<td>Middlesbrough South and East Cleveland</td>
-			<td>17</td>
-		</tr>
-		<tr>
-			<td>Middlesbrough</td>
-			<td>66</td>
-		</tr>
-		<tr>
-			<td>Redcar</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Stockton South</td>
-			<td>54</td>
-		</tr>
-		<tr>
-			<td>Stockton North</td>
-			<td>90</td>
-		</tr>
-		<tr>
-			<td>Hartlepool</td>
-			<td>83</td>
-		</tr>
-		<tr>
-			<td>Easington</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>Darlington</td>
-			<td>73</td>
-		</tr>
-		<tr>
-			<td>Sedgefield</td>
-			<td>57</td>
-		</tr>
-		<tr>
-			<td>Bishop Auckland</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>City of Durham</td>
-			<td>75</td>
-		</tr>
-		<tr>
-			<td>North West Durham</td>
-			<td>67</td>
-		</tr>
-		<tr>
-			<td>North Durham</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>Sunderland Central</td>
-			<td>66</td>
-		</tr>
-		<tr>
-			<td>Houghton and Sunderland South</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>Blaydon</td>
-			<td>36</td>
-		</tr>
-		<tr>
-			<td>Washington and Sunderland West</td>
-			<td>27</td>
-		</tr>
-		<tr>
-			<td>South Shields</td>
-			<td>66</td>
-		</tr>
-		<tr>
-			<td>Jarrow</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Tynemouth</td>
-			<td>36</td>
-		</tr>
-		<tr>
-			<td>North Tyneside</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Gateshead</td>
-			<td>28</td>
-		</tr>
-		<tr>
-			<td>Newcastle-upon-Tyne East</td>
-			<td>79</td>
-		</tr>
-		<tr>
-			<td>Newcastle-upon-Tyne Central</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>Newcastle-upon-Tyne North</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Blyth Valley</td>
-			<td>77</td>
-		</tr>
-		<tr>
-			<td>Wansbeck</td>
-			<td>70</td>
-		</tr>
-		<tr>
-			<td>Hexham</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>Berwick-upon-Tweed</td>
-			<td>32</td>
-		</tr>
-		<tr>
-			<td>Feltham and Heston</td>
-			<td>67</td>
-		</tr>
-		<tr>
-			<td>Ealing Southall</td>
-			<td>25</td>
-		</tr>
-		<tr>
-			<td>Ealing North</td>
-			<td>39</td>
-		</tr>
-		<tr>
-			<td>South West Hertfordshire</td>
-			<td>43</td>
-		</tr>
-		<tr>
-			<td>Ruislip Northwood and Pinner</td>
-			<td>71</td>
-		</tr>
-		<tr>
-			<td>Uxbridge and South Ruislip</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Harrow East</td>
-			<td>43</td>
-		</tr>
-		<tr>
-			<td>Hendon</td>
-			<td>64</td>
-		</tr>
-		<tr>
-			<td>Harrow West</td>
-			<td>15</td>
-		</tr>
-		<tr>
-			<td>Brent North</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td>Brent Central</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Finchley and Golders Green</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td>Chipping Barnet</td>
-			<td>11</td>
-		</tr>
-		<tr>
-			<td>Enfield Southgate</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Enfield North</td>
-			<td>25</td>
-		</tr>
-		<tr>
-			<td>Edmonton</td>
-			<td>67</td>
-		</tr>
-		<tr>
-			<td>Chingford and Woodford Green</td>
-			<td>57</td>
-		</tr>
-		<tr>
-			<td>Ilford North</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Romford</td>
-			<td>85</td>
-		</tr>
-		<tr>
-			<td>Hornsey and Wood Green</td>
-			<td>33</td>
-		</tr>
-		<tr>
-			<td>Hampstead and Kilburn</td>
-			<td>49</td>
-		</tr>
-		<tr>
-			<td>Ealing Central and Acton</td>
-			<td>31</td>
-		</tr>
-		<tr>
-			<td>Brentford and Isleworth</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>Twickenham</td>
-			<td>67</td>
-		</tr>
-		<tr>
-			<td>Richmond Park</td>
-			<td>19</td>
-		</tr>
-		<tr>
-			<td>Hammersmith</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Chelsea and Fulham</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Kensington</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Westminster North</td>
-			<td>77</td>
-		</tr>
-		<tr>
-			<td>Cities of London and Westminster</td>
-			<td>75</td>
-		</tr>
-		<tr>
-			<td>Holborn and St. Pancras</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Tottenham</td>
-			<td>54</td>
-		</tr>
-		<tr>
-			<td>Islington North</td>
-			<td>90</td>
-		</tr>
-		<tr>
-			<td>Islington South and Finsbury</td>
-			<td>59</td>
-		</tr>
-		<tr>
-			<td>Hackney South and Shoreditch</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Hackney North and Stoke Newington</td>
-			<td>71</td>
-		</tr>
-		<tr>
-			<td>Walthamstow</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Leyton and Wanstead</td>
-			<td>39</td>
-		</tr>
-		<tr>
-			<td>Ilford South</td>
-			<td>44</td>
-		</tr>
-		<tr>
-			<td>West Ham</td>
-			<td>58</td>
-		</tr>
-		<tr>
-			<td>East Ham</td>
-			<td>55</td>
-		</tr>
-		<tr>
-			<td>Barking</td>
-			<td>65</td>
-		</tr>
-		<tr>
-			<td>Dagenham and Rainham</td>
-			<td>74</td>
-		</tr>
-		<tr>
-			<td>Bexleyheath and Crayford</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Erith and Thamesmead</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>Old Bexley and Sidcup</td>
-			<td>90</td>
-		</tr>
-		<tr>
-			<td>Bromley and Chislehurst</td>
-			<td>33</td>
-		</tr>
-		<tr>
-			<td>Eltham</td>
-			<td>28</td>
-		</tr>
-		<tr>
-			<td>Greenwich and Woolwich</td>
-			<td>51</td>
-		</tr>
-		<tr>
-			<td>Poplar and Limehouse</td>
-			<td>27</td>
-		</tr>
-		<tr>
-			<td>Lewisham Deptford</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Lewisham East</td>
-			<td>90</td>
-		</tr>
-		<tr>
-			<td>Bermondsey and Old Southwark</td>
-			<td>48</td>
-		</tr>
-		<tr>
-			<td>Vauxhall</td>
-			<td>14</td>
-		</tr>
-		<tr>
-			<td>Camberwell and Peckham</td>
-			<td>67</td>
-		</tr>
-		<tr>
-			<td>Dulwich and West Norwood</td>
-			<td>58</td>
-		</tr>
-		<tr>
-			<td>Streatham</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td>Battersea</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Tooting</td>
-			<td>54</td>
-		</tr>
-		<tr>
-			<td>Putney</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Wimbledon</td>
-			<td>72</td>
-		</tr>
-		<tr>
-			<td>Bethnal Green and Bow</td>
-			<td>74</td>
-		</tr>
-		<tr>
-			<td>Kingston and Surbiton</td>
-			<td>51</td>
-		</tr>
-		<tr>
-			<td>Mitcham and Morden</td>
-			<td>71</td>
-		</tr>
-		<tr>
-			<td>Croydon North</td>
-			<td>42</td>
-		</tr>
-		<tr>
-			<td>Lewisham West and Penge</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>Beckenham</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Croydon Central</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Croydon South</td>
-			<td>76</td>
-		</tr>
-		<tr>
-			<td>Hornchurch and Upminster</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Carshalton and Wallington</td>
-			<td>51</td>
-		</tr>
-		<tr>
-			<td>Hayes and Harlington</td>
-			<td>41</td>
-		</tr>
-		<tr>
-			<td>Orpington</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>South Basildon and East Thurrock</td>
-			<td>35</td>
-		</tr>
-		<tr>
-			<td>Thurrock</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Castle Point</td>
-			<td>32</td>
-		</tr>
-		<tr>
-			<td>Southend West</td>
-			<td>34</td>
-		</tr>
-		<tr>
-			<td>Rochford and Southend East</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Rayleigh and Wickford</td>
-			<td>51</td>
-		</tr>
-		<tr>
-			<td>Basildon and Billericay</td>
-			<td>76</td>
-		</tr>
-		<tr>
-			<td>Brentwood and Ongar</td>
-			<td>47</td>
-		</tr>
-		<tr>
-			<td>Maldon</td>
-			<td>12</td>
-		</tr>
-		<tr>
-			<td>Chelmsford</td>
-			<td>75</td>
-		</tr>
-		<tr>
-			<td>Epping Forest</td>
-			<td>85</td>
-		</tr>
-		<tr>
-			<td>Harlow</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td>Broxbourne</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Hertford and Stortford</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>North East Hertfordshire</td>
-			<td>27</td>
-		</tr>
-		<tr>
-			<td>Witham</td>
-			<td>49</td>
-		</tr>
-		<tr>
-			<td>Colchester</td>
-			<td>17</td>
-		</tr>
-		<tr>
-			<td>Clacton</td>
-			<td>24</td>
-		</tr>
-		<tr>
-			<td>Harwich and North Essex</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Braintree</td>
-			<td>81</td>
-		</tr>
-		<tr>
-			<td>Saffron Walden</td>
-			<td>66</td>
-		</tr>
-		<tr>
-			<td>South East Cambridgeshire</td>
-			<td>11</td>
-		</tr>
-		<tr>
-			<td>West Suffolk</td>
-			<td>32</td>
-		</tr>
-		<tr>
-			<td>Bury St Edmunds</td>
-			<td>22</td>
-		</tr>
-		<tr>
-			<td>South Suffolk</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>Ipswich</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td>Suffolk Coastal</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>Central Suffolk and North Ipswich</td>
-			<td>49</td>
-		</tr>
-		<tr>
-			<td>Waveney</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>South Norfolk</td>
-			<td>39</td>
-		</tr>
-		<tr>
-			<td>Norwich South</td>
-			<td>20</td>
-		</tr>
-		<tr>
-			<td>Great Yarmouth</td>
-			<td>13</td>
-		</tr>
-		<tr>
-			<td>North Norfolk</td>
-			<td>36</td>
-		</tr>
-		<tr>
-			<td>Norwich North</td>
-			<td>42</td>
-		</tr>
-		<tr>
-			<td>Broadland</td>
-			<td>38</td>
-		</tr>
-		<tr>
-			<td>North West Norfolk</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Mid Norfolk</td>
-			<td>83</td>
-		</tr>
-		<tr>
-			<td>South West Norfolk</td>
-			<td>23</td>
-		</tr>
-		<tr>
-			<td>North East Cambridgeshire</td>
-			<td>13</td>
-		</tr>
-		<tr>
-			<td>Peterborough</td>
-			<td>85</td>
-		</tr>
-		<tr>
-			<td>North West Cambridgeshire</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>Lincoln</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>South Cambridgeshire</td>
-			<td>11</td>
-		</tr>
-		<tr>
-			<td>Cambridge</td>
-			<td>50</td>
-		</tr>
-		<tr>
-			<td>Huntingdon</td>
-			<td>51</td>
-		</tr>
-		<tr>
-			<td>North East Bedfordshire</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Mid Bedfordshire</td>
-			<td>89</td>
-		</tr>
-		<tr>
-			<td>Bedford</td>
-			<td>58</td>
-		</tr>
-		<tr>
-			<td>Hertsmere</td>
-			<td>44</td>
-		</tr>
-		<tr>
-			<td>St Albans</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Watford</td>
-			<td>49</td>
-		</tr>
-		<tr>
-			<td>Welwyn Hatfield</td>
-			<td>19</td>
-		</tr>
-		<tr>
-			<td>Hitchin and Harpenden</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Stevenage</td>
-			<td>72</td>
-		</tr>
-		<tr>
-			<td>Hemel Hempstead</td>
-			<td>31</td>
-		</tr>
-		<tr>
-			<td>South West Bedfordshire</td>
-			<td>73</td>
-		</tr>
-		<tr>
-			<td>Luton North</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Luton South</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>South Holland and the Deepings</td>
-			<td>32</td>
-		</tr>
-		<tr>
-			<td>Grantham and Stamford</td>
-			<td>66</td>
-		</tr>
-		<tr>
-			<td>Boston and Skegness</td>
-			<td>60</td>
-		</tr>
-		<tr>
-			<td>Sleaford and North Hykeham</td>
-			<td>42</td>
-		</tr>
-		<tr>
-			<td>Louth and Horncastle</td>
-			<td>70</td>
-		</tr>
-		<tr>
-			<td>Gainsborough</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Wellingborough</td>
-			<td>74</td>
-		</tr>
-		<tr>
-			<td>Corby</td>
-			<td>17</td>
-		</tr>
-		<tr>
-			<td>Rutland and Melton</td>
-			<td>53</td>
-		</tr>
-		<tr>
-			<td>Kettering</td>
-			<td>67</td>
-		</tr>
-		<tr>
-			<td>Daventry</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td>Northampton North</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Northampton South</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>South Northamptonshire</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td>Harborough</td>
-			<td>54</td>
-		</tr>
-		<tr>
-			<td>South Leicestershire</td>
-			<td>63</td>
-		</tr>
-		<tr>
-			<td>Leicester South</td>
-			<td>69</td>
-		</tr>
-		<tr>
-			<td>Leicester East</td>
-			<td>15</td>
-		</tr>
-		<tr>
-			<td>Leicester West</td>
-			<td>82</td>
-		</tr>
-		<tr>
-			<td>Charnwood</td>
-			<td>68</td>
-		</tr>
-		<tr>
-			<td>Bosworth</td>
-			<td>64</td>
-		</tr>
-		<tr>
-			<td>South Derbyshire</td>
-			<td>35</td>
-		</tr>
-		<tr>
-			<td>North West Leicestershire</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Loughborough</td>
-			<td>22</td>
-		</tr>
-		<tr>
-			<td>Derby North</td>
-			<td>45</td>
-		</tr>
-		<tr>
-			<td>Derby South</td>
-			<td>27</td>
-		</tr>
-		<tr>
-			<td>Derbyshire Dales</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Mid Derbyshire</td>
-			<td>67</td>
-		</tr>
-		<tr>
-			<td>Erewash</td>
-			<td>90</td>
-		</tr>
-		<tr>
-			<td>Amber Valley</td>
-			<td>82</td>
-		</tr>
-		<tr>
-			<td>Rushcliffe</td>
-			<td>87</td>
-		</tr>
-		<tr>
-			<td>Broxtowe</td>
-			<td>32</td>
-		</tr>
-		<tr>
-			<td>Nottingham North</td>
-			<td>58</td>
-		</tr>
-		<tr>
-			<td>Nottingham South</td>
-			<td>56</td>
-		</tr>
-		<tr>
-			<td>Nottingham East</td>
-			<td>64</td>
-		</tr>
-		<tr>
-			<td>Gedling</td>
-			<td>37</td>
-		</tr>
-		<tr>
-			<td>Newark</td>
-			<td>52</td>
-		</tr>
-		<tr>
-			<td>Sherwood</td>
-			<td>48</td>
-		</tr>
-		<tr>
-			<td>Mansfield</td>
-			<td>44</td>
-		</tr>
-		<tr>
-			<td>Ashfield</td>
-			<td>14</td>
-		</tr>
-		<tr>
-			<td>Bassetlaw</td>
-			<td>24</td>
-		</tr>
-		<tr>
-			<td>Bolsover</td>
-			<td>65</td>
-		</tr>
-		<tr>
-			<td>Chesterfield</td>
-			<td>61</td>
-		</tr>
-		<tr>
-			<td>North East Derbyshire</td>
-			<td>76</td>
-		</tr>
-		<tr>
-			<td>High Peak</td>
-			<td>84</td>
-		</tr>
-		<tr>
-			<td>Cheltenham</td>
-			<td>25</td>
-		</tr>
-		<tr>
-			<td>Orkney and Shetland</td>
-			<td>48</td>
-		</tr>
-	</tbody>
-</table>
-		<link rel="stylesheet" href="../../src/style/chart.css">
-		<script data-main="../../src/scripts/main" src="../../node_modules/requirejs/require.js"></script>
+		<table class="fm-choropleth-uk-constituencies"
+			data-fm-target-number-of-increments="">
+			<thead>
+				<tr>
+					<th>Constituency</th>
+					<th>Electorate (2010)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Aldershot</td>
+					<td>50,908</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Aldridge-Brownhills</td>
+					<td>58,695</td>
+					<td>59,506</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Altrincham and Sale West</td>
+					<td>69,605</td>
+					<td>72,008</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Amber Valley</td>
+					<td>66,406</td>
+					<td>69,538</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>Arundel and South Downs</td>
+					<td>71,203</td>
+					<td>76,697</td>
+					<td>West Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Ashfield</td>
+					<td>74,674</td>
+					<td>77,049</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Ashford</td>
+					<td>72,501</td>
+					<td>81,947</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Ashton-under-Lyne</td>
+					<td>67,334</td>
+					<td>68,553</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Aylesbury</td>
+					<td>72,023</td>
+					<td>78,750</td>
+					<td>Buckinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Banbury</td>
+					<td>78,817</td>
+					<td>84,063</td>
+					<td>Oxfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Barking</td>
+					<td>72,498</td>
+					<td>74,027</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Barnsley Central</td>
+					<td>64,117</td>
+					<td>64,732</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Barnsley East</td>
+					<td>65,237</td>
+					<td>68,243</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Barrow and Furness</td>
+					<td>69,142</td>
+					<td>69,148</td>
+					<td>Cumbria</td>
+					
+				</tr>
+				<tr>
+					<td>Basildon and Billericay</td>
+					<td>65,475</td>
+					<td>65,373</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Basingstoke</td>
+					<td>69,987</td>
+					<td>75,470</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Bassetlaw</td>
+					<td>75,036</td>
+					<td>78,306</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Bath</td>
+					<td>65,048</td>
+					<td>66,690</td>
+					<td>Bath and North East Somerset</td>
+					
+				</tr>
+				<tr>
+					<td>Batley and Spen</td>
+					<td>75,443</td>
+					<td>77,472</td>
+					<td>West Yorkshire (Kirklees)</td>
+					
+				</tr>
+				<tr>
+					<td>Battersea</td>
+					<td>67,111</td>
+					<td>73,028</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Beaconsfield</td>
+					<td>72,604</td>
+					<td>75,320</td>
+					<td>Buckinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Beckenham</td>
+					<td>63,405</td>
+					<td>66,470</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Bedford</td>
+					<td>68,867</td>
+					<td>69,019</td>
+					<td>Bedfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Bermondsey and Old Southwark</td>
+					<td>66,206</td>
+					<td>77,186</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Berwick-upon-Tweed</td>
+					<td>57,571</td>
+					<td>55,785</td>
+					<td>Northumberland</td>
+					
+				</tr>
+				<tr>
+					<td>Bethnal Green and Bow</td>
+					<td>66,423</td>
+					<td>79,581</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Beverley and Holderness</td>
+					<td>74,488</td>
+					<td>79,775</td>
+					<td>East Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Bexhill and Battle</td>
+					<td>73,593</td>
+					<td>78,602</td>
+					<td>East Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Bexleyheath and Crayford</td>
+					<td>64,032</td>
+					<td>64,144</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Birkenhead</td>
+					<td>66,452</td>
+					<td>62,432</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Birmingham, Edgbaston</td>
+					<td>71,523</td>
+					<td>69,039</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Birmingham, Erdington</td>
+					<td>67,357</td>
+					<td>67,598</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Birmingham, Hall Green</td>
+					<td>74,814</td>
+					<td>77,157</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Birmingham, Hodge Hill</td>
+					<td>75,563</td>
+					<td>75,595</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Birmingham, Ladywood</td>
+					<td>65,061</td>
+					<td>74,008</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Birmingham, Northfield</td>
+					<td>73,731</td>
+					<td>72,190</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Birmingham, Perry Barr</td>
+					<td>72,968</td>
+					<td>71,794</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Birmingham, Selly Oak</td>
+					<td>74,283</td>
+					<td>75,668</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Birmingham, Yardley</td>
+					<td>73,864</td>
+					<td>73,261</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Bishop Auckland</td>
+					<td>67,474</td>
+					<td>68,501</td>
+					<td>County Durham</td>
+					
+				</tr>
+				<tr>
+					<td>Blackburn</td>
+					<td>73,010</td>
+					<td>72,112</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Blackpool North and Cleveleys</td>
+					<td>65,449</td>
+					<td>66,187</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Blackpool South</td>
+					<td>64,002</td>
+					<td>64,081</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Blackley and Broughton</td>
+					<td>65,982</td>
+					<td>69,006</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Blaydon</td>
+					<td>69,530</td>
+					<td>68,156</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>Blyth Valley</td>
+					<td>62,657</td>
+					<td>63,173</td>
+					<td>Northumberland</td>
+					
+				</tr>
+				<tr>
+					<td>Bognor Regis and Littlehampton</td>
+					<td>71,328</td>
+					<td>70,535</td>
+					<td>West Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Bolsover</td>
+					<td>70,448</td>
+					<td>72,162</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>Bolton North East</td>
+					<td>71,024</td>
+					<td>66,600</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Bolton South East</td>
+					<td>73,348</td>
+					<td>69,088</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Bolton West</td>
+					<td>68,575</td>
+					<td>71,454</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Bootle</td>
+					<td>75,032</td>
+					<td>70,824</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Boston and Skegness</td>
+					<td>71,003</td>
+					<td>70,620</td>
+					<td>Lincolnshire</td>
+					
+				</tr>
+				<tr>
+					<td>Bosworth</td>
+					<td>72,948</td>
+					<td>77,787</td>
+					<td>Leicestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Bournemouth East</td>
+					<td>71,125</td>
+					<td>72,961</td>
+					<td>Dorset</td>
+					
+				</tr>
+				<tr>
+					<td>Bournemouth West</td>
+					<td>68,080</td>
+					<td>72,714</td>
+					<td>Dorset</td>
+					
+				</tr>
+				<tr>
+					<td>Bracknell</td>
+					<td>74,307</td>
+					<td>77,490</td>
+					<td>Berkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Bradford East</td>
+					<td>70,863</td>
+					<td>66,718</td>
+					<td>West Yorkshire (Bradford)</td>
+					
+				</tr>
+				<tr>
+					<td>Bradford South</td>
+					<td>67,201</td>
+					<td>64,715</td>
+					<td>West Yorkshire (Bradford)</td>
+					
+				</tr>
+				<tr>
+					<td>Bradford West</td>
+					<td>69,967</td>
+					<td>63,425</td>
+					<td>West Yorkshire (Bradford)</td>
+					
+				</tr>
+				<tr>
+					<td>Braintree</td>
+					<td>65,616</td>
+					<td>72,064</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Brent Central</td>
+					<td>71,073</td>
+					<td>73,385</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Brent North</td>
+					<td>71,398</td>
+					<td>82,648</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Brentford and Isleworth</td>
+					<td>79,334</td>
+					<td>83,332</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Brentwood and Ongar</td>
+					<td>68,099</td>
+					<td>71,041</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Bridgwater and West Somerset</td>
+					<td>77,780</td>
+					<td>82,936</td>
+					<td>Somerset</td>
+					
+				</tr>
+				<tr>
+					<td>Brigg and Goole</td>
+					<td>62,246</td>
+					<td>66,734</td>
+					<td>East Yorkshire &amp; North Lincolnshire</td>
+					
+				</tr>
+				<tr>
+					<td>Brighton, Kemptown</td>
+					<td>65,563</td>
+					<td>66,557</td>
+					<td>East Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Brighton, Pavilion</td>
+					<td>70,509</td>
+					<td>73,430</td>
+					<td>East Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Bristol East</td>
+					<td>68,245</td>
+					<td>69,347</td>
+					<td>Bristol</td>
+					
+				</tr>
+				<tr>
+					<td>Bristol North West</td>
+					<td>72,563</td>
+					<td>73,920</td>
+					<td>Bristol</td>
+					
+				</tr>
+				<tr>
+					<td>Bristol South</td>
+					<td>75,410</td>
+					<td>78,703</td>
+					<td>Bristol</td>
+					
+				</tr>
+				<tr>
+					<td>Bristol West</td>
+					<td>74,262</td>
+					<td>82,503</td>
+					<td>Bristol</td>
+					
+				</tr>
+				<tr>
+					<td>Broadland</td>
+					<td>71,241</td>
+					<td>73,066</td>
+					<td>Norfolk</td>
+					
+				</tr>
+				<tr>
+					<td>Bromley and Chislehurst</td>
+					<td>63,489</td>
+					<td>65,508</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Bromsgrove</td>
+					<td>68,443</td>
+					<td>73,279</td>
+					<td>Worcestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Broxbourne</td>
+					<td>67,800</td>
+					<td>71,872</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Broxtowe</td>
+					<td>73,073</td>
+					<td>71,961</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Buckingham</td>
+					<td>69,560</td>
+					<td>75,837</td>
+					<td>Buckinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Burnley</td>
+					<td>67,256</td>
+					<td>67,003</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Burton</td>
+					<td>70,324</td>
+					<td>75,302</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Bury North</td>
+					<td>65,440</td>
+					<td>67,911</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Bury South</td>
+					<td>73,212</td>
+					<td>75,140</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Bury St Edmunds</td>
+					<td>76,640</td>
+					<td>85,933</td>
+					<td>Suffolk</td>
+					
+				</tr>
+				<tr>
+					<td>Calder Valley</td>
+					<td>75,379</td>
+					<td>76,041</td>
+					<td>West Yorkshire (Calderdale)</td>
+					
+				</tr>
+				<tr>
+					<td>Camberwell and Peckham</td>
+					<td>67,764</td>
+					<td>78,605</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Camborne and Redruth</td>
+					<td>60,773</td>
+					<td>64,798</td>
+					<td>Cornwall</td>
+					
+				</tr>
+				<tr>
+					<td>Cambridge</td>
+					<td>76,906</td>
+					<td>75,259</td>
+					<td>Cambridgeshire</td>
+					
+				</tr>
+				<tr>
+					<td>Cannock Chase</td>
+					<td>70,995</td>
+					<td>75,680</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Canterbury</td>
+					<td>72,745</td>
+					<td>73,779</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Carlisle</td>
+					<td>63,001</td>
+					<td>66,322</td>
+					<td>Cumbria</td>
+					
+				</tr>
+				<tr>
+					<td>Carshalton and Wallington</td>
+					<td>65,610</td>
+					<td>67,044</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Castle Point</td>
+					<td>68,065</td>
+					<td>64,562</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Central Devon</td>
+					<td>63,563</td>
+					<td>71,563</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>Central Suffolk and North Ipswich</td>
+					<td>69,264</td>
+					<td>76,177</td>
+					<td>Suffolk</td>
+					
+				</tr>
+				<tr>
+					<td>Charnwood</td>
+					<td>70,869</td>
+					<td>75,454</td>
+					<td>Leicestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Chatham and Aylesford</td>
+					<td>66,482</td>
+					<td>68,437</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Cheadle</td>
+					<td>72,933</td>
+					<td>71,797</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Chelmsford</td>
+					<td>72,835</td>
+					<td>77,835</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Chelsea and Fulham</td>
+					<td>63,330</td>
+					<td>62,958</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Cheltenham</td>
+					<td>73,330</td>
+					<td>77,937</td>
+					<td>Gloucestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Chesham and Amersham</td>
+					<td>70,596</td>
+					<td>70,723</td>
+					<td>Buckinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Chesterfield</td>
+					<td>71,299</td>
+					<td>72,866</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>Chichester</td>
+					<td>75,499</td>
+					<td>81,804</td>
+					<td>West Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Chingford and Woodford Green</td>
+					<td>63,910</td>
+					<td>64,770</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Chippenham</td>
+					<td>65,755</td>
+					<td>73,312</td>
+					<td>Wiltshire</td>
+					
+				</tr>
+				<tr>
+					<td>Chipping Barnet</td>
+					<td>74,890</td>
+					<td>76,455</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Chorley</td>
+					<td>68,899</td>
+					<td>71,333</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Christchurch</td>
+					<td>66,744</td>
+					<td>69,008</td>
+					<td>Dorset</td>
+					
+				</tr>
+				<tr>
+					<td>Cities of London and Westminster</td>
+					<td>61,621</td>
+					<td>65,140</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>City of Chester</td>
+					<td>69,279</td>
+					<td>68,280</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>City of Durham</td>
+					<td>69,926</td>
+					<td>72,659</td>
+					<td>County Durham</td>
+					
+				</tr>
+				<tr>
+					<td>Clacton</td>
+					<td>65,999</td>
+					<td>67,447</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Cleethorpes</td>
+					<td>68,938</td>
+					<td>70,895</td>
+					<td>Humberside</td>
+					
+				</tr>
+				<tr>
+					<td>Colchester</td>
+					<td>70,933</td>
+					<td>73,638</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Colne Valley</td>
+					<td>78,355</td>
+					<td>80,791</td>
+					<td>West Yorkshire (Kirklees)</td>
+					
+				</tr>
+				<tr>
+					<td>Congleton</td>
+					<td>71,944</td>
+					<td>73,820</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>Copeland</td>
+					<td>62,517</td>
+					<td>63,696</td>
+					<td>Cumbria</td>
+					
+				</tr>
+				<tr>
+					<td>Corby</td>
+					<td>72,053</td>
+					<td>79,468</td>
+					<td>Northamptonshire</td>
+					
+				</tr>
+				<tr>
+					<td>Coventry North East</td>
+					<td>76,185</td>
+					<td>74,870</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Coventry North West</td>
+					<td>73,595</td>
+					<td>74,180</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Coventry South</td>
+					<td>72,903</td>
+					<td>75,705</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Crawley</td>
+					<td>71,789</td>
+					<td>71,793</td>
+					<td>West Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Crewe and Nantwich</td>
+					<td>69,130</td>
+					<td>78,845</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>Croydon Central</td>
+					<td>73,420</td>
+					<td>76,980</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Croydon North</td>
+					<td>79,819</td>
+					<td>85,107</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Croydon South</td>
+					<td>78,363</td>
+					<td>81,554</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Dagenham and Rainham</td>
+					<td>71,205</td>
+					<td>70,187</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Darlington</td>
+					<td>65,872</td>
+					<td>67,476</td>
+					<td>County Durham</td>
+					
+				</tr>
+				<tr>
+					<td>Dartford</td>
+					<td>69,471</td>
+					<td>74,756</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Daventry</td>
+					<td>67,256</td>
+					<td>71,903</td>
+					<td>Northamptonshire</td>
+					
+				</tr>
+				<tr>
+					<td>Denton and Reddish</td>
+					<td>65,855</td>
+					<td>65,684</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Derby North</td>
+					<td>71,311</td>
+					<td>72,617</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>Derby South</td>
+					<td>69,584</td>
+					<td>72,048</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>Derbyshire Dales</td>
+					<td>62,511</td>
+					<td>63,732</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>Devizes</td>
+					<td>64,707</td>
+					<td>68,846</td>
+					<td>Wiltshire</td>
+					
+				</tr>
+				<tr>
+					<td>Dewsbury</td>
+					<td>76,886</td>
+					<td>79,634</td>
+					<td>West Yorkshire (Kirklees)</td>
+					
+				</tr>
+				<tr>
+					<td>Don Valley</td>
+					<td>72,358</td>
+					<td>73,674</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Doncaster Central</td>
+					<td>74,388</td>
+					<td>73,874</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Doncaster North</td>
+					<td>73,907</td>
+					<td>72,855</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Dover</td>
+					<td>69,932</td>
+					<td>71,993</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Dudley North</td>
+					<td>60,992</td>
+					<td>61,714</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Dudley South</td>
+					<td>60,844</td>
+					<td>61,308</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Dulwich and West Norwood</td>
+					<td>66,856</td>
+					<td>71,523</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Ealing Central and Acton</td>
+					<td>71,258</td>
+					<td>69,828</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Ealing North</td>
+					<td>72,971</td>
+					<td>73,105</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Ealing, Southall</td>
+					<td>62,341</td>
+					<td>65,768</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Easington</td>
+					<td>62,562</td>
+					<td>65,618</td>
+					<td>County Durham</td>
+					
+				</tr>
+				<tr>
+					<td>East Devon</td>
+					<td>69,068</td>
+					<td>72,406</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>East Ham</td>
+					<td>72,900</td>
+					<td>91,531</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>East Hampshire</td>
+					<td>67,452</td>
+					<td>72,648</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>East Surrey</td>
+					<td>74,786</td>
+					<td>77,145</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>East Worthing and Shoreham</td>
+					<td>71,760</td>
+					<td>72,996</td>
+					<td>West Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>East Yorkshire</td>
+					<td>72,018</td>
+					<td>80,435</td>
+					<td>Humberside</td>
+					
+				</tr>
+				<tr>
+					<td>Eastbourne</td>
+					<td>66,949</td>
+					<td>76,978</td>
+					<td>East Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Eastleigh</td>
+					<td>72,715</td>
+					<td>78,313</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Eddisbury</td>
+					<td>63,923</td>
+					<td>65,914</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>Edmonton</td>
+					<td>65,443</td>
+					<td>64,356</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Ellesmere Port and Neston</td>
+					<td>68,372</td>
+					<td>66,995</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>Elmet and Rothwell</td>
+					<td>76,580</td>
+					<td>77,994</td>
+					<td>West Yorkshire (Leeds)</td>
+					
+				</tr>
+				<tr>
+					<td>Eltham</td>
+					<td>64,907</td>
+					<td>63,059</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Enfield North</td>
+					<td>65,709</td>
+					<td>66,761</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Enfield, Southgate</td>
+					<td>67,943</td>
+					<td>64,932</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Epping Forest</td>
+					<td>70,441</td>
+					<td>72,212</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Epsom and Ewell</td>
+					<td>72,866</td>
+					<td>76,916</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>Erewash</td>
+					<td>68,934</td>
+					<td>70,022</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>Erith and Thamesmead</td>
+					<td>64,307</td>
+					<td>69,718</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Esher and Walton</td>
+					<td>74,052</td>
+					<td>76,962</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>Exeter</td>
+					<td>74,492</td>
+					<td>76,796</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>Fareham</td>
+					<td>71,423</td>
+					<td>76,457</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Faversham and Mid Kent</td>
+					<td>66,179</td>
+					<td>68,521</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Feltham and Heston</td>
+					<td>77,606</td>
+					<td>80,437</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Filton and Bradley Stoke</td>
+					<td>62,299</td>
+					<td>69,732</td>
+					<td>South Gloucestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Finchley and Golders Green</td>
+					<td>71,800</td>
+					<td>71,595</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Folkestone and Hythe</td>
+					<td>72,512</td>
+					<td>84,156</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Forest of Dean</td>
+					<td>66,055</td>
+					<td>68,703</td>
+					<td>Gloucestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Fylde</td>
+					<td>62,745</td>
+					<td>66,504</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Gainsborough</td>
+					<td>64,022</td>
+					<td>63,795</td>
+					<td>Lincolnshire</td>
+					
+				</tr>
+				<tr>
+					<td>Garston and Halewood</td>
+					<td>73,480</td>
+					<td>71,618</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Gateshead</td>
+					<td>69,403</td>
+					<td>66,066</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>Gedling</td>
+					<td>70,575</td>
+					<td>70,886</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Gillingham and Rainham</td>
+					<td>71,539</td>
+					<td>71,109</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Gloucester</td>
+					<td>74,876</td>
+					<td>80,788</td>
+					<td>Gloucestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Gosport</td>
+					<td>69,708</td>
+					<td>72,845</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Grantham and Stamford</td>
+					<td>73,336</td>
+					<td>79,118</td>
+					<td>Lincolnshire</td>
+					
+				</tr>
+				<tr>
+					<td>Gravesham</td>
+					<td>70,098</td>
+					<td>70,412</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Great Grimsby</td>
+					<td>64,594</td>
+					<td>61,929</td>
+					<td>Humberside (NE Lincolnshire)</td>
+					
+				</tr>
+				<tr>
+					<td>Great Yarmouth</td>
+					<td>69,086</td>
+					<td>70,526</td>
+					<td>Norfolk</td>
+					
+				</tr>
+				<tr>
+					<td>Greenwich and Woolwich</td>
+					<td>60,473</td>
+					<td>66,982</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Guildford</td>
+					<td>74,987</td>
+					<td>77,517</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>Hackney North and Stoke Newington</td>
+					<td>63,185</td>
+					<td>74,780</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Hackney South and Shoreditch</td>
+					<td>57,204</td>
+					<td>73,778</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Halesowen and Rowley Regis</td>
+					<td>66,579</td>
+					<td>67,656</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Halifax</td>
+					<td>70,978</td>
+					<td>69,126</td>
+					<td>West Yorkshire (Calderdale)</td>
+					
+				</tr>
+				<tr>
+					<td>Haltemprice and Howden</td>
+					<td>66,268</td>
+					<td>70,864</td>
+					<td>Humberside</td>
+					
+				</tr>
+				<tr>
+					<td>Halton</td>
+					<td>69,727</td>
+					<td>70,322</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>Hammersmith</td>
+					<td>67,873</td>
+					<td>70,008</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Hampstead and Kilburn</td>
+					<td>74,573</td>
+					<td>78,552</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Harborough</td>
+					<td>72,881</td>
+					<td>78,753</td>
+					<td>Leicestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Harlow</td>
+					<td>67,232</td>
+					<td>67,700</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Harrogate and Knaresborough</td>
+					<td>73,962</td>
+					<td>75,044</td>
+					<td>North Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Harrow East</td>
+					<td>67,365</td>
+					<td>72,537</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Harrow West</td>
+					<td>64,737</td>
+					<td>69,135</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Hartlepool</td>
+					<td>68,262</td>
+					<td>70,010</td>
+					<td>Cleveland</td>
+					
+				</tr>
+				<tr>
+					<td>Harwich and North Essex</td>
+					<td>67,715</td>
+					<td>71,087</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Hastings and Rye</td>
+					<td>74,623</td>
+					<td>76,422</td>
+					<td>East Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Havant</td>
+					<td>70,138</td>
+					<td>70,568</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Hayes and Harlington</td>
+					<td>65,237</td>
+					<td>70,789</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Hazel Grove</td>
+					<td>63,519</td>
+					<td>62,422</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Hemel Hempstead</td>
+					<td>72,019</td>
+					<td>72,561</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Hemsworth</td>
+					<td>71,988</td>
+					<td>73,487</td>
+					<td>West Yorkshire (Wakefield)</td>
+					
+				</tr>
+				<tr>
+					<td>Hendon</td>
+					<td>73,976</td>
+					<td>74,329</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Henley</td>
+					<td>72,331</td>
+					<td>73,851</td>
+					<td>Oxfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Hereford and South Herefordshire</td>
+					<td>69,632</td>
+					<td>71,352</td>
+					<td>Herefordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Hertford and Stortford</td>
+					<td>73,717</td>
+					<td>79,255</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Hertsmere</td>
+					<td>69,178</td>
+					<td>70,772</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Hexham</td>
+					<td>59,666</td>
+					<td>60,499</td>
+					<td>Northumberland</td>
+					
+				</tr>
+				<tr>
+					<td>Heywood and Middleton</td>
+					<td>78,036</td>
+					<td>79,636</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>High Peak</td>
+					<td>68,061</td>
+					<td>72,178</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>Hitchin and Harpenden</td>
+					<td>68,765</td>
+					<td>74,189</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Holborn and St Pancras</td>
+					<td>78,307</td>
+					<td>85,243</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Hornchurch and Upminster</td>
+					<td>79,496</td>
+					<td>79,568</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Hornsey and Wood Green</td>
+					<td>75,052</td>
+					<td>79,878</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Horsham</td>
+					<td>72,277</td>
+					<td>77,001</td>
+					<td>West Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Houghton and Sunderland South</td>
+					<td>71,347</td>
+					<td>70,115</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>Hove</td>
+					<td>70,912</td>
+					<td>71,181</td>
+					<td>East Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Huddersfield</td>
+					<td>66,275</td>
+					<td>66,681</td>
+					<td>West Yorkshire (Kirklees)</td>
+					
+				</tr>
+				<tr>
+					<td>Huntingdon</td>
+					<td>74,724</td>
+					<td>79,134</td>
+					<td>Cambridgeshire</td>
+					
+				</tr>
+				<tr>
+					<td>Hyndburn</td>
+					<td>68,030</td>
+					<td>69,617</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Ilford North</td>
+					<td>67,525</td>
+					<td>72,702</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Ilford South</td>
+					<td>75,294</td>
+					<td>86,401</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Ipswich</td>
+					<td>71,717</td>
+					<td>75,195</td>
+					<td>Suffolk</td>
+					
+				</tr>
+				<tr>
+					<td>Isle of Wight</td>
+					<td>103,480</td>
+					<td>110,924</td>
+					<td>Isle of Wight</td>
+					
+				</tr>
+				<tr>
+					<td>Islington North</td>
+					<td>61,054</td>
+					<td>68,777</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Islington South and Finsbury</td>
+					<td>58,839</td>
+					<td>67,613</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Jarrow</td>
+					<td>65,804</td>
+					<td>65,047</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>Keighley</td>
+					<td>68,652</td>
+					<td>66,967</td>
+					<td>West Yorkshire (Bradford)</td>
+					
+				</tr>
+				<tr>
+					<td>Kenilworth and Southam</td>
+					<td>62,708</td>
+					<td>63,772</td>
+					<td>Warwickshire</td>
+					
+				</tr>
+				<tr>
+					<td>Kensington</td>
+					<td>65,482</td>
+					<td>62,784</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Kettering</td>
+					<td>62,813</td>
+					<td>69,610</td>
+					<td>Northamptonshire</td>
+					
+				</tr>
+				<tr>
+					<td>Kingston and Surbiton</td>
+					<td>74,602</td>
+					<td>80,639</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Kingston upon Hull East</td>
+					<td>70,638</td>
+					<td>68,150</td>
+					<td>Humberside</td>
+					
+				</tr>
+				<tr>
+					<td>Kingston upon Hull North</td>
+					<td>62,286</td>
+					<td>65,219</td>
+					<td>Humberside</td>
+					
+				</tr>
+				<tr>
+					<td>Kingston upon Hull West and Hessle</td>
+					<td>64,369</td>
+					<td>61,232</td>
+					<td>Humberside</td>
+					
+				</tr>
+				<tr>
+					<td>Kingswood</td>
+					<td>60,936</td>
+					<td>67,199</td>
+					<td>South Gloucestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Knowsley</td>
+					<td>79,099</td>
+					<td>79,334</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Lancaster and Fleetwood</td>
+					<td>63,849</td>
+					<td>67,305</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Leeds Central</td>
+					<td>78,941</td>
+					<td>80,912</td>
+					<td>West Yorkshire (Leeds)</td>
+					
+				</tr>
+				<tr>
+					<td>Leeds East</td>
+					<td>67,571</td>
+					<td>64,742</td>
+					<td>West Yorkshire (Leeds)</td>
+					
+				</tr>
+				<tr>
+					<td>Leeds North East</td>
+					<td>66,930</td>
+					<td>68,269</td>
+					<td>West Yorkshire (Leeds)</td>
+					
+				</tr>
+				<tr>
+					<td>Leeds North West</td>
+					<td>66,466</td>
+					<td>65,047</td>
+					<td>West Yorkshire (Leeds)</td>
+					
+				</tr>
+				<tr>
+					<td>Leeds West</td>
+					<td>67,629</td>
+					<td>67,222</td>
+					<td>West Yorkshire (Leeds)</td>
+					
+				</tr>
+				<tr>
+					<td>Leicester East</td>
+					<td>66,176</td>
+					<td>74,377</td>
+					<td>Leicestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Leicester South</td>
+					<td>73,400</td>
+					<td>78,433</td>
+					<td>Leicestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Leicester West</td>
+					<td>64,301</td>
+					<td>65,432</td>
+					<td>Leicestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Leigh</td>
+					<td>74,231</td>
+					<td>77,001</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Lewes</td>
+					<td>65,282</td>
+					<td>68,515</td>
+					<td>East Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Lewisham, Deptford</td>
+					<td>67,682</td>
+					<td>67,590</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Lewisham East</td>
+					<td>67,833</td>
+					<td>65,508</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Lewisham West and Penge</td>
+					<td>68,411</td>
+					<td>69,399</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Leyton and Wanstead</td>
+					<td>62,960</td>
+					<td>63,021</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Lichfield</td>
+					<td>68,301</td>
+					<td>73,085</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Lincoln</td>
+					<td>70,135</td>
+					<td>72,662</td>
+					<td>Lincolnshire</td>
+					
+				</tr>
+				<tr>
+					<td>Liverpool, Riverside</td>
+					<td>72,873</td>
+					<td>73,406</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Liverpool, Walton</td>
+					<td>72,182</td>
+					<td>61,974</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Liverpool, Wavertree</td>
+					<td>72,256</td>
+					<td>61,979</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Liverpool, West Derby</td>
+					<td>70,583</td>
+					<td>62,709</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Loughborough</td>
+					<td>70,983</td>
+					<td>77,884</td>
+					<td>Leicestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Louth and Horncastle</td>
+					<td>70,463</td>
+					<td>76,233</td>
+					<td>Lincolnshire</td>
+					
+				</tr>
+				<tr>
+					<td>Ludlow</td>
+					<td>63,052</td>
+					<td>66,199</td>
+					<td>Shropshire</td>
+					
+				</tr>
+				<tr>
+					<td>Luton North</td>
+					<td>66,807</td>
+					<td>66,273</td>
+					<td>Bedfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Luton South</td>
+					<td>69,326</td>
+					<td>65,889</td>
+					<td>Bedfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Macclesfield</td>
+					<td>72,655</td>
+					<td>73,613</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>Maidenhead</td>
+					<td>73,868</td>
+					<td>74,028</td>
+					<td>Berkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Maidstone and The Weald</td>
+					<td>68,014</td>
+					<td>70,576</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Makerfield</td>
+					<td>72,903</td>
+					<td>74,856</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Maldon</td>
+					<td>65,899</td>
+					<td>69,539</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Manchester Central</td>
+					<td>69,600</td>
+					<td>89,519</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Manchester, Gorton</td>
+					<td>70,845</td>
+					<td>74,681</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Manchester, Withington</td>
+					<td>69,187</td>
+					<td>73,656</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Mansfield</td>
+					<td>77,524</td>
+					<td>79,849</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Meon Valley</td>
+					<td>65,952</td>
+					<td>71,291</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Meriden</td>
+					<td>78,714</td>
+					<td>83,428</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Mid Bedfordshire</td>
+					<td>70,111</td>
+					<td>76,381</td>
+					<td>Bedfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Mid Derbyshire</td>
+					<td>64,939</td>
+					<td>66,572</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>Mid Dorset and North Poole</td>
+					<td>65,066</td>
+					<td>64,705</td>
+					<td>Dorset</td>
+					
+				</tr>
+				<tr>
+					<td>Mid Norfolk</td>
+					<td>68,328</td>
+					<td>75,080</td>
+					<td>Norfolk</td>
+					
+				</tr>
+				<tr>
+					<td>Mid Sussex</td>
+					<td>73,822</td>
+					<td>77,044</td>
+					<td>West Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Mid Worcestershire</td>
+					<td>69,351</td>
+					<td>71,660</td>
+					<td>Worcestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Middlesbrough</td>
+					<td>69,638</td>
+					<td>65,851</td>
+					<td>Cleveland</td>
+					
+				</tr>
+				<tr>
+					<td>Middlesbrough South and East Cleveland</td>
+					<td>71,942</td>
+					<td>72,876</td>
+					<td>Cleveland</td>
+					
+				</tr>
+				<tr>
+					<td>Milton Keynes North</td>
+					<td>75,312</td>
+					<td>81,226</td>
+					<td>Buckinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Milton Keynes South</td>
+					<td>75,682</td>
+					<td>85,552</td>
+					<td>Buckinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Mitcham and Morden</td>
+					<td>65,629</td>
+					<td>67,074</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Mole Valley</td>
+					<td>69,093</td>
+					<td>72,568</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>Morecambe and Lunesdale</td>
+					<td>67,514</td>
+					<td>69,254</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Morley and Outwood</td>
+					<td>69,583</td>
+					<td>75,163</td>
+					<td>West Yorkshire (Leeds and Wakefield)</td>
+					
+				</tr>
+				<tr>
+					<td>New Forest East</td>
+					<td>69,646</td>
+					<td>73,542</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>New Forest West</td>
+					<td>65,269</td>
+					<td>68,987</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Newark</td>
+					<td>69,803</td>
+					<td>72,407</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Newbury</td>
+					<td>74,865</td>
+					<td>77,898</td>
+					<td>Berkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Newcastle-under-Lyme</td>
+					<td>66,701</td>
+					<td>68,692</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Newcastle upon Tyne Central</td>
+					<td>64,803</td>
+					<td>60,795</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>Newcastle upon Tyne East</td>
+					<td>68,068</td>
+					<td>65,203</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>Newcastle upon Tyne North</td>
+					<td>68,753</td>
+					<td>67,401</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>Newton Abbot</td>
+					<td>64,555</td>
+					<td>69,600</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>Normanton, Pontefract and Castleford</td>
+					<td>78,641</td>
+					<td>83,284</td>
+					<td>West Yorkshire (Wakefield)</td>
+					
+				</tr>
+				<tr>
+					<td>North Cornwall</td>
+					<td>62,214</td>
+					<td>68,206</td>
+					<td>Cornwall</td>
+					
+				</tr>
+				<tr>
+					<td>North Devon</td>
+					<td>68,272</td>
+					<td>75,098</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>North Dorset</td>
+					<td>66,608</td>
+					<td>73,010</td>
+					<td>Dorset</td>
+					
+				</tr>
+				<tr>
+					<td>North Durham</td>
+					<td>68,087</td>
+					<td>68,959</td>
+					<td>County Durham</td>
+					
+				</tr>
+				<tr>
+					<td>North East Bedfordshire</td>
+					<td>68,900</td>
+					<td>78,350</td>
+					<td>Bedfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>North East Cambridgeshire</td>
+					<td>74,165</td>
+					<td>83,661</td>
+					<td>Cambridgeshire</td>
+					
+				</tr>
+				<tr>
+					<td>North East Derbyshire</td>
+					<td>71,580</td>
+					<td>72,374</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>North East Hampshire</td>
+					<td>67,417</td>
+					<td>72,548</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>North East Hertfordshire</td>
+					<td>70,477</td>
+					<td>72,658</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>North East Somerset</td>
+					<td>65,942</td>
+					<td>68,546</td>
+					<td>Bath and North East Somerset</td>
+					
+				</tr>
+				<tr>
+					<td>North Herefordshire</td>
+					<td>63,418</td>
+					<td>66,711</td>
+					<td>Herefordshire</td>
+					
+				</tr>
+				<tr>
+					<td>North Norfolk</td>
+					<td>66,811</td>
+					<td>68,277</td>
+					<td>Norfolk</td>
+					
+				</tr>
+				<tr>
+					<td>North Shropshire</td>
+					<td>72,964</td>
+					<td>77,673</td>
+					<td>Shropshire</td>
+					
+				</tr>
+				<tr>
+					<td>North Somerset</td>
+					<td>71,308</td>
+					<td>78,223</td>
+					<td>North Somerset</td>
+					
+				</tr>
+				<tr>
+					<td>North Swindon</td>
+					<td>67,106</td>
+					<td>79,488</td>
+					<td>Wiltshire</td>
+					
+				</tr>
+				<tr>
+					<td>North Thanet</td>
+					<td>66,026</td>
+					<td>67,110</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>North Tyneside</td>
+					<td>71,751</td>
+					<td>78,617</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>North Warwickshire</td>
+					<td>67,872</td>
+					<td>70,544</td>
+					<td>Warwickshire</td>
+					
+				</tr>
+				<tr>
+					<td>North West Cambridgeshire</td>
+					<td>73,648</td>
+					<td>89,419</td>
+					<td>Cambridgeshire</td>
+					
+				</tr>
+				<tr>
+					<td>North West Durham</td>
+					<td>67,298</td>
+					<td>72,760</td>
+					<td>County Durham</td>
+					
+				</tr>
+				<tr>
+					<td>North West Hampshire</td>
+					<td>73,840</td>
+					<td>77,020</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>North West Leicestershire</td>
+					<td>67,534</td>
+					<td>72,022</td>
+					<td>Leicestershire</td>
+					
+				</tr>
+				<tr>
+					<td>North West Norfolk</td>
+					<td>71,144</td>
+					<td>73,269</td>
+					<td>Norfolk</td>
+					
+				</tr>
+				<tr>
+					<td>North Wiltshire</td>
+					<td>61,322</td>
+					<td>67,154</td>
+					<td>Wiltshire</td>
+					
+				</tr>
+				<tr>
+					<td>Northampton North</td>
+					<td>64,212</td>
+					<td>62,095</td>
+					<td>Northamptonshire</td>
+					
+				</tr>
+				<tr>
+					<td>Northampton South</td>
+					<td>62,133</td>
+					<td>63,048</td>
+					<td>Northamptonshire</td>
+					
+				</tr>
+				<tr>
+					<td>Norwich North</td>
+					<td>64,506</td>
+					<td>64,982</td>
+					<td>Norfolk</td>
+					
+				</tr>
+				<tr>
+					<td>Norwich South</td>
+					<td>68,763</td>
+					<td>73,569</td>
+					<td>Norfolk</td>
+					
+				</tr>
+				<tr>
+					<td>Nottingham East</td>
+					<td>64,173</td>
+					<td>59,489</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Nottingham North</td>
+					<td>68,139</td>
+					<td>64,578</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Nottingham South</td>
+					<td>72,400</td>
+					<td>69,154</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Nuneaton</td>
+					<td>66,460</td>
+					<td>68,288</td>
+					<td>Warwickshire</td>
+					
+				</tr>
+				<tr>
+					<td>Old Bexley and Sidcup</td>
+					<td>65,186</td>
+					<td>65,161</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Oldham East and Saddleworth</td>
+					<td>70,984</td>
+					<td>72,249</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Oldham West and Royton</td>
+					<td>70,947</td>
+					<td>72,402</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Orpington</td>
+					<td>66,974</td>
+					<td>68,221</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Oxford East</td>
+					<td>78,769</td>
+					<td>81,644</td>
+					<td>Oxfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Oxford West and Abingdon</td>
+					<td>75,153</td>
+					<td>77,811</td>
+					<td>Oxfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Pendle</td>
+					<td>63,347</td>
+					<td>66,735</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Penistone and Stocksbridge</td>
+					<td>63,914</td>
+					<td>69,133</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Penrith and The Border</td>
+					<td>61,000</td>
+					<td>65,234</td>
+					<td>Cumbria</td>
+					
+				</tr>
+				<tr>
+					<td>Peterborough</td>
+					<td>70,640</td>
+					<td>72,787</td>
+					<td>Cambridgeshire</td>
+					
+				</tr>
+				<tr>
+					<td>Plymouth, Moor View</td>
+					<td>68,843</td>
+					<td>68,556</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>Plymouth, Sutton and Devonport</td>
+					<td>73,240</td>
+					<td>71,236</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>Poole</td>
+					<td>67,933</td>
+					<td>72,773</td>
+					<td>Dorset</td>
+					
+				</tr>
+				<tr>
+					<td>Poplar and Limehouse</td>
+					<td>59,400</td>
+					<td>74,919</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Portsmouth North</td>
+					<td>70,871</td>
+					<td>71,798</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Portsmouth South</td>
+					<td>71,774</td>
+					<td>71,947</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Preston</td>
+					<td>63,558</td>
+					<td>61,025</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Pudsey</td>
+					<td>68,150</td>
+					<td>69,738</td>
+					<td>West Yorkshire (Leeds)</td>
+					
+				</tr>
+				<tr>
+					<td>Putney</td>
+					<td>59,331</td>
+					<td>62,153</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Rayleigh and Wickford</td>
+					<td>71,975</td>
+					<td>76,089</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Reading East</td>
+					<td>72,788</td>
+					<td>78,170</td>
+					<td>Berkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Reading West</td>
+					<td>72,250</td>
+					<td>73,216</td>
+					<td>Berkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Redcar</td>
+					<td>67,638</td>
+					<td>67,195</td>
+					<td>Cleveland</td>
+					
+				</tr>
+				<tr>
+					<td>Redditch</td>
+					<td>64,501</td>
+					<td>66,492</td>
+					<td>Worcestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Reigate</td>
+					<td>67,432</td>
+					<td>72,043</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>Ribble Valley</td>
+					<td>71,997</td>
+					<td>77,437</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Richmond (Yorks)</td>
+					<td>74,434</td>
+					<td>78,902</td>
+					<td>North Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Richmond Park</td>
+					<td>71,457</td>
+					<td>76,650</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Rochdale</td>
+					<td>73,807</td>
+					<td>77,699</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Rochester and Strood</td>
+					<td>69,032</td>
+					<td>75,001</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Rochford and Southend East</td>
+					<td>69,904</td>
+					<td>71,131</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Romford</td>
+					<td>69,536</td>
+					<td>71,978</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Romsey and Southampton North</td>
+					<td>65,461</td>
+					<td>67,696</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Rossendale and Darwen</td>
+					<td>70,698</td>
+					<td>73,443</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Rother Valley</td>
+					<td>72,237</td>
+					<td>73,068</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Rotherham</td>
+					<td>65,305</td>
+					<td>63,131</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Rugby</td>
+					<td>65,407</td>
+					<td>69,932</td>
+					<td>Warwickshire</td>
+					
+				</tr>
+				<tr>
+					<td>Ruislip, Northwood and Pinner</td>
+					<td>68,244</td>
+					<td>71,706</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Runnymede and Weybridge</td>
+					<td>73,357</td>
+					<td>73,680</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>Rushcliffe</td>
+					<td>70,484</td>
+					<td>73,430</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Rutland and Melton</td>
+					<td>72,214</td>
+					<td>77,324</td>
+					<td>Leicestershire and Rutland</td>
+					
+				</tr>
+				<tr>
+					<td>Saffron Walden</td>
+					<td>70,402</td>
+					<td>77,109</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Salisbury</td>
+					<td>66,502</td>
+					<td>68,731</td>
+					<td>Wiltshire</td>
+					
+				</tr>
+				<tr>
+					<td>Salford and Eccles</td>
+					<td>73,162</td>
+					<td>76,863</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Scarborough and Whitby</td>
+					<td>76,572</td>
+					<td>76,078</td>
+					<td>North Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Scunthorpe</td>
+					<td>62,032</td>
+					<td>63,489</td>
+					<td>Humberside</td>
+					
+				</tr>
+				<tr>
+					<td>Sedgefield</td>
+					<td>63,917</td>
+					<td>67,386</td>
+					<td>County Durham</td>
+					
+				</tr>
+				<tr>
+					<td>Sefton Central</td>
+					<td>71,744</td>
+					<td>67,696</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Selby and Ainsty</td>
+					<td>67,709</td>
+					<td>73,580</td>
+					<td>North Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Sevenoaks</td>
+					<td>69,794</td>
+					<td>69,925</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Sheffield, Brightside and Hillsborough</td>
+					<td>73,619</td>
+					<td>69,206</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Sheffield Central</td>
+					<td>65,261</td>
+					<td>69,975</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Sheffield, Hallam</td>
+					<td>65,594</td>
+					<td>70,032</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Sheffield, Heeley</td>
+					<td>69,789</td>
+					<td>66,432</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Sheffield South East</td>
+					<td>66,817</td>
+					<td>67,792</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Sherwood</td>
+					<td>70,042</td>
+					<td>72,022</td>
+					<td>Nottinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Shipley</td>
+					<td>69,427</td>
+					<td>68,129</td>
+					<td>West Yorkshire (Bradford)</td>
+					
+				</tr>
+				<tr>
+					<td>Shrewsbury and Atcham</td>
+					<td>74,984</td>
+					<td>73,978</td>
+					<td>Shropshire</td>
+					
+				</tr>
+				<tr>
+					<td>Sittingbourne and Sheppey</td>
+					<td>69,349</td>
+					<td>74,796</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Skipton and Ripon</td>
+					<td>75,532</td>
+					<td>77,098</td>
+					<td>North Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Sleaford and North Hykeham</td>
+					<td>73,058</td>
+					<td>85,561</td>
+					<td>Lincolnshire</td>
+					
+				</tr>
+				<tr>
+					<td>Slough</td>
+					<td>73,627</td>
+					<td>81,327</td>
+					<td>Berkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Solihull</td>
+					<td>75,988</td>
+					<td>77,354</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Somerton and Frome</td>
+					<td>74,223</td>
+					<td>82,150</td>
+					<td>Somerset</td>
+					
+				</tr>
+				<tr>
+					<td>South Basildon and East Thurrock</td>
+					<td>71,425</td>
+					<td>71,819</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>South Cambridgeshire</td>
+					<td>71,597</td>
+					<td>80,001</td>
+					<td>Cambridgeshire</td>
+					
+				</tr>
+				<tr>
+					<td>South Derbyshire</td>
+					<td>62,130</td>
+					<td>71,326</td>
+					<td>Derbyshire</td>
+					
+				</tr>
+				<tr>
+					<td>South Dorset</td>
+					<td>67,752</td>
+					<td>73,499</td>
+					<td>Dorset</td>
+					
+				</tr>
+				<tr>
+					<td>South East Cambridgeshire</td>
+					<td>73,941</td>
+					<td>82,265</td>
+					<td>Cambridgeshire</td>
+					
+				</tr>
+				<tr>
+					<td>South East Cornwall</td>
+					<td>67,018</td>
+					<td>71,851</td>
+					<td>Cornwall</td>
+					
+				</tr>
+				<tr>
+					<td>South Holland and The Deepings</td>
+					<td>70,402</td>
+					<td>76,939</td>
+					<td>Lincolnshire</td>
+					
+				</tr>
+				<tr>
+					<td>South Leicestershire</td>
+					<td>72,731</td>
+					<td>77,412</td>
+					<td>Leicestershire</td>
+					
+				</tr>
+				<tr>
+					<td>South Norfolk</td>
+					<td>69,691</td>
+					<td>77,316</td>
+					<td>Norfolk</td>
+					
+				</tr>
+				<tr>
+					<td>South Northamptonshire</td>
+					<td>68,773</td>
+					<td>82,956</td>
+					<td>Northamptonshire</td>
+					
+				</tr>
+				<tr>
+					<td>South Ribble</td>
+					<td>71,730</td>
+					<td>75,116</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>South Shields</td>
+					<td>65,773</td>
+					<td>63,765</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>South Staffordshire</td>
+					<td>72,338</td>
+					<td>74,189</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>South Suffolk</td>
+					<td>69,119</td>
+					<td>72,965</td>
+					<td>Suffolk</td>
+					
+				</tr>
+				<tr>
+					<td>South Swindon</td>
+					<td>70,794</td>
+					<td>73,449</td>
+					<td>Wiltshire</td>
+					
+				</tr>
+				<tr>
+					<td>South Thanet</td>
+					<td>69,501</td>
+					<td>67,970</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>South West Bedfordshire</td>
+					<td>71,288</td>
+					<td>76,178</td>
+					<td>Bedfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>South West Devon</td>
+					<td>68,756</td>
+					<td>70,756</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>South West Hertfordshire</td>
+					<td>74,440</td>
+					<td>78,269</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>South West Norfolk</td>
+					<td>67,666</td>
+					<td>75,034</td>
+					<td>Norfolk</td>
+					
+				</tr>
+				<tr>
+					<td>South West Surrey</td>
+					<td>75,107</td>
+					<td>76,495</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>South West Wiltshire</td>
+					<td>63,865</td>
+					<td>72,820</td>
+					<td>Wiltshire</td>
+					
+				</tr>
+				<tr>
+					<td>Southampton, Itchen</td>
+					<td>71,142</td>
+					<td>74,513</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Southampton, Test</td>
+					<td>72,018</td>
+					<td>71,263</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Southend West</td>
+					<td>66,508</td>
+					<td>66,780</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Southport</td>
+					<td>70,544</td>
+					<td>67,803</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Spelthorne</td>
+					<td>69,291</td>
+					<td>71,211</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>St Albans</td>
+					<td>66,738</td>
+					<td>70,298</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>St Austell and Newquay</td>
+					<td>67,936</td>
+					<td>75,974</td>
+					<td>Cornwall</td>
+					
+				</tr>
+				<tr>
+					<td>St Helens North</td>
+					<td>76,263</td>
+					<td>75,688</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>St Helens South and Whiston</td>
+					<td>76,614</td>
+					<td>78,612</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>St Ives</td>
+					<td>62,962</td>
+					<td>66,696</td>
+					<td>Cornwall</td>
+					
+				</tr>
+				<tr>
+					<td>Stafford</td>
+					<td>69,274</td>
+					<td>69,832</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Staffordshire Moorlands</td>
+					<td>60,810</td>
+					<td>62,457</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Stalybridge and Hyde</td>
+					<td>66,563</td>
+					<td>70,691</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Stevenage</td>
+					<td>66,881</td>
+					<td>69,357</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Stockport</td>
+					<td>64,679</td>
+					<td>62,764</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Stockton North</td>
+					<td>67,529</td>
+					<td>67,333</td>
+					<td>Cleveland</td>
+					
+				</tr>
+				<tr>
+					<td>Stockton South</td>
+					<td>68,506</td>
+					<td>74,521</td>
+					<td>Cleveland</td>
+					
+				</tr>
+				<tr>
+					<td>Stoke-on-Trent Central</td>
+					<td>63,330</td>
+					<td>61,774</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Stoke-on-Trent North</td>
+					<td>69,938</td>
+					<td>72,225</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Stoke-on-Trent South</td>
+					<td>67,629</td>
+					<td>68,624</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Stone</td>
+					<td>64,653</td>
+					<td>66,729</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Stourbridge</td>
+					<td>68,590</td>
+					<td>70,225</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Stratford-on-Avon</td>
+					<td>64,954</td>
+					<td>69,108</td>
+					<td>Warwickshire</td>
+					
+				</tr>
+				<tr>
+					<td>Streatham</td>
+					<td>69,355</td>
+					<td>71,913</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Stretford and Urmston</td>
+					<td>72,414</td>
+					<td>70,520</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Stroud</td>
+					<td>75,258</td>
+					<td>79,135</td>
+					<td>Gloucestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Suffolk Coastal</td>
+					<td>76,085</td>
+					<td>76,932</td>
+					<td>Suffolk</td>
+					
+				</tr>
+				<tr>
+					<td>Sunderland Central</td>
+					<td>76,457</td>
+					<td>76,292</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>Surrey Heath</td>
+					<td>75,454</td>
+					<td>78,453</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>Sutton and Cheam</td>
+					<td>66,147</td>
+					<td>66,571</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Sutton Coldfield</td>
+					<td>72,019</td>
+					<td>75,031</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Tamworth</td>
+					<td>69,490</td>
+					<td>72,544</td>
+					<td>Staffordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Tatton</td>
+					<td>65,030</td>
+					<td>65,200</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>Taunton Deane</td>
+					<td>77,535</td>
+					<td>82,882</td>
+					<td>Somerset</td>
+					
+				</tr>
+				<tr>
+					<td>Telford</td>
+					<td>63,906</td>
+					<td>65,938</td>
+					<td>Shropshire</td>
+					
+				</tr>
+				<tr>
+					<td>Tewkesbury</td>
+					<td>72,146</td>
+					<td>77,206</td>
+					<td>Gloucestershire</td>
+					
+				</tr>
+				<tr>
+					<td>The Cotswolds</td>
+					<td>73,097</td>
+					<td>78,439</td>
+					<td>Gloucestershire</td>
+					
+				</tr>
+				<tr>
+					<td>The Wrekin</td>
+					<td>62,024</td>
+					<td>66,111</td>
+					<td>Shropshire</td>
+					
+				</tr>
+				<tr>
+					<td>Thirsk and Malton</td>
+					<td>73,534</td>
+					<td>77,230</td>
+					<td>North Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Thornbury and Yate</td>
+					<td>63,320</td>
+					<td>64,736</td>
+					<td>South Gloucestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Thurrock</td>
+					<td>71,067</td>
+					<td>77,667</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Tiverton and Honiton</td>
+					<td>69,682</td>
+					<td>75,839</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>Tonbridge and Malling</td>
+					<td>65,969</td>
+					<td>71,989</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Tooting</td>
+					<td>69,445</td>
+					<td>72,707</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Torbay</td>
+					<td>69,340</td>
+					<td>76,219</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>Torridge and West Devon</td>
+					<td>68,720</td>
+					<td>77,417</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>Totnes</td>
+					<td>64,939</td>
+					<td>67,562</td>
+					<td>Devon</td>
+					
+				</tr>
+				<tr>
+					<td>Tottenham</td>
+					<td>64,888</td>
+					<td>70,162</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Truro and Falmouth</td>
+					<td>64,587</td>
+					<td>71,340</td>
+					<td>Cornwall</td>
+					
+				</tr>
+				<tr>
+					<td>Tunbridge Wells</td>
+					<td>69,479</td>
+					<td>73,028</td>
+					<td>Kent</td>
+					
+				</tr>
+				<tr>
+					<td>Twickenham</td>
+					<td>74,154</td>
+					<td>79,172</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Tynemouth</td>
+					<td>71,514</td>
+					<td>76,618</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>Uxbridge and South Ruislip</td>
+					<td>66,253</td>
+					<td>71,954</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Vauxhall</td>
+					<td>65,729</td>
+					<td>73,274</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Wakefield</td>
+					<td>71,347</td>
+					<td>71,531</td>
+					<td>West Yorkshire (Wakefield)</td>
+					
+				</tr>
+				<tr>
+					<td>Wallasey</td>
+					<td>66,845</td>
+					<td>65,732</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Walsall North</td>
+					<td>66,287</td>
+					<td>65,468</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Walsall South</td>
+					<td>64,995</td>
+					<td>66,082</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Walthamstow</td>
+					<td>64,314</td>
+					<td>64,482</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Wansbeck</td>
+					<td>63,329</td>
+					<td>62,395</td>
+					<td>Northumberland</td>
+					
+				</tr>
+				<tr>
+					<td>Wantage</td>
+					<td>74,774</td>
+					<td>79,775</td>
+					<td>Oxfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Warley</td>
+					<td>64,695</td>
+					<td>63,024</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Warrington North</td>
+					<td>71,868</td>
+					<td>71,836</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>Warrington South</td>
+					<td>75,114</td>
+					<td>81,212</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>Warwick and Leamington</td>
+					<td>63,236</td>
+					<td>66,278</td>
+					<td>Warwickshire</td>
+					
+				</tr>
+				<tr>
+					<td>Washington and Sunderland West</td>
+					<td>70,259</td>
+					<td>70,177</td>
+					<td>Tyne and Wear</td>
+					
+				</tr>
+				<tr>
+					<td>Watford</td>
+					<td>76,331</td>
+					<td>80,939</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Waveney</td>
+					<td>76,708</td>
+					<td>79,132</td>
+					<td>Suffolk</td>
+					
+				</tr>
+				<tr>
+					<td>Wealden</td>
+					<td>74,989</td>
+					<td>77,536</td>
+					<td>East Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Weaver Vale</td>
+					<td>64,216</td>
+					<td>66,008</td>
+					<td>Cheshire</td>
+					
+				</tr>
+				<tr>
+					<td>Wellingborough</td>
+					<td>71,392</td>
+					<td>76,848</td>
+					<td>Northamptonshire</td>
+					
+				</tr>
+				<tr>
+					<td>Wells</td>
+					<td>74,064</td>
+					<td>79,989</td>
+					<td>Somerset</td>
+					
+				</tr>
+				<tr>
+					<td>Welwyn Hatfield</td>
+					<td>67,247</td>
+					<td>71,766</td>
+					<td>Hertfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Wentworth and Dearne</td>
+					<td>71,213</td>
+					<td>72,272</td>
+					<td>South Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>West Bromwich East</td>
+					<td>64,538</td>
+					<td>63,008</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>West Bromwich West</td>
+					<td>62,899</td>
+					<td>65,249</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>West Dorset</td>
+					<td>71,462</td>
+					<td>76,779</td>
+					<td>Dorset</td>
+					
+				</tr>
+				<tr>
+					<td>West Ham</td>
+					<td>77,984</td>
+					<td>86,400</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>West Lancashire</td>
+					<td>73,739</td>
+					<td>73,028</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>West Suffolk</td>
+					<td>68,883</td>
+					<td>76,158</td>
+					<td>Suffolk</td>
+					
+				</tr>
+				<tr>
+					<td>West Worcestershire</td>
+					<td>71,373</td>
+					<td>73,001</td>
+					<td>Worcestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Westminster North</td>
+					<td>59,016</td>
+					<td>65,936</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Westmorland and Lonsdale</td>
+					<td>67,303</td>
+					<td>66,609</td>
+					<td>Cumbria</td>
+					
+				</tr>
+				<tr>
+					<td>Weston-Super-Mare</td>
+					<td>73,771</td>
+					<td>78,778</td>
+					<td>North Somerset</td>
+					
+				</tr>
+				<tr>
+					<td>Wigan</td>
+					<td>76,467</td>
+					<td>76,779</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Wimbledon</td>
+					<td>64,841</td>
+					<td>65,936</td>
+					<td>Greater London</td>
+					
+				</tr>
+				<tr>
+					<td>Winchester</td>
+					<td>70,211</td>
+					<td>74,138</td>
+					<td>Hampshire</td>
+					
+				</tr>
+				<tr>
+					<td>Windsor</td>
+					<td>69,785</td>
+					<td>70,633</td>
+					<td>Berkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Wirral South</td>
+					<td>57,801</td>
+					<td>56,238</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Wirral West</td>
+					<td>56,085</td>
+					<td>55,077</td>
+					<td>Merseyside</td>
+					
+				</tr>
+				<tr>
+					<td>Witham</td>
+					<td>63,839</td>
+					<td>67,451</td>
+					<td>Essex</td>
+					
+				</tr>
+				<tr>
+					<td>Witney</td>
+					<td>72,275</td>
+					<td>78,220</td>
+					<td>Oxfordshire</td>
+					
+				</tr>
+				<tr>
+					<td>Woking</td>
+					<td>71,260</td>
+					<td>74,328</td>
+					<td>Surrey</td>
+					
+				</tr>
+				<tr>
+					<td>Wokingham</td>
+					<td>69,751</td>
+					<td>75,886</td>
+					<td>Berkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Wolverhampton North East</td>
+					<td>62,778</td>
+					<td>60,354</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Wolverhampton South East</td>
+					<td>64,015</td>
+					<td>61,751</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Wolverhampton South West</td>
+					<td>63,641</td>
+					<td>59,846</td>
+					<td>West Midlands</td>
+					
+				</tr>
+				<tr>
+					<td>Worcester</td>
+					<td>71,601</td>
+					<td>73,960</td>
+					<td>Worcestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Workington</td>
+					<td>61,369</td>
+					<td>59,361</td>
+					<td>Cumbria</td>
+					
+				</tr>
+				<tr>
+					<td>Worsley and Eccles South</td>
+					<td>72,554</td>
+					<td>73,409</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Worthing West</td>
+					<td>72,585</td>
+					<td>74,468</td>
+					<td>West Sussex</td>
+					
+				</tr>
+				<tr>
+					<td>Wycombe</td>
+					<td>71,997</td>
+					<td>73,750</td>
+					<td>Buckinghamshire</td>
+					
+				</tr>
+				<tr>
+					<td>Wyre and Preston North</td>
+					<td>68,812</td>
+					<td>71,612</td>
+					<td>Lancashire</td>
+					
+				</tr>
+				<tr>
+					<td>Wyre Forest</td>
+					<td>75,563</td>
+					<td>77,800</td>
+					<td>Worcestershire</td>
+					
+				</tr>
+				<tr>
+					<td>Wythenshawe and Sale East</td>
+					<td>72,093</td>
+					<td>75,602</td>
+					<td>Greater Manchester</td>
+					
+				</tr>
+				<tr>
+					<td>Yeovil</td>
+					<td>77,049</td>
+					<td>82,771</td>
+					<td>Somerset</td>
+					
+				</tr>
+				<tr>
+					<td>York Central</td>
+					<td>71,160</td>
+					<td>75,656</td>
+					<td>North Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>York Outer</td>
+					<td>71,613</td>
+					<td>75,125</td>
+					<td>North Yorkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Aberavon</td>
+					<td>50,422</td>
+					<td>51,233</td>
+					<td>Neath Port Talbot</td>
+					
+				</tr>
+				<tr>
+					<td>Aberconwy</td>
+					<td>43,976</td>
+					<td>45,407</td>
+					<td>Denbighshire</td>
+					
+				</tr>
+				<tr>
+					<td>Alyn and Deeside</td>
+					<td>60,331</td>
+					<td>62,196</td>
+					<td>Flintshire;Wrexham</td>
+					
+				</tr>
+				<tr>
+					<td>Arfon</td>
+					<td>42,998</td>
+					<td>41,138</td>
+					<td>Gwynedd</td>
+					
+				</tr>
+				<tr>
+					<td>Blaenau Gwent</td>
+					<td>53,120</td>
+					<td>53,791</td>
+					<td>Blaenau Gwent</td>
+					
+				</tr>
+				<tr>
+					<td>Brecon and Radnorshire</td>
+					<td>53,497</td>
+					<td>53,882</td>
+					<td>Powys</td>
+					
+				</tr>
+				<tr>
+					<td>Bridgend</td>
+					<td>57,046</td>
+					<td>59,533</td>
+					<td>Bridgend</td>
+					
+				</tr>
+				<tr>
+					<td>Caerphilly</td>
+					<td>64,120</td>
+					<td>61,876</td>
+					<td>Caerphilly; Newport</td>
+					
+				</tr>
+				<tr>
+					<td>Cardiff Central</td>
+					<td>60,864</td>
+					<td>64,225</td>
+					<td>Cardiff</td>
+					
+				</tr>
+				<tr>
+					<td>Cardiff North</td>
+					<td>63,615</td>
+					<td>67,194</td>
+					<td>Cardiff</td>
+					
+				</tr>
+				<tr>
+					<td>Cardiff South and Penarth</td>
+					<td>67,855</td>
+					<td>75,175</td>
+					<td>Cardiff</td>
+					
+				</tr>
+				<tr>
+					<td>Cardiff West</td>
+					<td>64,587</td>
+					<td>64,295</td>
+					<td>Cardiff</td>
+					
+				</tr>
+				<tr>
+					<td>Carmarthen East and Dinefwr</td>
+					<td>52,741</td>
+					<td>54,557</td>
+					<td>Carmarthenshire</td>
+					
+				</tr>
+				<tr>
+					<td>Carmarthen West and South Pembrokeshire</td>
+					<td>57,143</td>
+					<td>58,994</td>
+					<td>Carmarthenshire; Pembrokeshire</td>
+					
+				</tr>
+				<tr>
+					<td>Ceredigion</td>
+					<td>52,514</td>
+					<td>56,942</td>
+					<td>Ceredigion</td>
+					
+				</tr>
+				<tr>
+					<td>Clwyd South</td>
+					<td>51,201</td>
+					<td>54,895</td>
+					<td>Clwyd; Denbighshire</td>
+					
+				</tr>
+				<tr>
+					<td>Clwyd West</td>
+					<td>55,381</td>
+					<td>58,544</td>
+					<td>Clwyd</td>
+					
+				</tr>
+				<tr>
+					<td>Cynon Valley</td>
+					<td>48,272</td>
+					<td>52,372</td>
+					<td>Rhondda Cynon Taf</td>
+					
+				</tr>
+				<tr>
+					<td>Delyn</td>
+					<td>54,277</td>
+					<td>54,405</td>
+					<td>Flintshire; Conwy</td>
+					
+				</tr>
+				<tr>
+					<td>Dwyfor Meirionnydd</td>
+					<td>48,823</td>
+					<td>45,006</td>
+					<td>Gwynedd</td>
+					
+				</tr>
+				<tr>
+					<td>Gower</td>
+					<td>60,535</td>
+					<td>62,389</td>
+					<td>Swansea</td>
+					
+				</tr>
+				<tr>
+					<td>Islwyn</td>
+					<td>56,225</td>
+					<td>54,792</td>
+					<td>Caerphilly</td>
+					
+				</tr>
+				<tr>
+					<td>Llanelli</td>
+					<td>57,409</td>
+					<td>59,266</td>
+					<td>Carmarthenshire; Swansea</td>
+					
+				</tr>
+				<tr>
+					<td>Merthyr Tydfil and Rhymney</td>
+					<td>55,476</td>
+					<td>55,409</td>
+					<td>Merthyr Tydfil; Caerphilly</td>
+					
+				</tr>
+				<tr>
+					<td>Monmouth</td>
+					<td>62,423</td>
+					<td>65,432</td>
+					<td>Monmouthshire</td>
+					
+				</tr>
+				<tr>
+					<td>Montgomeryshire</td>
+					<td>46,655</td>
+					<td>48,910</td>
+					<td>Powys</td>
+					
+				</tr>
+				<tr>
+					<td>Neath</td>
+					<td>56,982</td>
+					<td>57,823</td>
+					<td>Neath Port Talbot</td>
+					
+				</tr>
+				<tr>
+					<td>Newport East</td>
+					<td>56,355</td>
+					<td>55,224</td>
+					<td>Newport</td>
+					
+				</tr>
+				<tr>
+					<td>Newport West</td>
+					<td>60,882</td>
+					<td>63,056</td>
+					<td>Newport</td>
+					
+				</tr>
+				<tr>
+					<td>Ogmore</td>
+					<td>53,842</td>
+					<td>55,851</td>
+					<td>Rhondda Cynon Taf</td>
+					
+				</tr>
+				<tr>
+					<td>Pontypridd</td>
+					<td>54,122</td>
+					<td>60,275</td>
+					<td>Torfaen</td>
+					
+				</tr>
+				<tr>
+					<td>Preseli Pembrokeshire</td>
+					<td>56,001</td>
+					<td>58,343</td>
+					<td>Pembrokeshire</td>
+					
+				</tr>
+				<tr>
+					<td>Rhondda</td>
+					<td>50,389</td>
+					<td>52,862</td>
+					<td>Rhondda Cynon Taf</td>
+					
+				</tr>
+				<tr>
+					<td>Swansea East</td>
+					<td>57,226</td>
+					<td>60,809</td>
+					<td>Swansea</td>
+					
+				</tr>
+				<tr>
+					<td>Swansea West</td>
+					<td>58,336</td>
+					<td>62,769</td>
+					<td>Swansea</td>
+					
+				</tr>
+				<tr>
+					<td>Torfaen</td>
+					<td>61,371</td>
+					<td>61,806</td>
+					<td>Torfaen</td>
+					
+				</tr>
+				<tr>
+					<td>Vale of Clwyd</td>
+					<td>49,637</td>
+					<td>56,585</td>
+					<td>Denbighshire</td>
+					
+				</tr>
+				<tr>
+					<td>Vale of Glamorgan</td>
+					<td>68,229</td>
+					<td>71,585</td>
+					<td>Vale of Glamorgan</td>
+					
+				</tr>
+				<tr>
+					<td>Wrexham</td>
+					<td>50,980</td>
+					<td>53,733</td>
+					<td>Wrexham</td>
+					
+				</tr>
+				<tr>
+					<td>Ynys Môn</td>
+					<td>49,831</td>
+					<td>49,721</td>
+					<td>Isle of Anglesey</td>
+					
+				</tr>
+				<tr>
+					<td>Belfast East</td>
+					<td>60,129</td>
+					<td>60,050</td>
+					<td>Belfast; Castlereagh</td>
+					
+				</tr>
+				<tr>
+					<td>Belfast North</td>
+					<td>63,193</td>
+					<td>66,825</td>
+					<td>Belfast; Newtownabbey</td>
+					
+				</tr>
+				<tr>
+					<td>Belfast South</td>
+					<td>58,225</td>
+					<td>60,726</td>
+					<td>Belfast; Castlereagh</td>
+					
+				</tr>
+				<tr>
+					<td>Belfast West</td>
+					<td>55,025</td>
+					<td>60,520</td>
+					<td>Belfast; Lisburn</td>
+					
+				</tr>
+				<tr>
+					<td>East Antrim</td>
+					<td>56,125</td>
+					<td>61,253</td>
+					<td>Carrickfergus; Larne; Moyle</td>
+					
+				</tr>
+				<tr>
+					<td>East Londonderry</td>
+					<td>60,494</td>
+					<td>64,546</td>
+					<td>Coleraine; Londonderry/Derry</td>
+					
+				</tr>
+				<tr>
+					<td>Fermanagh and South Tyrone</td>
+					<td>64,345</td>
+					<td>68,979</td>
+					<td>Fermanagh; Dungannon and South Tyrone</td>
+					
+				</tr>
+				<tr>
+					<td>Foyle</td>
+					<td>60,823</td>
+					<td>67,810</td>
+					<td>Londonderry/Derry</td>
+					
+				</tr>
+				<tr>
+					<td>Lagan Valley</td>
+					<td>60,973</td>
+					<td>66,327</td>
+					<td>Lisburn; Banbridge</td>
+					
+				</tr>
+				<tr>
+					<td>Mid Ulster/Mid Ulster</td>
+					<td>60,119</td>
+					<td>65,655</td>
+					<td>Magherafelt; Cookstown; Dungannon and South Tyrone</td>
+					
+				</tr>
+				<tr>
+					<td>Newry and Armagh</td>
+					<td>68,730</td>
+					<td>75,856</td>
+					<td>Armagh; Newry and Mourne</td>
+					
+				</tr>
+				<tr>
+					<td>North Antrim</td>
+					<td>72,814</td>
+					<td>74,094</td>
+					<td>Ballymena; Ballymoney; Moyle</td>
+					
+				</tr>
+				<tr>
+					<td>North Down</td>
+					<td>57,435</td>
+					<td>61,615</td>
+					<td>Ards; North Down</td>
+					
+				</tr>
+				<tr>
+					<td>South Antrim</td>
+					<td>56,594</td>
+					<td>64,254</td>
+					<td>Antrim; Newtownabbey; Lisburn</td>
+					
+				</tr>
+				<tr>
+					<td>South Down</td>
+					<td>64,530</td>
+					<td>72,092</td>
+					<td>Down; Newry and Mourne; Banbridge</td>
+					
+				</tr>
+				<tr>
+					<td>Strangford</td>
+					<td>57,463</td>
+					<td>61,566</td>
+					<td>Ards; Castlereagh; Down</td>
+					
+				</tr>
+				<tr>
+					<td>Upper Bann</td>
+					<td>68,806</td>
+					<td>76,209</td>
+					<td>Craigavon; Banbridge</td>
+					
+				</tr>
+				<tr>
+					<td>West Tyrone</td>
+					<td>57,847</td>
+					<td>62,258</td>
+					<td>Omagh; Strabane</td>
+					
+				</tr>
+				<tr>
+					<td>Aberdeen North</td>
+					<td>69,622</td>
+					<td>64,753</td>
+					<td>Aberdeen City</td>
+					
+				</tr>
+				<tr>
+					<td>Aberdeen South</td>
+					<td>69,332</td>
+					<td>64,330</td>
+					<td>Aberdeen City</td>
+					
+				</tr>
+				<tr>
+					<td>Airdrie and Shotts</td>
+					<td>63,309</td>
+					<td>62,789</td>
+					<td>North Lanarkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Angus</td>
+					<td>64,591</td>
+					<td>64,178</td>
+					<td>Angus</td>
+					
+				</tr>
+				<tr>
+					<td>Argyll and Bute</td>
+					<td>69,571</td>
+					<td>67,692</td>
+					<td>Argyll and Bute</td>
+					
+				</tr>
+				<tr>
+					<td>Ayr, Carrick and Cumnock</td>
+					<td>74,159</td>
+					<td>73,708</td>
+					<td>East Ayrshire and South Ayrshire</td>
+					
+				</tr>
+				<tr>
+					<td>Banff and Buchan</td>
+					<td>65,970</td>
+					<td>65,183</td>
+					<td>Aberdeenshire</td>
+					
+				</tr>
+				<tr>
+					<td>Berwickshire, Roxburgh and Selkirk</td>
+					<td>72,430</td>
+					<td>74,115</td>
+					<td>Scottish Borders</td>
+					
+				</tr>
+				<tr>
+					<td>Caithness, Sutherland and Easter Ross</td>
+					<td>46,533</td>
+					<td>47,572</td>
+					<td>Highland</td>
+					
+				</tr>
+				<tr>
+					<td>Central Ayrshire</td>
+					<td>69,161</td>
+					<td>69,243</td>
+					<td>North Ayrshire and South Ayrshire</td>
+					
+				</tr>
+				<tr>
+					<td>Coatbridge, Chryston and Bellshill</td>
+					<td>67,647</td>
+					<td>70,537</td>
+					<td>North Lanarkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Cumbernauld, Kilsyth and Kirkintilloch East</td>
+					<td>67,802</td>
+					<td>65,317</td>
+					<td>East Dunbartonshire and North Lanarkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Dumfries and Galloway</td>
+					<td>75,316</td>
+					<td>74,414</td>
+					<td>Dumfries and Galloway</td>
+					
+				</tr>
+				<tr>
+					<td>Dumfriesshire, Clydesdale and Tweeddale</td>
+					<td>65,137</td>
+					<td>67,066</td>
+					<td>Dumfries and Galloway, Scottish Borders and South Lanarkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Dundee East</td>
+					<td>65,059</td>
+					<td>65,702</td>
+					<td>Angus and Dundee City</td>
+					
+				</tr>
+				<tr>
+					<td>Dundee West</td>
+					<td>67,751</td>
+					<td>63,065</td>
+					<td>Angus and Dundee City</td>
+					
+				</tr>
+				<tr>
+					<td>Dunfermline and West Fife</td>
+					<td>70,373</td>
+					<td>74,621</td>
+					<td>Fife</td>
+					
+				</tr>
+				<tr>
+					<td>East Dunbartonshire</td>
+					<td>66,724</td>
+					<td>64,186</td>
+					<td>East Dunbartonshire</td>
+					
+				</tr>
+				<tr>
+					<td>East Kilbride, Strathaven and Lesmahagow</td>
+					<td>77,257</td>
+					<td>77,985</td>
+					<td>South Lanarkshire</td>
+					
+				</tr>
+				<tr>
+					<td>East Lothian</td>
+					<td>71,288</td>
+					<td>74,320</td>
+					<td>East Lothian</td>
+					
+				</tr>
+				<tr>
+					<td>East Renfrewshire</td>
+					<td>69,249</td>
+					<td>68,117</td>
+					<td>East Renfrewshire</td>
+					
+				</tr>
+				<tr>
+					<td>Edinburgh East</td>
+					<td>74,505</td>
+					<td>60,594</td>
+					<td>City of Edinburgh</td>
+					
+				</tr>
+				<tr>
+					<td>Edinburgh North and Leith</td>
+					<td>74,762</td>
+					<td>69,580</td>
+					<td>City of Edinburgh</td>
+					
+				</tr>
+				<tr>
+					<td>Edinburgh South</td>
+					<td>68,884</td>
+					<td>59,285</td>
+					<td>City of Edinburgh</td>
+					
+				</tr>
+				<tr>
+					<td>Edinburgh South West</td>
+					<td>75,787</td>
+					<td>66,262</td>
+					<td>City of Edinburgh</td>
+					
+				</tr>
+				<tr>
+					<td>Edinburgh West</td>
+					<td>70,603</td>
+					<td>65,526</td>
+					<td>City of Edinburgh</td>
+					
+				</tr>
+				<tr>
+					<td>Falkirk</td>
+					<td>78,281</td>
+					<td>82,473</td>
+					<td>Falkirk</td>
+					
+				</tr>
+				<tr>
+					<td>Glasgow Central</td>
+					<td>70,378</td>
+					<td>67,521</td>
+					<td>Glasgow City</td>
+					
+				</tr>
+				<tr>
+					<td>Glasgow East</td>
+					<td>70,167</td>
+					<td>66,482</td>
+					<td>Glasgow City</td>
+					
+				</tr>
+				<tr>
+					<td>Glasgow North</td>
+					<td>63,729</td>
+					<td>54,620</td>
+					<td>Glasgow City</td>
+					
+				</tr>
+				<tr>
+					<td>Glasgow North East</td>
+					<td>70,899</td>
+					<td>64,171</td>
+					<td>Glasgow City</td>
+					
+				</tr>
+				<tr>
+					<td>Glasgow North West</td>
+					<td>67,087</td>
+					<td>64,522</td>
+					<td>Glasgow City</td>
+					
+				</tr>
+				<tr>
+					<td>Glasgow South</td>
+					<td>74,482</td>
+					<td>69,122</td>
+					<td>Glasgow City</td>
+					
+				</tr>
+				<tr>
+					<td>Glasgow South West</td>
+					<td>66,335</td>
+					<td>62,378</td>
+					<td>Glasgow City</td>
+					
+				</tr>
+				<tr>
+					<td>Glenrothes</td>
+					<td>69,499</td>
+					<td>68,393</td>
+					<td>Fife</td>
+					
+				</tr>
+				<tr>
+					<td>Gordon</td>
+					<td>69,631</td>
+					<td>74,394</td>
+					<td>Aberdeenshire</td>
+					
+				</tr>
+				<tr>
+					<td>Inverclyde</td>
+					<td>65,485</td>
+					<td>61,038</td>
+					<td>Inverclyde</td>
+					
+				</tr>
+				<tr>
+					<td>Inverness, Nairn, Badenoch and Strathspey</td>
+					<td>67,790</td>
+					<td>72,764</td>
+					<td>Highland</td>
+					
+				</tr>
+				<tr>
+					<td>Kilmarnock and Loudoun</td>
+					<td>72,922</td>
+					<td>75,001</td>
+					<td>East Ayrshire</td>
+					
+				</tr>
+				<tr>
+					<td>Kirkcaldy and Cowdenbeath</td>
+					<td>74,163</td>
+					<td>74,247</td>
+					<td>Fife</td>
+					
+				</tr>
+				<tr>
+					<td>Lanark and Hamilton East</td>
+					<td>76,173</td>
+					<td>76,190</td>
+					<td>South Lanarkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Linlithgow and East Falkirk</td>
+					<td>78,675</td>
+					<td>81,756</td>
+					<td>West Lothian and Falkirk</td>
+					
+				</tr>
+				<tr>
+					<td>Livingston</td>
+					<td>76,299</td>
+					<td>76,580</td>
+					<td>West Lothian</td>
+					
+				</tr>
+				<tr>
+					<td>Midlothian</td>
+					<td>62,787</td>
+					<td>61,986</td>
+					<td>Midlothian</td>
+					
+				</tr>
+				<tr>
+					<td>Moray</td>
+					<td>63,959</td>
+					<td>66,726</td>
+					<td>Moray</td>
+					
+				</tr>
+				<tr>
+					<td>Motherwell and Wishaw</td>
+					<td>67,499</td>
+					<td>66,949</td>
+					<td>North Lanarkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Na h-Eileanan an Iar</td>
+					<td>21,884</td>
+					<td>21,837</td>
+					<td>Na h-Eileanan Siar</td>
+					
+				</tr>
+				<tr>
+					<td>North Ayrshire and Arran</td>
+					<td>73,182</td>
+					<td>75,201</td>
+					<td>North Ayrshire</td>
+					
+				</tr>
+				<tr>
+					<td>North East Fife</td>
+					<td>64,813</td>
+					<td>63,349</td>
+					<td>Fife</td>
+					
+				</tr>
+				<tr>
+					<td>Ochil and South Perthshire</td>
+					<td>71,738</td>
+					<td>75,848</td>
+					<td>Clackmannanshire and Perth and Kinross</td>
+					
+				</tr>
+				<tr>
+					<td>Orkney and Shetland</td>
+					<td>32,181</td>
+					<td>33,755</td>
+					<td>Orkney Islands and Shetland Islands</td>
+					
+				</tr>
+				<tr>
+					<td>Paisley and Renfrewshire North</td>
+					<td>68,642</td>
+					<td>65,847</td>
+					<td>Renfrewshire</td>
+					
+				</tr>
+				<tr>
+					<td>Paisley and Renfrewshire South</td>
+					<td>68,038</td>
+					<td>63,268</td>
+					<td>Renfrewshire</td>
+					
+				</tr>
+				<tr>
+					<td>Perth and North Perthshire</td>
+					<td>70,718</td>
+					<td>73,064</td>
+					<td>Perth and Kinross</td>
+					
+				</tr>
+				<tr>
+					<td>Ross, Skye and Lochaber</td>
+					<td>49,544</td>
+					<td>52,064</td>
+					<td>Highland</td>
+					
+				</tr>
+				<tr>
+					<td>Rutherglen and Hamilton West</td>
+					<td>75,370</td>
+					<td>77,729</td>
+					<td>South Lanarkshire</td>
+					
+				</tr>
+				<tr>
+					<td>Stirling</td>
+					<td>66,393</td>
+					<td>66,743</td>
+					<td>Stirling</td>
+					
+				</tr>
+				<tr>
+					<td>West Aberdeenshire and Kincardine</td>
+					<td>62,214</td>
+					<td>67,060</td>
+					<td>Aberdeenshire</td>
+					
+				</tr>
+				<tr>
+					<td>West Dunbartonshire</td>
+					<td>71,710</td>
+					<td>66,738</td>
+					<td>West Dunbartonshire</td>
+					
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </body>
 

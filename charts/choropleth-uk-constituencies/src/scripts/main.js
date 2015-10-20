@@ -63,13 +63,19 @@ require(['svg-builder'], function(buildSVG) {
 		return window['factmint'] && window['factmint'].previewVisualizations;
 	}
 	
-	var tables = document.querySelectorAll('table.fm-uk-constituencies');
+	var tables = document.querySelectorAll('table.fm-choropleth-uk-constituencies');
 
 	if (! supportsSvg()) {
 		console.log("SVG not supported: visualizations disabled");
 	} else if (! supportsGetBoundingClientRectForSvg()) {
 		console.log("Your browser does not correctly support getBoundingClientRect() for SVG elements: visualizations disabled");
 	} else {
+		if (! window['factmint']) {
+			window['factmint'] = {};
+		}
+		
+		window['factmint'].choroplethUKConstituencies = buildSVG;
+		
 		for (var tableIndex = 0; tableIndex < tables.length; tableIndex++) {
 			if (inPreviewMode() || ! tables[tableIndex].hasAttribute('data-fm-rendered')) {
 				tables[tableIndex].setAttribute('data-fm-rendered', 'true');
