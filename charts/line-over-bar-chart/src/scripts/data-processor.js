@@ -32,7 +32,6 @@ define(['config', 'number-utils', 'moment'],
 		
 		return {
 			tableToJSON: function(container, options) {
-			//dateFormat, includeZero, prefix, suffix, abbreviateLabels) {
 				var dateFormat = (options.dateFormat) ? options.dateFormat : 'DD/MM/YYYY';
 				var includeZero = (options.includeZero === true) ? true : false;
 				var prefix = (options.valuePrefix) ? options.valuePrefix : '';
@@ -77,9 +76,6 @@ define(['config', 'number-utils', 'moment'],
 					var xLabel = row.children[0].textContent;
 					
 					var ySeries = [];
-
-
-
 
 					var lineDataColumn = row.children[1].textContent;
 
@@ -271,57 +267,9 @@ define(['config', 'number-utils', 'moment'],
 				) {
 					data.yRange.min = 0;
 				}
-				
-				if (options.rebase === true) {
-					this.rebase(data);
-					options.valuePrefix = '';
-					options.valueSuffix = ' %';
-				}
 
 				return data;
 
-			},
-			
-			rebase: function(data) {
-				var openingValues = data.rows[0].ySeries;
-				
-				data.yRange = {
-					min: 0,
-					max: 0
-				};
-				
-				data.secondaryYRange = {
-					min: 0,
-					max: 0
-				};
-				
-				data.rows.forEach(function (row) {
-					if (! row.isFill) {
-						row.ySeries = row.ySeries.map(function(y, index) {
-							if (y === null) return null;
-							
-							var base = openingValues[index].value;
-							
-							var percentFromBase = 100 * (y.value - base) / base;
-							
-							if (percentFromBase < data.yRange.min) {
-								data.yRange.min = percentFromBase;
-								data.secondaryYRange.min = percentFromBase;
-							}
-							if (percentFromBase > data.yRange.max) {
-								data.yRange.max = percentFromBase;
-								data.secondaryYRange.max = percentFromBase;
-							}
-							
-							return {
-								value: percentFromBase,
-								text: y.text
-							};
-						});
-						
-						row.averageYValue = calculateYAverage(row.ySeries);
-					}
-				});
 			}
 		};
 	});
