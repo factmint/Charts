@@ -63,10 +63,9 @@ define([
 						var xPixel = xScale.getPixel(xValue);
 						
 						if (! dataItem.isFill) {
-
 							if (dataItem.ySeries[0] !== null) {
 								var yPixel = yScale.getPixel(dataItem.ySeries[0].value);
-								
+
 								paths[0].push({
 									x: xPixel,
 									y: yPixel
@@ -120,6 +119,7 @@ define([
 								var yPixel;
 								if (dualAxes) {
 									yPixel = secondaryYScale.getPixel(dataItem.ySeries[1].value);
+									console.log(yPixel, dataItem.ySeries[1].value);
 								} else {
 									yPixel = yScale.getPixel(dataItem.ySeries[1].value);
 								}
@@ -334,6 +334,13 @@ define([
 	
 					var prefix = (options.valuePrefix) ? options.valuePrefix : '';
 					var suffix = (options.valueSuffix) ? options.valueSuffix : '';
+					
+					var isRebasedAxis = (options.rebaseLine && ! secondary) || (options.rebaseBar && secondary);
+					
+					if (isRebasedAxis) {
+						prefix = '';
+						suffix = '%';
+					}
 					
 					yTickMarks = yTickMarks.map(function(tickMark) {
 						return {
@@ -732,7 +739,7 @@ define([
 
 				if (percentDifference <= Config.AXIS_MERGE_PERCENT_MARGIN) {
 					dualAxes = false;
-					
+
 					yTickMarks = ScaleUtils.getTickMarks(Math.min(data.yRange.min, data.secondaryYRange.min), Math.max(data.yRange.max, data.secondaryYRange.max), Config.TARGET_MARKER_COUNT, true);
 				}
 
@@ -774,6 +781,7 @@ define([
 				
 				var hasPullOut = data.startPullout >= 0 && data.endPullout >= 1 && options.pulloutTitle;
 
+				console.log(data);
 				populateGraph();
 
 				lineGraph.append(yAxis);
@@ -782,10 +790,7 @@ define([
 				lineGraph.append(graphContent);
 
 				var lineGraphBBox = lineGraph.getBBox();
-/*
-				var yOverflow = startY - lineGraphBBox.y;
-				lineGraph.transform('t 0 ' + yOverflow);
-*/
+				
 				return lineGraph;
 			};
 		});

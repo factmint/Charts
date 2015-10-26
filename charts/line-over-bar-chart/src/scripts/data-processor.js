@@ -78,9 +78,6 @@ define(['config', 'number-utils', 'moment'],
 					
 					var ySeries = [];
 
-
-
-
 					var lineDataColumn = row.children[1].textContent;
 
 					var yAnnotation = null;
@@ -107,7 +104,6 @@ define(['config', 'number-utils', 'moment'],
 					} else {
 						ySeries.push(null);
 					}
-					
 					
 					var columnDataColumn = row.children[2].textContent;
 
@@ -272,29 +268,33 @@ define(['config', 'number-utils', 'moment'],
 					data.yRange.min = 0;
 				}
 				
-				if (options.rebase === true) {
+				if (options.rebaseLine === true) {
 					this.rebase(data);
-					options.valuePrefix = '';
-					options.valueSuffix = ' %';
+				}
+
+				if (options.rebaseBar === true) {
+					this.rebase(data, true);
 				}
 
 				return data;
 
 			},
 			
-			rebase: function(data) {
+			rebase: function(data, secondary) {
 				var openingValues = data.rows[0].ySeries;
 				
-				data.yRange = {
-					min: 0,
-					max: 0
-				};
-				
-				data.secondaryYRange = {
-					min: 0,
-					max: 0
-				};
-				
+				if (secondary) {
+					data.secondaryYRange = {
+						min: 0,
+						max: 0
+					};
+				} else {
+					data.yRange = {
+						min: 0,
+						max: 0
+					};
+				}
+				console.log(data.rows);
 				data.rows.forEach(function (row) {
 					if (! row.isFill) {
 						row.ySeries = row.ySeries.map(function(y, index) {
@@ -305,12 +305,18 @@ define(['config', 'number-utils', 'moment'],
 							var percentFromBase = 100 * (y.value - base) / base;
 							
 							if (percentFromBase < data.yRange.min) {
-								data.yRange.min = percentFromBase;
-								data.secondaryYRange.min = percentFromBase;
+								if (secondary) {
+									data.secondaryYRange.min = percentFromBase;
+								} else {
+									data.yRange.min = percentFromBase;
+								}
 							}
 							if (percentFromBase > data.yRange.max) {
-								data.yRange.max = percentFromBase;
-								data.secondaryYRange.max = percentFromBase;
+								if (secondary) {
+									data.secondaryYRange.max = percentFromBase;
+								} else {
+									data.yRange.max = percentFromBase;
+								}
 							}
 							
 							return {
