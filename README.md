@@ -4,6 +4,78 @@ Factmint Charts allows you to create interactive data visualizations, which can 
 
 ## Getting started
 
+1. Download: `bower install factmint-charts` or manually download raw CSS and JS from [the dist folder](https://github.com/factmint/Charts/tree/master/dist)
+
+2. Create a table with a classname of `fm-[visualisation name]` and include the CSS and JS in your document.
+
+e.g.
+
+```
+<table class="fm-pie">
+	<thead>
+		<tr>
+			<th>Product</th>
+			<th>Units sold</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Ice cream</td>
+			<td>1500</td>
+		</tr>
+		<tr>
+			<td>Umbrellas</td>
+			<td>6500</td>
+		</tr>
+		<tr>
+			<td>Horse shoes</td>
+			<td>4200</td>
+		</tr>
+	</tbody>
+</table>
+<link rel="stylesheet" href="pie.min.css">
+<script async src="pie.min.js"></script>
+```
+
+For the two choropleths and the pie chart, you also have the option of using a Javascript object/JSON rather than an HTML table:
+
+index.html
+```
+<html>
+    <head>
+        <title>Pie chart</title>
+        
+		<link rel="stylesheet" href="../../../../dist/choropleth-uk-constituencies.min.css">
+		
+		<script defer src="../../../../dist/choropleth-uk-constituencies.min.js"></script>
+		<script defer src="main.js"></script>
+	</head>
+```
+
+main.js
+```
+var data = [
+  {
+    "title": "Rowing",
+    "value": 27
+  },
+  {
+    "title": "Kayaking",
+    "value": 18
+  },
+  {
+    "title": "Cycling",
+    "details": "Lorem ipsum",
+    "value": 50
+  }
+];
+
+window.factmint.pie(data);
+```
+
+
+## Building a chart
+
 First, clone this repository with `git clone https://github.com/factmint/Charts.git`. Then run `npm install` from the project root.
 
 To see running examples, navigate to the directory of a given chart in the terminal and (if it's the first time) `npm install` and `grunt install`. Finally, run `grunt serve` from the project root (not the chart directory).
@@ -19,9 +91,7 @@ grunt serve
 
 This will start a web server. You should see a message telling you which port it is running on (e.g. "Started connect web server on http://0.0.0.0:15002"). You can now navigate to http://locahost:15002 (the port number will be different if 15002 was not open when you ran `grunt serve`, so be sure to check), where you will see a directory listing. If you look in the `examples/unbuilt/` directory, you will find example use cases.
 
-## Building a chart
-
-Once you have tested a chart and decided you would like to use it in a live scenario, you will probably want to build a standalone minified script. To achieve this, run `grunt build` from the chart's root directory. This will create three files in the `/dist/` directory: a minified standalone script, a minified CSS file, and a text file containing all of the available options for the given chart. You can see examples using the built script under `examples/built/` in the chart's directory.
+If you run `grunt build` from the chart's root directory, it will create or update three files in the `/dist/` directory: a minified standalone script, a minified CSS file, and a text file containing all of the available options for the given chart. You can see examples using the built script under `examples/built/` in the chart's directory.
 
 ## Tests
 
