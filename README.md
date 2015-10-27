@@ -141,7 +141,7 @@ To see unit tests for the API, navigate to `api/test` in your browser.
 
 #### Line Over Bar Chart
 
-![]()
+![Line over bar chart](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/line-over-bar.png)
 
 (See [http://factmint.com/documentation/line-over-column-chart/](http://factmint.com/documentation/line-over-column-chart/))
  
