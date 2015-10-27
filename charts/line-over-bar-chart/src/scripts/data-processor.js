@@ -294,7 +294,7 @@ define(['config', 'number-utils', 'moment'],
 						max: 0
 					};
 				}
-				console.log(data.rows);
+
 				data.rows.forEach(function (row) {
 					if (! row.isFill) {
 						row.ySeries = row.ySeries.map(function(y, index) {
