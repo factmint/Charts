@@ -171,6 +171,8 @@ To see unit tests for the API, navigate to `api/test` in your browser.
 
 #### Stacked Column Bar Chart
 
+![Stacked column bar chart](http://factmint.com/wp-content/themes/factmint-graphs.theme/assets/img/demo/examples/stacked-column-bar.png)
+
 (See [http://factmint.com/documentation/stacked-column-bar-chart/](http://factmint.com/documentation/stacked-column-bar-chart/))
 
 ## API
