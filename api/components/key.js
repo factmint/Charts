@@ -82,7 +82,7 @@ key.setValues = function(values, colorOverrides) {
 
 	key.keyItems.gridLeft();
 
-	var keyBackgroundHeight = key.keyItems.bbox().height + Configuration.PADDING_TOP + Configuration.PADDING_BOTTOM
+	var keyBackgroundHeight = key.keyItems.bbox().height + Configuration.PADDING_TOP + Configuration.PADDING_BOTTOM;
 
 	if (isReDraw) {
 		key.background.attr("height", keyBackgroundHeight);
