@@ -1,0 +1,23 @@
+/////////////////////////////
+// Responsive/layout utils //
+/////////////////////////////
+
+@mixin respond-to($width) {
+	@media only screen and (min-width: $width) { @content; }
+}
+
+/////////////
+// Effects //
+/////////////
+
+@mixin drop-shadow {
+	box-shadow: inset 1px 4px 9px -6px black;
+}
+
+@mixin opacity-hover($initial-opacity) {
+	opacity: $initial-opacity;
+	transition: opacity 0.2s;
+	&:hover {
+		opacity: 1;
+	}
+}

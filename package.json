@@ -1,0 +1,32 @@
+{
+  "name": "factmint-charts-documentation",
+  "version": "0.0.1",
+  "description": "Documentation pages for Factmint Charts",
+  "dependencies": {
+    "grunt-jekyll": "^0.4.3",
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jekyll": "^0.4.3",
+    "grunt-openport": "^0.1.0",
+    "load-grunt-tasks": "^3.3.0",
+    "time-grunt": "^1.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/factmint/Charts.git"
+  },
+  "author": "Benjamin Brown",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/factmint/Charts/issues"
+  },
+  "homepage": "https://github.com/factmint/Charts"
+}

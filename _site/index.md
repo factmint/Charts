@@ -1,1 +1,0 @@
-Factmint Charts

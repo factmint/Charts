@@ -1,0 +1,281 @@
+/* ==========================================================================
+   Configuration
+   ========================================================================== */
+
+@import 'variables';
+@import 'mixins';
+@import 'typography';
+
+/* ==========================================================================
+   Main styles
+   ========================================================================== */
+
+body {
+	background: $body-background-color;
+	font-family: "Lato",sans-serif;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	font-weight: 400;
+}
+
+p, ul, ol {
+    font-weight: 300;
+    line-height: 1.6em;
+}
+
+em {
+	border: 2px solid lighten($nearly-danger, 10);
+	display: inline-block;
+	padding: 0.6em 0.6em 0.6em 4em;
+	font-size: 0.9em;
+	font-style: italic;
+	background-color: white;
+	position: relative;
+	line-height: 1.9em;
+}
+em:before {
+	content: "Hint:";
+	position: absolute;
+	top: 0;
+	display: block;
+	left: 0;
+	padding: 0 0.8em;
+	line-height: 3em;
+	vertical-align: baseline;
+	height: 100%;
+}
+
+.bullet-list li {
+	background: url(../images/bullet-point.png) no-repeat left 0.5em transparent;
+	padding-left: 15px;
+}
+
+.masthead {
+	background: lighten($radial-outer, 10);
+	background-image: radial-gradient(circle at 50% 15em, $radial-center, $radial-outer);
+	height: 6rem;
+	position: relative;
+	z-index: 1;
+}
+
+.flex-wrapper {
+	@include drop-shadow;
+	@include respond-to(800px) {
+		display: flex;
+	}
+}
+
+.main-logo {
+	float: left;
+	height: $default-header-height;
+	line-height: $default-header-height;
+	padding-left: 2rem;
+	width: 30%;
+	.logo-image {
+		display: inline-block;
+		margin-right: 0.3rem;
+		img {
+			height: 17px;
+			position: relative;
+			top: -3px;
+			vertical-align: middle;
+			width: 80px;
+			@include respond-to(600px) {
+				height: 21px;
+				top: -5px;
+				width: 100px;
+			}       
+			@include respond-to(850px) {
+				height: 27px;
+				top: -8px;
+				width: 130px;
+			}
+		}
+	}
+	.sub-title {
+		color: white;
+		display: none;
+		font-size: 1.5rem;
+		font-weight: 100;
+		text-transform: lowercase;
+		@include respond-to(600px) {
+			display: inline;
+		}
+		@include respond-to(850px) {
+			display: inline;
+			font-size: 2rem;
+		}
+	}
+}
+
+.helper {
+	display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.sidebar {
+	@include drop-shadow;
+	background: $sidebar-background;
+	height: 100%;
+	margin: 0;
+	width: 100%;
+	ul {
+		a {
+			@include opacity-hover(0.6);
+			color: $dark-text;
+			border-bottom: solid 1px $grey-stroke;
+			display: block;
+		}
+		li {
+			&:first-child.active h3 {
+				@include drop-shadow;
+			}
+			&.active {
+				border-bottom: solid 1px $grey-stroke;
+				h3 {
+					background: darken($sidebar-background, 3);
+					font-size: 1rem;
+					opacity: 1;
+					padding: 2.5rem;
+				}
+				.sub-items {
+					display: block;
+				}
+			}
+			h3 {
+				font-size: 0.8rem;
+				font-weight: 500;
+				margin: 0;
+				@include opacity-hover(0.6);
+				padding: 1.5rem;
+				text: {
+					align: center;
+					transform: uppercase;
+				}
+				transition: padding 0.2s;
+			}
+		}
+	}
+	.sub-items {
+		> ul > li > a {
+			border-bottom: none;
+			font-size: 1rem;
+			line-height: 2.5em;
+		}
+		display: none;
+		padding: 1.5em 4em;
+	}
+	.bullet-list li {
+		background-position: left 50%;
+	}
+	@include respond-to(800px) {
+		flex: 1;
+		width: 22rem;
+	}
+}
+
+.documentation-content {
+	padding: 1rem 1.5rem;
+	@include respond-to(600px) {
+		padding: 1rem 3rem;
+	}
+	> article + article {
+		margin-top: 6rem;
+	}
+	dl {
+		dt {
+			font-family: monospace;
+			margin: 1.5em 0 0.75em 0;
+		}
+		dd {
+			font-weight: 300;
+			line-height: 1.4em;
+		}
+	}
+	h1 {
+		font: {
+			size: 2rem;
+			weight: 300;
+		}
+	}
+	h2 {
+		margin-top: 3rem;
+		& + h1 {
+			margin-top: 0;
+		}
+		font: {
+			size: 1.2rem;
+		}
+		text-align: left;
+	}
+	h3 {
+		font-style: italic;
+	}
+	p {
+		font-size: 1.2em;
+		padding: 0;
+	}
+	.to-top-link {
+		@include opacity-hover(0.7);
+		background: {
+			image: url(../img/icons/to-top.svg);
+			repeat: no-repeat;
+			size: 100%;
+		}
+		display: block;
+		float: right;
+		height: 40px;
+		overflow: hidden;
+		position: relative;
+		top: 5px;
+		text-indent: 999px;
+		width: 50px;
+	}
+	.documentation-example-container {
+		margin-top: 6em;
+		position: relative;
+		z-index: 999;
+	}
+	@include respond-to(800px) {
+		flex: 1.1;
+	}
+	@include respond-to(900px) {
+		flex: 1.5;
+	}
+	@include respond-to(1000px) {
+		flex: 2;
+	}
+}
+
+dl.faq {
+
+	font-size: 1.2em;
+
+	dt {
+		font-family: Lato, sans-serif;
+		font-style: italic;
+	}
+
+	blockquote {
+		margin: 0;
+	}
+
+	dd {
+		margin: 0 0 2.8em;
+		line-height: 1.8em;
+		font-weight: 300;
+	}
+}

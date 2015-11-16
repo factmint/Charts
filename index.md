@@ -1,6 +1,6 @@
 ---
 title: Factmint Charts
-layout: post
+layout: default
 ---
 
 Welcome to Factmint Charts
