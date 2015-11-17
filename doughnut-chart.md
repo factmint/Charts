@@ -19,7 +19,7 @@ The first column represents the names of the Segments; the second column represe
 
 ## Example
 
-<pre class="line-numbers" data-src="/code-examples/doughnut-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/doughnut-documentation.html"></pre>
 <a href="http://codepen.io/Factmint/pen/pvWEPq" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
@@ -75,12 +75,12 @@ The following data attributes are available for a Doughnut Chart.
 <dl>
  <dt>data-fm-value-prefix</dt><dd>Adds a prefix to the values. For example, you may wish to add  the ‘£’ symbol before each number</dd>
  <dt>data-fm-value-suffix</dt><dd>Adds a suffix to each of your values. For example, you may wish to add  the ‘$’ symbol after each number</dd>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-enable-spillover</dt><dd>If "true", the doughnut chart will draw some transient elements outside of its configured height and width (see <a href="/documentation/chart-layout-and-sizing/#spillover">layout guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-enable-spillover</dt><dd>If "true", the doughnut chart will draw some transient elements outside of its configured height and width (see <a href="chart-layout-and-sizing.html#spillover">layout guide</a>)</dd>
 </dl>
 
 ## Customizing colours
 You can customize the colours for the sections of your doughnut chart. This is achieved by applying a <code>data-fm-color</code> attribute to the <code>&#60;tr&#62;</code> element that relates to the section you want to colour. The attribute will accept any valid CSS colour:
 
-<pre class="line-numbers" data-src="/code-examples/doughnut-hex-code-example.html"></pre>
+<pre class="line-numbers" data-src="code-examples/doughnut-hex-code-example.html"></pre>

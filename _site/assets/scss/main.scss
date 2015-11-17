@@ -67,6 +67,10 @@ strong, b {
 	padding-left: 15px;
 }
 
+pre {
+	max-height: 30rem;
+}
+
 .masthead {
 	background: lighten($radial-outer, 10);
 	background-image: radial-gradient(circle at 50% 15em, $radial-center, $radial-outer);

@@ -19,7 +19,7 @@ In scalar mode, countries are simply shaded by comparing the values assigned on 
 
 <h2 id="choropleth-world-countries-scalar-example">Code Example (scalar)</h2>
 
-<pre class="line-numbers" data-src="/code-examples/choropleth-world-countries-scalar-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/choropleth-world-countries-scalar-documentation.html"></pre>
 
 <a href="http://codepen.io/Factmint/pen/xwqgRN" class="codepen-button">
    {% include code-pen-icon.svg %}
@@ -27,7 +27,7 @@ In scalar mode, countries are simply shaded by comparing the values assigned on 
 
 <h2 id="choropleth-world-countries-non-scalar-example">Code Example (non-scalar)</h2>
 
-<pre class="line-numbers" data-src="/code-examples/choropleth-world-countries-non-scalar-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/choropleth-world-countries-non-scalar-documentation.html"></pre>
 
 <a href="http://codepen.io/Factmint/pen/GpWrWj" class="codepen-button">
    {% include code-pen-icon.svg %}
@@ -2127,8 +2127,8 @@ In scalar mode, countries are simply shaded by comparing the values assigned on 
 The following data attributes are available for a World Countries Choropleth.
 
 <dl>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
  <dt>data-fm-target-number-of-increments</dt><dd>Defines an approximate number of increments to display on the key of a scalar Choropleth</dd>
 </dl>
 

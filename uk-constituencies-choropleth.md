@@ -9,43 +9,42 @@ A Choropleth is a map, divided into coloured sections. The sections can either b
 
 Our current release of the Choropleth is configured with a map suitable for displaying data about UK Parliamentary Constituencies.
 
-<h3>Interactions</h3>
+### Interactions
 
 Hovering over a region will trigger a tooltip with the name of that region; the user will also be able to click to zoom into the region. Once a user has zoomed on a region, hovering over a constituency will trigger a tooltip with the name of that constituency. Clicking a constituency will select the constituency and show a tooltip with more information about the constituency; the user will also be able to hover over other constituencies to compare data.
 
-<h3 id="uk-constituencies-choropleth-usage">Usage</h3>
+### Usage
 
 <strong>Scalar:</strong>
 The first column contains constituency names: these must <em>exactly</em> match the <a href="#constituency-names">constituency names as listed below</a>. If the second column is the last, the chart will be a scalar choropleth. The second column will contain the values of the scale, which will be bounded by the highest and lowest value in the dataset.
 
 <strong id="choropleth-non-scalar-usage">Non-scalar:</strong>
 The first column contains constituency names: these must <em>exactly</em> match the <a href="#constituency-names">constituency names as listed below</a>. The subsequent columns will represent data relating to particular political parties contesting the UK General Election, 2015. Each column heading should relate to a party. To configure the colours for your choropleth you will need to:
-<ul style="font-size:1em;list-style:circle;margin-left:2em;">
-<li>convert each party name to lowercase and replace space characters with '-' (dash) characters</li>
-<li>add a <code>data-fm-color-class-&lt;lowercase_party_name&gt;</code> tag for each party to the table tag</li>
-<li>the value of each <code>data-fm-color-class-&lt;lowercase_party_name&gt;</code> tag should be <code>"&lt;lowercase_party_name&gt;-color"</code></li>
-<li>add some <code>&lt;style&gt;</code> tags that define a colour for each <code>&lt;lowercase_party_name&gt;-color</code>. Please see the <a href="#colour-configuration-example">colour configuration example below</a>.</li>
-</ul>
+
+1. Convert each party name to lowercase and replace space characters with '-' (dash) characters
+2. Add a <code>data-fm-color-class-&lt;lowercase_party_name&gt;</code> tag for each party to the table tag
+3. The value of each <code>data-fm-color-class-&lt;lowercase_party_name&gt;</code> tag should be <code>"&lt;lowercase_party_name&gt;-color"</code>
+4. Add some <code>&lt;style&gt;</code> tags that define a colour for each <code>&lt;lowercase_party_name&gt;-color</code>. Please see the <a href="#colour-configuration-example-non-scalar">colour configuration example below</a>.
 
 
-<h2 id="uk-constituencies-choropleth-scalar-example">Example (scalar)</h2>
+## Example (scalar)
 
-<pre class="line-numbers" data-src="/code-examples/choropleth-scalar-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/choropleth-scalar-documentation.html"></pre>
 
-<h2 id="uk-constituencies-choropleth-non-scalar-example">Example (non-scalar)</h2>
+## Example (non-scalar)
 
-<pre class="line-numbers" data-src="/code-examples/choropleth-non-scalar-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/choropleth-non-scalar-documentation.html"></pre>
 
-<h2 id="uk-constituencies-colour-configuration-example">Colour configuration example (non-scalar)</h2>
+## Colour configuration example (non-scalar)
 
-<pre class="line-numbers" data-src="/code-examples/choropleth-colour-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/choropleth-colour-documentation.html"></pre>
 
 
 <a href="http://codepen.io/Factmint/pen/BNNyqR" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
 
-<h2>Scalar Example</h2>
+## Scalar Example
 <div id="non-scalar-demo" class="documentation-example-container">
 
 <table class="fm-uk-constituencies" data-fm-height="750px;" data-fm-width="750px;">
@@ -2663,7 +2662,7 @@ The first column contains constituency names: these must <em>exactly</em> match 
 </div>
 
 
-<h2>Non-Scalar Example</h2>
+## Non-Scalar Example
 <div id="non-scalar-demo" class="documentation-example-container">
 
 <link rel="stylesheet" href="http://factmint.io/fallback-table.css">
@@ -12445,20 +12444,20 @@ The first column contains constituency names: these must <em>exactly</em> match 
 <script async src="http://factmint.io/uk-constituencies.js"></script>
 </div>
 
-<h2 id="uk-constituencies-choropleth-options">Options</h2>
+## Options
 
 The following data attributes are available for a Choropleth.
 
 <dl>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
  <dt>data-fm-target-number-of-increments</dt><dd>Defines an approximate number of increments to display on the key of a scalar Choropleth</dd>
 </dl>
 
 
-<h2 id="constituency-names">Constituency names</h2>
+## Constituency names
 
-<a href="http://factmint.com/constituencies/uk_parliamentary_constituencies_2015.csv">UK Westminster Parliamentary Constituencies 2015</a> (CSV download).
+<a href="assets/other/uk_parliamentary_constituencies_2015.csv">UK Westminster Parliamentary Constituencies 2015</a> (CSV download).
 
 Alternatively, please use the list below:
 

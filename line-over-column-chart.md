@@ -21,7 +21,7 @@ You can tag points in time for either the line element or the columns element by
 
 ## Example
 
-<pre class="line-numbers" data-src="/code-examples/line-over-column-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/line-over-column-documentation.html"></pre>
 <a href="http://codepen.io/Factmint/pen/vNENqm" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
@@ -102,13 +102,13 @@ The following data attributes are available for a Line Over Column Chart.
  <dt>data-fm-value-prefix</dt><dd>Adds a prefix to the values. For example, you may wish to add  the ‘£’ symbol before each number</dd>
  <dt>data-fm-value-suffix</dt><dd>Adds a suffix to each of your values. For example, you may wish to add  the ‘%’ symbol after each number</dd>
  <dt>data-fm-date-format</dt><dd>Used to interpret time-series data, see <a href="http://momentjs.com/docs/#/parsing/string-format/" alt="Parsing documentation for Moment.js">the Moment.js docs</a> for format details</dd>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
 <dt>data-fm-start-pullout</dt>
 <dd>Defines a start date for a pullout section. Must be in the same format as the data-fm-date-format option</dd>
 <dt>data-fm-end-pullout</dt>
 <dd>Defines an end date for a pullout section. Must be in the same format as the data-fm-date-format option</dd>
 <dt>data-fm-pullout-title</dt>
 <dd>Defines a title for your pullout section</dd>
- <dt>data-fm-enable-spillover</dt><dd>If "true", the line chart will draw some transient elements outside of its configured height and width (see <a href="/documentation/chart-layout-and-sizing/#spillover">layout guide</a>)</dd>
+ <dt>data-fm-enable-spillover</dt><dd>If "true", the line chart will draw some transient elements outside of its configured height and width (see <a href="chart-layout-and-sizing.html#spillover">layout guide</a>)</dd>
 </dl>

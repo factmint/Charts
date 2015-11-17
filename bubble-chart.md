@@ -19,7 +19,7 @@ The first column is the label for each bubble. The second and third are the X an
 
 ## Example
 
-<pre class="line-numbers" data-src="/code-examples/bubble-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/bubble-documentation.html"></pre>
 <a href="http://codepen.io/Factmint/pen/VYMKzm" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
@@ -123,7 +123,7 @@ The following data attributes are available for a Bubble Chart.
  <dt>data-fm-y-suffix</dt><dd>Adds a suffix to y values (displayed on hover). For example, you may wish to add  the ‘$’ symbol after each number</dd>
  <dt>data-fm-size-prefix</dt><dd>Adds a prefix to bubble size values (displayed on hover). For example, you may wish to add  the ‘£’ symbol before each number</dd>
  <dt>data-fm-size-suffix</dt><dd>Adds a suffix to bubble size values (displayed on hover). For example, you may wish to add  the ‘$’ symbol after each number</dd>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-enable-spillover</dt><dd>If "true", the bubble chart will draw some transient elements outside of its configured height and width (see <a href="/documentation/chart-layout-and-sizing/#spillover">layout guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-enable-spillover</dt><dd>If "true", the bubble chart will draw some transient elements outside of its configured height and width (see <a href="chart-layout-and-sizing.html#spillover">layout guide</a>)</dd>
 </dl>

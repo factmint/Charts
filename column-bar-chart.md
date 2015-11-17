@@ -17,7 +17,7 @@ The first data column is the name of the entity. All subsequent data columns rep
 
 ## Example
 
-<pre class="line-numbers" data-src="/code-examples/column-bar-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/column-bar-documentation.html"></pre>
 <a href="http://codepen.io/Factmint/pen/PwJGEE" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
@@ -67,7 +67,7 @@ The following data attributes are available for a Column/Bar Chart:
  <dt>data-fm-value-suffix</dt><dd>Adds a suffix to each of your values. For example, you may wish to add  the ‘$’ symbol after each number</dd>
  <dt>data-fm-pullout-items</dt><dd>Comma separated list of bars to draw attention to, can be either the data series number or the data series name (e.g. “Ice cream”)</dd>
  <dt>data-fm-pullout-title</dt><dd>Adds a title to the key explaining the pull-out items</dd>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-enable-spillover</dt><dd>If "true", the column/bar chart will draw some transient elements outside of its configured height and width (see <a href="/documentation/chart-layout-and-sizing/#spillover">layout guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-enable-spillover</dt><dd>If "true", the column/bar chart will draw some transient elements outside of its configured height and width (see <a href="chart-layout-and-sizing.html#spillover">layout guide</a>)</dd>
 </dl>

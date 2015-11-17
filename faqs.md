@@ -6,7 +6,7 @@ layout: doc-page
 <dl class="faq">
 
 <dt><blockquote>Why is my chart covering other content on the page?</blockquote></dt>
-<dd><p>This may happen if you configure a chart to use an extra <i>spillover</i> area to draw transient elements like tooltips. You can turn that feature off by removing the option: <b>data-fm-enable-spillover="true"</b>. See <a href="/chart-layout-and-sizing.html" alt="Documentation on chart layout">Chart layout and sizing</a>.</p></dd>
+<dd><p>This may happen if you configure a chart to use an extra <i>spillover</i> area to draw transient elements like tooltips. You can turn that feature off by removing the option: <b>data-fm-enable-spillover="true"</b>. See <a href="chart-layout-and-sizing.html" alt="Documentation on chart layout">Chart layout and sizing</a>.</p></dd>
 
 <dt><blockquote>Why is "You need to register your domain at http://charts.factmint.com in order to use this Chart." reported in the console?</blockquote></dt>
 <dd><p>Our system checks the "Referer" header in the request for our JavaScript; if you have not registered the domain then we will not serve the JavaScript.</p></dd>
@@ -19,9 +19,9 @@ layout: doc-page
 
 <dt><blockquote>How can I use Factmint Charts with WordPress? It strips out <code>script</code> tags.</blockquote></dt>
 <dd><p>You can use a shortcode to embed the script and link tags. Something like this:</p>
-<pre class="line-numbers language-javascript" data-src="/code-examples/wp-shortcode.php"></pre>
+<pre class="line-numbers language-javascript" data-src="code-examples/wp-shortcode.php"></pre>
 <p>Then you would add this to the a table in an article:</p>
-<pre class="line-numbers" data-src="/code-examples/wp-post.html"></pre>
+<pre class="line-numbers" data-src="code-examples/wp-post.html"></pre>
 </dd>
 
 <dt><blockquote>I'm a commercial licence customer, what happens if I exceed the number of chart impressions I have paid for?</blockquote></dt>
@@ -29,7 +29,7 @@ layout: doc-page
 
 <dt><blockquote>I don't like the table styling for older browsers / disabled JavaScript.</blockquote></dt>
 <dd><p>If a Factmint chart cannot render, it should leave the original HTML table in place. The chart itself does not provide any styling for the table as that might be obtrusive on the host site and may not have consistent style with the rest of the site. However, we do provide a simple stylesheet to improve the look of basic tables: you can use it like this:</p>
-<pre class="line-numbers" data-src="/code-examples/fallback-table.html"></pre>
+<pre class="line-numbers" data-src="code-examples/fallback-table.html"></pre>
 <p>The stylesheet will not set the <code>font-family</code>, the <code>color</code> of the <code>tbody</code> text, etc; these things should cascade from the documents styling.</p>
 </dd>
 

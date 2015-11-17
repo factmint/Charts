@@ -19,7 +19,7 @@ The first column is the date, time or any other X-axis value. All subsequent col
 
 ## Example
 
-<pre class="line-numbers" data-src="/code-examples/line-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/line-documentation.html"></pre>
 <a href="http://codepen.io/Factmint/pen/gbGwGX" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
@@ -76,13 +76,13 @@ The following data attributes are available for a Line Chart.
  <dt>data-fm-include-zero</dt><dd>Forces the Y-axis to include 0</dd>
  <dt>data-fm-rebase</dt><dd>Tracks the percentage change of each series. This mode is useful for comparing how two series fared relatively, for example Company A’s stock price may have doubled while Company B’s stock price only rose by 20%</dd>
  <dt>data-fm-smooth-curve</dt><dd>Connect points with a smooth line</dd>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
 <dt>data-fm-start-pullout</dt>
 <dd>Defines a start date for a pullout section. Must be in the same format as the data-fm-date-format option</dd>
 <dt>data-fm-end-pullout</dt>
 <dd>Defines an end date for a pullout section. Must be in the same format as the data-fm-date-format option</dd>
 <dt>data-fm-pullout-title</dt>
 <dd>Defines a title for your pullout section</dd>
- <dt>data-fm-enable-spillover</dt><dd>If "true", the line chart will draw some transient elements outside of its configured height and width (see <a href="/documentation/chart-layout-and-sizing/#spillover">layout guide</a>)</dd>
+ <dt>data-fm-enable-spillover</dt><dd>If "true", the line chart will draw some transient elements outside of its configured height and width (see <a href="chart-layout-and-sizing.html#spillover">layout guide</a>)</dd>
 </dl>

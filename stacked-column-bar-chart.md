@@ -17,7 +17,7 @@ The first data column is the name of the entity or group. All subsequent data co
 
 ## Example
 
-<pre class="line-numbers" data-src="/code-examples/stacked-column-bar-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/stacked-column-bar-documentation.html"></pre>
 <a href="http://codepen.io/Factmint/pen/gabaQx" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
@@ -119,7 +119,7 @@ The following data attributes are available for a Stacked Column/Bar Chart:
  <dt>data-fm-axis-label</dt><dd>Adds a label to the axis used for values (which depends if stacked column or bar chart is being shown)</dd>
  <dt>data-fm-value-prefix</dt><dd>Adds a prefix to the values. For example, you may wish to add  the ‘£’ symbol before each number</dd>
  <dt>data-fm-value-suffix</dt><dd>Adds a suffix to each of your values. For example, you may wish to add  the ‘%’ symbol after each number</dd>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-enable-spillover</dt><dd>If "true", the column/bar chart will draw some transient elements outside of its configured height and width (see <a href="/documentation/chart-layout-and-sizing/#spillover">layout guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-enable-spillover</dt><dd>If "true", the column/bar chart will draw some transient elements outside of its configured height and width (see <a href="chart-layout-and-sizing.html#spillover">layout guide</a>)</dd>
 </dl>

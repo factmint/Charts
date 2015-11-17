@@ -19,7 +19,7 @@ The first column is the date, time or any other X-axis value. All subsequent col
 
 ## Example
 
-<pre class="line-numbers" data-src="/code-examples/stacked-area-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/stacked-area-documentation.html"></pre>
 <a href="http://codepen.io/Factmint/pen/VYMKrP" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
@@ -74,7 +74,7 @@ The following data attributes are available for a Stacked Area Chart.
  <dt>data-fm-include-zero</dt><dd>Forces the Y-axis to include 0</dd>
  <dt>data-fm-date-format</dt><dd>Used to interpret time-series data, see <a href="http://momentjs.com/docs/#/parsing/string-format/" alt="Parsing documentation for Moment.js">the Moment.js docs</a> for format details</dd>
  <dt>data-fm-percent</dt><dd>Renders the visualization as a 100% stacked area chart</dd>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-enable-spillover</dt><dd>If "true", the stacked area chart will draw some transient elements outside of its configured height and width (see <a href="/documentation/chart-layout-and-sizing/#spillover">layout guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-enable-spillover</dt><dd>If "true", the stacked area chart will draw some transient elements outside of its configured height and width (see <a href="chart-layout-and-sizing.html#spillover">layout guide</a>)</dd>
 </dl>

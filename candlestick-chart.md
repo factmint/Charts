@@ -17,7 +17,7 @@ The first column is the date, time or any other X-axis value. The second column 
 
 ## Example
 
-<pre class="line-numbers" data-src="/code-examples/candlestick-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/candlestick-documentation.html"></pre>
 <a href="http://codepen.io/Factmint/pen/MYEjrd" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
@@ -268,7 +268,7 @@ The following data attributes are available for a Candlestick Chart:
  <dt>data-fm-include-zero</dt><dd>Force the y-scale to include zero</dd>
  <dt>data-fm-date-format</dt><dd>Used to interpret time-series data, see <a href="http://momentjs.com/docs/#/parsing/string-format/" alt="Parsing documentation for Moment.js">the Moment.js docs</a> for format details</dd>
  <dt>data-fm-greyscale</dt><dd>Renders chart in greyscale</dd>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-enable-spillover</dt><dd>If "true", the candlestick chart will draw some transient elements outside of its configured height and width (see <a href="/documentation/chart-layout-and-sizing/#spillover">layout guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-enable-spillover</dt><dd>If "true", the candlestick chart will draw some transient elements outside of its configured height and width (see <a href="chart-layout-and-sizing.html#spillover">layout guide</a>)</dd>
 </dl>

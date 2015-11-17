@@ -5,7 +5,7 @@ layout: doc-page
 
 <a id="pictorial-bar-description"></a>
 
-The Pictorial Bar Chart is similar in layout to a conventional 100% stacked <a href="/documentation/column-bar-chart">bar chart</a> but uses a row of symbols, with different symbols for each series.
+The Pictorial Bar Chart is similar in layout to a conventional 100% stacked <a href="column-bar-chart.html">bar chart</a> but uses a row of symbols, with different symbols for each series.
 
 ### Interactions
 
@@ -19,7 +19,7 @@ The first column is the label for each bar. All subsequent columns are data seri
 
 ## Example
 
-<pre class="line-numbers" data-src="/code-examples/pictorial-bar-documentation.html"></pre>
+<pre class="line-numbers" data-src="code-examples/pictorial-bar-documentation.html"></pre>
 <a href="http://codepen.io/Factmint/pen/ogGzpz" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
@@ -66,9 +66,9 @@ The first column is the label for each bar. All subsequent columns are data seri
 The following data attributes are available for a Pictorial Bar Chart.
 
 <dl>
- <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="/documentation/chart-layout-and-sizing/#size">sizing guide</a>)</dd>
- <dt>data-fm-enable-spillover</dt><dd>If "true", the pictorial bar chart will draw some transient elements outside of its configured height and width (see <a href="/documentation/chart-layout-and-sizing/#spillover">layout guide</a>)</dd>
+ <dt>data-fm-height</dt><dd>Enforces an explicit height. Expects a value with CCS syntax, e.g. "250px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-width</dt><dd>Enforces an explicit width. Expects a value with CCS syntax, e.g. "800px" (see <a href="chart-layout-and-sizing.html#size">sizing guide</a>)</dd>
+ <dt>data-fm-enable-spillover</dt><dd>If "true", the pictorial bar chart will draw some transient elements outside of its configured height and width (see <a href="chart-layout-and-sizing.html#spillover">layout guide</a>)</dd>
 
 </dl>
 
@@ -79,7 +79,7 @@ The following data attributes are available for a Pictorial Bar Chart.
 
 By default, the Pictorial Bar Chart will use the first letter of the series title (columns header) as the symbol to represent the series - for example, "Male executives" would be represented by an "m". In most cases this is not suitable and should be avoided. You can choose a different glyph for the series by adding the "data-fm-glyph" attribute to the <code>th</code>, like so:
 
-<pre class="line-numbers" data-src="/code-examples/pictorial-bar-glyph-example.html"></pre>
+<pre class="line-numbers" data-src="code-examples/pictorial-bar-glyph-example.html"></pre>
 
 Any character can be used. In the example above, the charcter is a standard UTF-8 character, which can be used as an HTML entity code or (if the HTML document has the correct character set) the character itself.
 
@@ -87,7 +87,7 @@ Any character can be used. In the example above, the charcter is a standard UTF-
 
 As well as changing the glyph, you can apply a CSS class using the "data-fm-glyph-class" annotation on a <code>th</code>. For example, 'data-fm-glyph-class="male"' would apply a class of "male" to all symbols for Males:
 
-<pre class="line-numbers" data-src="/code-examples/pictorial-bar-glyph-class-example.html"></pre>
+<pre class="line-numbers" data-src="code-examples/pictorial-bar-glyph-class-example.html"></pre>
 
 <span class="tip">Remember that the glyphs are rendered as SVG text elements, so the CSS rules are different from those for HTML. For example, SVG supports "stroke" and "fill".</span>
 
@@ -95,7 +95,7 @@ As well as changing the glyph, you can apply a CSS class using the "data-fm-glyp
 
 By providing a custom glyph class, setting the "font-family", and using HTML character entities as glyphs you can utilize icon fonts. For example:
 
-<pre class="line-numbers" data-src="/code-examples/pictorial-bar-glyph-icon-font-example.html"></pre>
+<pre class="line-numbers" data-src="code-examples/pictorial-bar-glyph-icon-font-example.html"></pre>
 
 There are a number of tools online which can help you find the HTML entity value, including <a href="http://unicode.online-toolz.com/tools/unicode-html-entities-convertor.php" alt="Online entity converter">this one from Toolz</a>.
 

@@ -10,7 +10,7 @@ N.B. You can use the chart builder without signing in but be aware that you cann
 
 Data can either be directly input to the Chart Builder, or copied and pasted from a spreadsheet.
 
-Different charts require require a different number of columns and/or formats of data: there are headings at the top of each column to help you with this. For more information about the columns of data required for each chart, please take a look at our <a href="http://factmint.com/documentation/">full documentation</a>.
+Different charts require require a different number of columns and/or formats of data: there are headings at the top of each column to help you with this. For more information about the columns of data required for each chart, please take a look at our <a href="http://factmint.github.io/Charts/">full documentation</a>.
 
 ### Building your Chart:
 
@@ -33,4 +33,4 @@ Different charts require require a different number of columns and/or formats of
 	<li>Copy the output code snippet.</li>
 	<li>Paste it into your webpage or CMS.</li>
 </ol>
-<span class="tip">You might want to play with the sizing of the chart. Take a look at our <a href="http://factmint.com/documentation/chart-layout-and-sizing/">layout and sizing guide</a>.</span>
+<span class="tip">You might want to play with the sizing of the chart. Take a look at our <a href="chart-layout-and-sizing.html">layout and sizing guide</a>.</span>
