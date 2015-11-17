@@ -35,7 +35,7 @@ p, ul, ol {
     line-height: 1.6em;
 }
 
-em {
+.hint {
 	border: 2px solid lighten($nearly-danger, 10);
 	display: inline-block;
 	padding: 0.6em 0.6em 0.6em 4em;
@@ -45,7 +45,7 @@ em {
 	position: relative;
 	line-height: 1.9em;
 }
-em:before {
+.hint:before {
 	content: "Hint:";
 	position: absolute;
 	top: 0;
