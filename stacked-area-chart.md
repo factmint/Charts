@@ -59,7 +59,8 @@ The first column is the date, time or any other X-axis value. All subsequent col
 		</tr>
 	</tbody>
 </table>
-[fm-chart type="stacked-area"]
+<link rel="stylesheet" href="http://factmint.io/stacked-area.css">
+<script async src="http://factmint.io/stacked-area.js"></script>
 </div>
 
 ## Options

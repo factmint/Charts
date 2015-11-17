@@ -64,7 +64,8 @@ The first column represents the names of the Segments; the second column represe
 		</tr>
 	</tbody>
 </table>
-[fm-chart type="doughnut"]
+<link rel="stylesheet" href="http://factmint.io/doughnut.css">
+<script async src="http://factmint.io/doughnut.js"></script>
 </div>
 
 ## Options

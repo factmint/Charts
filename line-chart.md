@@ -60,7 +60,8 @@ The first column is the date, time or any other X-axis value. All subsequent col
 	</tbody>
 </table>
 <br>
-[fm-chart type="line"]
+<link rel="stylesheet" href="http://factmint.io/line.css">
+<script async src="http://factmint.io/line.js"></script>
 </div>
 
 ## Options

@@ -53,7 +53,8 @@ The first data column is the name of the entity. All subsequent data columns rep
 		</tr>
 	</tbody>
 </table>
-[fm-chart type="column-bar"]
+<link rel="stylesheet" href="http://factmint.io/column-bar.css">
+<script async src="http://factmint.io/column-bar.js"></script>
 </div>
 
 ## Options

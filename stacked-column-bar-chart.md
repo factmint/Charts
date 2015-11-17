@@ -107,7 +107,8 @@ The first data column is the name of the entity or group. All subsequent data co
 		</tr>
 	</tbody>
 </table>
-[fm-chart type="stacked-column-bar"]
+<link rel="stylesheet" href="http://factmint.io/stacked-column-bar.css">
+<script async src="http://factmint.io/stacked-column-bar.js"></script>
 </div>
 
 <h2 id="stacked-column-bar-options" style="padding-top:100px;">Options</h2>

@@ -62,7 +62,8 @@ The first column is the label for each point. The second and third are the X and
 								</tr>
 							</tbody>
 						</table>
-[fm-chart type="scatter"]
+<link rel="stylesheet" href="http://factmint.io/scatter.css">
+<script async src="http://factmint.io/scatter.js"></script>
 </div>
 
 ## Options

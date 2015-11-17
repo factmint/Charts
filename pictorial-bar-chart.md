@@ -57,7 +57,8 @@ The first column is the label for each bar. All subsequent columns are data seri
 		</tr>
 	</tbody>
 </table>
-[fm-chart type="pictorial-bar"]
+<link rel="stylesheet" href="http://factmint.io/pictorial-bar.css">
+<script async src="http://factmint.io/pictorial-bar.js"></script>
 </div>
 
 ## Options

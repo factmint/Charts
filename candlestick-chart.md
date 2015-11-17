@@ -253,7 +253,8 @@ The first column is the date, time or any other X-axis value. The second column 
 		</tr>
 	</tbody>
 </table>
-[fm-chart type="candlestick"]
+<link rel="stylesheet" href="http://factmint.io/candlestick.css">
+<script async src="http://factmint.io/candlestick.js"></script>
 </div>
 
 ## Options

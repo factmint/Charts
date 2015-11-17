@@ -17,6 +17,7 @@ body {
 }
 
 a {
+	color: $default-link-color;
 	text-decoration: none;
 }
 
@@ -33,6 +34,10 @@ h2 {
 p, ul, ol {
     font-weight: 300;
     line-height: 1.6em;
+}
+
+strong, b {
+	font-weight: 400;
 }
 
 .hint {
@@ -262,7 +267,9 @@ p, ul, ol {
 
 dl.faq {
 
-	font-size: 1.2em;
+	blockquote, p {
+		font-size: 1.2em;
+	}
 
 	dt {
 		font-family: Lato, sans-serif;

@@ -90,8 +90,6 @@ You can tag points in time for either the line element or the columns element by
 </table>
 <link rel="stylesheet" href="http://factmint.io/line-over-bar.css">
 <script async src="http://factmint.io/line-over-bar.js"></script>
-<br>
-[fm-chart type="line-over-bar"]
 </div>
 
 ## Options

@@ -3,8 +3,6 @@ title: Pie Chart
 layout: doc-page
 ---
 
-&nbsp;
-
 The Pie Chart represents data relatively, as proportional slices of the pie.
 ### Interactions
 Hovering on a segment shows a tooltip with the core data. Clicking on a segment selects it for comparison - all of it’s data is shown where the key would normally be and the user can hover on another segment for comparison.
@@ -14,8 +12,10 @@ Hovering on a segment shows a tooltip with the core data. Clicking on a segment 
 The first column represents the names of the Segments; the second column represents the size of each segment.
 
 <span class="tip">If you put data in columns 3+ it will show up in the key area when a user clicks on a segment.</span>
+
 ## Example
-<pre class="line-numbers" data-src="/code-examples/pie-documentation.html"></pre>
+
+<pre data-src="code-examples/pie-documentation.html" class="line-numbers"></pre>
 <a href="http://codepen.io/Factmint/pen/XJejpL/" class="codepen-button">
 	{% include code-pen-icon.svg %}
 </a>
@@ -83,7 +83,8 @@ The first column represents the names of the Segments; the second column represe
 </tbody>
 </table>
 
-[fm-chart type="pie"]
+<link rel="stylesheet" href="http://factmint.io/pie.css">
+<script async src="http://factmint.io/pie.js"></script>
 </div>
 
 ## Options
@@ -95,4 +96,4 @@ The following data attributes are available for a Pie Chart.
 ## Customizing colours
 You can customize the colours for the sections of your pie chart. This is achieved by applying a <code>data-fm-color</code> attribute to the <code>&#60;tr&#62;</code> element that relates to the section you want to colour. The attribute will accept hex codes and RGB colour values, <em>but not colour names</em>:
 
-<pre class="line-numbers" data-src="/code-examples/pie-hex-code-example.html"></pre>
+<pre class="line-numbers" data-src="code-examples/pie-hex-code-example.html"></pre>
