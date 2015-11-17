@@ -4,10 +4,12 @@ layout: doc-page
 ---
 
 The Pie Chart represents data relatively, as proportional slices of the pie.
+
 ### Interactions
 Hovering on a segment shows a tooltip with the core data. Clicking on a segment selects it for comparison - all of it’s data is shown where the key would normally be and the user can hover on another segment for comparison.
 
 <span class="tip">If your data is quite crowded, the Pie Chart will group the smallest segments into an ‘other’ segment which, on click, will bloom to reveal all of the data.</span>
+
 ### Usage
 The first column represents the names of the Segments; the second column represents the size of each segment.
 
