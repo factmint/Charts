@@ -1,0 +1,63 @@
+/*!
+ * Scatter graph styles
+ */
+
+/* ==========================================================================
+   Configuration
+   ========================================================================== */
+
+@import 'variables';
+@import 'classes';
+
+/* ==========================================================================
+   Plugin style definitions
+   ========================================================================== */
+
+@import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
+
+.fm-hidden {
+	display: none;
+}
+
+.fm-scale {
+	fill: none;
+}
+
+.fm-x-axis {
+	.fm-axis {
+		stroke: #808080;
+		stroke-width: 1px;
+	}
+}
+
+.fm-tick-mark {
+	line {
+		stroke: #B3B3B3;
+	}
+}
+
+.fm-grid-line {
+	stroke: #B3B3B3;
+}
+
+.fm-scatter-dot {
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.fm-label {
+	text {
+		fill: white;
+	}
+}
+
+.fm-scatter-tooltip {
+	text {
+		fill: white;
+	}
+}
+
+.fm-trend-line {
+	stroke-width: 2
+}

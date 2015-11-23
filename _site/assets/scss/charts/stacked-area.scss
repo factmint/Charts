@@ -1,0 +1,103 @@
+/*!
+ * Stacked area graph styles
+ */
+
+/* ==========================================================================
+  Configuration
+   ========================================================================== */
+
+@import 'variables';
+@import 'classes';
+
+/* ==========================================================================
+   Plugin style definitions
+   ========================================================================== */
+
+@import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
+
+.fm-hidden {
+	display: none;
+}
+
+.fm-scale {
+	fill: none;
+}
+
+.fm-x-axis {
+	.fm-axis {
+		stroke: #808080;
+		stroke-width: 1px;
+	}
+}
+
+.fm-tick-mark {
+	line {
+		stroke: #B3B3B3;
+	}
+}
+
+.fm-grid-line {
+	stroke: #B3B3B3;
+}
+
+.fm-line-dot {
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.fm-label {
+	text {
+		fill: white;
+	}
+}
+
+.fm-trend-line {
+	stroke-width: 2;
+}
+
+.fm-line-stroke {
+	stroke-width: 2;
+}
+
+.fm-x-tracker {
+	stroke: #808080;
+	stroke-width: 1px;
+	
+	&.label {
+		fill: #303030;
+	}
+}
+
+@mixin fm-label-text() {
+	fill: white;
+	stroke: none;
+	alignment-baseline: central;
+	font-family: Lato, sans-serif;
+	font-size: 12px;
+}
+
+.fm-stacked-area-tooltip.fm-annotation {
+	text {
+		font-family: 'Lato', sans-serif;
+		font-size: 13px;
+		font-weight: bold;
+		fill: white;
+		stroke: none;
+	}
+}
+
+.fm-label-title {
+	@include fm-label-text;
+	text-anchor: middle;
+}
+
+.fm-label-key {
+	@include fm-label-text;
+	text-anchor: start;
+}
+
+.fm-label-value {
+	@include fm-label-text;
+	text-anchor: end;
+}

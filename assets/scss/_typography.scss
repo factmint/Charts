@@ -3,6 +3,15 @@
 ////////////////
 
 @font-face {
+	font-family: 'FontAwesome';
+	src: url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype');
+}
+
+.fontawesome-icon {
+	font-family: FontAwesome;
+}
+
+@font-face {
     font-family: 'Lato';
     src: url('../fonts/lato-hairline-webfont.eot');
     src: url('../fonts/lato-hairline-webfont.eot?#iefix') format('embedded-opentype'),

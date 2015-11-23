@@ -1,0 +1,139 @@
+/*!
+ * Styles for Snap.svg plugin: stacked-column-bar-chart
+ */
+
+/* ==========================================================================
+  Configuration
+   ========================================================================== */
+
+@import 'variables';
+@import 'classes';
+
+$fm-color-pull-out-indicator: #B2B2B2;
+
+/* ==========================================================================
+   Plugin style definitions
+   ========================================================================== */
+
+@import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
+
+.fm-hidden {
+	display: none;
+}
+
+.fm-scale {
+	fill: none;
+}
+
+.fm-axis text {
+	font-family: Lato, sans-serif;
+	font-size: 12px;
+	
+	&.fm-squeezed-label {
+		font-size: 10px;
+	}
+}
+
+.fm-axis line, .fm-major-grid-line {
+	stroke: #808080;
+	stroke-width: 1px;
+}
+
+.fm-minor-grid-line {
+	stroke: #B3B3B3;
+}
+
+.fm-y-axis text {
+	text-anchor: end;
+	dominant-baseline: central;
+}
+
+.fm-tick-mark {
+	line {
+		stroke: #B3B3B3;
+	}
+}
+
+.fm-label {
+	text {
+		fill: white;
+	}
+}
+
+.fm-axis-label {
+	text-anchor: middle;
+	dominant-baseline: text-before-edge;
+}
+
+.fm-inverted-axis-label {
+	text-anchor: middle;
+	dominant-baseline: text-after-edge;
+}
+
+.fm-pulled-out-label {
+	font-weight: 700;
+}
+
+.fm-column-bar-tooltip {
+	text {
+		font-family: 'Lato', sans-serif;
+		font-size: 13px;
+		fill: black;
+		stroke: none;
+	}
+	&.with-fill {
+		text {
+			fill: white;
+		}
+		.fm-tooltip-arrow, .fm-tooltip-bg {
+			stroke: none;
+		}
+	}
+}
+
+.fm-column-bar-datum {
+	&:hover {
+		cursor: pointer;
+	}
+	transition: 0.1s fill;
+}
+
+.fm-pullout {
+	fill: black;
+	opacity: 0.09;
+}
+
+.fm-pullout-key-indicator {
+}
+
+.fm-key {
+	rect.fm-key-container {
+		fill: #e4e4e3;
+	}
+	
+	line {
+		stroke: black;
+	}
+	
+	.fm-key-dividor {
+		stroke: $fm-color-pull-out-indicator;
+	}
+	
+	.fm-pullout-key {
+		stroke: black;
+		stroke-width: 1;
+		fill: $fm-color-pull-out-indicator;
+	}
+	
+	.fm-pullout-title {
+		dominant-baseline: central;
+		font-family: 'Lato', sans-serif;
+		font-size: 12px;
+	}
+}
+
+@each $letter, $color in $color-wheel {
+	.fm-datum-color-wheel-#{$letter}.active {
+		fill: $color;
+	}
+}

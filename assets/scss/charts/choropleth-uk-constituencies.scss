@@ -1,0 +1,152 @@
+/*!
+ * Choropleth UK constituency styles
+ */
+
+/* ==========================================================================
+   Configuration
+   ========================================================================== */
+
+@import 'variables';
+@import 'classes';
+
+
+// Transfer styles to their respective component directories and import them
+
+/* ==========================================================================
+   Plugin style definitions
+   ========================================================================== */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+
+
+.fm-chart {
+	transition: opacity 0.2s;
+}
+
+.fm-unrendered-chart {
+	opacity: 1;
+}
+
+.fm-hidden {
+	display: none;
+}
+
+.fm-color-scale-key-marker {
+	opacity: 1;
+	transition: opacity 0.2s;
+	&.hidden {
+		opacity: 1;
+	}
+	&.secondary {
+		fill: white;
+		stroke: black;
+		stroke-width: 1;
+	}
+}
+
+.fm-color-scale-key-tick-line {
+	stroke: #B3B3B3;
+	stroke-width: 0.5;
+}
+
+.fm-color-scale-key-tick-label {
+	font: {
+		size: 12px;
+		weight: 100;
+	}
+	tspan {
+		dominant-baseline: central;
+	}
+}
+
+.fm-choropleth-large-map {
+	.fm-choropleth-area {
+		cursor: pointer;
+		&.fm-active {
+			stroke: black;
+			stroke-width: 2;
+		}
+		&.fm-highlighted {
+			stroke: black;
+			stroke-width: 1;
+		}
+	}
+
+	.fm-choropleth-region,
+	.fm-choropleth-region .fm-choropleth-area,
+	.fm-choropleth-region .fm-choropleth-neutral-area {
+		cursor: pointer;
+	}
+
+	.fm-choropleth-neutral-area {
+		cursor: not-allowed;
+	}
+
+}
+
+.fm-choropleth-neutral-area {
+	fill: #A4ADAD;
+}
+
+.fm-choropleth-thumbnail-map {
+	cursor: pointer;
+}
+
+.fm-choropleth-thumbnail-map-background {
+	cursor: pointer;
+	stroke: #ABACAB;
+	stroke-width: 1;
+	fill: white;
+}
+
+.fm-choropleth-zoom-icon {
+	cursor: pointer;
+}
+
+.fm-tooltip {
+	fill: #303432;
+	font-weight: 300;
+	&.fm-secondary {
+		fill: white;
+		stroke: black;
+		stroke-width: 1;
+		text {
+			fill: black;
+		}
+		ellipse {
+			stroke: none;
+		}
+	}
+	text {
+		dominant-baseline: central;
+		fill: white;
+		font: {
+			family: 'Lato', sans-serif;
+			size: 12px;
+		}
+		stroke: none;
+	}
+}
+
+.fm-multi-measure-tooltip {
+	.fm-multi-measure-tooltip-title {
+		font-weight: 400;
+	}
+}
+
+.fm-key {
+	.fm-key-value-title {
+		font: {
+			family: 'Lato', sans-serif;
+			size: 12px;
+		}
+	}
+}
+
+.fm-key-background {
+}
+
+.fm-key-top-border {
+	stroke: black;
+	stroke-width: 1;
+}
