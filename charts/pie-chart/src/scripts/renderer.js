@@ -152,10 +152,10 @@ return function(left, top, width, height, options, data, chart, renderMode) {
 
 			key.move(
 				0,
-				top + height - keyHeight
+				height - keyHeight
 			);
 			
-			pieAreaHeight = height - keyHeight - maxTooltipDimensions.height;
+			pieAreaHeight = height - keyHeight - 2 * maxTooltipDimensions.height;
 
 			chartDescription.layout.drawRegions.pieArea = {
 				x: left,
