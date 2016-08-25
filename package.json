@@ -1,6 +1,6 @@
 {
   "name": "factmint-charts-api",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Some tools built on SVG.js and Paths.js for creating data visualizations",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "paths-js": "git+https://github.com/andreaferretti/paths-js.git",
-    "svg.js": "~2.0.0",
+    "svg.js": "~2.2",
     "almond": "~0.3.1"
   }
 }

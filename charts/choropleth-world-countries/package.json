@@ -2,7 +2,7 @@
 	"name": "choropleth-world-countries",
 	"releaseName": "choropleth-world-countries",
 	"description": "Factmint world countries choropleth plugin",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"devDependencies": {
 		"almond": "^0.3.0",
 		"grunt": "0.4.*",
@@ -29,6 +29,6 @@
 		"classList": "git+https://github.com/bcbweb/classList.js.git",
 		"paths-js": "git+https://github.com/andreaferretti/paths-js.git",
 		"requirejs": "^2.1.15",
-	    "svg.js": "~2.0.4"
+	    "svg.js": "~2.2"
 	}
 }
